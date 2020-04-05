@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>VěK - Nesmrtelní - Kniha</title>
+    <link rel="stylesheet" href="../../../VeK.css" type="text/css" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <style>
+      .thumbnail-page
+      {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #thumbnails
+      {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 7px;
+        margin-top: 0px;
+        /*height: 75px;*/        
+        
+        text-align: center;
+      }
+      
+      #thumbnails li
+      {
+        display: inline;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #thumbnails img
+      {
+        border: none;
+        vertical-align: middle;
+        
+        margin: 0;
+        margin-right: 7px;
+      }
+      
+      #viewbox
+      {
+        width: 100%;
+        text-align: center;
+        overflow: scroll;
+        
+        background: url('Kniha.jpg') no-repeat 50% 50%;
+      }
+      
+      #zpet
+      {
+        margin: 0;
+        margin-top: 5px;
+        margin-left: 14px;
+      }
+      
+    </style>
+    
+    <script>
+      ImageHeightDelta = -10;
+      /*FirstImage = 'Kniha.jpg'*/
+      
+      PhotoDimensions = {
+        /*'Kniha.jpg'  : { 'w':  900, 'h':  525, 'disableZoom': true },*/
+        'Obsah.jpg'  : { 'w': 1542, 'h': 1096 },
+        'Esej.jpg'   : { 'w': 1560, 'h': 1117 },
+        'Biobibliografie.jpg' : { 'w': 1536, 'h': 1120 },        
+        'Pruvodce.jpg'    : { 'w': 1536, 'h': 1120 },
+        'MotoTitul.jpg'   : { 'w': 1536, 'h': 1120 },
+        'Frontispice.jpg' : { 'w': 1536, 'h': 1120 },
+        'Ancerl.jpg'      : { 'w': 1536, 'h': 1120 },
+        'Holan.jpg'       : { 'w': 1536, 'h': 1120 },
+        'Tomasek.jpg'     : { 'w': 1536, 'h': 1120 }
+      };
+    </script>
+        
+  </head>
+
+  <body class="thumbnail-page">
+    
+    <ul id="thumbnails">
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/MotoTitul.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_MotoTitul.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Frontispice.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Frontispice.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Obsah.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Obsah.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Esej.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Esej.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="Ancerl.jpg" target="_blank"><img src="th_Ancerl.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="Holan.jpg" target="_blank"><img src="th_Holan.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="Tomasek.jpg" target="_blank"><img src="th_Tomasek.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Biobibliografie.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Biobibliografie.jpg" /></a></li>
+      <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Pruvodce.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Pruvodce.jpg" /></a></li>
+    </ul>
+
+    <a id="zpet" href="../Index.html"><span class="nocss">zpět</span></a>
+    
+    <div id="viewbox">
+      <img id="image" style="display: none;" />
+    </div>
+        
+    <script src="../../../Viewport.js"></script>
+    <script src="../../../Gallery.js"></script>
+    <script src="../../../VeK.js"></script>
+       
+  </body>
+</html>
