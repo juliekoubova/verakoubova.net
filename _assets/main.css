@@ -10,38 +10,35 @@ body {
 
 nav a {
   @apply text-red-800;
+  @apply no-underline;
 }
 
 nav a:hover {
   @apply text-black;
 }
 
-a:active {
-  @apply text-black;
+h1 {
+  @apply vr-none-3xl;
 }
 
-.applied h1 {
-  @apply vr-none-2xl;
+h2 {
+  @apply mt-6;
+  @apply font-bold;
+  @apply vr-relaxed-lg;
 }
 
-.applied a {
+a {
   @apply text-red-800;
   @apply underline;
 }
 
-.applied a:active,
-.applied a:hover {
+a:active,
+a:hover {
   @apply text-gray-700;
 }
 
-.applied a:visited {
+a:visited {
   @apply text-black;
-}
-
-.applied h2 {
-  @apply mt-6;
-  @apply font-bold;
-  @apply vr-relaxed-base;
 }
 
 .applied p {

@@ -1,0 +1,120 @@
+cz: Výstavy
+de: Ausstellungen
+slug:
+  cz: vystavy
+  de: Ausstellungen
+
+rows:
+- cz: Mezi zdmi
+  de:
+  instances:
+  - cz: Praha - Rubín
+    de:
+    year: 1994
+
+- cz: Tváře s příběhy
+  de:
+  instances:
+  - cz: Praha - Modřanská knihovna
+    de:
+    year: 1995
+
+- cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+  de: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+  instances:
+  - cz: Freiburg - Katolická akademie (Německo)
+    de: Freiburg - Katholische Akademie (Deutschland)
+    year: 2001
+  - cz: Praha - Goethe-Institut
+    de: Praha - Goethe-Institut (Tschechien)
+    year: 2001
+  - cz: Wuppertal - Universita (Německo)
+    de: Wuppertal - Bergische Universität (Deutschland)
+    year: 2001
+  - cz: Jena - Universita (Německo)
+    de: Jena - Jenaer Universität (Deutschland)
+    year: 2002
+  - cz: Erfurt - Michaeliskirche a Thüringer Staatskanzlei (Německo)
+    de: Erfurt - Michaeliskirche und Thüringer Staatskanzlei (Deutschland)
+    year: 2002
+  - cz: Düsseldorf - Gerhart-Hauptmann-Haus (Německo)
+    de: Düsseldorf - Gerhart-Hauptmann-Haus (Deutschland
+    year: 2003
+  - cz: Weinberg - zámek (Rakousko)
+    de: Weinberg - Schloss (Österreich)
+    year: 2003
+
+- cz: Místo děje
+  de:
+  instances:
+  - cz: Praha - Černý kůň Lucerna
+    de:
+    year: 2003
+
+- cz: Mezi sebou
+  de:
+  instances:
+  - cz: Praha - Černý kůň Lucerna
+    de:
+    year: 2004
+
+- cz: Za mrtvé stromy
+  de:
+  instances:
+  - cz: Kaliště - Mahlerův dům
+    de:
+    year: 2006
+
+- cz: Psí víno
+  de:
+  instances:
+  - cz: Pejškovna
+    de:
+    year: 2007
+  - cz: Praha - Písecká brána
+    de:
+    year: 2010
+
+- cz: Odečítání z povrchu
+  de:
+  instances:
+  - cz: 'Bern - "raum" (Švýcarsko)'
+    de:
+    year: 2010
+  - cz: Praha - Centrum Franze Kafky
+    de:
+    year: 2011
+  - cz: Heidelberg - Německo-Americký Institut (Německo)
+    de:
+    year: 2015
+  - cz: Plzeň - Evropský dům
+    de:
+    year: 2016
+
+- cz: Vidiny Paměti
+  de:
+  instances:
+  - cz: Vídeň - IWM (Rakousko)
+    de:
+    year: 2008
+
+- cz: Zkouškové období aneb Plaveme
+  de:
+  instances:
+  - cz: Pejškovna
+    de:
+    year: 2010
+
+- cz: Jan Věk
+  de:
+  instances:
+  - cz: Vyšný u Českého Krumlova - Hájenka
+    de:
+    year: 2011
+
+- cz: Zkřížené cesty
+  de:
+  instances:
+  - cz: Brno - Café 99
+    de:
+    year: 2012

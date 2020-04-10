@@ -1,0 +1,58 @@
+cz: Fotografická témata
+de: Fotografische Themen
+slug:
+  cz: fotograficka-temata
+  de: fotografische-themen
+rows:
+- cz: Místo děje
+  de:
+  instances:
+  - cz: pouliční příběhy z devadesátých let
+
+- cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+  instances:
+  - cz: |
+      hroby českých, německých a židovských osobností na území bývalé „Bohemie“
+      kolem přelomu tisíciletí
+  - de:
+
+- cz: Konference
+  de:
+  instances:
+  - cz: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
+    de:
+- cz:
+  de:
+  instances:
+  - cz:
+    de:
+
+- cz: Fotoeseje
+  de:
+  instances:
+  - cz: dlouhodobě sbírané události
+    de:
+
+- cz: Portréty
+  de:
+  instances:
+  - cz: obrazy tváří z minulého i nového věku
+    de:
+
+- cz: Ilustrace
+  de:
+  instances:
+  - cz: fotografie v duchu literárních děl
+    de:
+
+- cz: Fantom
+  de:
+  instances:
+  - cz: cyklus světelných příběhů
+    de:
+
+- cz: Triptychy
+  de:
+  instances:
+  - cz: ilustrace ilustrací
+    de:

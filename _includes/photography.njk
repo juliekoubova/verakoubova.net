@@ -1,0 +1,27 @@
+---
+layout: body
+---
+{% for section in photography | dictsort %}
+<section id="{{ section[1].slug | lang }}">
+  <h2>{{ section[1] | lang | nl2br | safe }}</h2>
+  <ul class="mt-2">
+  {% for row in section[1].rows %}
+    <li class="md:flex mb-2">
+      <div class="md:w-1/4 md:flex-shrink-0 md:mr-2 md:text-right vr-relaxed-base font-semibold">
+      {{ row | lang | nl2br | safe }}
+      </div>
+      <div class="vr-relaxed-base">
+      {% for inst in row.instances %}
+        {% if loop.first %}<ul>{% endif %}
+        {% if loop.length > 1 %}<li>{% endif %}
+        {{ inst.year }}
+        {{ inst | lang | nl2br | safe }}
+        {% if loop.length > 1 %}</li>{% endif %}
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endfor %}

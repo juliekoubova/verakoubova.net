@@ -1,7 +1,7 @@
 <ul class="collapsible-list">
 {% for exhib in exhibitions %}
   <li>
-    <div>{{ exhib[lang] | nl2br | safe }}</div>
+    <div>{{ exhib | lang | nl2br | safe }}</div>
     <ul>
     {% for venue in exhib.venues %}
       <li>{{ venue.year }} {{ venue[lang] }}</li>
