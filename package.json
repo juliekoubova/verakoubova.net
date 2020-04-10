@@ -17,6 +17,7 @@
     "tailwindcss": "^1.2.0"
   },
   "dependencies": {
+    "js-yaml": "^3.13.1",
     "tailwind-vertical-rhythm": "^1.0.0"
   }
 }

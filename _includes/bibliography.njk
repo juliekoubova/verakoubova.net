@@ -1,0 +1,27 @@
+---
+layout: body
+---
+{% for b in bibliography | dictsort %}
+<section id="{{ b[0] }}">
+  <h2 class="mt-6 font-bold vr-loose-base">{{ b[1].name }} </h2>
+  <ul>
+    {% for pub in b[1].publications %}
+    {% set published = pub.published | lang %}
+    <li>
+      <div class="flex flex-wrap">
+        <div class="mr-1">
+          <em>{{ pub.translated }}</em>
+          ({{ pub.original | lang }}){{ ", " if published }}
+        </div>
+        {% if published %}
+        <div>{{ published }}</div>
+        {% endif %}
+      </div>
+      {% for note in pub.notes %}
+      <div>{{ note | lang }}</div>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
