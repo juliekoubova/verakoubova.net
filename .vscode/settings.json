@@ -1,0 +1,13 @@
+{
+  "cSpell.words": [
+    "Koubová",
+    "Passthrough",
+    "eleventy",
+    "tailwindcss"
+  ],
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+  }
+}

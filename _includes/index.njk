@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<h1 class="sr-only">Věra Koubová</h1>
+<div class="min-h-screen flex flex-col-reverse md:flex-row justify-center items-center">
+  <nav class="vr-normal-4xl text-right tracking-tight mr-4">
+    {{ content | safe }}
+  </nav>
+  <div class="lowercase">
+    {% for lgg in site.languages %}
+      {% if lgg.code != lang %}
+        <a href="/{{ lgg.code }}" class="text-gray-600 hover:text-black">{{ lgg.label }}</a>
+      {% endif %}
+    {% endfor %}
+    <img src="/img/index.jpeg" alt="" height="464" width="329" />
+  </div>
+</div>

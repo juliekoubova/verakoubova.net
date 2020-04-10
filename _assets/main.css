@@ -1,0 +1,67 @@
+@charset 'utf-8';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* @apply vr-debug; */
+}
+
+nav a {
+  @apply text-red-800;
+}
+
+nav a:hover {
+  @apply text-black;
+}
+
+a:active {
+  @apply text-black;
+}
+
+.applied h1 {
+  @apply vr-none-2xl;
+}
+
+.applied a {
+  @apply text-red-800;
+  @apply underline;
+}
+
+.applied a:active,
+.applied a:hover {
+  @apply text-gray-700;
+}
+
+.applied a:visited {
+  @apply text-black;
+}
+
+.applied h2 {
+  @apply mt-6;
+  @apply font-bold;
+  @apply vr-relaxed-base;
+}
+
+.applied p {
+  @apply vr-loose-base;
+}
+
+.applied dl {
+  @apply vr-relaxed-base;
+}
+
+.applied dt {
+  @apply font-bold;
+  @apply inline;
+}
+
+.applied li {
+  @apply mt-2;
+  @apply vr-relaxed-base;
+}
+
+.applied p:not(:first-of-type) {
+  @apply mt-4;
+}
