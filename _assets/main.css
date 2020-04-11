@@ -19,10 +19,10 @@ body {
 
 h1 {
   @apply vr-none-3xl;
+  @apply mt-4;
 }
 
 h2 {
-  @apply mt-6;
   @apply font-bold;
   @apply vr-relaxed-lg;
 }
@@ -47,6 +47,9 @@ nav a:hover {
   @apply text-gray-700;
 }
 
+article, section {
+  @apply mb-6;
+}
 
 .applied p {
   @apply vr-loose-base;

@@ -3,7 +3,7 @@ layout: applied
 ---
 {% for b in bibliography | dictsort %}
 <section id="{{ b[0] }}">
-  <h2 class="mt-6 font-bold vr-loose-base">{{ b[1].name }} </h2>
+  <h2 class="font-bold vr-loose-base">{{ b[1].name }} </h2>
   <ul>
     {% for pub in b[1].publications %}
     {% set published = pub.published | lang %}
