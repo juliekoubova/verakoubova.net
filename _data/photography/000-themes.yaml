@@ -20,6 +20,9 @@ rows:
 
 - cz: Konference
   de: Konferenzen
+  href:
+      cz: /cz/konference
+      de: /de/konferenzen
   instances:
   - cz: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
