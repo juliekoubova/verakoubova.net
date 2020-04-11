@@ -2,7 +2,7 @@
 layout: body
 ---
 {% for section in photography | dictsort %}
-<section id="{{ section[1].slug | lang }}">
+<section id="{{ section[1].slug | lang }}" class="mb-8">
   <h2>{{ section[1] | lang | nl2br | safe }}</h2>
   <ul class="mt-2">
   {% for row in section[1].rows %}

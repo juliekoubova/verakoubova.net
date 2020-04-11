@@ -6,17 +6,17 @@ slug:
 
 rows:
 - cz: Mezi zdmi
-  de:
+  de: Zwischen Mauern
   instances:
   - cz: Praha - Rubín
-    de:
+    de: Theater Rubín (Tschechien)
     year: 1994
 
 - cz: Tváře s příběhy
-  de:
+  de: Gesichter mit Geschichten
   instances:
   - cz: Praha - Modřanská knihovna
-    de:
+    de: Bibliothek Modřany (Tschechien)
     year: 1995
 
 - cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
@@ -45,76 +45,76 @@ rows:
     year: 2003
 
 - cz: Místo děje
-  de:
+  de: Anstelle anstätte
   instances:
   - cz: Praha - Černý kůň Lucerna
-    de:
+    de: Praha - Lucerna (Tschechien)
     year: 2003
 
 - cz: Mezi sebou
-  de:
+  de: Untereinander
   instances:
   - cz: Praha - Černý kůň Lucerna
-    de:
+    de: Praha - Lucerna (Tschechien)
     year: 2004
 
 - cz: Za mrtvé stromy
-  de:
+  de: Für tote Bäume
   instances:
   - cz: Kaliště - Mahlerův dům
-    de:
+    de: Kaliště - Mahler-Haus (Tschechien)
     year: 2006
 
 - cz: Psí víno
-  de:
+  de: Wilder Wein
   instances:
   - cz: Pejškovna
-    de:
+    de: Pejškovna (Tschechien)
     year: 2007
   - cz: Praha - Písecká brána
-    de:
+    de: Praha - Písek-Tor (Tschechien)
     year: 2010
-
-- cz: Odečítání z povrchu
-  de:
-  instances:
-  - cz: 'Bern - "raum" (Švýcarsko)'
-    de:
-    year: 2010
-  - cz: Praha - Centrum Franze Kafky
-    de:
-    year: 2011
-  - cz: Heidelberg - Německo-Americký Institut (Německo)
-    de:
-    year: 2015
-  - cz: Plzeň - Evropský dům
-    de:
-    year: 2016
 
 - cz: Vidiny Paměti
-  de:
+  de: GedächtnisGesichte
   instances:
   - cz: Vídeň - IWM (Rakousko)
-    de:
+    de: Wien - IWM (Österreich)
     year: 2008
 
 - cz: Zkouškové období aneb Plaveme
-  de:
+  de: Schwimm- und Schwitzzeit
   instances:
   - cz: Pejškovna
-    de:
+    de: Pejškovna (Tschechien)
     year: 2010
 
+- cz: Odečítání z povrchu
+  de: Von der Oberfläche gelesen
+  instances:
+  - cz: 'Bern - "raum" (Švýcarsko)'
+    de: Bern - "raum" (Schweiz)
+    year: 2010
+  - cz: Praha - Centrum Franze Kafky
+    de: Praha - Franz-Kafka-Zentrum (Tschechien)
+    year: 2011
+  - cz: Heidelberg - Německo-Americký Institut (Německo)
+    de: Heidelberg - Deutsch-Amerikanisches Institut (Deutschland)
+    year: 2015
+  - cz: Plzeň - Evropský dům
+    de: Pilsen - Europäisches Haus (Tschechien
+    year: 2016
+
 - cz: Jan Věk
-  de:
+  de: Jan Verk
   instances:
   - cz: Vyšný u Českého Krumlova - Hájenka
-    de:
+    de: Vyšný bei Böhmisch Krumau - Forsthaus (Tschechien)
     year: 2011
 
 - cz: Zkřížené cesty
-  de:
+  de: Wege gekreuzt
   instances:
   - cz: Brno - Café 99
-    de:
+    de: Brno - Café 99 (Tschechien)
     year: 2012

@@ -24,38 +24,32 @@ rows:
   - cz: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
 
-- cz:
-  de:
-  instances:
-  - cz:
-    de:
-
 - cz: Fotoeseje
-  de:
+  de: Photoessays
   instances:
   - cz: dlouhodobě sbírané události
-    de:
+    de: Langfristig aufgenommene Ereignisse
 
 - cz: Portréty
-  de:
+  de: Portraits
   instances:
   - cz: obrazy tváří z minulého i nového věku
-    de:
+    de: Antlitze aus dem vergangenen sowie neuen Zeitalter
 
 - cz: Ilustrace
-  de:
+  de: Illustrationen
   instances:
   - cz: fotografie v duchu literárních děl
-    de:
+    de: Photographien im Sinne von literarischen Werken
 
 - cz: Fantom
-  de:
+  de: Phantom
   instances:
   - cz: cyklus světelných příběhů
-    de:
+    de: Zyklus einiger Lichtgeschichten
 
 - cz: Triptychy
-  de:
+  de: Triptychen
   instances:
   - cz: ilustrace ilustrací
-    de:
+    de: Illustrierte Illustrationen

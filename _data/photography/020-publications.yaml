@@ -28,126 +28,129 @@ rows:
     de: (Ausstellung) Proben in der Zeitschrift Revolver Revue 55/2004 (14)
 
 - cz: Událost a nepředmětnost
-  de:
   instances:
   - cz: |
       disputace k filosofii Ladislava Hejdánka
       ukázky v Reflexi 28/2005 (8)
-    de:
+    de: |
+      Disputation zur Philosophie Ladislav Hejdáneks: <em>Ereignis und Nicht-Gegenständlichkeit</em>
+      Proben in der Zeitschrift Reflexe 28/2005 (8)
 
 
 - cz: Nekonečnost konečnosti
-  de:
   instances:
   - cz: disputace k filosofii Ivana Chvatíka 2005
-    de:
-
+    de: |
+      Disputation zur Philosophie Ivan Chvatíks: <em>Unendlichkeit der Endlichkeit</em>, 2005
+    # Proben auf der Adresse der Evangelischen theologischen Fakultät (8)
 
 - cz: Hledání literárních dějin v diskusi
-  de:
   instances:
   - cz: (konference) ukázky ve Scholares, Paseka 2006 (8)
-    de:
-
+    de: |
+      Konferenz: <em>Suche nach der Literaturgeschichte in Diskussion</em>
+      Proben in: Scholares, Paseka 2006 (8)
 
 - cz: Návrh ilustrací k povídkám Jiřího Weila
-  de:
   instances:
   - cz: (ilustrace) ukázky v Revolver Revue 65/2006 (7)
-    de:
+    de: |
+      Illustrationen zu Erzählungen von Jiří Weil
+      Proben in der Zeitschrift Revolver Revue 65/2006 (7)
 
-
-- cz: „ich bleibe. ihr geht“
-  de:
+- de: „ich bleibe. ihr geht“
   instances:
   - cz: (fotoesej) Transit 33, Vídeň 2007 (9)
-    de:
+    de: (Photoessay) Transit 33, Wien 2007 (9)
 
-
-- cz: GedächtnisGesichte
-  de:
+- de: GedächtnisGesichte
   instances:
   - cz: (fotoesej) Transit 35, Vídeň 2008 (9)
-    de:
-
+    de: (Photoessay) Transit 35, Wien 2008 (9)
 
 - cz: Osmdesátiny
-  de:
+  de: Jubiläum
   instances:
   - cz: kolokvium k jubileu Ladislava Hejdánka a Jakuba Trojana 2007
-    de:
+    de: Kolloquium zum Jubiläum von Ladislav Hejdánek und Jakub Trojan 2007
 
 - cz: O nejvyšších rodech
-  de:
+  de: Über die höchsten Genera
   instances:
   - cz: |
       disputace o Platónově dialogu Sofistés 2009
     # ukázky na adrese Evangelické teologické fakulty</a> (16)
 
-    de:
+    de: |
+      Disputation über Platos Sophistes 2009
+    # Proben auf der Adresse der Evangelischen theologischen Fakultät (16)
 
 - cz: Masák a partner
-  de:
+  de: Masak und Partner
   instances:
   - cz: |
       Fotografická prezentace architektonického ateliéru
       Viz webovou stránku <a href="http://www.masak-partner.com/">Masák a partner</a>
-    de:
+    de: |
+      Photographische Präsentation eines architektonischen Ateliers
+      Siehe die Webseite von <a href="http://www.masak-partner.com/">Masak und Partner</a>
 
 - cz: Psí víno
-  de:
   instances:
   - cz: |
       Ilustrace k novele Anny Blažíčkové
       Triáda, Praha 2010 (10)
+    de: |
+      Illustrationen zur Novelle "Wilder Wein" von Anna Blažíčková
+      Triáda, Praha 2010 (10)
 
-    de:
-
-- cz: Kafka
-  de:
-  instances:
-  - cz: |
-      Ilustrace k eseji Jürga Amanna
-      Archa, Zlín 2011 (14)
-    de:
 
 - cz: Filosofie Lidského, příliš lidského
-  de:
   instances:
   - cz: |
       Ilustrace k souboru filosofických esejů a záběry z kolokvia ke vzniku knihy
       Pavel Mervart, Červený Kostelec 2011 (14)
 
-    de:
+- cz: Kafka
+  instances:
+  - cz: |
+      Ilustrace k eseji Jürga Amanna
+      Archa, Zlín 2011 (14)
+    de: |
+      Illustrationen zum Essay von Jürg Amann
+      Archa, Zlín 2011 (14)
 
 - cz: Čekání v zástupu
-  de:
   instances:
   - cz: |
       Ilustrace ke sbírce povídek Anny Blažíčkové
       Triáda, Praha 2014 (9)
-    de:
+    de: |
+      Illustration zu Anna Blažíčkovás Erzählband "Warten in der Schar"
+      Triáda, Praha 2014 (9)
 
 - cz: Duše zrcadlo
-  de:
   instances:
   - cz: |
       Ilustrace ke knize studií Lenky Karfíkové ke Kappadočanům, Augustinovi a Abélardovi
       Triáda, Praha 2016 (10)
-    de:
+    de: |
+      Illustrationen zum Band von Abhandlungen Lenka Karfíkovás zu den Kappadokiern, zu Augustinus und Abélard "Seele als Spiegel"
+      Triáda, Praha 2016 (10)
 
 - cz: Trochu jiné mámy
-  de:
+  de: Etwas andere Mütter
   instances:
   - cz: |
       Portréty k rozhovorům Petry Maťové s mladými ženami, jež jejich zdravotní postižení neodradilo od mateřství
       knižně v nakladatelství Host, Brno cca 2017 (8)
-    de:
-    published:
+    de: |
+      Portraits zu Gesprächen von Petra Maťová über die Mutterschaft trotz gesundheitlicher Handicaps
+      als Buch im Verlag Host, Brno, cca 2017 (8)
 
 - cz: Knižní obálky
-  de:
+  de: Buchumschläge
   instances:
   - cz: soubor fotografií VěK použitých na obálky knih
-    de:
+    de: Photographien von VerK auf Buchumschlägen
 
