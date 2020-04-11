@@ -1,13 +1,16 @@
 ---
 layout: default
 ---
-<h1 class="sr-only">Věra Koubová</h1>
-<div class="min-h-screen flex flex-col-reverse md:flex-row justify-center items-center">
-  <nav class="bignav vr-normal-4xl text-right tracking-tight mr-4">
+{% from 'macros.njk' import image %}
+<h1 class="sr-only">{{ title }}</h1>
+<div class="min-h-screen flex justify-center items-center px-2">
+  <div class="flex flex-col md:flex-row">
+    <div class="mx-auto md:ml-0 md:mr-2">
+      {% include 'nav.njk' %}
+      <div class="vr-normal-base">
+        {{ image(img) }}
+      </div>
+    </div>
     {{ content | safe }}
-  </nav>
-  <div>
-    {% include 'nav.njk' %}
-    <img class="mt-2" src="/img/index.jpeg" alt="" height="464" width="329" />
   </div>
 </div>

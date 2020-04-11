@@ -64,7 +64,7 @@ const filters = {
         : results
     }
 
-    const items = withSameValue(this.ctx.id ? 'id' : 'layout')
+    const items = withSameValue(this.ctx.pageId ? 'pageId' : 'layout')
 
     if (this.ctx.layout !== 'index') {
       items.unshift({
@@ -84,6 +84,13 @@ const filters = {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
+  eleventyConfig.setTemplateFormats([
+    'html',
+    'jpeg',
+    'md',
+    'njk',
+    'png',
+  ])
   eleventyConfig.addPassthroughCopy("img")
   for (const [key, fn] of Object.entries(filters)) {
     eleventyConfig.addFilter(key, fn)

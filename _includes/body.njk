@@ -9,15 +9,11 @@ layout: default
     <h1>{{ title }}</h1>
   </div>
 
+  {% from 'macros.njk' import image %}
+
   {% if img %}
   <div class="col-start-1 col-end-1 vr-loose-base">
-    <img
-      src="{{ img.url }}"
-      alt="{{ img.alt | lang }}"
-      height="{{ img.height }}"
-      width="{{ img.width }}"
-      class="mx-auto"
-    />
+    {{ image(img) }}
   </div>
   {% endif %}
 

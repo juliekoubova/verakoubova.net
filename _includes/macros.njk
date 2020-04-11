@@ -1,0 +1,11 @@
+{% macro image(img) %}
+{% if img %}
+  <img
+    class="max-w-full"
+    alt="{{ img.alt | lang }}"
+    src="{{ img.src | lang }}"
+    width="{{ img.width }}"
+    height="{{ img.heigth }}"
+  >
+{% endif %}
+{% endmacro %}

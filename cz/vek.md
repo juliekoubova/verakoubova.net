@@ -1,8 +1,9 @@
 ---
 layout: applied
+pageId: vek
 title: VěK
 img:
-  url: /img/vek.jpeg
+  src: /img/vek.jpeg
   alt:
     cz: Věra Koubová s fotoaparátem
   height: 170

@@ -9,6 +9,8 @@ body {
 }
 
 .bignav a {
+  @apply block;
+  @apply py-1;
   @apply text-red-800;
   @apply no-underline;
 }
