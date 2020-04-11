@@ -6,18 +6,25 @@
   "license": "PRIVATE",
   "private": true,
   "scripts": {
+    "clean": "shx rm -r _site",
     "dev": "run-p dev:*",
     "dev:eleventy": "eleventy --serve --quiet",
-    "dev:parcel": "parcel watch _assets/main.css --public-url /assets --out-dir _site/assets"
+    "dev:parcel": "parcel watch _assets/main.css --public-url /assets --out-dir _site/assets",
+    "build": "run-s clean build:parcel build:eleventy",
+    "build:eleventy": "eleventy",
+    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css --public-url /assets --out-dir _site/assets",
+    "deploy": "run-s build deploy:push-dir",
+    "deploy:push-dir": "push-dir --dir=_site --branch=master"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "cross-env": "^7.0.2",
+    "js-yaml": "^3.13.1",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
+    "push-dir": "^0.4.1",
+    "shx": "^0.3.2",
+    "tailwind-vertical-rhythm": "^1.0.0",
     "tailwindcss": "^1.2.0"
-  },
-  "dependencies": {
-    "js-yaml": "^3.13.1",
-    "tailwind-vertical-rhythm": "^1.0.0"
   }
 }
