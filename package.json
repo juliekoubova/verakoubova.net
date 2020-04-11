@@ -26,5 +26,9 @@
     "shx": "^0.3.2",
     "tailwind-vertical-rhythm": "^1.0.0",
     "tailwindcss": "^1.2.0"
+  },
+  "dependencies": {
+    "photoswipe": "^4.1.3",
+    "stimulus": "^1.1.1"
   }
 }
