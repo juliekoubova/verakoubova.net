@@ -59,7 +59,6 @@ const filters = {
           label: this.ctx.site.languages[p.data.lang]
         }))
 
-
       return duplicates(results, 'lang')
         ? []
         : results
