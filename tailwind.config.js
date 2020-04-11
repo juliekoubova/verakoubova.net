@@ -12,6 +12,9 @@ module.exports = {
       loose: 2,
     }
   },
+  variants: {
+    textColor: ['responsive', 'hover', 'focus', 'active', 'visited']
+  },
   verticalRhythm: {
     defaultLineHeight: 'loose',
     fontCapHeight: {

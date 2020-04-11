@@ -8,12 +8,12 @@ body {
   /* @apply vr-debug; */
 }
 
-nav a {
+.bignav a {
   @apply text-red-800;
   @apply no-underline;
 }
 
-nav a:hover {
+.bignav a:hover {
   @apply text-black;
 }
 
@@ -37,9 +37,16 @@ a:hover {
   @apply text-gray-700;
 }
 
-a:visited {
-  @apply text-black;
+nav a,
+nav a:visited {
+  @apply text-gray-800;
 }
+
+nav a:active,
+nav a:hover {
+  @apply text-gray-700;
+}
+
 
 .applied p {
   @apply vr-loose-base;

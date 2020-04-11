@@ -1,28 +1,31 @@
 cz: Publikace
-de:
+de: Publikationen
 slug:
   cz: publikace
-  de:
+  de: publikationen
 rows:
 
 - cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
-  de:
   instances:
   - cz: |
       (obrazová kniha) Steffen Höhne + VěK
       Nakladatelství Franze Kafky, Praha 2001 (88)
       distribuce <a href="http://www.oikoymenh.cz/product_info.php?products_id=141">oikoymenh</a>
-    de:
+    de: |
+      (Bildband) Steffen Höhne + VerK
+      Nakladatelství Franze Kafky, Praha 2001 (88)
+      Distribution <a href="http://www.oikoymenh.cz/product_info.php?products_id=141">oikoymenh</a>
+
 
 - cz: Místo děje
-  de:
   instances:
   - cz: ukázky v časopise Host 7/2003 (16)
+  - de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
 
 - cz: Nesmrtelní:smrtelní
-  de:
   instances:
-- cz: (výstava) ukázky v Revolver Revue 55/2004 (14)
+  - cz: (výstava) ukázky v Revolver Revue 55/2004 (14)
+    de: (Ausstellung) Proben in der Zeitschrift Revolver Revue 55/2004 (14)
 
 - cz: Událost a nepředmětnost
   de:

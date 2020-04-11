@@ -1,6 +1,5 @@
 languages:
-  - code: cz
-    label: Česky
-  - code: de
-    label: Deutsch
+  cz: česky
+  de: deutsch
 mail: verkou@verakoubova.net
+name: Věra Koubová

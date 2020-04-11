@@ -2,9 +2,10 @@
 layout: default
 ---
 <div class="mx-2 md:mx-auto max-w-4xl my-4">
-  <a class="underline text-gray-700 hover:text-red-800" href="/{{ lang }}">{{ goBack }}</a>
-  <h1>{{ title }}</h1>
-  <main class="mt-4 {{ mainClass }}">
+  {# <a class="underline text-gray-700 hover:text-red-800" href="/{{ lang }}">{{ goBack }}</a> #}
+  {% include 'nav.njk' %}
+  <h1 class="mt-4">{{ title }}</h1>
+  <main class="mt-4 mb-10 {{ mainClass }}">
     {{ content | safe }}
   </main>
 </div>

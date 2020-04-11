@@ -5,22 +5,25 @@ slug:
   de: fotografische-themen
 rows:
 - cz: Místo děje
-  de:
+  de: Anstelle anstätte
   instances:
   - cz: pouliční příběhy z devadesátých let
+    de: Strassengeschichten aus den neunziger Jahren
 
 - cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   instances:
   - cz: |
       hroby českých, německých a židovských osobností na území bývalé „Bohemie“
       kolem přelomu tisíciletí
-  - de:
+    de: |
+      Gräber von tschechischen, deutschen und jüdischen Persönlichkeiten auf dem Gebiet des ehemaligen Böhmens um die Jahrtausendwende
 
 - cz: Konference
-  de:
+  de: Konferenzen
   instances:
   - cz: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
-    de:
+    de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
+
 - cz:
   de:
   instances:

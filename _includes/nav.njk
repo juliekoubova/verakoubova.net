@@ -1,0 +1,14 @@
+<nav>
+  <ol>
+  {% for item in page | vekNav %}
+    <li class="inline">
+      {% if item.type == 'parent' %}
+      <span aria-hidden="true">&lsaquo;</span>
+      {% elif not loop.first %}
+      <span aria-hidden="true">|</span>
+      {% endif %}
+      <a class="text-gray-600 active:text-gray-900" href="{{ item.url }}">{{ item.label }}</a>
+    </li>
+  {% endfor %}
+  </ol>
+</nav>

@@ -17,7 +17,8 @@
     "deploy:push-dir": "push-dir --dir=_site --branch=master"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.11.0-beta.3",
+    "@11ty/eleventy-navigation": "^0.1.5",
     "cross-env": "^7.0.2",
     "js-yaml": "^3.13.1",
     "npm-run-all": "^4.1.5",
