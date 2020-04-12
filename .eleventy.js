@@ -33,20 +33,21 @@ function ensureTrailingSlash(url) {
   return String(url).replace(/\/*$/, '/')
 }
 
-const filters = {
-  lang(value) {
-    if (typeof value === 'object' && value) {
-      if (this.ctx && this.ctx.lang && this.ctx.lang in value) {
-        return value[this.ctx.lang]
-      }
-      const keys = Object.keys(value).filter(k => k.length === 2)
-      if (keys && keys.length !== 0) {
-        return value[keys[0]]
-      }
+function lang(value) {
+  if (typeof value === 'object' && value) {
+    if (this.ctx && this.ctx.lang && this.ctx.lang in value) {
+      return value[this.ctx.lang]
     }
-    return value
-  },
+    const keys = Object.keys(value).filter(k => k.length === 2)
+    if (keys && keys.length !== 0) {
+      return value[keys[0]]
+    }
+  }
+  return value
+}
 
+
+const filters = {
   vekNav(page) {
     /**
      * @param {string} key
@@ -87,21 +88,36 @@ const filters = {
 
   ensureTrailingSlash,
 
-  getChild(page, path) {
-    const url = ensureTrailingSlash(page.url) + ensureTrailingSlash(path)
-    const child = this.ctx.collections.all.find(
-      p => p.data.page.url === url
-    )
-    console.log(child)
-    return child
-  },
+  lang,
 
-  getChildren(page) {
-    // console.log(page.url)
-    // this.ctx.collections.all
-    //   .filter(p => p.data.page.url.startsWith(page.url))
-    //   .forEach(p => console.log(p.data.images))
-    return {}
+  galleryLink(set, key) {
+
+    if(!set || !key)  {
+      throw new Error("dict | galleryLink(key)")
+    }
+    const value = set[key]
+    if (!value || !value.images || !value.imageBase) {
+      throw new Error(`galleryLink key "${key}" not found between ${Object.keys(set).join(', ')}`)
+    }
+
+    const base = ensureTrailingSlash(value.imageBase)
+    const slides = value.images.map(image => {
+      const src = base + lang(image.src)
+      const metadata = this.ctx.images[src]
+      return {
+        h: metadata.height,
+        w: metadata.width,
+        src,
+        title: lang(image)
+      }
+    })
+
+    const { url, slug, escape, safe } = this.env.filters
+
+    const href = url(slug(key))
+    const slidesJson = escape(JSON.stringify(slides))
+
+    return safe(`<a href="${href}" data-slides="${slidesJson}">${lang(value)}</a>`)
   }
 }
 
@@ -114,16 +130,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(key, fn)
   }
 
-  eleventyConfig.addCollection("gallery", function (collection) {
-    return collection.getAll().filter(item => {
-      return 'images' in item
-    })
-  })
-
   return {
     dataTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: [ 'html', 'jpeg', 'md', 'njk', 'png', 'yaml', ],
+    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png', 'yaml',],
   }
 }
