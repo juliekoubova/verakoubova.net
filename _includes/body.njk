@@ -1,18 +1,13 @@
 ---
 layout: default
 ---
-<div class="mx-2 lg:mx-auto lg:grid col-gap-4 row-gap-2 grid-cols-main max-w-6xl my-4">
-  <div class="col-main mb-4">
+<div class="mx-2 md:ml-56 xl:mx-auto max-w-2xl my-4">
+  <header class="mb-4">
     {% include 'nav.njk' %}
     <h1>{{ title }}</h1>
-  </div>
+  </header>
 
-  {% if img %}
-  <div class="vr-loose-base place">
-    {% from 'macros.njk' import image %}
-    {{ image(img) }}
-  </div>
-  {% endif %}
-
-  {{ content | safe }}
+  <main class="{{ 'has-sidebar' if hasSidebar }} ">
+    {{ content | safe }}
+  </main>
 </div>

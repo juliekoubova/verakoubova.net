@@ -1,22 +1,21 @@
 ---
 layout: body
+hasSidebar: true
 ---
 {% for section in photography | dictsort %}
-<h2
-  id="{{ section[1].slug | lang }}"
-  class="col-main {{ 'mt-4' if not loop.first }}">
-  {{ section[1] | lang | nl2br | safe }}
-</h2>
-
-<ul class="contents">
+<section id="{{ section[1].slug | lang }}" class="mb-8">
+  <div class="sidebar-section">
+    <h2 class="in-main  font-semibold vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h2>
+  </div>
+  <ul class="mt-2">
   {% for row in section[1].rows %}
-  <li class="contents">
-    <div class="md:text-right col-left vr-relaxed-base font-semibold">
+    <li class="mb-2 sidebar-section">
+      <h3 class="in-sidebar vr-relaxed-base">
       {% if row.href %}<a href="{{ row.href | lang }}">{% endif %}
       {{ row | lang | nl2br | safe }}
       {% if row.href %}</a>{% endif %}
-      </div>
-      <div class="vr-relaxed-base col-main">
+      </h3>
+      <div class="vr-relaxed-base">
       {% for inst in row.instances %}
         {% if loop.first %}<ul>{% endif %}
         {% if loop.length > 1 %}<li>{% endif %}
@@ -25,10 +24,9 @@ layout: body
         {% if loop.length > 1 %}</li>{% endif %}
         {% if loop.last %}</ul>{% endif %}
       {% endfor %}
-
-    </div>
-  </li>
+      </div>
+    </li>
   {% endfor %}
-
-</ul>
+  </ul>
+</section>
 {% endfor %}
