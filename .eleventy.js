@@ -117,7 +117,13 @@ const filters = {
     const href = url(slug(key))
     const slidesJson = escape(JSON.stringify(slides))
 
-    return safe(`<a href="${href}" data-slides="${slidesJson}">${lang(value)}</a>`)
+    return safe(`
+      <a href="${href}"
+         data-controller="gallery"
+         data-action="gallery#open"
+         data-gallery-items="${slidesJson}">
+        ${lang(value)}
+      </a>`)
   }
 }
 
@@ -134,6 +140,6 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png', 'yaml',],
+    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png', 'yaml'],
   }
 }
