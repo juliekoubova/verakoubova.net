@@ -29,6 +29,10 @@ function duplicates(objects, key) {
   return [...countBy(objects, key).values()].findIndex(x => x > 1) !== -1
 }
 
+function ensureTrailingSlash(url) {
+  return String(url).replace(/\/*$/, '/')
+}
+
 const filters = {
   lang(value) {
     if (typeof value === 'object' && value) {
@@ -79,20 +83,47 @@ const filters = {
 
   stripSortPrefix(value) {
     return String(value).replace(/^\d+-/, '')
+  },
+
+  ensureTrailingSlash,
+
+  getChild(page, path) {
+    const url = ensureTrailingSlash(page.url) + ensureTrailingSlash(path)
+    const child = this.ctx.collections.all.find(
+      p => p.data.page.url === url
+    )
+    console.log(child)
+    return child
+  },
+
+  getChildren(page) {
+    // console.log(page.url)
+    // this.ctx.collections.all
+    //   .filter(p => p.data.page.url.startsWith(page.url))
+    //   .forEach(p => console.log(p.data.images))
+    return {}
   }
 }
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
-  eleventyConfig.setTemplateFormats([
-    'html',
-    'jpeg',
-    'md',
-    'njk',
-    'png',
-  ])
+
   eleventyConfig.addPassthroughCopy("img")
+
   for (const [key, fn] of Object.entries(filters)) {
     eleventyConfig.addFilter(key, fn)
+  }
+
+  eleventyConfig.addCollection("gallery", function (collection) {
+    return collection.getAll().filter(item => {
+      return 'images' in item
+    })
+  })
+
+  return {
+    dataTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    templateFormats: [ 'html', 'jpeg', 'md', 'njk', 'png', 'yaml', ],
   }
 }

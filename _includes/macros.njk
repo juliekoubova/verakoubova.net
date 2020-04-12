@@ -1,11 +1,16 @@
-{% macro image(img) %}
+{% macro image(img, base = '') %}
 {% if img %}
+{% set src = base | lang + img.src | lang %}
   <img
     class="max-w-full"
     alt="{{ img.alt | lang }}"
-    src="{{ img.src | lang }}"
+    src="{{ src | url }}"
     width="{{ img.width }}"
     height="{{ img.heigth }}"
   >
 {% endif %}
+{% endmacro %}
+
+{% macro galleryLink(path, gallery) %}
+<a href="{{ path | url }}">{{ gallery | lang }}</a>
 {% endmacro %}
