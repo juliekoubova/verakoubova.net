@@ -135,6 +135,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
   eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy(".nojekyll")
 
   for (const [key, fn] of Object.entries(filters)) {
     eleventyConfig.addFilter(key, fn)
