@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply vr-debug;
+  /* @apply vr-debug; */
 }
 
 .contents {
