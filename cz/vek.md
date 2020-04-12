@@ -27,7 +27,7 @@ němčina–angličtina roku 1979 disertací <em>Jazyková originalita jako pře
 základě rozboru překladů románu Jamese Joyce <em>Ulysses</em>) se věnuje <a href="ZJazykaDoJazyka.html">překládání</a>
 německojazyčné prózy, poezie a&nbsp;filosofie, zvláště dosud
 nepřeložených prací Friedricha Nietzscheho, spisů Franze Kafky v&nbsp;rámci jeho sebraného Díla v&nbsp;češtině
-a&nbsp;poetických sbírek původně pražského Němce Franze Wurma (1926)<
+a&nbsp;poetických sbírek původně pražského Němce Franze Wurma (1926).
 
 Texty, jimiž se zabývá překladem či v&nbsp;ilustraci, prezentuje buď jako literárně hudební pásma
 v&nbsp;samostatných <a href="SlovaKPoslechu/Index.html">pořadech</a> živě či v&nbsp;rozhlase, nebo
@@ -35,6 +35,6 @@ v&nbsp;přednášce, příp. doslovu anebo v&nbsp;rámci <a href="PoStopach.html
 
 <div class="vr-normal-base text-right mt-8">
   <div><a href="mailto:{{ site.mail }}">{{ site.mail }}</a></div>
-  <div>html Julie Koubová</div>
+  <div>web Julie Koubová</div>
   <div>režie a zvuk Martin Klusák</div>
 </div>

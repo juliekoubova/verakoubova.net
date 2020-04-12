@@ -1,23 +1,18 @@
 ---
 layout: default
 ---
-<div class="mx-2 lg:mx-auto lg:grid grid-cols-7 max-w-6xl my-4">
-  {% set mainGrid = "col-start-2 col-end-7" %}
-
-  <div class="{{ mainGrid }} mb-2">
+<div class="mx-2 lg:mx-auto lg:grid col-gap-4 row-gap-2 grid-cols-main max-w-6xl my-4">
+  <div class="col-main mb-4">
     {% include 'nav.njk' %}
     <h1>{{ title }}</h1>
   </div>
 
-  {% from 'macros.njk' import image %}
-
   {% if img %}
-  <div class="col-start-1 col-end-1 vr-loose-base">
+  <div class="vr-loose-base place">
+    {% from 'macros.njk' import image %}
     {{ image(img) }}
   </div>
   {% endif %}
 
-  <main class="mt-2 {{ mainGrid }} {{ mainClass }}">
-    {{ content | safe }}
-  </main>
+  {{ content | safe }}
 </div>

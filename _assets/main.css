@@ -5,7 +5,11 @@
 @tailwind utilities;
 
 body {
-  /* @apply vr-debug; */
+  @apply vr-debug;
+}
+
+.contents {
+  display: contents;
 }
 
 .bignav a {
@@ -53,8 +57,19 @@ article, section {
   @apply mb-6;
 }
 
+.col-left {
+  @apply col-start-1;
+  @apply col-end-1;
+}
+
+.col-main {
+  @apply col-start-2;
+}
+
 .applied p {
   @apply vr-loose-base;
+  @apply text-justify;
+  hyphens: auto;
 }
 
 .applied dl {

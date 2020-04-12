@@ -2,17 +2,21 @@
 layout: body
 ---
 {% for section in photography | dictsort %}
-<section id="{{ section[1].slug | lang }}" class="mb-8">
-  <h2>{{ section[1] | lang | nl2br | safe }}</h2>
-  <ul class="mt-2">
+<h2
+  id="{{ section[1].slug | lang }}"
+  class="col-main {{ 'mt-4' if not loop.first }}">
+  {{ section[1] | lang | nl2br | safe }}
+</h2>
+
+<ul class="contents">
   {% for row in section[1].rows %}
-    <li class="md:flex mb-2">
-      <div class="md:w-1/4 md:flex-shrink-0 md:mr-2 md:text-right vr-relaxed-base font-semibold">
+  <li class="contents">
+    <div class="md:text-right col-left vr-relaxed-base font-semibold">
       {% if row.href %}<a href="{{ row.href | lang }}">{% endif %}
       {{ row | lang | nl2br | safe }}
       {% if row.href %}</a>{% endif %}
       </div>
-      <div class="vr-relaxed-base">
+      <div class="vr-relaxed-base col-main">
       {% for inst in row.instances %}
         {% if loop.first %}<ul>{% endif %}
         {% if loop.length > 1 %}<li>{% endif %}
@@ -21,9 +25,10 @@ layout: body
         {% if loop.length > 1 %}</li>{% endif %}
         {% if loop.last %}</ul>{% endif %}
       {% endfor %}
-      </div>
-    </li>
+
+    </div>
+  </li>
   {% endfor %}
-  </ul>
-</section>
+
+</ul>
 {% endfor %}

@@ -1,7 +1,9 @@
 module.exports = {
   theme: {
-    fontFamily: {
-      quicksand: ['Quicksand', 'sans-serif']
+    extend: {
+      gridTemplateColumns: {
+        main: '1fr 3fr'
+      }
     },
     lineHeight: {
       none: 1,
