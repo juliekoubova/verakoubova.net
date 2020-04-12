@@ -102,11 +102,13 @@ const filters = {
 
     const base = ensureTrailingSlash(value.imageBase)
     const slides = value.images.map(image => {
-      const src = base + lang(image.src)
+      const relativeSrc = lang(image.src)
+      const src = base + relativeSrc
       const metadata = this.ctx.images[src]
       return {
         h: metadata.height,
         w: metadata.width,
+        pid: relativeSrc.replace(/^([^.]+)/, '$1'),
         src,
         title: lang(image)
       }
@@ -121,7 +123,9 @@ const filters = {
       <a href="${href}"
          data-controller="gallery"
          data-action="gallery#open"
-         data-gallery-items="${slidesJson}">
+         data-gallery-items="${slidesJson}"
+         data-gallery-uid="${key}"
+         >
         ${lang(value)}
       </a>`)
   }

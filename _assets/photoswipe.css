@@ -1,0 +1,11 @@
+.pswp__bg {
+  background: white;
+}
+.pswp__counter {
+  color: black;
+}
+
+.pswp__top-bar,
+.pswp__ui--fit .pswp__top-bar {
+  background: transparent;
+}
