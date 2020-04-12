@@ -5,7 +5,7 @@ hasSidebar: true
 {% for section in photography | dictsort %}
 <section id="{{ section[1].slug | lang }}" class="mb-8">
   <div class="sidebar-section">
-    <h2 class="in-main  font-semibold vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h2>
+    <h2 class="in-main font-semibold vr-normal-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h2>
   </div>
   <ul class="mt-2">
   {% for row in section[1].rows %}

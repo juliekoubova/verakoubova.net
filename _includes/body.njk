@@ -1,13 +1,15 @@
 ---
 layout: default
 ---
-<div class="mx-2 md:ml-56 xl:mx-auto max-w-2xl my-4">
-  <header class="mb-4">
-    {% include 'nav.njk' %}
-    <h1>{{ title }}</h1>
-  </header>
+<div class="flex justify-center">
+  <div class="mx-2 md:ml-56 lg:ml-64 max-w-2xl my-4">
+    <header class="mb-6">
+      {% include 'nav.njk' %}
+      <h1>{{ title }}</h1>
+    </header>
 
-  <main class="{{ 'has-sidebar' if hasSidebar }} ">
-    {{ content | safe }}
-  </main>
+    <main class="{{ 'has-sidebar' if hasSidebar }} ">
+      {{ content | safe }}
+    </main>
+  </div>
 </div>
