@@ -1,7 +1,7 @@
 {% from 'macros.njk' import image %}
 
 {% for img in gallery.images %}
-  <li class="h-realscreen flex items-center justify-center scroll-snap-align-start">
+  <li class="h-screen flex items-center justify-center scroll-snap-align-start">
     {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
   </li>
 {% endfor %}
