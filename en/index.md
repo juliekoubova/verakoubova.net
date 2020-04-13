@@ -11,3 +11,5 @@ titlePrefix:
 * [spoken word](slova-k-poslechu)
 * [on track](po-stopach)
 * [VěK](vek)
+
+{{ konference | dump | safe }}
