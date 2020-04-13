@@ -24,6 +24,10 @@ body {
   @apply mb-4;
 }
 
+.h-realscreen {
+  height: 100vh; /* overriden in js with actual height sans iOS Safari toolbar */
+}
+
 @screen sm {
   .sm\:flex-basis-1\/2 { flex-basis: 50%; }
 }

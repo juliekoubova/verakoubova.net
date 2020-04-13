@@ -1,17 +1,9 @@
 {% from 'macros.njk' import image %}
 
-<div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      {% for img in gallery.images %}
-      <li class="glide__slide">
-        <div class="flex h-realscreen items-center justify-center">
-          {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-
-<script src="{{ "/glide.js" | url }}" async></script>
+<ol class="tiny-slider">
+  {% for img in gallery.images %}
+  <li class="flex h-realscreen items-center justify-center">
+    {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
+  </li>
+  {% endfor %}
+</ol>
