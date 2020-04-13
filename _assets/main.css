@@ -28,6 +28,18 @@ body {
   height: 100vh; /* overriden in js with actual height sans iOS Safari toolbar */
 }
 
+.scroll-snap-y-mandatory {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-snap-align-start {
+  scroll-snap-align: start;
+}
+
+.overscroll-contain-y {
+  overscroll-behavior-y: contain;
+}
+
 @screen sm {
   .sm\:flex-basis-1\/2 { flex-basis: 50%; }
 }

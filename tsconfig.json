@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "noImplicitReturns": true,
+    "strict": true,
+    "target": "ES5"
+  }
+}

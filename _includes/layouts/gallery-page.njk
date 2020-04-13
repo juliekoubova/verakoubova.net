@@ -1,18 +1,30 @@
 ---
 layout: layouts/html
+htmlClass: overflow-none w-full h-realscreen fixed
 headerSmall: true
 ---
-<div class="flex flex-col ">
-  <div class="fixed bg-white opacity-75 left-0 right-0 z-10">
-    <div class="mx-2 xl:mx-auto max-w-2xl my-8 md:mt-16">
-    {% include 'header.njk' %}
-    </div>
+<div class="fixed bg-white opacity-75 left-0 right-0 z-10">
+  <div class="mx-2 xl:mx-auto max-w-2xl my-2 sm:my-8 md:mt-16">
+  {% include 'header.njk' %}
   </div>
-
-  <main class="flex-auto flex flex-col">
-    {{ content | safe }}
-  </main>
-
 </div>
+
+<main data-controller="scroll-to can-scroll">
+  <div class="fixed top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-between pointer-events-none z-20">
+    <button
+      data-action="scroll-to#prev"
+      data-target="can-scroll.up"
+      class="pointer-events-auto p-2 w-8"
+      type="button">{% include 'svg/chevron-up.svg' %}</button>
+    <button
+      data-action="scroll-to#next"
+      data-target="can-scroll.down"
+      class="pointer-events-auto p-2 w-8"
+      type="button">{% include 'svg/chevron-down.svg' %}</button>
+  </div>
+  <ol class="h-realscreen scrolling-touch overflow-y-auto scroll-snap-y-mandatory" data-target="scroll-to.list can-scroll.root">
+    {{ content | safe }}
+  </ol>
+</main>
 
 <script src="{{ "/gallery.js" | url }}" async></script>

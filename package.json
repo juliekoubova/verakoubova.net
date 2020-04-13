@@ -10,10 +10,10 @@
     "dev": "run-p dev:*",
     "dev:eleventy": "eleventy --serve --quiet",
     "dev:parcel-css": "parcel watch _assets/main.css --out-dir _site --no-hmr",
-    "dev:parcel-glide": "parcel watch _assets/gallery.js --out-dir _site --no-hmr",
+    "dev:parcel-glide": "parcel watch _assets/gallery.ts --out-dir _site --no-hmr",
     "build": "run-s clean build:parcel build:eleventy",
     "build:eleventy": "eleventy",
-    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css _assets/gallery.js --out-dir _site",
+    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css _assets/gallery.ts --out-dir _site",
     "deploy": "run-s build deploy:push-dir",
     "deploy:push-dir": "push-dir --dir=_site --branch=master"
   },
@@ -28,7 +28,8 @@
     "push-dir": "^0.4.1",
     "shx": "^0.3.2",
     "tailwind-vertical-rhythm": "^1.0.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.2.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
