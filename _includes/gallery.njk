@@ -1,9 +1,17 @@
 {% from 'macros.njk' import image %}
 
-<div class="grid md:grid-cols-4 md:gap-4">
-  {% for img in gallery.images %}
-  {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
-  {% endfor %}
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      {% for img in gallery.images %}
+      <li class="glide__slide">
+        <div class="flex h-realscreen items-center justify-center">
+          {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
-{% include 'photoswipe.njk' %}
+<script src="{{ "/glide.js" | url }}" async></script>

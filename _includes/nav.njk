@@ -1,10 +1,8 @@
-<ol class="">
+<ol class="inline">
   {% for item in page | vekNav %}
     <li class="inline">
       <a class="text-gray-600 active:text-gray-900" href="{{ item.url }}">{{ item.label }}</a>
-      {% if not loop.last %}
       <span aria-hidden="true">&rsaquo;</span>
-      {% endif %}
     </li>
   {% endfor %}
 </ol>

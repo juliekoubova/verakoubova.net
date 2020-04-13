@@ -66,7 +66,7 @@ const filters = {
       const url = page ? page.url : `/${code}/`
       const active = code === this.ctx.lang
 
-      return { active, url, label }
+      return { active, code, label, url }
     })
   },
 
