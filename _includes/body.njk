@@ -1,13 +1,23 @@
 ---
 layout: default
 ---
-<div class="mx-2 md:ml-56 lg:ml-64 xl:mx-auto max-w-2xl my-4">
-  <header class="mb-6">
-    {% include 'nav.njk' %}
-    <h1>{{ title }}</h1>
+<div class="
+  {{ 'has-sidebar' if hasSidebar }}
+  mx-2 md:ml-56 lg:ml-64 xl:mx-auto max-w-2xl my-8 md:mt-16
+  ">
+  <header class="flex flex-col md:flex-row md:justify-between">
+    <div>
+      <nav class="vr-tight-sm">
+        {% include 'nav.njk' %}
+      </nav>
+      <h1 class="vr-tight-3xl">{{ title }}</h1>
+    </div>
+    <nav class="vr-tight-sm mt-2 ,d:mt-0 md:text-right mt-2">
+      {% include 'lang-switcher.njk' %}
+    </nav>
   </header>
 
-  <main class="{{ 'has-sidebar' if hasSidebar }} ">
+  <main class="mt-6 md:mt-8">
     {{ content | safe }}
   </main>
 </div>

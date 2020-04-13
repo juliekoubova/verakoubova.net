@@ -3,14 +3,21 @@ layout: default
 ---
 {% from 'macros.njk' import image %}
 <h1 class="sr-only">{{ title }}</h1>
-<div class="sm:min-h-screen mx-auto max-w-xs sm:max-w-none flex flex-col sm:flex-row-reverse flex-wrap sm:items-center px-2">
-  <div class="flex-shrink-0 sm:w-1/2 xl:pl-3">
-    {% include 'nav.njk' %}
-    <div class="vr-normal-base max-w-xs">
-      {{ image(img, '', 'w-full') }}
+<div class="
+  mx-auto max-w-xs flex flex-col flex-wrap px-2
+  sm:min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
+  >
+  <div class="vr-normal-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2">
+    <div class="max-w-xs text-right">
+      {% include 'lang-switcher.njk' %}
+      {{ image(img) }}
     </div>
   </div>
-  <div class="sm:w-1/2 xl:pr-3">
+  <nav class="
+    vr-tight-4xl text-right tracking-tight
+    sm:flex-basis-1/2 sm:pr-2 xl:pr-4 sm:vr-normal-4xl
+    bignav
+    ">
     {{ content | safe }}
-  </div>
+  </nav>
 </div>

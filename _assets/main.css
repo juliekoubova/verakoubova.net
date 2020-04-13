@@ -12,15 +12,8 @@ body {
   display: contents;
 }
 
-.bignav a {
-  @apply block;
-  @apply py-1;
-  @apply text-red-800;
-  @apply no-underline;
-}
-
-.bignav a:hover {
-  @apply text-black;
+.bignav li {
+  @apply mb-4;
 }
 
 .in-sidebar {
@@ -29,6 +22,10 @@ body {
 
 .has-sidebar .sidebar-section {
   @apply mb-4;
+}
+
+@screen sm {
+  .sm\:flex-basis-1\/2 { flex-basis: 50%; }
 }
 
 @screen md {
@@ -51,29 +48,24 @@ body {
   }
 }
 
-h1 {
-  @apply vr-none-3xl;
-  @apply mt-4;
-}
-
 a {
-  @apply text-red-800;
   @apply underline;
 }
 
-a:active,
+a:link {
+  @apply text-red-800;
+}
+
+a:active {
+  @apply text-gray-900;
+}
+
 a:hover {
   @apply text-gray-700;
 }
 
-nav a,
-nav a:visited {
+nav a, nav a:visited {
   @apply text-red-800;
-}
-
-nav a:active,
-nav a:hover {
-  @apply text-gray-700;
 }
 
 .applied h2 {

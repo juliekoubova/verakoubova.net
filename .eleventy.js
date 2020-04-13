@@ -3,7 +3,7 @@ const yaml = require('js-yaml')
 
 /**
  * @param {object[]} objects
- * @param {string} key
+ * @param {string?} key
  */
 function countBy(objects, key) {
   const counts = new Map()
@@ -11,7 +11,7 @@ function countBy(objects, key) {
     if (!obj || typeof obj !== 'object') {
       continue
     }
-    const val = obj[key]
+    const val = key ? obj[key] : obj
     if (counts.has(val)) {
       counts.set(val, counts.get(val) + 1)
     } else {
@@ -23,7 +23,7 @@ function countBy(objects, key) {
 
 /**
  * @param {any[]} objects
- * @param {string} key
+ * @param {string?} key
  */
 function duplicates(objects, key) {
   return [...countBy(objects, key).values()].findIndex(x => x > 1) !== -1
@@ -49,37 +49,25 @@ function lang(value) {
 
 const filters = {
   vekNav(page) {
-    /**
-     * @param {string} key
-     * @returns {{ type: 'lang'|'parent', url: string, label: string}[]}
-     */
-    const withSameValue = (key) => {
-      const results = this.ctx.collections.all
-        .filter(p => p.data[key] === this.ctx[key])
-        .filter(p => p.url !== page.url)
-        .filter(p => p.data.lang !== this.ctx.lang)
-        .map(p => ({
-          type: 'lang',
-          url: p.url,
-          label: this.ctx.site.languages[p.data.lang]
-        }))
+    return [{
+      url: `/${this.ctx.lang}/`,
+      label: this.ctx.site.name
+    }]
+  },
 
-      return duplicates(results, 'lang')
-        ? []
-        : results
-    }
+  languages(page) {
+    return Object.entries(this.ctx.site.languages).map(([code, label]) => {
+      const page = this.ctx.pageId
+        ? this.ctx.collections.all.find(
+          p => p.data.pageId === this.ctx.pageId && p.data.lang === code
+        )
+        : undefined
 
-    const items = withSameValue(this.ctx.pageId ? 'pageId' : 'layout')
+      const url = page ? page.url : `/${code}/`
+      const active = code === this.ctx.lang
 
-    if (this.ctx.layout !== 'index') {
-      items.unshift({
-        type: 'parent',
-        url: `/${this.ctx.lang}/`,
-        label: this.ctx.site.name,
-      })
-    }
-
-    return items
+      return { active, url, label }
+    })
   },
 
   stripSortPrefix(value) {
@@ -92,7 +80,7 @@ const filters = {
 
   galleryLink(set, key) {
 
-    if(!set || !key)  {
+    if (!set || !key) {
       throw new Error("dict | galleryLink(key)")
     }
     const value = set[key]

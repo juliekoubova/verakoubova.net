@@ -1,0 +1,15 @@
+<ol>
+{% for item in page | languages | sort %}
+  <li class="inline">
+    {% if not loop.first %}
+    <span aria-hidden="true">|</span>
+    {% endif %}
+    {% if item.active %}
+    <span class="font-semibold">{{ item.label }}</span>
+    {% else %}
+    <a class="text-gray-600 active:text-gray-900"
+        href="{{ item.url | url }}">{{ item.label }}</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ol>
