@@ -1,8 +1,8 @@
-{% macro image(img, base = '') %}
+{% macro image(img, base = '', class = '') %}
 {% if img %}
 {% set src = base | lang + img.src | lang %}
   <img
-    class="max-w-full"
+    class="{{ class }}"
     alt="{{ img.alt | lang }}"
     src="{{ src | url }}"
     width="{{ img.width }}"

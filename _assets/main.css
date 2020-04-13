@@ -44,6 +44,7 @@ body {
 
   .has-sidebar .in-sidebar {
     @apply text-right;
+    @apply tracking-wide;
     @apply flex-none;
     @apply w-56;
     @apply pr-4;
@@ -67,7 +68,7 @@ a:hover {
 
 nav a,
 nav a:visited {
-  @apply text-gray-800;
+  @apply text-red-800;
 }
 
 nav a:active,
