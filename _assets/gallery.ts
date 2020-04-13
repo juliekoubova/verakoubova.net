@@ -14,3 +14,13 @@ if (typeof window['vekApp'] !== 'object') {
 
 window.vekApp.register('can-scroll', CanScrollController)
 window.vekApp.register('scroll-to', ScrollToController)
+
+const isSafari =
+  /Safari/.test(navigator.userAgent) &&
+  !/Chrome/.test(navigator.userAgent)
+
+const scrollSnapElement = isSafari
+  ? document.body
+  : document.documentElement
+
+scrollSnapElement.classList.add('scroll-snap-y-mandatory')

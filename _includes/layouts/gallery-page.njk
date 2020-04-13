@@ -1,6 +1,5 @@
 ---
 layout: layouts/html
-htmlClass: overflow-none w-full h-realscreen fixed
 headerSmall: true
 ---
 <div class="fixed bg-white opacity-75 left-0 right-0 z-10">
@@ -22,7 +21,7 @@ headerSmall: true
       class="pointer-events-auto p-2 w-8"
       type="button">{% include 'svg/chevron-down.svg' %}</button>
   </div>
-  <ol class="h-realscreen scrolling-touch overflow-y-auto scroll-snap-y-mandatory" data-target="scroll-to.list can-scroll.root">
+  <ol class="" data-target="scroll-to.list can-scroll.root">
     {{ content | safe }}
   </ol>
 </main>
