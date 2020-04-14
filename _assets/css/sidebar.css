@@ -12,32 +12,56 @@
   @apply font-semibold;
 }
 
-.has-sidebar .sidebar-section {
+.sidebar .sidebar-section {
   @apply mb-4;
 }
 
 @screen md {
-  .has-sidebar {
-    @apply ml-64;
-    @apply mr-16;
-    /* @apply sm:mx-auto max-w-2xl */
+  .sidebar {
+    @apply ml-48;
+    @apply mr-8;
   }
 
-  .has-sidebar .sidebar-section {
+  .sidebar .sidebar-section {
+    @apply mb-2;
+    @apply -ml-48;
+    @apply flex;
+  }
+
+  .sidebar .in-main {
+    @apply ml-48;
+  }
+
+  .sidebar .in-sidebar {
+    @apply text-right;
+    @apply flex-none;
+    @apply w-48;
+    @apply pr-3;
+  }
+}
+
+@screen lg {
+  .sidebar {
+    @apply ml-64;
+    @apply mr-16;
+  }
+
+  .sidebar .sidebar-section {
     @apply mb-2;
     @apply -ml-56;
     @apply flex;
   }
 
-  .has-sidebar .in-main {
+  .sidebar .in-main {
     @apply ml-56;
   }
 
-  .has-sidebar .in-sidebar {
+  .sidebar .in-sidebar {
     @apply text-right;
     @apply flex-none;
     @apply w-56;
     @apply pr-4;
   }
 }
+
 
