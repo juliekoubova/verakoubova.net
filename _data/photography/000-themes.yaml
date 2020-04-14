@@ -1,58 +1,58 @@
-cz: Fotografická témata
+cs: Fotografická témata
 de: Fotografische Themen
 slug:
-  cz: fotograficka-temata
+  cs: fotograficka-temata
   de: fotografische-themen
 rows:
-- cz: Místo děje
+- cs: Místo děje
   de: Anstelle anstätte
   instances:
-  - cz: pouliční příběhy z devadesátých let
+  - cs: pouliční příběhy z devadesátých let
     de: Strassengeschichten aus den neunziger Jahren
 
-- cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+- cs: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   instances:
-  - cz: |
+  - cs: |
       hroby českých, německých a židovských osobností na území bývalé „Bohemie“
       kolem přelomu tisíciletí
     de: |
       Gräber von tschechischen, deutschen und jüdischen Persönlichkeiten auf dem Gebiet des ehemaligen Böhmens um die Jahrtausendwende
 
-- cz: Konference
+- cs: Konference
   de: Konferenzen
   href:
-      cz: /cz/konference
+      cs: /cs/konference
       de: /de/konferenzen
   instances:
-  - cz: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
+  - cs: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
 
-- cz: Fotoeseje
+- cs: Fotoeseje
   de: Photoessays
   instances:
-  - cz: dlouhodobě sbírané události
+  - cs: dlouhodobě sbírané události
     de: Langfristig aufgenommene Ereignisse
 
-- cz: Portréty
+- cs: Portréty
   de: Portraits
   instances:
-  - cz: obrazy tváří z minulého i nového věku
+  - cs: obrazy tváří z minulého i nového věku
     de: Antlitze aus dem vergangenen sowie neuen Zeitalter
 
-- cz: Ilustrace
+- cs: Ilustrace
   de: Illustrationen
   instances:
-  - cz: fotografie v duchu literárních děl
+  - cs: fotografie v duchu literárních děl
     de: Photographien im Sinne von literarischen Werken
 
-- cz: Fantom
+- cs: Fantom
   de: Phantom
   instances:
-  - cz: cyklus světelných příběhů
+  - cs: cyklus světelných příběhů
     de: Zyklus einiger Lichtgeschichten
 
-- cz: Triptychy
+- cs: Triptychy
   de: Triptychen
   instances:
-  - cz: ilustrace ilustrací
+  - cs: ilustrace ilustrací
     de: Illustrierte Illustrationen

@@ -1,13 +1,13 @@
-cz: Publikace
+cs: Publikace
 de: Publikationen
 slug:
-  cz: publikace
+  cs: publikace
   de: publikationen
 rows:
 
-- cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+- cs: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   instances:
-  - cz: |
+  - cs: |
       (obrazová kniha) Steffen Höhne + VěK
       Nakladatelství Franze Kafky, Praha 2001 (88)
       distribuce <a href="http://www.oikoymenh.cz/product_info.php?products_id=141">oikoymenh</a>
@@ -17,19 +17,19 @@ rows:
       Distribution <a href="http://www.oikoymenh.cz/product_info.php?products_id=141">oikoymenh</a>
 
 
-- cz: Místo děje
+- cs: Místo děje
   instances:
-  - cz: ukázky v časopise Host 7/2003 (16)
+  - cs: ukázky v časopise Host 7/2003 (16)
   - de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
 
-- cz: Nesmrtelní:smrtelní
+- cs: Nesmrtelní:smrtelní
   instances:
-  - cz: (výstava) ukázky v Revolver Revue 55/2004 (14)
+  - cs: (výstava) ukázky v Revolver Revue 55/2004 (14)
     de: (Ausstellung) Proben in der Zeitschrift Revolver Revue 55/2004 (14)
 
-- cz: Událost a nepředmětnost
+- cs: Událost a nepředmětnost
   instances:
-  - cz: |
+  - cs: |
       disputace k filosofii Ladislava Hejdánka
       ukázky v Reflexi 28/2005 (8)
     de: |
@@ -37,47 +37,47 @@ rows:
       Proben in der Zeitschrift Reflexe 28/2005 (8)
 
 
-- cz: Nekonečnost konečnosti
+- cs: Nekonečnost konečnosti
   instances:
-  - cz: disputace k filosofii Ivana Chvatíka 2005
+  - cs: disputace k filosofii Ivana Chvatíka 2005
     de: |
       Disputation zur Philosophie Ivan Chvatíks: <em>Unendlichkeit der Endlichkeit</em>, 2005
     # Proben auf der Adresse der Evangelischen theologischen Fakultät (8)
 
-- cz: Hledání literárních dějin v diskusi
+- cs: Hledání literárních dějin v diskusi
   instances:
-  - cz: (konference) ukázky ve Scholares, Paseka 2006 (8)
+  - cs: (konference) ukázky ve Scholares, Paseka 2006 (8)
     de: |
       Konferenz: <em>Suche nach der Literaturgeschichte in Diskussion</em>
       Proben in: Scholares, Paseka 2006 (8)
 
-- cz: Návrh ilustrací k povídkám Jiřího Weila
+- cs: Návrh ilustrací k povídkám Jiřího Weila
   instances:
-  - cz: (ilustrace) ukázky v Revolver Revue 65/2006 (7)
+  - cs: (ilustrace) ukázky v Revolver Revue 65/2006 (7)
     de: |
       Illustrationen zu Erzählungen von Jiří Weil
       Proben in der Zeitschrift Revolver Revue 65/2006 (7)
 
 - de: „ich bleibe. ihr geht“
   instances:
-  - cz: (fotoesej) Transit 33, Vídeň 2007 (9)
+  - cs: (fotoesej) Transit 33, Vídeň 2007 (9)
     de: (Photoessay) Transit 33, Wien 2007 (9)
 
 - de: GedächtnisGesichte
   instances:
-  - cz: (fotoesej) Transit 35, Vídeň 2008 (9)
+  - cs: (fotoesej) Transit 35, Vídeň 2008 (9)
     de: (Photoessay) Transit 35, Wien 2008 (9)
 
-- cz: Osmdesátiny
+- cs: Osmdesátiny
   de: Jubiläum
   instances:
-  - cz: kolokvium k jubileu Ladislava Hejdánka a Jakuba Trojana 2007
+  - cs: kolokvium k jubileu Ladislava Hejdánka a Jakuba Trojana 2007
     de: Kolloquium zum Jubiläum von Ladislav Hejdánek und Jakub Trojan 2007
 
-- cz: O nejvyšších rodech
+- cs: O nejvyšších rodech
   de: Über die höchsten Genera
   instances:
-  - cz: |
+  - cs: |
       disputace o Platónově dialogu Sofistés 2009
     # ukázky na adrese Evangelické teologické fakulty</a> (16)
 
@@ -85,19 +85,19 @@ rows:
       Disputation über Platos Sophistes 2009
     # Proben auf der Adresse der Evangelischen theologischen Fakultät (16)
 
-- cz: Masák a partner
+- cs: Masák a partner
   de: Masak und Partner
   instances:
-  - cz: |
+  - cs: |
       Fotografická prezentace architektonického ateliéru
       Viz webovou stránku <a href="http://www.masak-partner.com/">Masák a partner</a>
     de: |
       Photographische Präsentation eines architektonischen Ateliers
       Siehe die Webseite von <a href="http://www.masak-partner.com/">Masak und Partner</a>
 
-- cz: Psí víno
+- cs: Psí víno
   instances:
-  - cz: |
+  - cs: |
       Ilustrace k novele Anny Blažíčkové
       Triáda, Praha 2010 (10)
     de: |
@@ -105,52 +105,52 @@ rows:
       Triáda, Praha 2010 (10)
 
 
-- cz: Filosofie Lidského, příliš lidského
+- cs: Filosofie Lidského, příliš lidského
   instances:
-  - cz: |
+  - cs: |
       Ilustrace k souboru filosofických esejů a záběry z kolokvia ke vzniku knihy
       Pavel Mervart, Červený Kostelec 2011 (14)
 
-- cz: Kafka
+- cs: Kafka
   instances:
-  - cz: |
+  - cs: |
       Ilustrace k eseji Jürga Amanna
       Archa, Zlín 2011 (14)
     de: |
       Illustrationen zum Essay von Jürg Amann
       Archa, Zlín 2011 (14)
 
-- cz: Čekání v zástupu
+- cs: Čekání v zástupu
   instances:
-  - cz: |
+  - cs: |
       Ilustrace ke sbírce povídek Anny Blažíčkové
       Triáda, Praha 2014 (9)
     de: |
       Illustration zu Anna Blažíčkovás Erzählband "Warten in der Schar"
       Triáda, Praha 2014 (9)
 
-- cz: Duše zrcadlo
+- cs: Duše zrcadlo
   instances:
-  - cz: |
+  - cs: |
       Ilustrace ke knize studií Lenky Karfíkové ke Kappadočanům, Augustinovi a Abélardovi
       Triáda, Praha 2016 (10)
     de: |
       Illustrationen zum Band von Abhandlungen Lenka Karfíkovás zu den Kappadokiern, zu Augustinus und Abélard "Seele als Spiegel"
       Triáda, Praha 2016 (10)
 
-- cz: Trochu jiné mámy
+- cs: Trochu jiné mámy
   de: Etwas andere Mütter
   instances:
-  - cz: |
+  - cs: |
       Portréty k rozhovorům Petry Maťové s mladými ženami, jež jejich zdravotní postižení neodradilo od mateřství
       knižně v nakladatelství Host, Brno cca 2017 (8)
     de: |
       Portraits zu Gesprächen von Petra Maťová über die Mutterschaft trotz gesundheitlicher Handicaps
       als Buch im Verlag Host, Brno, cca 2017 (8)
 
-- cz: Knižní obálky
+- cs: Knižní obálky
   de: Buchumschläge
   instances:
-  - cz: soubor fotografií VěK použitých na obálky knih
+  - cs: soubor fotografií VěK použitých na obálky knih
     de: Photographien von VerK auf Buchumschlägen
 

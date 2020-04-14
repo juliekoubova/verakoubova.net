@@ -1,30 +1,30 @@
-cz: NeShodnosti
+cs: NeShodnosti
 de: UnÄhnlichkeiten
 imageBase: /img/dissimilarities
 images:
-- cz: NeShodnosti
+- cs: NeShodnosti
   de: UnÄhnlichkeiten
-  src: { cz: dis-similarities.cz.jpeg, de: dis-similarities.de.jpeg }
+  src: { cs: dis-similarities.cs.jpeg, de: dis-similarities.de.jpeg }
 
-- { cz: Čelo, de: Vorn, src: celo.jpeg }
-- { cz: Jiné čelo, de: Voraus, src: jine-celo.jpeg }
-- { cz: Podepřené čelo, de: Frontal, src: podeprene-celo.jpeg }
-- { cz: Pobavená, de: Vergnügt, src: pobavena.jpeg }
-- { cz: Ve třech, de: Zu zweien, src: ve-trech.jpeg }
-- { cz: Ve dvou, de: Zu dreien, src: ve-dvou.jpeg }
-- { cz: Nožka, de: Der Tanzschuh, src: nozka.jpeg }
-- { cz: Svíce, de: Kerzen, src: svice.jpeg }
-- { cz: Ovladač, de: Fernbedienung, src: ovladac.jpeg }
-- { cz: Mikrofon, de: Das Mikrofon, src: mikrofon.jpeg }
-- { cz: Let, de: Ein Flug, src: let.jpeg }
-- { cz: Hvězdice, de: Ein Stern, src: hvezdice.jpeg }
-- { cz: Váhy, de: Die Waage, src: vahy.jpeg }
-- { cz: Spojenými pohledy, de: Mit verbundenen Blicken, src: spojenymi-pohledy.jpeg }
-- { cz: Runda, de: Die Runde, src: runda.jpeg }
-- { cz: Na vodách, de: Über Wassern, src: na-vodach.jpeg }
-- { cz: Spár, de: Die Kralle, src: spar.jpeg }
-- { cz: Aureola, de: Die Aureole, src: aureola.jpeg }
-- { cz: Šála, de: Die Echarpe, src: sala.jpeg }
-- { cz: Sešitek, de: Ein Heft, src: sesitek.jpeg }
-- { cz: Z očí do ruky, de: Von Auge zu Hand, src: z-oci-do-ruky.jpeg }
-- { cz: Závěrečný akord, de: Der Schlussakkord, src: zaverecny-akord.jpeg }
+- { cs: Čelo, de: Vorn, src: celo.jpeg }
+- { cs: Jiné čelo, de: Voraus, src: jine-celo.jpeg }
+- { cs: Podepřené čelo, de: Frontal, src: podeprene-celo.jpeg }
+- { cs: Pobavená, de: Vergnügt, src: pobavena.jpeg }
+- { cs: Ve třech, de: Zu zweien, src: ve-trech.jpeg }
+- { cs: Ve dvou, de: Zu dreien, src: ve-dvou.jpeg }
+- { cs: Nožka, de: Der Tanzschuh, src: nozka.jpeg }
+- { cs: Svíce, de: Kerzen, src: svice.jpeg }
+- { cs: Ovladač, de: Fernbedienung, src: ovladac.jpeg }
+- { cs: Mikrofon, de: Das Mikrofon, src: mikrofon.jpeg }
+- { cs: Let, de: Ein Flug, src: let.jpeg }
+- { cs: Hvězdice, de: Ein Stern, src: hvezdice.jpeg }
+- { cs: Váhy, de: Die Waage, src: vahy.jpeg }
+- { cs: Spojenými pohledy, de: Mit verbundenen Blicken, src: spojenymi-pohledy.jpeg }
+- { cs: Runda, de: Die Runde, src: runda.jpeg }
+- { cs: Na vodách, de: Über Wassern, src: na-vodach.jpeg }
+- { cs: Spár, de: Die Kralle, src: spar.jpeg }
+- { cs: Aureola, de: Die Aureole, src: aureola.jpeg }
+- { cs: Šála, de: Die Echarpe, src: sala.jpeg }
+- { cs: Sešitek, de: Ein Heft, src: sesitek.jpeg }
+- { cs: Z očí do ruky, de: Von Auge zu Hand, src: z-oci-do-ruky.jpeg }
+- { cs: Závěrečný akord, de: Der Schlussakkord, src: zaverecny-akord.jpeg }

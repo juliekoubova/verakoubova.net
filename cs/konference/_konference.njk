@@ -4,7 +4,7 @@ pagination:
   data: konference
   size: 1
   alias: gallery
-permalink: "cz/konference/{{ gallery | slug }}/index.html"
+permalink: "{{ lang }}/konference/{{ gallery | slug }}/index.html"
 eleventyComputed:
   title: "{{ konference[gallery] | lang }}"
 ---

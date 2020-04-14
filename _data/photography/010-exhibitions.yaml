@@ -1,120 +1,120 @@
-cz: Výstavy
+cs: Výstavy
 de: Ausstellungen
 slug:
-  cz: vystavy
+  cs: vystavy
   de: Ausstellungen
 
 rows:
-- cz: Mezi zdmi
+- cs: Mezi zdmi
   de: Zwischen Mauern
   instances:
-  - cz: Praha - Rubín
+  - cs: Praha - Rubín
     de: Theater Rubín (Tschechien)
     year: 1994
 
-- cz: Tváře s příběhy
+- cs: Tváře s příběhy
   de: Gesichter mit Geschichten
   instances:
-  - cz: Praha - Modřanská knihovna
+  - cs: Praha - Modřanská knihovna
     de: Bibliothek Modřany (Tschechien)
     year: 1995
 
-- cz: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
+- cs: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   de: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   instances:
-  - cz: Freiburg - Katolická akademie (Německo)
+  - cs: Freiburg - Katolická akademie (Německo)
     de: Freiburg - Katholische Akademie (Deutschland)
     year: 2001
-  - cz: Praha - Goethe-Institut
+  - cs: Praha - Goethe-Institut
     de: Praha - Goethe-Institut (Tschechien)
     year: 2001
-  - cz: Wuppertal - Universita (Německo)
+  - cs: Wuppertal - Universita (Německo)
     de: Wuppertal - Bergische Universität (Deutschland)
     year: 2001
-  - cz: Jena - Universita (Německo)
+  - cs: Jena - Universita (Německo)
     de: Jena - Jenaer Universität (Deutschland)
     year: 2002
-  - cz: Erfurt - Michaeliskirche a Thüringer Staatskanzlei (Německo)
+  - cs: Erfurt - Michaeliskirche a Thüringer Staatskanzlei (Německo)
     de: Erfurt - Michaeliskirche und Thüringer Staatskanzlei (Deutschland)
     year: 2002
-  - cz: Düsseldorf - Gerhart-Hauptmann-Haus (Německo)
+  - cs: Düsseldorf - Gerhart-Hauptmann-Haus (Německo)
     de: Düsseldorf - Gerhart-Hauptmann-Haus (Deutschland
     year: 2003
-  - cz: Weinberg - zámek (Rakousko)
+  - cs: Weinberg - zámek (Rakousko)
     de: Weinberg - Schloss (Österreich)
     year: 2003
 
-- cz: Místo děje
+- cs: Místo děje
   de: Anstelle anstätte
   instances:
-  - cz: Praha - Černý kůň Lucerna
+  - cs: Praha - Černý kůň Lucerna
     de: Praha - Lucerna (Tschechien)
     year: 2003
 
-- cz: Mezi sebou
+- cs: Mezi sebou
   de: Untereinander
   instances:
-  - cz: Praha - Černý kůň Lucerna
+  - cs: Praha - Černý kůň Lucerna
     de: Praha - Lucerna (Tschechien)
     year: 2004
 
-- cz: Za mrtvé stromy
+- cs: Za mrtvé stromy
   de: Für tote Bäume
   instances:
-  - cz: Kaliště - Mahlerův dům
+  - cs: Kaliště - Mahlerův dům
     de: Kaliště - Mahler-Haus (Tschechien)
     year: 2006
 
-- cz: Psí víno
+- cs: Psí víno
   de: Wilder Wein
   instances:
-  - cz: Pejškovna
+  - cs: Pejškovna
     de: Pejškovna (Tschechien)
     year: 2007
-  - cz: Praha - Písecká brána
+  - cs: Praha - Písecká brána
     de: Praha - Písek-Tor (Tschechien)
     year: 2010
 
-- cz: Vidiny Paměti
+- cs: Vidiny Paměti
   de: GedächtnisGesichte
   instances:
-  - cz: Vídeň - IWM (Rakousko)
+  - cs: Vídeň - IWM (Rakousko)
     de: Wien - IWM (Österreich)
     year: 2008
 
-- cz: Zkouškové období aneb Plaveme
+- cs: Zkouškové období aneb Plaveme
   de: Schwimm- und Schwitzzeit
   instances:
-  - cz: Pejškovna
+  - cs: Pejškovna
     de: Pejškovna (Tschechien)
     year: 2010
 
-- cz: Odečítání z povrchu
+- cs: Odečítání z povrchu
   de: Von der Oberfläche gelesen
   instances:
-  - cz: 'Bern - "raum" (Švýcarsko)'
+  - cs: 'Bern - "raum" (Švýcarsko)'
     de: Bern - "raum" (Schweiz)
     year: 2010
-  - cz: Praha - Centrum Franze Kafky
+  - cs: Praha - Centrum Franze Kafky
     de: Praha - Franz-Kafka-Zentrum (Tschechien)
     year: 2011
-  - cz: Heidelberg - Německo-Americký Institut (Německo)
+  - cs: Heidelberg - Německo-Americký Institut (Německo)
     de: Heidelberg - Deutsch-Amerikanisches Institut (Deutschland)
     year: 2015
-  - cz: Plzeň - Evropský dům
+  - cs: Plzeň - Evropský dům
     de: Pilsen - Europäisches Haus (Tschechien
     year: 2016
 
-- cz: Jan Věk
+- cs: Jan Věk
   de: Jan Verk
   instances:
-  - cz: Vyšný u Českého Krumlova - Hájenka
+  - cs: Vyšný u Českého Krumlova - Hájenka
     de: Vyšný bei Böhmisch Krumau - Forsthaus (Tschechien)
     year: 2011
 
-- cz: Zkřížené cesty
+- cs: Zkřížené cesty
   de: Wege gekreuzt
   instances:
-  - cz: Brno - Café 99
+  - cs: Brno - Café 99
     de: Brno - Café 99 (Tschechien)
     year: 2012

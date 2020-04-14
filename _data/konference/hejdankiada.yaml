@@ -1,5 +1,5 @@
-cz: Hejdánkiáda
+cs: Hejdánkiáda
 imageBase: /img/hejdankiada
 images:
-- cz: Hejdánkiáda
-  src: { cz: hejdankiada.cz.jpeg, de: hejdankiada.de.jpeg }
+- cs: Hejdánkiáda
+  src: { cs: hejdankiada.cs.jpeg, de: hejdankiada.de.jpeg }
