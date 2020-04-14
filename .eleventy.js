@@ -1,5 +1,6 @@
 // @ts-check
 const yaml = require('js-yaml')
+const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 
 /**
  * @param {object[]} objects
@@ -124,6 +125,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("img")
   eleventyConfig.addPassthroughCopy(".nojekyll")
+
+  if (process.env.ELEVENTY_ENV === 'production') {
+    eleventyConfig.addPlugin(cacheBuster({}))
+  }
 
   for (const [key, fn] of Object.entries(filters)) {
     eleventyConfig.addFilter(key, fn)

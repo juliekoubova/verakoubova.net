@@ -1,9 +1,9 @@
 <html>
   <head>
     <title>VerK - Sterbliche - Bildband</title>
-    <link rel="stylesheet" href="../../../VeK.css" type="text/css" />
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    
+
     <style>
       .thumbnail-page
       {
@@ -11,7 +11,7 @@
         padding: 0;
         margin: 0;
       }
-      
+
       #thumbnails
       {
         list-style: none;
@@ -19,53 +19,53 @@
         margin: 0;
         margin-left: 7px;
         margin-top: 0px;
-        
+
         text-align: center;
       }
-      
+
       #thumbnails li
       {
         display: inline;
         padding: 0;
         margin: 0;
       }
-      
+
       #thumbnails img
       {
         border: none;
         vertical-align: middle;
-        
+
         margin: 0;
         margin-right: 7px;
       }
-      
+
       #viewbox
       {
         width: 100%;
         text-align: center;
         overflow: scroll;
-        
+
         background: url('Bildband.jpg') no-repeat 50% 50%;
       }
-      
+
       #zurueck
       {
         margin: 0;
         margin-top: 5px;
         margin-left: 14px;
       }
-      
+
     </style>
-    
+
     <script>
       ImageHeightDelta = -10;
       /*FirstImage = 'Bildband.jpg'*/
-      
+
       PhotoDimensions = {
         /*'Bildband.jpg'  : { 'w':  900, 'h':  525, 'disableZoom': true },*/
         'Obsah.jpg'     : { 'w': 1542, 'h': 1096 },
         'Esej.jpg'      : { 'w': 1560, 'h': 1117 },
-        'Biobibliografie.jpg' : { 'w': 1536, 'h': 1120 },        
+        'Biobibliografie.jpg' : { 'w': 1536, 'h': 1120 },
         'Pruvodce.jpg'    : { 'w': 1536, 'h': 1120 },
         'MotoTitul.jpg'   : { 'w': 1536, 'h': 1120 },
         'Frontispice.jpg' : { 'w': 1536, 'h': 1120 },
@@ -74,11 +74,11 @@
         'Lessing.jpg'     : { 'w': 1536, 'h': 1120 }
       };
     </script>
-        
+
   </head>
 
   <body class="thumbnail-page">
-    
+
     <ul id="thumbnails">
       <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/MotoTitul.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_MotoTitul.jpg" /></a></li>
       <li><a class="thumbnail-link" href="../../../Nesmrtelni/Kniha/Frontispice.jpg" target="_blank"><img src="../../../Nesmrtelni/Kniha/th_Frontispice.jpg" /></a></li>
@@ -92,14 +92,11 @@
     </ul>
 
     <a id="zurueck" href="../Index.html"><span class="nocss">zurück</span></a>
-    
+
     <div id="viewbox">
       <img id="image" style="display: none;" />
     </div>
-        
-    <script src="../../../Viewport.js"></script>
-    <script src="../../../Gallery.js"></script>
-    <script src="../../../VeK.js"></script>
+
 
   </body>
 </html>

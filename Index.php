@@ -1,5 +1,5 @@
 <?php
-	if (isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'])) 
+	if (isset( $_SERVER['HTTP_ACCEPT_LANGUAGE']))
 	{
 		//explode languages into array
 		$languages = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']);
@@ -13,7 +13,7 @@
       {
         header('Location: cz/Index.html');
         return;
-      }      
+      }
       else if ($code == 'de')
       {
         header('Location: de/Index.html');
@@ -21,19 +21,19 @@
       }
     }
   }
-  
+
   header('Location: cz/Index.html');
 ?>
-  
+
 <html>
   <head>
     <title>Věra Koubová</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="VeK.css" />
+
   </head>
 
   <body>
-  
+
     <a href="cz/Index.html">Česky</a>
     <a href="de/Index.html">Deutsch</a>
 
