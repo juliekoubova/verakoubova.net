@@ -6,6 +6,8 @@
 @tailwind utilities;
 
 @import './scroll-enticer.css';
+@import './scroll-snap.css';
+@import './sidebar.css';
 
 body {
   /* @apply vr-debug; */
@@ -15,67 +17,17 @@ body {
   @apply mb-2;
 }
 
+.pipe-separator:not(:first-child)::before {
+  content: '|';
+}
+
 @screen sm {
   .bignav li {
     @apply mb-4;
   }
 }
-
-.in-sidebar {
-  @apply font-semibold;
-}
-
-.has-sidebar .sidebar-section {
-  @apply mb-4;
-}
-
-.scroll-snap-y-mandatory {
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-snap-y-proximity {
-  scroll-snap-type: y proximity;
-}
-
-@screen md {
-  .md\:scroll-snap-y-mandatory {
-    scroll-snap-type: y mandatory;
-  }
-
-  .md\:scroll-snap-y-proximity {
-    scroll-snap-type: y proximity;
-  }
-}
-
-.scroll-snap-align-start {
-  scroll-snap-align: start;
-}
-
-.overscroll-contain-y {
-  overscroll-behavior-y: contain;
-}
-
 @screen sm {
   .sm\:flex-basis-1\/2 { flex-basis: 50%; }
-}
-
-@screen md {
-  .has-sidebar .sidebar-section {
-    @apply mb-2;
-    @apply -ml-56;
-    @apply flex;
-  }
-
-  .has-sidebar .in-main {
-    @apply ml-56;
-  }
-
-  .has-sidebar .in-sidebar {
-    @apply text-right;
-    @apply flex-none;
-    @apply w-56;
-    @apply pr-4;
-  }
 }
 
 @screen sm {

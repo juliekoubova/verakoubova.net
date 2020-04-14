@@ -1,11 +1,12 @@
 {% block before %}{% endblock %}
-<div class="
-  {{ 'has-sidebar' if hasSidebar }}
-  mx-2 md:ml-56 lg:ml-64 xl:mx-auto max-w-2xl py-8 md:pt-16
-  ">
-  {% include 'header.njk' %}
-  {% block content %}
-    {{ content | safe }}
-  {% endblock %}
+<div class="max-w-5xl mx-auto">
+  <div class="has-sidebar py-8 md:pt-16">
+    {% include 'header.njk' %}
+    <main class="main">
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+    </main>
+  </div>
 </div>
 {% block after %}{% endblock %}

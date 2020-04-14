@@ -6,7 +6,7 @@
     <title>{{ titlePrefix }}{{ " - " if titlePrefix }}{{ title | lang }}</title>
     <link rel="stylesheet" href="{{ '/main.css' | url }}">
   </head>
-  <body class="{{ bodyClass }}">
+  <body class="{{ bodyClass }} px-2">
     {{ content | safe }}
     <script src="{{ '/main.js' | url }}" async></script>
   </body>

@@ -1,9 +1,6 @@
-<ol>
+<ul>
 {% for item in page | languages | sort %}
-  <li class="inline">
-    {% if not loop.first %}
-    <span aria-hidden="true">|</span>
-    {% endif %}
+  <li class="inline pipe-separator">
     {% if item.active %}
     <span class="font-semibold">{{ item.label }}</span>
     {% else %}
@@ -12,4 +9,4 @@
     {% endif %}
   </li>
 {% endfor %}
-</ol>
+</ul>

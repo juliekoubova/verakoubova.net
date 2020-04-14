@@ -1,0 +1,43 @@
+
+.main-width {
+  @apply mx-auto;
+  @apply max-w-2xl;
+}
+
+@screen md {
+
+
+}
+.in-sidebar {
+  @apply font-semibold;
+}
+
+.has-sidebar .sidebar-section {
+  @apply mb-4;
+}
+
+@screen md {
+  .has-sidebar {
+    @apply ml-64;
+    @apply mr-16;
+    /* @apply sm:mx-auto max-w-2xl */
+  }
+
+  .has-sidebar .sidebar-section {
+    @apply mb-2;
+    @apply -ml-56;
+    @apply flex;
+  }
+
+  .has-sidebar .in-main {
+    @apply ml-56;
+  }
+
+  .has-sidebar .in-sidebar {
+    @apply text-right;
+    @apply flex-none;
+    @apply w-56;
+    @apply pr-4;
+  }
+}
+
