@@ -1,5 +1,6 @@
 ---
 layout: layouts/html
+htmlClass: scroll-snap-y-mandatory
 headerSmall: true
 ---
 <div class="fixed bg-white opacity-75 left-0 right-0 z-10">
@@ -9,21 +10,11 @@ headerSmall: true
 </div>
 
 <main data-controller="">
-  <div class="fixed top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-between pointer-events-none z-20">
-    <button
-      data-action="scroll-to#prev"
-      data-target="can-scroll.up"
-      class="pointer-events-auto p-2 w-8"
-      type="button">{% include 'svg/chevron-up.svg' %}</button>
-    <button
-      data-action="scroll-to#next"
-      data-target="can-scroll.down"
-      class="pointer-events-auto p-2 w-8"
-      type="button">{% include 'svg/chevron-down.svg' %}</button>
-  </div>
   <ol data-target="scroll-to.list can-scroll.root">
     {{ content | safe }}
   </ol>
 </main>
 
-<script src="{{ "/gallery.js" | url }}" async></script>
+<div class="absolute left-0 right-0 bottom-0 flex justify-center pointer-events-none">
+  <div class="w-6 mb-8 scroll-enticer">{% include 'svg/chevron-down.svg' %}</div>
+</div>

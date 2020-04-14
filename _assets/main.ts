@@ -1,6 +1,8 @@
 import { Application } from 'stimulus'
 import { CanScrollController } from './can-scroll'
 import { ScrollToController } from './scroll-to'
+import { setupHasScrolled } from './has-scrolled'
+import { fixSafariScrollSnap } from './scoll-snap'
 
 declare global {
   interface Window {
@@ -15,12 +17,5 @@ if (typeof window['vekApp'] !== 'object') {
 window.vekApp.register('can-scroll', CanScrollController)
 window.vekApp.register('scroll-to', ScrollToController)
 
-const isSafari =
-  /Safari/.test(navigator.userAgent) &&
-  !/Chrome/.test(navigator.userAgent)
-
-const scrollSnapElement = isSafari
-  ? document.body
-  : document.documentElement
-
-scrollSnapElement.classList.add('scroll-snap-y-mandatory')
+fixSafariScrollSnap()
+setupHasScrolled()

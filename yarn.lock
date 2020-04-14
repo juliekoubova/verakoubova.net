@@ -1072,6 +1072,13 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+animations.css@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/animations.css/-/animations.css-1.0.1.tgz#466bd081714091ff2e724849e38b34cd2c198904"
+  integrity sha1-RmvQgXFAkf8uckhJ44s0zSwZiQQ=
+  dependencies:
+    graceful-fs "^4.1.11"
+
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"

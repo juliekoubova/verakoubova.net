@@ -10,10 +10,10 @@
     "dev": "run-p dev:*",
     "dev:eleventy": "eleventy --serve --quiet",
     "dev:parcel-css": "parcel watch _assets/main.css --out-dir _site --no-hmr",
-    "dev:parcel-glide": "parcel watch _assets/gallery.ts --out-dir _site --no-hmr",
+    "dev:parcel-glide": "parcel watch _assets/main.ts --out-dir _site --no-hmr",
     "build": "run-s clean build:parcel build:eleventy",
     "build:eleventy": "eleventy",
-    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css _assets/gallery.ts --out-dir _site",
+    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css _assets/main.ts --out-dir _site",
     "deploy": "run-s build deploy:push-dir",
     "deploy:push-dir": "push-dir --dir=_site --branch=master"
   },
@@ -32,6 +32,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "animations.css": "^1.0.1",
     "stimulus": "^1.1.1"
   }
 }

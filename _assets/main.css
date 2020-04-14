@@ -1,8 +1,11 @@
 @charset 'utf-8';
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './scroll-enticer.css';
 
 body {
   /* @apply vr-debug; */
