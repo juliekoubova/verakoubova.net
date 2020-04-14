@@ -8,11 +8,11 @@
   "scripts": {
     "clean": "shx rm -rf _site .cache",
     "dev": "npm-run-all -s clean -p start dev:*",
-    "dev:parcel-css": "parcel watch _assets/css/main.css --out-dir _site --no-hmr",
-    "dev:parcel-js": "parcel watch _assets/js/main.ts --out-dir _site --no-hmr",
+    "dev:parcel-css": "parcel watch _assets/main.css --out-dir _site --no-hmr",
+    "dev:parcel-js": "parcel watch _assets/main.ts --out-dir _site --no-hmr",
     "build": "run-s clean build:parcel build:eleventy",
     "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
-    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/css/main.css _assets/js/main.ts --out-dir _site",
+    "build:parcel": "cross-env NODE_ENV=production parcel build _assets/main.css _assets/main.ts --out-dir _site",
     "start": "eleventy --serve --quiet",
     "deploy": "run-s build deploy:push-dir",
     "deploy:push-dir": "push-dir --dir=_site --branch=master"

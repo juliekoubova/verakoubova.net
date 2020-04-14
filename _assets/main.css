@@ -5,9 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './scroll-enticer.css';
-@import './scroll-snap.css';
-@import './sidebar.css';
+@import './css/scroll-enticer.css';
+@import './css/scroll-snap.css';
+@import './css/sidebar.css';
 
 body {
   /* @apply vr-debug; */
