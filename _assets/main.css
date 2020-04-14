@@ -24,10 +24,6 @@ body {
   @apply mb-4;
 }
 
-.h-realscreen {
-  height: 100vh; /* overriden in js with actual height sans iOS Safari toolbar */
-}
-
 .scroll-snap-y-mandatory {
   scroll-snap-type: y mandatory;
 }
