@@ -1,0 +1,11 @@
+{% block before %}{% endblock %}
+<div class="
+  {{ 'has-sidebar' if hasSidebar }}
+  mx-2 md:ml-56 lg:ml-64 xl:mx-auto max-w-2xl py-8 md:pt-16
+  ">
+  {% include 'header.njk' %}
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+</div>
+{% block after %}{% endblock %}

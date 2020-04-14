@@ -4,6 +4,7 @@ pageId: index
 img:
   src: /img/index.jpeg
 titlePrefix:
+bodyTitle: Aktuality
 ---
 
 * [za snímkem snímek](za-snimkem-snimek)

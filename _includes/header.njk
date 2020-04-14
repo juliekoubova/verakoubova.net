@@ -1,12 +1,12 @@
-<header class="flex flex-col md:flex-row md:justify-between">
+<header class="flex flex-col md:flex-row md:justify-between pb-6 md:pb-8">
   <div class="vr-tight-sm">
     <nav class="inline">
       {% include 'nav.njk' %}
     </nav>
     {% if headerSmall %}
-    <h1 class="inline font-semibold">{{ title }}</h1>
+    <h1 class="inline font-semibold">{{ bodyTitle | default(title) }}</h1>
     {% else %}
-    <h1 class="vr-tight-3xl">{{ title }}</h1>
+    <h1 class="vr-tight-3xl">{{ bodyTitle | default(title) }}</h1>
     {% endif %}
   </div>
   <nav class="vr-tight-sm mt-2 md:mt-0 md:text-right">

@@ -11,10 +11,6 @@ body {
   /* @apply vr-debug; */
 }
 
-.contents {
-  display: contents;
-}
-
 .bignav li {
   @apply mb-4;
 }
@@ -29,6 +25,20 @@ body {
 
 .scroll-snap-y-mandatory {
   scroll-snap-type: y mandatory;
+}
+
+.scroll-snap-y-proximity {
+  scroll-snap-type: y proximity;
+}
+
+@screen md {
+  .md\:scroll-snap-y-mandatory {
+    scroll-snap-type: y mandatory;
+  }
+
+  .md\:scroll-snap-y-proximity {
+    scroll-snap-type: y proximity;
+  }
 }
 
 .scroll-snap-align-start {
