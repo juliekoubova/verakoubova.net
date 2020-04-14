@@ -12,7 +12,13 @@ body {
 }
 
 .bignav li {
-  @apply mb-4;
+  @apply mb-2;
+}
+
+@screen sm {
+  .bignav li {
+    @apply mb-4;
+  }
 }
 
 .in-sidebar {
@@ -66,10 +72,16 @@ body {
 
   .has-sidebar .in-sidebar {
     @apply text-right;
-    @apply tracking-wide;
     @apply flex-none;
     @apply w-56;
     @apply pr-4;
+  }
+}
+
+@screen sm {
+  .para, .applied p {
+    @apply text-justify;
+    hyphens: auto;
   }
 }
 
@@ -100,8 +112,6 @@ nav a, nav a:visited {
 
 .applied p {
   @apply vr-loose-base;
-  @apply text-justify;
-  hyphens: auto;
 }
 
 .applied li {

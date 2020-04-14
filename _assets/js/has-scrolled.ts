@@ -1,7 +1,9 @@
 export function setupHasScrolled() {
   function handler() {
-    window.removeEventListener('scroll', handler)
-    document.documentElement.classList.add('user-has-scrolled')
+    document.documentElement.classList.toggle(
+      'user-has-scrolled',
+      scrollY > 10
+    )
   }
-  window.addEventListener('scroll', handler, { once: true, passive: true })
+  window.addEventListener('scroll', handler, { passive: true })
 }

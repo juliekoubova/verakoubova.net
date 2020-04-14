@@ -1,18 +1,14 @@
 <ol>
 {% for item in page | languages | sort %}
-  {% set label %}
-  <span class="sm:hidden">{{ item.code }}</span><span class="hidden sm:inline">{{ item.label }}</span>
-  {% endset %}
-
   <li class="inline">
     {% if not loop.first %}
     <span aria-hidden="true">|</span>
     {% endif %}
     {% if item.active %}
-    <span class="font-semibold">{{ label | trim | safe }}</span>
+    <span class="font-semibold">{{ item.label }}</span>
     {% else %}
     <a class="text-gray-600 active:text-gray-900"
-        href="{{ item.url | url }}">{{ label | trim | safe }}</a>
+        href="{{ item.url | url }}">{{ item.label }}</a>
     {% endif %}
   </li>
 {% endfor %}

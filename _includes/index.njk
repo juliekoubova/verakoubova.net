@@ -1,7 +1,6 @@
 ---
 layout: layouts/html
 hasSidebar: true
-htmlClass: scroll-snap-y-proximity md:scroll-snap-y-mandatory
 ---
 {% extends 'sidebar.njk' %}
 
@@ -10,20 +9,24 @@ htmlClass: scroll-snap-y-proximity md:scroll-snap-y-mandatory
 
 <div class="scroll-snap-align-start">
   {% from 'macros.njk' import image %}
-  <div class="
-    mx-auto max-w-xs flex flex-col flex-wrap px-2
-    sm:min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
+  <div
+    data-controller="scroll-snap-mandatory"
+    class="
+      mx-auto max-w-xs flex flex-col flex-wrap px-2
+      min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
     >
-    <div class="vr-normal-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2">
+    <div
+      class="vr-normal-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2"
+      >
       <div class="max-w-xs text-right">
         {% include 'lang-switcher.njk' %}
         {{ image(img) }}
       </div>
     </div>
-    <nav class="
-      vr-tight-4xl text-right tracking-tight
-      sm:flex-basis-1/2 sm:pr-2 xl:pr-4 sm:vr-normal-4xl
-      bignav
+    <nav
+      class="
+        bignav vr-tight-3xl text-right tracking-tight
+        sm:flex-basis-1/2 sm:pr-2 xl:pr-4 sm:vr-normal-4xl
       ">
       {{ content | safe }}
     </nav>
@@ -31,14 +34,14 @@ htmlClass: scroll-snap-y-proximity md:scroll-snap-y-mandatory
 
   {% include 'scroll-enticer.njk' %}
 </div>
-<div class="scroll-snap-align-start">
+<div class="scroll-snap-align-start min-h-screen" data-controller="adjust-vr">
 {% endblock %}
 
 {% block content %}
   {% for post in posts | reverse %}
-  <article class="scroll-snap-align-start sidebar-section">
-    <h2 class="in-sidebar">{{ post.title | lang }}</h2>
-    <p>{{ post | lang | safe }}</p>
+  <article class="scroll-snap-align-start sidebar-section ">
+    <h2 class="in-sidebar vr-loose-base">{{ post.title | lang }}</h2>
+    <p class="vr-loose-base para">{{ post | lang | safe }}</p>
   </article>
   {% endfor %}
 {% endblock %}

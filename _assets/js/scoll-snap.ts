@@ -14,3 +14,8 @@ export function fixSafariScrollSnap() {
     })
   }
 }
+
+export function toggleScrollSnapClass(className: string, value?: boolean) {
+  const el = isSafari ? document.body : document.documentElement
+  el.classList.toggle(className, value)
+}

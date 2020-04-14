@@ -5,4 +5,9 @@
       <span aria-hidden="true">&rsaquo;</span>
     </li>
   {% endfor %}
+  {% if bodyTitleInNav %}
+  <li class="inline">
+    <h1 class="inline font-semibold">{{ bodyTitle | default(title) }}</h1>
+  </li>
+  {% endif %}
 </ol>

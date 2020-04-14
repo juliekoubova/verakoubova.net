@@ -1,8 +1,8 @@
 module.exports = {
   theme: {
     extend: {
-      gridTemplateColumns: {
-        main: '1fr 3fr'
+      screens: {
+        short: { raw: '(max-height:' }
       }
     },
     lineHeight: {
