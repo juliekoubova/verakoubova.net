@@ -25,6 +25,7 @@
 
   .sidebar-section {
     @apply flex;
+    @apply mb-2;
     margin-left: -12rem;
   }
 
