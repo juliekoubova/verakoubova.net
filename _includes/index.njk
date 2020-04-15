@@ -16,7 +16,7 @@ hasSidebar: true
       min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
     >
     <div
-      class="vr-normal-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2"
+      class="vr-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2"
       >
       <div class="max-w-xs text-right">
         {% include 'lang-switcher.njk' %}
@@ -40,8 +40,8 @@ hasSidebar: true
 {% block content %}
   {% for post in posts | reverse %}
   <article class="scroll-snap-align-start sidebar-section ">
-    <h2 class="in-sidebar vr-loose-base">{{ post.title | lang }}</h2>
-    <p class="vr-loose-base para">{{ post | lang | safe }}</p>
+    <h2 class="in-sidebar vr-base">{{ post.title | lang }}</h2>
+    <p class="vr-base para">{{ post | lang | safe }}</p>
   </article>
   {% endfor %}
 {% endblock %}

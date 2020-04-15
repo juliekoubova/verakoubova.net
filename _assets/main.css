@@ -59,16 +59,16 @@ nav a, nav a:visited {
 
 .applied h2 {
   @apply font-bold;
-  @apply vr-relaxed-lg;
+  @apply vr-lg;
 }
 
 .applied p {
-  @apply vr-loose-base;
+  @apply vr-base;
 }
 
 .applied li {
   @apply mt-2;
-  @apply vr-relaxed-base;
+  @apply vr-base;
 }
 
 .applied p:not(:first-of-type) {

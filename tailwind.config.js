@@ -18,7 +18,7 @@ module.exports = {
     textColor: ['responsive', 'hover', 'focus', 'active', 'visited']
   },
   verticalRhythm: {
-    defaultLineHeight: 'loose',
+    defaultLineHeight: 'relaxed',
     fontCapHeight: {
       // Calculated using https://codepen.io/sebdesign/pen/EKmbGL?editors=0011
       'default': 0.705,

@@ -14,7 +14,7 @@ An der philosophischen Fakultät der Karls-Universität Prag absolvierte sie das
 
 Texte, mit denen sie sich durch Übersetzung oder Illustration beschäftigt, präsentiert sie entweder an literarisch-musikalischen <a href="UeberTonInsWort/Index.html">Programmabenden</a> oder im Rundfunk, in einem Vortrag oder Nachwort, bzw. im Rahmen eines literarischen <a href="SpurenAmOrt.html">Spaziergangs</a>.
 
-<div class="vr-normal-base text-right mt-8">
+<div class="vr-base text-right mt-8">
   <div><a href="mailto:{{ site.mail }}">{{ site.mail }}</a></div>
   <div>Redaktion deutscher Version Renate Epperlein</d>
   <div>html Julie Koubová</div>
