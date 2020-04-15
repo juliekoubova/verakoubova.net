@@ -24,16 +24,15 @@
   }
 
   .sidebar-section {
-    /* @apply mb-2; */
-    margin-left: -12rem;
     @apply flex;
+    margin-left: -12rem;
   }
 
   .in-sidebar {
-    width: 12rem;
     @apply text-right;
     @apply flex-none;
     @apply pr-3;
+    width: 12rem;
   }
 }
 
