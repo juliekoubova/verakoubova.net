@@ -11,6 +11,12 @@
 
 body {
   /* @apply vr-debug; */
+  @apply font-light;
+  font-synthesis: none;
+}
+
+b, strong {
+  @apply font-medium;
 }
 
 .pipe-separator:not(:first-child)::before {
@@ -48,6 +54,10 @@ a:hover {
 
 nav a, nav a:visited {
   @apply text-red-800;
+}
+
+nav a:hover {
+  @apply text-gray-700;
 }
 
 .applied h2 {

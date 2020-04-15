@@ -1,5 +1,11 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
+    fontFamily: {
+      condensed: ['"Fira Sans Extra Condensed"', ...defaultTheme.fontFamily.sans],
+      sans: ['"Fira Sans Condensed"', ...defaultTheme.fontFamily.sans]
+    },
     extend: {
       screens: {
         short: { raw: '(max-height:' }
@@ -21,7 +27,7 @@ module.exports = {
     defaultLineHeight: 'normal',
     fontCapHeight: {
       // Calculated using https://codepen.io/sebdesign/pen/EKmbGL?editors=0011
-      'default': 0.705,
+      'default': 0.7,
     },
     height: 0.5 // Vertical rhythm in rems
   },

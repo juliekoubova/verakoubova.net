@@ -5,7 +5,7 @@
 }
 
 .in-sidebar {
-  @apply font-semibold;
+  @apply font-medium;
 }
 
 .sidebar-section {

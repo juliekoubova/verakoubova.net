@@ -2,7 +2,7 @@
 {% for item in page | languages | sort %}
   <li class="inline pipe-separator">
     {% if item.active %}
-    <span class="font-semibold">{{ item.label }}</span>
+    <strong>{{ item.label }}</strong>
     {% else %}
     <a class="text-gray-600 active:text-gray-900"
         href="{{ item.url | url }}">{{ item.label }}</a>
