@@ -1,8 +1,8 @@
 ---
-layout: index
-pageId: index
+layout: layouts/home
+pageId: home
 img:
-  src: /img/index.jpeg
+  src: /img/home.jpeg
 titlePrefix:
 bodyTitle: Aktuality
 ---
