@@ -18,5 +18,5 @@ Texte, mit denen sie sich durch Übersetzung oder Illustration beschäftigt, pr�
   <div><a href="mailto:{{ site.mail }}">{{ site.mail }}</a></div>
   <div>Redaktion deutscher Version Renate Epperlein</d>
   <div>html Julie Koubová</div>
-  <div>Regie und Ton Martin Klusák</div>
+  <div>Ton Martin Klusák</div>
 </div>
