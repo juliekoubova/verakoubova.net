@@ -11,10 +11,10 @@ hasSidebar: true
   {% from 'macros.njk' import image %}
   <div
     data-controller="scroll-snap-mandatory"
-    class="min-h-screen flex items-stretch justify-end sm:justify-center"
+    class="min-h-screen flex items-center sm:items-stretch justify-end sm:justify-center"
     >
-    <div class="flex flex-col sm:flex-row-reverse sm:justify-center sm:items-center">
-      <div class="vr-base xl:pl-3 sm:flex-basis-1/2">
+    <div class="flex flex-col sm:flex-row-reverse sm:items-center">
+      <div class="vr-base xl:pl-3 sm:flex-basis-1/2 sm:flex-shrink-0">
         <div class="w-64 text-right">
           {% include 'lang-switcher.njk' %}
           {{ image(img, class = 'w-64') }}
@@ -22,7 +22,7 @@ hasSidebar: true
       </div>
       <nav
         class="vr-snug-3xl text-right tracking-tighter whitespace-no-wrap
-          sm:flex-basis-1/2 sm:pr-4 sm:vr-normal-4xl
+          sm:flex-basis-1/2 sm:pr-4 sm:vr-normal-4xl sm:flex-shrink-0
         ">
         {{ content | safe }}
       </nav>
