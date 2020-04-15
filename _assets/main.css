@@ -17,6 +17,8 @@ body {
   content: '|';
 }
 
+.flex-basis-1\/2 { flex-basis: 50%; }
+
 @screen sm {
   .sm\:flex-basis-1\/2 { flex-basis: 50%; }
 }

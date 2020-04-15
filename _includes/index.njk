@@ -11,25 +11,24 @@ hasSidebar: true
   {% from 'macros.njk' import image %}
   <div
     data-controller="scroll-snap-mandatory"
-    class="
-      mx-auto max-w-xs flex flex-col flex-wrap px-2
-      min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
+    class="flex min-h-screen items-center justify-center"
     >
-    <div
-      class="vr-base flex-shrink-0 xl:pl-3 sm:flex-basis-1/2"
-      >
-      <div class="w-64 text-right">
-        {% include 'lang-switcher.njk' %}
-        {{ image(img, class = 'w-64') }}
+    <div class="flex flex-row-reverse flex-wrap items-center">
+      <div
+        class="vr-base flex-grow-0 flex-shrink-0 xl:pl-3"
+        >
+        <div class="w-64 text-right">
+          {% include 'lang-switcher.njk' %}
+          {{ image(img, class = 'w-64') }}
+        </div>
       </div>
+      <nav
+        class="vr-snug-3xl text-right tracking-tighter flex-basis-1/2 overflow-visible whitespace-no-wrap
+          sm:pr-4  sm:vr-normal-4xl
+        ">
+        {{ content | safe }}
+      </nav>
     </div>
-    <nav
-      class="
-        vr-none-3xl text-right tracking-tight
-        sm:flex-basis-1/2 sm:pr-2 md:pr-4 sm:vr-normal-4xl
-      ">
-      {{ content | safe }}
-    </nav>
   </div>
 
   {% include 'scroll-enticer.njk' %}
