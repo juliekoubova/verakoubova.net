@@ -13,19 +13,10 @@ body {
   /* @apply vr-debug; */
 }
 
-.bignav li {
-  @apply mb-2;
-}
-
 .pipe-separator:not(:first-child)::before {
   content: '|';
 }
 
-@screen sm {
-  .bignav li {
-    @apply mb-4;
-  }
-}
 @screen sm {
   .sm\:flex-basis-1\/2 { flex-basis: 50%; }
 }

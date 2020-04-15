@@ -25,7 +25,6 @@
 
   .sidebar-section {
     @apply flex;
-    @apply mb-2;
     margin-left: -12rem;
   }
 
@@ -36,54 +35,3 @@
     width: 12rem;
   }
 }
-
-/* @screen md {
-  .sidebar-container {
-    @apply max-w-4xl;
-  }
-
-  .sidebar {
-    @apply ml-48;
-    @apply mr-8;
-  }
-
-  .sidebar-section {
-    @apply mb-2;
-    @apply -ml-48;
-    @apply flex;
-  }
-
-  .in-sidebar {
-    @apply text-right;
-    @apply flex-none;
-    @apply w-48;
-    @apply pr-3;
-  }
-}
- */
-
-/* @screen lg {
-  .sidebar-container {
-    @apply max-w-5xl;
-  }
-
-  .sidebar {
-    @apply ml-64;
-    @apply mr-16;
-  }
-
-  .sidebar-section {
-    @apply mb-2;
-    @apply -ml-56;
-    @apply flex;
-  }
-
-  .in-sidebar {
-    @apply text-right;
-    @apply flex-none;
-    @apply w-56;
-    @apply pr-4;
-  }
-}
-
- */

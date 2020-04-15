@@ -9,7 +9,7 @@ hasSidebar: true
   <ul>
     {% for pub in b[1].publications %}
     {% set published = pub.published | lang %}
-    <li class="mb-2">
+    <li class="{{ 'mb-2' if not loop.last }}">
       <div class="flex flex-wrap vr-base">
         <div class="mr-1">
           <em>{{ pub.translated }}</em>

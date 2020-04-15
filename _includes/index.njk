@@ -16,16 +16,16 @@ hasSidebar: true
       min-h-screen sm:max-w-none sm:flex-row-reverse sm:items-center"
     >
     <div
-      class="vr-base max-w-xs flex-shrink-0 xl:pl-3 sm:max-w-none sm:flex-basis-1/2"
+      class="vr-base flex-shrink-0 xl:pl-3 sm:flex-basis-1/2"
       >
-      <div class="max-w-xs text-right">
+      <div class="w-64 text-right">
         {% include 'lang-switcher.njk' %}
-        {{ image(img) }}
+        {{ image(img, class = 'w-64') }}
       </div>
     </div>
     <nav
       class="
-        bignav vr-tight-3xl text-right tracking-tight
+        vr-none-3xl text-right tracking-tight
         sm:flex-basis-1/2 sm:pr-2 md:pr-4 sm:vr-normal-4xl
       ">
       {{ content | safe }}
@@ -39,7 +39,7 @@ hasSidebar: true
 
 {% block content %}
   {% for post in posts | reverse %}
-  <article class="scroll-snap-align-start sidebar-section ">
+  <article class="scroll-snap-align-start sidebar-section md:mb-4">
     <h2 class="in-sidebar vr-base">{{ post.title | lang }}</h2>
     <p class="vr-base para">{{ post | lang | safe }}</p>
   </article>
