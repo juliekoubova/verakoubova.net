@@ -11,11 +11,11 @@ hasSidebar: true
   {% from 'macros.njk' import image %}
   <div
     data-controller="scroll-snap-mandatory"
-    class="min-h-screen flex items-center sm:items-stretch justify-end sm:justify-center"
+    class="min-h-screen flex items-center sm:items-stretch justify-center py-16"
     >
     <div class="flex flex-col sm:flex-row-reverse sm:items-center">
-      <div class="vr-base xl:pl-3 sm:flex-basis-1/2 sm:flex-shrink-0">
-        <div class="w-64 text-right">
+      <div class="vr-base self-end sm:self-auto xl:pl-3 sm:flex-basis-1/2 sm:flex-shrink-0">
+        <div class="w-64">
           {% include 'lang-switcher.njk' %}
           {{ image(img, class = 'w-64') }}
         </div>
