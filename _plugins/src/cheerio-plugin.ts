@@ -15,7 +15,7 @@ export function cheerioPlugin(
   transform: (document: CheerioStatic) => void | Promise<void>
 ): EleventyPlugin {
   return {
-    configFunction(eleventy, _options = {}) {
+    configFunction(eleventy) {
       eleventy.addTransform(name, async (content, outputPath) => {
         if (extname(outputPath) !== '.html') {
           return content

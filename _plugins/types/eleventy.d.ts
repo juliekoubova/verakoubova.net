@@ -2,14 +2,16 @@ declare module '@11ty/eleventy' {
 
   export type EleventyTransform = (content: string, outputPath: string) => string | Promise<string>
 
-  export type EleventyPluginFunction = (eleventy: Eleventy, config?: object) => void
-  export type EleventyPlugin = {
-    configFunction: EleventyPluginFunction
+  export type EleventyPluginFunction<Config> = (eleventy: Eleventy, config?: Config) => void
+  export type EleventyPlugin<Config = {}> =
+  | {
+    configFunction: EleventyPluginFunction<Config>
     init?(eleventy: Eleventy): void
   }
+  | EleventyPluginFunction<Config>
 
   export interface Eleventy {
-    addPlugin(plugin: EleventyPlugin | EleventyPluginFunction): void
+    addPlugin<Config>(plugin: EleventyPlugin<Config>): void
     addTransform(name: string, transform: EleventyTransform): void
   }
 }
