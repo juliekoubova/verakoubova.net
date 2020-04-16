@@ -3,7 +3,7 @@
 {%   set headerPadding = 'py-4' %}
 {% endif %}
 <header class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16">
-  <div class="mb-4 sm:mb-2">
+  <div class="{{ 'mb-4 sm:mb-2' if not bodyTitleInNav }}">
     <nav class="vr-tight-sm">
       {% include 'nav.njk' %}
     </nav>
