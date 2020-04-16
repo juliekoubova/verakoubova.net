@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "noImplicitReturns": true,
+    "strict": true,
+    "target": "ES2019",
+    "outDir": "dist"
+  }
+}

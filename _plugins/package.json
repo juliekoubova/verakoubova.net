@@ -1,0 +1,17 @@
+{
+  "name": "@verakoubova/11ty-plugins",
+  "license": "MIT",
+  "scripts": {
+    "clean": "shx rm -r dist",
+    "build": "tsc"
+  },
+  "main": "dist/index.js",
+  "devDependencies": {
+    "typescript": "^3.8.3",
+    "shx": "^0.3.2"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.17",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}

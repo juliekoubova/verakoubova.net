@@ -9,5 +9,6 @@
     "**/.cache": true,
     "**/.DS_Store": true,
     "**/.git": true,
+    "**/dist": true
   }
 }

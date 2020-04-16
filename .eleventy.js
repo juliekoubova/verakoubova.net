@@ -1,6 +1,8 @@
 // @ts-check
-const yaml = require('js-yaml')
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
+const imagesResponsiver = require('eleventy-plugin-images-responsiver')
+const { externalLinks } = require('./_plugins')
+const yaml = require('js-yaml')
 
 /**
  * @param {object[]} objects
@@ -20,14 +22,6 @@ function countBy(objects, key) {
     }
   }
   return counts
-}
-
-/**
- * @param {any[]} objects
- * @param {string?} key
- */
-function duplicates(objects, key) {
-  return [...countBy(objects, key).values()].findIndex(x => x > 1) !== -1
 }
 
 function ensureTrailingSlash(url) {
@@ -120,24 +114,29 @@ const filters = {
   }
 }
 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
+module.exports = /**
+ * @param {import('@11ty/eleventy').Eleventy} eleventyConfig
+ */
+  function (eleventyConfig) {
+    eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
-  eleventyConfig.addPassthroughCopy("img")
-  eleventyConfig.addPassthroughCopy(".nojekyll")
+    eleventyConfig.addPassthroughCopy("img")
+    eleventyConfig.addPassthroughCopy(".nojekyll")
 
-  if (process.env.ELEVENTY_ENV === 'production') {
-    eleventyConfig.addPlugin(cacheBuster({}))
+    eleventyConfig.addPlugin(externalLinks)
+
+    if (process.env.ELEVENTY_ENV === 'production') {
+      eleventyConfig.addPlugin(cacheBuster({}))
+    }
+
+    for (const [key, fn] of Object.entries(filters)) {
+      eleventyConfig.addFilter(key, fn)
+    }
+
+    return {
+      dataTemplateEngine: 'njk',
+      markdownTemplateEngine: 'njk',
+      htmlTemplateEngine: 'njk',
+      templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],
+    }
   }
-
-  for (const [key, fn] of Object.entries(filters)) {
-    eleventyConfig.addFilter(key, fn)
-  }
-
-  return {
-    dataTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png', 'yaml'],
-  }
-}
