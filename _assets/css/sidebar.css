@@ -1,7 +1,11 @@
 
+.header-width {
+  max-width: 40rem;
+}
+
 .sidebar-container {
   @apply mx-auto;
-  max-width: 40rem;
+  @apply header-width;
 }
 
 .sidebar-section {

@@ -8,6 +8,8 @@ module.exports = async function loadImageMetadata(...args) {
     const stream = createReadStream(img)
     try {
       const size = await imageSize(stream)
+      size.horizontal = size.width >= size.height
+      size.vertical = !size.horizontal
       return ['/' + img, size]
     } finally {
       stream.destroy()

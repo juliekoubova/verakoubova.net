@@ -4,7 +4,7 @@ imageBase: /img/dissimilarities
 images:
 - cs: NeShodnosti
   de: UnÄhnlichkeiten
-  src: { cs: dis-similarities.cs.jpeg, de: dis-similarities.de.jpeg }
+  src: kuloar.jpeg
 
 - { cs: Čelo, de: Vorn, src: celo.jpeg }
 - { cs: Jiné čelo, de: Voraus, src: jine-celo.jpeg }

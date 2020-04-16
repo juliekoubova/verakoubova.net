@@ -1,7 +1,11 @@
 {% from 'macros.njk' import image %}
 
 {% for img in gallery.images %}
-  <li class="h-screen flex items-center justify-center scroll-snap-align-start">
+  <li class="h-screen flex items-center justify-center scroll-snap-align-start py-24">
+    {% if image.horizontal %}
     {{ image(img, gallery.imageBase | ensureTrailingSlash) }}
+    {% else %}
+    {{ image(img, gallery.imageBase | ensureTrailingSlash, class = 'max-h-full') }}
+    {% endif %}
   </li>
 {% endfor %}

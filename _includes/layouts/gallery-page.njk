@@ -3,10 +3,15 @@ layout: layouts/html
 htmlClass: scroll-snap-y-mandatory
 bodyTitleInNav: true
 ---
+{% extends 'sidebar.njk' %}
+{% block before %}
 <div class="fixed bg-white opacity-75 left-0 right-0 z-10">
-  <div class="mx-2 xl:mx-auto max-w-2xl my-2 sm:my-8 md:mt-16">
-  {% include 'header.njk' %}
-  </div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block after %}
 </div>
 
 <main data-controller="">
@@ -16,3 +21,4 @@ bodyTitleInNav: true
 </main>
 
 {% include 'scroll-enticer.njk' %}
+{% endblock %}

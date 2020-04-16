@@ -1,12 +1,12 @@
 {% block before %}{% endblock %}
 <div class="sidebar-container">
-  <div class="sidebar py-8 md:pt-16">
+  <div class="sidebar">
     {% include 'header.njk' %}
-    <main class="main">
     {% block content %}
+    <main class="main">
       {{ content | safe }}
-    {% endblock %}
     </main>
+    {% endblock %}
   </div>
 </div>
 {% block after %}{% endblock %}

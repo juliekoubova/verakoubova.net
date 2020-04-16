@@ -1,4 +1,8 @@
-<header class="flex flex-wrap pb-6 justify-between">
+{% set headerPadding = 'pt-8 pb-6' %}
+{% if bodyTitleInNav %}
+{%   set headerPadding = 'py-4' %}
+{% endif %}
+<header class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16">
   <div class="mb-4 sm:mb-2">
     <nav class="vr-tight-sm">
       {% include 'nav.njk' %}
