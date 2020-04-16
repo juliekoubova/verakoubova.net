@@ -38,8 +38,8 @@ hasSidebar: true
 {% block content %}
   {% for post in posts | reverse %}
   <article class="scroll-snap-align-start sidebar-section md:mb-4">
-    <h2 class="in-sidebar vr-base">{{ post.title | lang }}</h2>
-    <p class="vr-base para">{{ post | lang | safe }}</p>
+    <h3 class="in-sidebar vr-base">{{ post.title | lang }}</h3>
+    <p class="para">{{ post | lang | safe }}</p>
   </article>
   {% endfor %}
 {% endblock %}

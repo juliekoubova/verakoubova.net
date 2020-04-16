@@ -11,8 +11,16 @@
 
 body {
   /* @apply vr-debug; */
-  @apply font-light;
   font-synthesis: none;
+}
+
+.font-body {
+  @apply font-light;
+}
+
+.para {
+  @apply vr-base;
+  @apply font-body;
 }
 
 b, strong {
@@ -31,7 +39,6 @@ b, strong {
 
 @screen sm {
   .para, .applied p {
-    /* @apply text-justify; */
     hyphens: auto;
   }
 }
@@ -66,12 +73,13 @@ nav a:hover {
 }
 
 .applied p {
-  @apply vr-base;
+  @apply para;
 }
 
 .applied li {
   @apply mt-2;
   @apply vr-base;
+  @apply font-body;
 }
 
 .applied p:not(:first-of-type) {

@@ -5,16 +5,16 @@ hasSidebar: true
 ---
 {% for section in photography | dictsort %}
 <section id="{{ section[1].slug | lang }}" class="mb-8">
-  <h2 class="font-medium vr-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h2>
+  <h3 class="font-medium vr-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h3>
   <ul class="mt-2">
   {% for row in section[1].rows %}
     <li class="mb-2 sidebar-section">
-      <h3 class="in-sidebar vr-base">
+      <h4 class="in-sidebar vr-base">
       {% if row.href %}<a href="{{ row.href | lang }}">{% endif %}
       {{ row | lang | nl2br | safe }}
       {% if row.href %}</a>{% endif %}
-      </h3>
-      <div class="vr-base">
+      </h4>
+      <div class="vr-base font-body">
       {% for inst in row.instances %}
         {% if loop.first %}<ul>{% endif %}
         {% if loop.length > 1 %}<li>{% endif %}
