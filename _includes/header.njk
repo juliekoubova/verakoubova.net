@@ -4,7 +4,7 @@
       {% include 'nav.njk' %}
     </nav>
     {% if not bodyTitleInNav %}
-    <h2 class="vr-tight-3xl">{{ bodyTitle | default(title) }}</h2>
+    <h2 class="vr-tight-3xl xl:font-light">{{ bodyTitle | default(title) }}</h2>
     {% endif %}
   </div>
   <nav class="vr-tight-sm mb-2 sm:text-right">

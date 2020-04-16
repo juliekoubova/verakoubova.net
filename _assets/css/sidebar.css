@@ -4,12 +4,11 @@
   max-width: 40rem;
 }
 
-.in-sidebar {
-  /* @apply font-normal; */
-}
-
 .sidebar-section {
   @apply mb-4;
+}
+.in-sidebar {
+  @apply font-medium;
 }
 
 @screen lg {
@@ -33,5 +32,11 @@
     @apply flex-none;
     @apply pr-3;
     width: 12rem;
+  }
+}
+
+@screen xl {
+  .in-sidebar {
+    font-weight: inherit;
   }
 }
