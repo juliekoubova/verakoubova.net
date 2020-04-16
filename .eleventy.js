@@ -73,6 +73,15 @@ const filters = {
 
   lang,
 
+  itemContent(url, baseUrl) {
+    if (!url) {
+      return ''
+    }
+    const inputPath = '.' + ensureTrailingSlash(baseUrl) + url.replace(/^\//, '')
+    const item = this.ctx.collections.all.find(p => p.inputPath === inputPath)
+    return item ? item.templateContent : ''
+  },
+
   galleryLink(set, key) {
 
     if (!set || !key) {
@@ -83,34 +92,11 @@ const filters = {
       throw new Error(`galleryLink key "${key}" not found between ${Object.keys(set).join(', ')}`)
     }
 
-    const base = ensureTrailingSlash(value.imageBase)
-    const slides = value.images.map(image => {
-      const relativeSrc = lang(image.src)
-      const src = base + relativeSrc
-      const metadata = this.ctx.images[src]
-      return {
-        h: metadata.height,
-        w: metadata.width,
-        pid: relativeSrc.replace(/^([^.]+)/, '$1'),
-        src,
-        title: lang(image)
-      }
-    })
-
-    const { url, slug, escape, safe } = this.env.filters
+    const { url, slug, safe } = this.env.filters
 
     const href = url(slug(key))
-    const slidesJson = escape(JSON.stringify(slides))
 
-    return safe(`
-      <a href="${href}"
-         data-controller="gallery"
-         data-action="gallery#open"
-         data-gallery-items="${slidesJson}"
-         data-gallery-uid="${key}"
-         >
-        ${lang(value)}
-      </a>`)
+    return safe(`<a href="${href}"> ${lang(value)} </a>`)
   }
 }
 
