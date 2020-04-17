@@ -5,7 +5,7 @@ export class NavigateOnScroll extends IntersectorController {
 
   private attributeObserver?: AttributeObserver
 
-  threshold = [0.1]
+  threshold = 0.5
 
   intersect(entries: IntersectionObserverEntry[]) {
 

@@ -3,7 +3,7 @@ import { Controller } from 'stimulus'
 export abstract class IntersectorController extends Controller {
   private intersectionObserver?: IntersectionObserver
 
-  threshold?: number[]
+  threshold?: number | number[]
 
   abstract intersect(entries: IntersectionObserverEntry[]): void
 
