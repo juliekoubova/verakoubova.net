@@ -6,14 +6,6 @@ module.exports = {
       condensed: ['"Roboto Condensed"', ...defaultTheme.fontFamily.sans],
       sans: ['Roboto', ...defaultTheme.fontFamily.sans]
     },
-    extend: {
-      fontWeight: {
-        // medium: defaultTheme.fontWeight.semibold
-      },
-      screens: {
-        short: { raw: '(max-height:' }
-      }
-    },
     lineHeight: {
       none: 1,
       tight: 1.25,
@@ -21,7 +13,12 @@ module.exports = {
       normal: 1.5,
       relaxed: 1.625,
       loose: 2,
+    },
+    maxHeight: {
+      ...defaultTheme.maxHeight,
+      'screen-2/3': '66vh'
     }
+
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'active', 'visited']

@@ -4,23 +4,18 @@
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
   <li class="
-    h-screen flex scroll-snap-align-start items-center
-    pt-12 pb-16 md:pt-32 md:pb-40
+    h-screen flex scroll-snap-align-start pt-12 pb-16 md:pt-32 md:pb-40
   ">
-    <div class="flex-auto">
-      {{ left | safe }}
+    <div class="flex-1">{{ left | safe }}</div>
+
+    <div class="flex-1">
+      {{ image(
+              img,
+              gallery.imageBase | ensureTrailingSlash,
+              class='object-scale-down h-full'
+        ) }}
     </div>
 
-    <div class="flex-1 md:mx-4 lg:mx-8">
-    {{ image(
-        img,
-        gallery.imageBase | ensureTrailingSlash,
-        class = 'object-contain max-h-full'
-    ) }}
-    </div>
-
-    <div class="flex-auto">
-      {{ right | safe }}
-    </div>
+    <div class="flex-1">{{ right | safe }}</div>
   </li>
 {% endfor %}
