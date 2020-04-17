@@ -1,5 +1,6 @@
 import { Controller } from "stimulus"
 import { InPagePosition, getInPagePosition } from "./in-page-navigation"
+import { timingSafeEqual } from "crypto"
 
 export class Breadcrumb extends Controller {
 
@@ -28,6 +29,13 @@ export class Breadcrumb extends Controller {
     }
 
     const last = this.crumbTargets[this.crumbTargets.length - 1]
+
+    if (last.hasAttribute("data-breadcrumb-clone")) {
+      this.clonedCrumb = last
+      this.lastCrumb = last.previousElementSibling || undefined
+      return
+    }
+
     const clone = last.cloneNode(true) as Element
     const cloneA = clone.getElementsByTagName("A")[0] as HTMLAnchorElement
 
@@ -35,6 +43,7 @@ export class Breadcrumb extends Controller {
       return
     }
 
+    clone.setAttribute("data-breadcrumb-clone", "")
     cloneA.href = '#'
     cloneA.textContent = this.originalBodyTitle || null
 
