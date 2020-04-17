@@ -21,8 +21,8 @@ rows:
 - cs: Konference
   de: Konferenzen
   href:
-      cs: /cs/konference
-      de: /de/konferenzen
+      cs: /cs/konference/
+      de: /de/konferenzen/
   instances:
   - cs: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
