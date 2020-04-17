@@ -1,6 +1,6 @@
 import { Controller } from "stimulus"
 
-export class ScrollToController extends Controller {
+export class ScrollTo extends Controller {
 
   static targets = ["list"]
 

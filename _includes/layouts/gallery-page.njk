@@ -1,7 +1,6 @@
 ---
 layout: layouts/html
-htmlClass: snap-y-mandatory
-bodyController: navigate-on-scroll
+bodyController: NavigateOnScroll SnapYMandatory
 bodyTitleInNav: true
 ---
 {% extends 'sidebar.njk' %}
@@ -15,7 +14,7 @@ bodyTitleInNav: true
 {% block after %}
 </div>
 
-<main data-controller="">
+<main>
   <ol data-target="scroll-to.list can-scroll.root">
     {{ content | safe }}
   </ol>

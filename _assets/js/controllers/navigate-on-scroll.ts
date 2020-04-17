@@ -1,7 +1,7 @@
 import { AttributeObserver } from '@stimulus/mutation-observers'
-import { IntersectorController } from './intersector'
+import { IntersectorController } from '../base_controllers/intersector'
 
-export class NavigateOnScrollController extends IntersectorController {
+export class NavigateOnScroll extends IntersectorController {
 
   private attributeObserver?: AttributeObserver
 

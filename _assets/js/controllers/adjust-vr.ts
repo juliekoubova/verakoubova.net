@@ -1,4 +1,4 @@
-import { ResizerController } from './resizer'
+import { ResizerController } from '../base_controllers'
 
 function adjustToRem(documentFontSizePx: number, px: number) {
   if (px === 0) {
@@ -8,7 +8,7 @@ function adjustToRem(documentFontSizePx: number, px: number) {
   return `${adjustPx / documentFontSizePx}rem`
 }
 
-export class AdjustVRController extends ResizerController {
+export class AdjustVR extends ResizerController {
   resized() {
     const el = this.element as HTMLElement
     const { height, top } = el.getBoundingClientRect()
