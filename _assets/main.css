@@ -30,6 +30,11 @@ b, strong {
   content: '|';
 }
 
+.turbolinks-progress-bar {
+  @apply h-1;
+  @apply bg-red-800;
+}
+
 .flex-basis-1\/2 { flex-basis: 50%; }
 
 @screen sm {

@@ -140,6 +140,20 @@ module.exports = /**
       eleventyConfig.addFilter(key, fn)
     }
 
+    // In order to support Turbolinks, Browsersync can be used with a custom rule
+    // to include Browsersync's script at the <head> tag instead of the <body> tag.
+    // https://github.com/BrowserSync/browser-sync/wiki/Browsersync-for-Turbolinks
+    eleventyConfig.setBrowserSyncConfig({
+      snippetOptions: {
+        rule: {
+          match: /<\/head>/i,
+          fn: function (snippet, match) {
+            return snippet + match;
+          }
+        }
+      }
+    })
+
     return {
       dataTemplateEngine: 'njk',
       markdownTemplateEngine: 'njk',

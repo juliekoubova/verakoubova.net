@@ -1,3 +1,4 @@
+import { start as startTurbolinks } from 'turbolinks'
 import { vekApp } from './js/vek-app'
 import { AdjustVRController } from './js/adjust-vr'
 import { setupHasScrolled } from './js/has-scrolled'
@@ -11,3 +12,9 @@ vekApp.register('snap-y-mandatory', SnapYMandatoryController)
 
 fixSafariScrollSnap()
 setupHasScrolled()
+startTurbolinks()
+addEventListener('turbolinks:load', () => {
+  const meta = document.querySelector('meta[http-equiv=content-language]')
+  const language = meta?.getAttribute('content')
+  document.documentElement.setAttribute('lang', language || '')
+})
