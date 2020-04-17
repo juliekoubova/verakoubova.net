@@ -4,7 +4,8 @@
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
   <li class="
-    h-screen flex scroll-snap-align-start pt-12 pb-16 md:pt-32 md:pb-40
+    h-screen flex scroll-snap-align-start items-center
+    pt-12 pb-16 md:pt-32 md:pb-40
   ">
     <div class="flex-1">{{ left | safe }}</div>
 
