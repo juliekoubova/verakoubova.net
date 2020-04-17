@@ -41,27 +41,48 @@ function lang(value) {
   return value
 }
 
+function findPage(ctx, pageId, lang) {
+  const filter = lang
+    ? (p => p.data.pageId === pageId && p.data.lang === lang)
+    : (p => p.data.pageId === pageId)
+
+  const page = ctx.collections.all.find(filter)
+  return page
+}
+
 
 const filters = {
   vekNav(page) {
-    return [{
-      url: `/${this.ctx.lang}/`,
-      label: this.ctx.site.name
-    }]
+    const result = [
+      {
+        url: `/${this.ctx.lang}/`,
+        label: this.ctx.site.name
+      }
+    ]
+
+    if (this.ctx.parentId) {
+      const parent = findPage(this.ctx, this.ctx.parentId, this.ctx.lang)
+      if (parent) {
+        result.push({
+          url: parent.url,
+          label: lang(parent.data.title)
+        })
+      }
+    }
+
+    return result
   },
 
-  languages(page) {
-    return Object.entries(this.ctx.site.languages).map(([code, label]) => {
-      const page = this.ctx.pageId
-        ? this.ctx.collections.all.find(
-          p => p.data.pageId === this.ctx.pageId && p.data.lang === code
-        )
+  languages(_page) {
+    return Object.entries(this.ctx.site.languages).map(([lang, label]) => {
+      const target = this.ctx.pageId
+        ? findPage(this.ctx, this.ctx.pageId, lang)
         : undefined
 
-      const url = page ? page.url : `/${code}/`
-      const active = code === this.ctx.lang
+      const url = target ? target.url : `/${lang}/`
+      const active = lang === this.ctx.lang
 
-      return { active, code, label, url }
+      return { active, label, url }
     })
   },
 

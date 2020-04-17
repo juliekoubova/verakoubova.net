@@ -4,6 +4,7 @@ pagination:
   data: konference
   size: 1
   alias: gallery
+parentId: konference
 permalink: "{{ lang }}/konference/{{ gallery | slug }}/index.html"
 eleventyComputed:
   title: "{{ konference[gallery] | lang }}"
