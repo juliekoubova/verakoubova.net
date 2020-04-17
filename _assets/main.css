@@ -9,7 +9,7 @@
 @import './css/sidebar.css';
 
 body {
-  /* @apply vr-debug; */
+  @apply vr-debug;
   font-synthesis: none;
 }
 

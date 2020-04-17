@@ -4,14 +4,14 @@
 {% endif %}
 <header class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16">
   <div class="{{ 'mb-4 sm:mb-2' if not bodyTitleInNav }}">
-    <nav class="vr-tight-sm">
+    <nav class="vr-normal-sm">
       {% include 'nav.njk' %}
     </nav>
     {% if not bodyTitleInNav %}
-    <h2 class="vr-tight-3xl xl:font-light">{{ bodyTitle | default(title) }}</h2>
+    <h2 class="vr-normal-3xl xl:font-light">{{ bodyTitle | default(title) }}</h2>
     {% endif %}
   </div>
-  <nav class="vr-tight-sm mb-2 sm:text-right">
+  <nav class="vr-normal-sm mb-2 sm:text-right">
     {% include 'lang-switcher.njk' %}
   </nav>
 </header>
