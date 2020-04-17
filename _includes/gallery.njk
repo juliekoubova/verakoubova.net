@@ -3,11 +3,13 @@
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
+  {% set leftClass = 'hidden sm:block' if not left %}
+  {% set rightClass = 'hidden sm:block' if not right %}
   <li class="
     sm:h-screen sm:flex sm:snap-start items-center
     pt-16 pb-12 md:pt-40 md:pb-32
   ">
-    <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none">{{ left | safe }}</div>
+    <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none {{ leftClass }}">{{ left | safe }}</div>
 
     <div class="h-screen sm:h-full flex-grow-1 snap-start sm:snap-none md:mx-4">
       {{ image(
@@ -17,6 +19,6 @@
         ) }}
     </div>
 
-    <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none">{{ right | safe }}</div>
+    <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none {{ rightClass }}">{{ right | safe }}</div>
   </li>
 {% endfor %}
