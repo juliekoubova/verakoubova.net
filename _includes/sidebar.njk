@@ -3,7 +3,7 @@
   <div class="sidebar">
     {% include 'header.njk' %}
     {% block content %}
-    <main class="main">
+    <main class="main" id="{{ mainId }}">
       {{ content | safe }}
     </main>
     {% endblock %}

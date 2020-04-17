@@ -19,6 +19,7 @@ export class CanScrollController extends Controller {
   }
 
   connect() {
+    this.scope.
     if (!('IntersectionObserver' in window) || !this.rootTarget) {
       return
     }

@@ -1,6 +1,6 @@
 ---
 layout: layouts/html
-hasSidebar: true
+bodyController: navigate-on-scroll
 ---
 {% extends 'sidebar.njk' %}
 
@@ -36,12 +36,14 @@ hasSidebar: true
 {% endblock %}
 
 {% block content %}
+<main id="{{ mainId }}">
   {% for post in posts | reverse %}
   <article class="snap-start sidebar-section md:mb-4">
     <h3 class="in-sidebar vr-base">{{ post.title | lang }}</h3>
     <p class="para">{{ post | lang | safe }}</p>
   </article>
   {% endfor %}
+</main>
 {% endblock %}
 
 {% block after %}

@@ -5,6 +5,7 @@ img:
   src: /img/home.jpeg
 titlePrefix:
 bodyTitle: Aktuelles
+mainId: aktuelles
 ---
 * [aufnahme für aufnahme](aufnahme-fuer-aufnahme)
 * [von sprache zu sprache](von-sprache-zu-sprache)

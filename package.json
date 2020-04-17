@@ -45,6 +45,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@stimulus/mutation-observers": "^1.1.1",
     "@types/turbolinks": "^5.2.0",
     "animations.css": "^1.0.1",
     "eleventy-plugin-images-responsiver": "^1.5.3",

@@ -5,6 +5,7 @@ img:
   src: /img/home.jpeg
 titlePrefix:
 bodyTitle: Aktuality
+mainId: aktuality
 ---
 
 * [za snímkem snímek](za-snimkem-snimek)
