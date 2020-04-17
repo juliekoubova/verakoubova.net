@@ -5,10 +5,14 @@
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
   {% set leftClass = 'hidden sm:block' if not left %}
   {% set rightClass = 'hidden sm:block' if not right %}
-  <li class="
-    sm:h-screen sm:flex sm:snap-start items-center
-    pt-16 pb-12 md:pt-40 md:pb-32
-  ">
+  <li
+    {% if not loop.first %}
+    id="{{ img | lang | slug }}"
+    data-title="{{ img | lang }}"
+    {% endif %}
+
+    class="sm:h-screen sm:flex sm:snap-start items-center pt-16 pb-12 md:pt-40 md:pb-32"
+    >
     <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none {{ leftClass }}">{{ left | safe }}</div>
 
     <div class="h-screen sm:h-full flex-grow-1 snap-start sm:snap-none md:mx-4">
