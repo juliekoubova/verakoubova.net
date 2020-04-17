@@ -47,11 +47,8 @@ b, strong {
   }
 }
 
-a {
-  @apply underline;
-}
-
 a:link {
+  @apply underline;
   @apply text-red-800;
 }
 
