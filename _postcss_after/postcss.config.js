@@ -15,7 +15,8 @@ const plugins = [
         },
         extensions: ['css', 'html', 'js'],
       },
-    ]
+    ],
+    whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
   })
 ]
 

@@ -1,6 +1,5 @@
 import { Controller } from "stimulus"
 import { InPagePosition, getInPagePosition } from "./in-page-navigation"
-import { timingSafeEqual } from "crypto"
 
 export class Breadcrumb extends Controller {
 
