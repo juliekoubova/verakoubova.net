@@ -4,12 +4,12 @@
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
   <li class="
-    h-screen flex scroll-snap-align-start items-center
-    pt-12 pb-16 md:pt-32 md:pb-40
+    h-screen flex md:snap-start items-center
+    pt-16 pb-12 md:pt-40 md:pb-32
   ">
-    <div class="flex-1">{{ left | safe }}</div>
+    <div class="flex-1 snap-start md:snap-none">{{ left | safe }}</div>
 
-    <div class="flex-1">
+    <div class="flex-1 snap-start md:snap-none md:mx-4">
       {{ image(
               img,
               gallery.imageBase | ensureTrailingSlash,
@@ -17,6 +17,6 @@
         ) }}
     </div>
 
-    <div class="flex-1">{{ right | safe }}</div>
+    <div class="flex-1 snap-start md:snap-none">{{ right | safe }}</div>
   </li>
 {% endfor %}

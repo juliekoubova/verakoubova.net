@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 @import './css/scroll-enticer.css';
-@import './css/scroll-snap.css';
 @import './css/sidebar.css';
 
 body {

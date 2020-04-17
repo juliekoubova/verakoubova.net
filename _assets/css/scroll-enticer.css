@@ -2,7 +2,7 @@
   display: none;
 }
 
-.scroll-snap-y-mandatory .scroll-enticer {
+.snap-y-mandatory .scroll-enticer {
   display: initial;
 }
 

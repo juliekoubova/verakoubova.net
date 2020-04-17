@@ -17,10 +17,19 @@ module.exports = {
     maxHeight: {
       ...defaultTheme.maxHeight,
       'screen-2/3': '66vh'
+    },
+    scrollSnapType: {
+      'no-snap': 'none',
+      'snap-y-mandatory': 'y mandatory',
+      'snap-y-proximity': 'y proximity',
+    },
+    scrollSnapAlign: {
+      'snap-none': 'none',
+      'snap-start': 'start',
     }
-
   },
   variants: {
+    scrollSnapAlign: ['responsive'],
     textColor: ['responsive', 'hover', 'focus', 'active', 'visited']
   },
   verticalRhythm: {
@@ -32,6 +41,7 @@ module.exports = {
     height: 0.5 // Vertical rhythm in rems
   },
   plugins: [
+    require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
   ]
 }

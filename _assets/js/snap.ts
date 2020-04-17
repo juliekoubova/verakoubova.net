@@ -2,7 +2,7 @@ const isSafari =
   /Safari/.test(navigator.userAgent) &&
   !/Chrome/.test(navigator.userAgent)
 
-const scrollSnapClass = /^scroll-snap-.+$/
+const scrollSnapClass = /^snap-.+$/
 
 export function fixSafariScrollSnap() {
   if (isSafari) {
