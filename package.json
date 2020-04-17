@@ -17,7 +17,7 @@
     "build:plugins": "cd _plugins && run-s build",
     "build:parcel": "parcel build _assets/main.css _assets/main.ts --out-dir _site",
     "build:postcss-after": "postcss ./_site/main.css --config ./_postcss_after --replace --map",
-    "serve": "http-server _site",
+    "serve": "ws --directory _site --port 8080",
     "start": "eleventy --serve --quiet --output _site",
     "deploy": "run-s build deploy:push-dir",
     "deploy:push-dir": "push-dir --dir=_site --branch=master"
@@ -31,8 +31,8 @@
     "cssnano": "^4.1.10",
     "eleventy-plugin-safe-external-links": "^0.1.4",
     "fast-glob": "^3.2.2",
-    "http-server": "^0.12.1",
     "js-yaml": "^3.13.1",
+    "local-web-server": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "postcss-cli": "^7.1.0",
