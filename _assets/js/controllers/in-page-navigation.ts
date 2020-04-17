@@ -42,6 +42,20 @@ export function setInPagePosition(element: Element | undefined) {
   dispatchInPageNavigation({ hash, id, title })
 }
 
+export const queueSetInPagePosition = (function () {
+  let timerId: number | undefined
+
+  return (element: Element | undefined) => {
+    if (timerId) {
+      window.clearTimeout(timerId)
+    }
+    timerId = window.setTimeout(
+      setInPagePosition.bind(undefined, element),
+      360,
+    )
+  }
+})()
+
 export function getInPagePosition(): InPagePosition {
   const { hash } = location
   const id = stripHash(hash) || undefined
@@ -62,12 +76,12 @@ export class InPageNavigation extends IntersectorController {
 
     for (const entry of entries) {
       if (entry.isIntersecting) {
-        setInPagePosition(entry.target)
+        queueSetInPagePosition(entry.target)
         return
       }
       const { id } = entry.target
       if (id === current?.id && !entry.isIntersecting) {
-        setInPagePosition(undefined)
+        queueSetInPagePosition(undefined)
       }
     }
   }
