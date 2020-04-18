@@ -1,6 +1,7 @@
 import { Application } from "stimulus"
 import {
-  controllers, setupHasScrolled
+  BreadcrumbController, NavigationController,
+  setupHasScrolled, SnapTypeController, VRController,
 } from './js'
 import './js/polyfills/custom-event'
 import './js/turbolinks'
@@ -8,6 +9,7 @@ import './js/turbolinks'
 setupHasScrolled()
 
 const vekApp = Application.start()
-for (const key in controllers) {
-  vekApp.register(key, controllers[key])
-}
+vekApp.register('breadcrumb', BreadcrumbController)
+vekApp.register('navigation', NavigationController)
+vekApp.register('snap-type', SnapTypeController)
+vekApp.register('vr', VRController)

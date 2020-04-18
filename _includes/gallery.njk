@@ -1,5 +1,6 @@
 {% from 'macros.njk' import image %}
 
+<ol>
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
@@ -11,9 +12,12 @@
     id="{{ img | lang | slug }}"
 
     {% if loop.first %}
-    data-target="SnapYMandatory.determineBy"
+    data-navigation-ignore
+    data-target="snap-type.determineBy"
     {% endif %}
     >
+    <h3 class="sr-only">{{ item | lang }}</h3>
+
     <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none {{ leftClass }}">{{ left | safe }}</div>
 
     <div class="h-screen sm:h-full flex-grow-1 snap-start sm:snap-none md:mx-4">
@@ -27,3 +31,4 @@
     <div class="h-screen sm:h-full flex-auto snap-start sm:snap-none {{ rightClass }}">{{ right | safe }}</div>
   </li>
 {% endfor %}
+</ol>

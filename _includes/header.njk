@@ -5,22 +5,22 @@
 <header
   class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16"
   {% if enchantBreadcrumb %}
-  data-controller="Breadcrumb"
-  data-action="vek:in-page-navigation@window->Breadcrumb#navigated"
+  data-controller="breadcrumb"
+  data-action="vek:in-page-navigation@window->breadcrumb#navigated"
   {% endif %}
   >
   <div class="{{ 'mb-4 sm:mb-2' if not bodyTitleInNav }}">
     <nav class="vr-normal-sm">
       <ol class="inline">
         {% for item in page | vekNav %}
-        <li class="inline" data-target="Breadcrumb.crumb">
+        <li class="inline" data-target="breadcrumb.crumb">
           <a href="{{ item.url }}">{{ item.label }}</a>
           <span aria-hidden="true">&rsaquo;</span>
         </li>
         {% endfor %}
         {% if bodyTitleInNav %}
         <li class="inline">
-          <h2 class="inline" data-target="Breadcrumb.bodyTitle">
+          <h2 class="inline" data-target="breadcrumb.bodyTitle">
             {{ bodyTitle | default(title) }}
           </h2>
         </li>
@@ -28,7 +28,7 @@
       </ol>
     </nav>
     {% if not bodyTitleInNav %}
-    <h2 class="vr-normal-3xl xl:font-light" data-target="Breadcrumb.bodyTitle">
+    <h2 class="vr-normal-3xl xl:font-light" data-target="breadcrumb.bodyTitle">
       {{ bodyTitle | default(title) }}
     </h2>
     {% endif %}

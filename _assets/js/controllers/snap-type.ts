@@ -9,7 +9,7 @@ function toggleScrollSnapClass(className: string, value?: boolean) {
   el.classList.toggle(className, value)
 }
 
-export class SnapYMandatory extends ResizerController {
+export class SnapTypeController extends ResizerController {
   static targets = ["determineBy"]
   readonly hasDetermineByTarget!: boolean
   readonly determineByTarget?: Element

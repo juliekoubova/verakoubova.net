@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
-import { InPagePosition, getInPagePosition } from "./in-page-navigation"
+import { InPagePosition, getInPagePosition } from "./navigation"
 
-export class Breadcrumb extends Controller {
+export class BreadcrumbController extends Controller {
 
   static readonly targets = ["bodyTitle", "crumb"]
 

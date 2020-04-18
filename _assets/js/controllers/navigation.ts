@@ -28,7 +28,7 @@ function hashEqual(a: string, b: string) {
   return stripHash(a) === stripHash(b)
 }
 
-export function setInPagePosition(element: Element | undefined) {
+function setInPagePosition(element: Element | undefined) {
 
   const title = element ? getElementTitle(element) : ''
   const id = element?.id ?? ''
@@ -38,7 +38,6 @@ export function setInPagePosition(element: Element | undefined) {
     return
   }
 
-  console.log(hash)
   history.replaceState(history.state, title, hash)
   dispatchInPageNavigation({ hash, id, title })
 }
@@ -68,7 +67,7 @@ export function getInPagePosition(): InPagePosition {
   return { hash, id, title }
 }
 
-export class InPageNavigation extends IntersectorController {
+export class NavigationController extends IntersectorController {
 
   threshold = 0.2
 
@@ -89,10 +88,14 @@ export class InPageNavigation extends IntersectorController {
   }
 
   intersect(entries: IntersectionObserverEntry[]) {
-    for (const entry of entries.filter(e => e.isIntersecting)) {
-      const target = entry.target === this.topElement
-        ? undefined
-        : entry.target
+    const relevantEntries = entries.filter(
+      e => e.isIntersecting && !e.target.hasAttribute('data-navigation-ignore')
+    )
+    for (const entry of relevantEntries) {
+      const target =
+        entry.target === this.topElement
+          ? undefined
+          : entry.target
       queueSetInPagePosition(target)
     }
   }
@@ -118,5 +121,4 @@ export class InPageNavigation extends IntersectorController {
     this.attributeObserver?.stop()
     this.attributeObserver = undefined
   }
-
 }
