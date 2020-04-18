@@ -1,5 +1,6 @@
 import { EleventyPlugin } from '@11ty/eleventy'
 import { load } from 'cheerio'
+import { isHtml } from './is-html'
 
 export function addToken(element: Cheerio, attr: string, token: string) {
   element.attr('rel', (el, i, tokenList) => {
@@ -30,11 +31,7 @@ export function cheerioPlugin(
   return {
     configFunction(eleventy) {
       eleventy.addTransform(name, async (content, outputPath) => {
-        if (typeof outputPath !== 'string') {
-          return content
-        }
-
-        if (!outputPath.endsWith('.html')) {
+        if (!isHtml(outputPath)) {
           return content
         }
 

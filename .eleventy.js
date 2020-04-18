@@ -1,7 +1,7 @@
 // @ts-check
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 const imagesResponsiver = require('eleventy-plugin-images-responsiver')
-const { externalLinks } = require('./_plugins')
+const { externalLinks, htmlMinifier } = require('./_plugins')
 const yaml = require('js-yaml')
 
 /**
@@ -132,9 +132,27 @@ module.exports = /**
 
     eleventyConfig.addPlugin(externalLinks)
 
-    if (process.env.ELEVENTY_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       eleventyConfig.addPlugin(cacheBuster({}))
     }
+
+    eleventyConfig.addPlugin(htmlMinifier, {
+      caseSensitive: false,
+      collapseBooleanAttributes: true,
+      collapseInlineTagWhitespace: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      decodeEntities: true,
+      html5: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeEmptyElements: true,
+      removeOptionalTags: true,
+      removeRedundantAttributes: true,
+      sortAttributes: true,
+      sortClassName: true
+    })
 
     for (const [key, fn] of Object.entries(filters)) {
       eleventyConfig.addFilter(key, fn)

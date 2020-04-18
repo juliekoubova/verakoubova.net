@@ -26,7 +26,7 @@ b, strong {
 }
 
 .pipe-separator:not(:first-child)::before {
-  content: '|';
+  content: ' | ';
 }
 
 .rsaquo-after::after {
