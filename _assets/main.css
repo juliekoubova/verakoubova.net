@@ -71,24 +71,27 @@ b, strong {
   }
 }
 
-:link {
+a[href]:link {
   @apply underline;
   @apply text-red-800;
 }
 
-:active {
+a[href]:active {
   @apply text-gray-900;
 }
 
-a[href]:hover, a[href]:focus {
+a[href]:hover,
+a[href]:focus {
   @apply text-gray-700;
 }
 
-nav :link, nav :visited {
+nav a[href],
+nav a[href]:visited {
   @apply text-red-800;
 }
 
-nav a[href]:hover, nav a[href]:focus {
+nav a[href]:hover,
+nav a[href]:focus {
   @apply text-gray-700;
 }
 
