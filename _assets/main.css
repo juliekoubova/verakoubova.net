@@ -47,13 +47,13 @@ b, strong {
   backdrop-filter: blur(8px);
 }
 
-.lf-after::after {
+.lf-before::before {
   content: '\A';
   white-space: pre;
 }
 
 @screen sm {
-  .lf-after.sm\:no-lf-after::after {
+  .lf-before.sm\:no-lf-before::before {
     content: '';
     white-space: unset;
   }
@@ -71,24 +71,24 @@ b, strong {
   }
 }
 
-a:link {
+:link {
   @apply underline;
   @apply text-red-800;
 }
 
-a:active {
+:active {
   @apply text-gray-900;
 }
 
-a:hover {
+a[href]:hover, a[href]:focus {
   @apply text-gray-700;
 }
 
-nav a, nav a:visited {
+nav :link, nav :visited {
   @apply text-red-800;
 }
 
-nav a:hover {
+nav a[href]:hover, nav a[href]:focus {
   @apply text-gray-700;
 }
 

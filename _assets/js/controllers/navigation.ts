@@ -57,7 +57,7 @@ function debounce<F extends (this: undefined, ...args: any[]) => void>(
   } as F
 }
 
-export const queueSetInPagePosition = debounce(360, setInPagePosition)
+export const queueSetInPagePosition = debounce(128, setInPagePosition)
 
 export function getInPagePosition(): InPagePosition {
   const { hash } = location

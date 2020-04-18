@@ -11,10 +11,15 @@ export class BreadcrumbController extends Controller {
   readonly parentAnchorTarget!: HTMLAnchorElement
   readonly parentItemTarget!: HTMLElement
 
-
   connect() {
     // hide leaf and show parent
+    this.leafItemTarget.style.opacity = '0'
     this.parentItemTarget.removeAttribute('hidden')
+    this.update(getInPagePosition())
+    setTimeout(() => this.leafItemTarget.style.transition = 'opacity 192ms ease-in')
+  }
+
+  goUp(e: Event) {
     this.leafItemTarget.style.opacity = '0'
   }
 
@@ -28,7 +33,7 @@ export class BreadcrumbController extends Controller {
       this.leafHeadingTarget.textContent = pos.title
       this.leafItemTarget.style.opacity = '1'
     } else {
-      this.parentAnchorTarget.href = ''
+      this.parentAnchorTarget.removeAttribute('href')
       this.leafItemTarget.style.opacity = '0'
     }
   }
