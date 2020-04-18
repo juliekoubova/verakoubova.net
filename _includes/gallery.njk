@@ -4,7 +4,7 @@
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
-  {% set blockClass = 'snap-start sm:snap-none sm:flex-basis-1/2 mt-20 sm:mt-0 h-screen sm:h-auto' %}
+  {% set blockClass = 'snap-start sm:snap-none sm:flex-basis-1/2 pt-20 sm:pt-0 h-screen sm:h-auto' %}
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center"
     data-title="{{ img | lang }}"
