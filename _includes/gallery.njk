@@ -4,7 +4,21 @@
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
-  {% set blockClass = 'snap-start sm:snap-none sm:flex-basis-1/2 pt-20 sm:pt-0 h-screen sm:h-auto' %}
+
+  {% if left and right %}
+    {% set flexBasis = " sm:flex-basis-1/3" %}
+  {% elif left or right %}
+    {% set flexBasis = " sm:flex-basis-1/2" %}
+  {% else %}
+    {% set flexBasis = "" %}
+  {% endif %}
+
+  {% set objectAlign = 'sm:object-top' %}
+  {% set objectAlign = 'sm:object-left-top' if left %}
+  {% set objectAlign = 'sm:object-right-top' if right %}
+
+  {% set blockClass = 'snap-start sm:snap-none pt-20 sm:pt-0 h-screen sm:h-auto ' + flexBasis %}
+
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center"
     data-title="{{ img | lang }}"
@@ -31,7 +45,7 @@
         {{ image(
                 img,
                 gallery.imageBase | ensureTrailingSlash,
-                class='object-scale-down sm:object-right-top h-full w-full'
+                class='object-scale-down h-full w-full ' + objectAlign
           ) }}
       </div>
 
