@@ -4,11 +4,9 @@
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
-  {% set blockClass = 'h-screen pt-24 pb-2 sm:pt-32 pb-16 sm:h-full flex-auto snap-start sm:snap-none' %}
-  {% set leftClass = 'hidden sm:block' if not left %}
-  {% set rightClass = 'hidden sm:block' if not right %}
+  {% set blockClass = 'h-screen pt-24 sm:pt-32 pb-16 sm:h-full snap-start sm:snap-none' %}
   <li
-    class="sm:h-screen sm:flex sm:snap-start items-center"
+    class="sm:h-screen sm:flex sm:snap-start justify-center items-center"
     data-title="{{ img | lang }}"
     id="{{ img | lang | slug }}"
 
@@ -19,7 +17,7 @@
     <h3 class="sr-only">{{ item | lang }}</h3>
 
     {% if left %}
-    <div class="{{ blockClass }} {{ leftClass }}">{{ left | safe }}</div>
+    <div class="{{ blockClass }}">{{ left | safe }}</div>
     {% endif %}
 
     <div
@@ -37,7 +35,7 @@
     </div>
 
     {% if right %}
-    <div class="{{ blockClass }} {{ rightClass }}">{{ right | safe }}</div>
+    <div class="{{ blockClass }}">{{ right | safe }}</div>
     {% endif %}
   </li>
 {% endfor %}
