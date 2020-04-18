@@ -70,23 +70,30 @@ export function getInPagePosition(): InPagePosition {
 
 export class InPageNavigation extends IntersectorController {
 
-  private attributeObserver?: AttributeObserver
+  threshold = 0.2
 
-  threshold = 0.5
+  private attributeObserver?: AttributeObserver
+  private topElement = document.createElement('div')
+
+  initialize() {
+    Object.assign(this.topElement.style, {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      right: '0',
+      height: '5px'
+    })
+    this.topElement.style.pointerEvents = 'none'
+    this.topElement.setAttribute('aria-hidden', 'true')
+    document.body.insertAdjacentElement('afterbegin', this.topElement)
+  }
 
   intersect(entries: IntersectionObserverEntry[]) {
-
-    const current = getInPagePosition()
-
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        queueSetInPagePosition(entry.target)
-        return
-      }
-      const { id } = entry.target
-      if (id === current?.id && !entry.isIntersecting) {
-        queueSetInPagePosition(undefined)
-      }
+    for (const entry of entries.filter(e => e.isIntersecting)) {
+      const target = entry.target === this.topElement
+        ? undefined
+        : entry.target
+      queueSetInPagePosition(target)
     }
   }
 
@@ -98,6 +105,7 @@ export class InPageNavigation extends IntersectorController {
       dispatchInPageNavigation(position)
     }
 
+    this.observe(this.topElement)
     this.attributeObserver = new AttributeObserver(this.element, 'id', {
       elementMatchedAttribute: element => this.observe(element),
       elementUnmatchedAttribute: element => this.unobserve(element),
