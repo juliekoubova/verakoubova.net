@@ -1,0 +1,47 @@
+- city: Praha
+  year: 2000
+  venue:
+    cs: Goethe-Institut
+    de: Goethe-Institut (Tschechien)
+
+- city: Oberschützen
+  year: 2000
+  venue:
+    cs: Kulturní dům (Rakousko)
+    de: Kulturhaus (Österreich)
+
+- city:  Graz
+  year:  2001
+  venue:
+    cs: Karl-Franzens-Universität (Rakousko)
+    de: Karl-Franzens-Universität (Österreich)
+
+- city: Freiburg/Breisgau
+  year: 2002
+  venue:
+    cs: Katolická akademie (Německo)
+    de: Katholische Akademie (Deutschland)
+
+- city: Basel
+  year: 2002
+  venue:
+    cs: Paedagogium (Švýcarsko)
+    de: Paedagogium am Münsterplatz (Schweiz)
+
+- city: Weimar
+  year: 2003
+  venue:
+    cs: Altenburg (Německo)
+    de: Altenburg (Deutschland)
+
+- city: Praha
+  year: 2006
+  venue:
+    cs: nahrávka pro rozhlasovou stanici Vltava
+    de: Aufnahme für den Rundfunksender Vltava (Tschechien)
+
+- city: Pardubice
+  year: 2019
+  venue:
+    cs: Divadlo D29 (VěK a klavíristka Michaela Řeřichová)
+    de: Theater D29 (VerK + Pianistin Michaela Řeřichová)

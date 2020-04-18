@@ -1,0 +1,8 @@
+<ol>
+  {% for show in shows %}
+  <li class="sidebar-section">
+    <div class="in-sidebar">{{ show.city | lang }}</div>
+    <div class="in-main">{{ show.year }} -  {{ show.venue | lang }}</div>
+  </li>
+  {% endfor %}
+</ol>
