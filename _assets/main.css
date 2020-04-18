@@ -39,6 +39,14 @@ b, strong {
   @apply bg-red-800;
 }
 
+.bg-white-3\/4 {
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.bg-blur {
+  backdrop-filter: blur(8px);
+}
+
 .flex-basis-1\/2 { flex-basis: 50%; }
 
 @screen sm {
