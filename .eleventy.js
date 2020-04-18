@@ -125,7 +125,7 @@ const filters = {
 
     const href = url(slug(key))
 
-    return safe(`<a href="${href}"> ${lang(value)} </a>`)
+    return safe(`<a href="${href}"> ${lang.call(this, value)} </a>`)
   }
 }
 
