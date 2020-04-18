@@ -7,6 +7,7 @@ images:
   src: kuloar.jpeg
   right:
     cs: dis-similarities.cs.html
+    de: dis-similarities.de.html
 
 - { cs: Čelo, de: Vorn, src: celo.jpeg }
 - { cs: Jiné čelo, de: Voraus, src: jine-celo.jpeg }
