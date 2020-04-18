@@ -2,8 +2,8 @@
 
 <ol>
 {% for img in gallery.images %}
-  {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
-  {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
+  {% set left = img.left | lang | item(gallery.imageBase) %}
+  {% set right = img.right | lang | item(gallery.imageBase) %}
 
   {% if left and right %}
     {% set flexBasis = " sm:w-1/3" %}
@@ -13,14 +13,17 @@
     {% set flexBasis = "" %}
   {% endif %}
 
-  {% set leftClass = left.class | lang | default('flex-1', true) %}
-  {% set rightClass = right.class | lang | default('flex-1', true) %}
+  {% set leftClass = left.data.class | lang %}
+  {% set rightClass = right.data.class | lang %}
 
   {% set objectAlign = 'sm:object-top' %}
   {% set objectAlign = 'sm:object-left-top' if left %}
   {% set objectAlign = 'sm:object-right-top' if right %}
 
-  {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto' %}
+  {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto' + flexBasis %}
+
+  {% set leftHtml = (left.templateContent if left) | trim %}
+  {% set rightHtml = (right.templateContent if right) | trim %}
 
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
@@ -36,7 +39,7 @@
     <div class="sm:max-h-full sm:flex sm:max-w-2xl lg:max-w-4xl mx-auto">
       {% if left %}
       <div class="{{ blockClass }} {{ leftClass }}">
-        {{ left | safe }}
+        {{ leftHtml | safe }}
       </div>
       {% endif %}
 
@@ -56,7 +59,7 @@
 
       {% if right %}
       <div class="{{ blockClass }} {{ rightClass }}">
-        {{ right | safe }}
+        {{ rightHtml | safe }}
       </div>
       {% endif %}
     </div>

@@ -50,7 +50,6 @@ function findPage(ctx, pageId, lang) {
   return page
 }
 
-
 const filters = {
   vekNav(page) {
     const result = [
@@ -93,6 +92,15 @@ const filters = {
   ensureTrailingSlash,
 
   lang,
+
+  item(url, baseUrl) {
+    if (!url) {
+      return ''
+    }
+    const inputPath = '.' + ensureTrailingSlash(baseUrl) + url.replace(/^\//, '')
+    const item = this.ctx.collections.all.find(p => p.inputPath === inputPath)
+    return item
+  },
 
   itemContent(url, baseUrl) {
     if (!url) {
