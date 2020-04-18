@@ -3,72 +3,33 @@ import { InPagePosition, getInPagePosition } from "./navigation"
 
 export class BreadcrumbController extends Controller {
 
-  static readonly targets = ["bodyTitle", "crumb"]
+  static readonly targets = ["parentItem", "parentAnchor", "leafItem", "leafHeading"]
 
-  readonly bodyTitleTarget!: Element
-  readonly crumbTargets!: Element[]
+  readonly leafHeadingTarget!: HTMLElement
+  readonly leafItemTarget!: HTMLElement
 
-  clonedCrumb?: Element
-  lastCrumb?: Element
-  originalBodyTitle?: string
+  readonly parentAnchorTarget!: HTMLAnchorElement
+  readonly parentItemTarget!: HTMLElement
+
 
   connect() {
-    this.originalBodyTitle = this.bodyTitleTarget.textContent?.trim()
-    this.cloneLastCrumb()
-    this.update(getInPagePosition())
+    // hide leaf and show parent
+    this.parentItemTarget.removeAttribute('hidden')
+    this.leafItemTarget.style.opacity = '0'
   }
 
   navigated = (e: CustomEvent<InPagePosition>) => {
     this.update(e.detail)
   }
 
-  private cloneLastCrumb() {
-    if (this.crumbTargets.length === 0) {
-      return
-    }
-
-    const last = this.crumbTargets[this.crumbTargets.length - 1]
-
-    if (last.hasAttribute("data-breadcrumb-clone")) {
-      this.clonedCrumb = last
-      this.lastCrumb = last.previousElementSibling || undefined
-      return
-    }
-
-    const clone = last.cloneNode(true) as Element
-    const cloneA = clone.getElementsByTagName("A")[0] as HTMLAnchorElement
-
-    if (!cloneA) {
-      return
-    }
-
-    clone.setAttribute("data-breadcrumb-clone", "")
-    cloneA.href = '#'
-    cloneA.textContent = this.originalBodyTitle || null
-
-    this.lastCrumb = last
-    this.clonedCrumb = clone
-  }
-
   private update(pos: InPagePosition) {
     if (pos.id && pos.title) {
-      this.toggleClone(true)
-      this.bodyTitleTarget.textContent = pos.title
+      this.parentAnchorTarget.href = '#'
+      this.leafHeadingTarget.textContent = pos.title
+      this.leafItemTarget.style.opacity = '1'
     } else {
-      this.toggleClone(false)
-      this.bodyTitleTarget.textContent = this.originalBodyTitle || null
+      this.parentAnchorTarget.href = ''
+      this.leafItemTarget.style.opacity = '0'
     }
   }
-
-  private toggleClone(visible: boolean) {
-    if (!this.clonedCrumb || !this.lastCrumb)
-      return
-
-    if (visible && !this.clonedCrumb.parentElement) {
-      this.lastCrumb.insertAdjacentElement('afterend', this.clonedCrumb)
-    } else if (!visible && this.clonedCrumb.parentElement) {
-      this.clonedCrumb.remove()
-    }
-  }
-
 }

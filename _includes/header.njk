@@ -1,33 +1,39 @@
 {% set headerPadding = 'pt-8 pb-6' %}
-{% if bodyTitleInNav %}
+{% if inPageNav %}
 {%   set headerPadding = 'py-4' %}
 {% endif %}
 <header
   class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16"
-  {% if enchantBreadcrumb %}
+  {% if inPageNav %}
   data-controller="breadcrumb"
   data-action="vek:in-page-navigation@window->breadcrumb#navigated"
   {% endif %}
   >
-  <div class="{{ 'mb-4 sm:mb-2' if not bodyTitleInNav }}">
+  <div class="{{ 'mb-4 sm:mb-2' if not inPageNav }}">
     <nav class="vr-normal-sm">
       <ol class="inline">
         {% for item in page | vekNav %}
-        <li class="inline rsaquo-separator" data-target="breadcrumb.crumb">
+        <li class="inline">
           <a href="{{ item.url }}">{{ item.label }}</a>
+          <span aria-hidden="true">&rsaquo;</span>
         </li>
         {% endfor %}
-        {% if bodyTitleInNav %}
-        <li class="inline rsaquo-separator">
-          <h2 class="inline" data-target="breadcrumb.bodyTitle">
+
+        {% if inPageNav %}
+        <li hidden class="inline" data-target="breadcrumb.parentItem">
+          <a class="inline" data-target="breadcrumb.parentAnchor">{{ bodyTitle | default(title) }}</a>
+        </li>
+        <li class="inline transition-opacity duration-200" data-target="breadcrumb.leafItem">
+          <span aria-hidden="true">&rsaquo;</span>
+          <h2 class="inline" data-target="breadcrumb.leafHeading">
             {{ bodyTitle | default(title) }}
           </h2>
         </li>
         {% endif %}
       </ol>
     </nav>
-    {% if not bodyTitleInNav %}
-    <h2 class="vr-normal-3xl xl:font-light" data-target="breadcrumb.bodyTitle">
+    {% if not inPageNav %}
+    <h2 class="vr-normal-3xl xl:font-light">
       {{ bodyTitle | default(title) }}
     </h2>
     {% endif %}

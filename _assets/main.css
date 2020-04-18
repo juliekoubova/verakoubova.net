@@ -29,7 +29,7 @@ b, strong {
   content: '|';
 }
 
-.rsaquo-separator:not(:first-child)::before {
+.rsaquo-after::after {
   content: '\203A';
 }
 
@@ -45,6 +45,18 @@ b, strong {
 
 .bg-blur {
   backdrop-filter: blur(8px);
+}
+
+.lf-after::after {
+  content: '\A';
+  white-space: pre;
+}
+
+@screen sm {
+  .lf-after.sm\:no-lf-after::after {
+    content: '';
+    white-space: unset;
+  }
 }
 
 .flex-basis-1\/2 { flex-basis: 50%; }
