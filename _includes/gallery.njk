@@ -4,9 +4,9 @@
 {% for img in gallery.images %}
   {% set left = img.left | lang | itemContent(gallery.imageBase) | trim %}
   {% set right = img.right | lang | itemContent(gallery.imageBase) | trim %}
-  {% set blockClass = 'snap-start sm:snap-none sm:flex-1' %}
+  {% set blockClass = 'snap-start sm:snap-none sm:flex-basis-1/2 mt-20 sm:mt-0 h-screen sm:h-auto' %}
   <li
-    class="sm:h-screen"
+    class="sm:h-screen sm:py-32 sm:flex items-center"
     data-title="{{ img | lang }}"
     id="{{ img | lang | slug }}"
 
@@ -16,13 +16,13 @@
     >
     <h3 class="sr-only">{{ item | lang }}</h3>
 
-    <div class="h-full sm:h-auto sm:flex sm:mt-32">
+    <div class="sm:max-h-full sm:flex sm:max-w-2xl mx-auto">
       {% if left %}
       <div class="{{ blockClass }}">{{ left | safe }}</div>
       {% endif %}
 
       <div
-        class="md:mx-4 {{ blockClass }}"
+        class="sm:mx-4 {{ blockClass }}"
 
         {% if loop.first %}
         data-target="snap-type.determineBy"
@@ -31,7 +31,7 @@
         {{ image(
                 img,
                 gallery.imageBase | ensureTrailingSlash,
-                class='object-scale-down'
+                class='object-scale-down sm:object-right-top h-full w-full'
           ) }}
       </div>
 
