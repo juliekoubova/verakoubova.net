@@ -13,13 +13,12 @@
     <nav class="vr-normal-sm">
       <ol class="inline">
         {% for item in page | vekNav %}
-        <li class="inline" data-target="breadcrumb.crumb">
+        <li class="inline rsaquo-separator" data-target="breadcrumb.crumb">
           <a href="{{ item.url }}">{{ item.label }}</a>
-          <span aria-hidden="true">&rsaquo;</span>
         </li>
         {% endfor %}
         {% if bodyTitleInNav %}
-        <li class="inline">
+        <li class="inline rsaquo-separator">
           <h2 class="inline" data-target="breadcrumb.bodyTitle">
             {{ bodyTitle | default(title) }}
           </h2>

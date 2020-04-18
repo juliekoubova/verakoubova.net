@@ -29,6 +29,10 @@ b, strong {
   content: '|';
 }
 
+.rsaquo-separator:not(:first-child)::before {
+  content: '\203A';
+}
+
 .turbolinks-progress-bar {
   /* purgecss ignore current */
   @apply h-1;
