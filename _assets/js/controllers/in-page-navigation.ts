@@ -38,23 +38,27 @@ export function setInPagePosition(element: Element | undefined) {
     return
   }
 
+  console.log(hash)
   history.replaceState(history.state, title, hash)
   dispatchInPageNavigation({ hash, id, title })
 }
 
-export const queueSetInPagePosition = (function () {
-  let timerId: number | undefined
+function debounce<F extends (this: undefined, ...args: any[]) => void>(
+  delay: number,
+  fn: F,
+): F {
+  let timeoutId = 0
 
-  return (element: Element | undefined) => {
-    if (timerId) {
-      window.clearTimeout(timerId)
+  return function (...args: any[]) {
+    if (timeoutId) {
+      window.clearTimeout(timeoutId)
     }
-    timerId = window.setTimeout(
-      setInPagePosition.bind(undefined, element),
-      360,
-    )
-  }
-})()
+    const f = fn.bind(undefined, ...args)
+    timeoutId = window.setTimeout(f, delay)
+  } as F
+}
+
+export const queueSetInPagePosition = debounce(360, setInPagePosition)
 
 export function getInPagePosition(): InPagePosition {
   const { hash } = location
