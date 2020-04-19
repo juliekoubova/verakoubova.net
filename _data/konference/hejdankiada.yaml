@@ -2,4 +2,44 @@ cs: Hejdánkiáda
 imageBase: /img/hejdankiada
 images:
 - cs: Hejdánkiáda
-  src: { cs: hejdankiada.cs.jpeg, de: hejdankiada.de.jpeg }
+  src: na-jedne-lodi.jpeg
+
+- cs: Hejdánkovy křivky
+  de: Hejdáneks Kurven
+  src: hejdankovy-krivky.jpeg
+
+- cs: Koubovi motýli
+  de: Fingerübungen
+  src: koubovi-motyli.jpeg
+
+- cs: Nepředmětnost těžkaná
+  de: Nichtgegenständlichkeit gewogen
+  src: nepredmetnost-tezkana.jpeg
+
+- cs: Nepředmětnost kroucená
+  de: Nichtgegenständlichkeit gewunden
+  src: nepredmetnost-kroucena.jpeg
+
+- cs: "Objekty budou pracovat!"
+  de: "Objekte werden arbeiten!"
+  src: objekty-budou-pracovat.jpeg
+
+- cs: Němcův sekáček
+  de: Němecs Hackmesser
+  src: nemcuv-sekacek.jpeg
+
+- cs: Dvojhlav v dlani
+  de: Doppelkopf im Handteller
+  src: dvojhlav-v-dlani.jpeg
+
+- cs: Na jedné lodi
+  de: In einem Boot
+  src: na-jedne-lodi.jpeg
+
+- cs: Pointa
+  de: Pointa
+  src: pointa.jpeg
+
+- cs: Nad papíry
+  de: Papiere
+  src: nad-papiry.jpeg
