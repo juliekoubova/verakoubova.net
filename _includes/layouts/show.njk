@@ -1,7 +1,15 @@
 ---
 layout: layouts/sidebar
-pageId: spoken-word
 ---
-<section class="sidebar-section">
+<div data-controller="vr">
+  <audio src="{{ audio }}" controls>
+    <a href="{{ audio }}">{{ audioSample }}</a>
+  </audio>
+</div>
 
-</section>
+<div class="applied mt-2">
+  {{ content | safe }}
+</div>
+
+{% set gigs = shows.nietzsche %}
+{% include 'gigs.njk' %}

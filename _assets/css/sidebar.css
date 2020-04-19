@@ -8,9 +8,6 @@
   @apply header-width;
 }
 
-.sidebar-section {
-  @apply mb-4;
-}
 .in-sidebar {
   @apply font-medium;
 }
@@ -36,11 +33,5 @@
     @apply flex-none;
     @apply pr-3;
     width: 12rem;
-  }
-}
-
-@screen xl {
-  .in-sidebar {
-    font-weight: inherit;
   }
 }

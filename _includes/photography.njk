@@ -4,7 +4,7 @@ pageId: photography
 ---
 {% for section in photography | dictsort %}
 <section id="{{ section[1].slug | lang }}" class="mb-8">
-  <h3 class="font-medium vr-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h3>
+  <h3 class="vr-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h3>
   <ul class="mt-2">
   {% for row in section[1].rows %}
     <li class="mb-2 sidebar-section">

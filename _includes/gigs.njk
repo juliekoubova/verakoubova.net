@@ -1,0 +1,8 @@
+<ol class="mt-4">
+  {% for show in shows %}
+  <li class="sidebar-section">
+    <div class="in-sidebar vr-base">{{ show.city | lang }}</div>
+    <div class="in-main font-body vr-base">{{ show.year }} -  {{ show.venue | lang }}</div>
+  </li>
+  {% endfor %}
+</ol>

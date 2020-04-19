@@ -1,16 +1,16 @@
 ---
-layout: applied
+layout: layouts/sidebar
 title: Skrytá tvář Friedricha Nietzscheho
 subtitle: komponovaný dialog písní a básní filosofa
+audio: ../skryta-tvar.mp3
 ---
-<div class="sidebar-section">
-  <div class="in-sidebar">
-    <audio src="../skryta-tvar.mp3" controls class="max-w-full">
-      <a href="../skryta-tvar.mp3">Zvuková ukázka</a>
-    </audio>
-  </div>
+<div data-controller="vr">
+  <audio src="" controls>
+    <a href="../skryta-tvar.mp3">Zvuková ukázka</a>
+  </audio>
+</div>
 
-  <div>
+<div class="applied mt-2">
 
 Nietzsche nalezl pro své umělecké nadání nejrůznější vyjadřovací prostředky.
 Jeho hudebnost ho přivedla až k&nbsp;vlastnímu komponování, intenzivní cit pro
@@ -26,7 +26,6 @@ Hodinový program obsahuje celkem 30 čísel, z&nbsp;nichž skladby interpretuje
 a&nbsp;texty Věra Koubová. Program existuje v&nbsp;německé a&nbsp;české verzi a&nbsp;byl
 proveden na několika místech:
 
-  </div>
 </div>
 
 {% set shows = shows.nietzsche %}
