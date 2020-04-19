@@ -122,6 +122,10 @@ const filters = {
 
   lang,
 
+  withCurrentLang(items) {
+    return items.filter(i => i.data.lang === this.ctx.lang)
+  },
+
   item(url, baseUrl = this.ctx.page.url) {
     if (!url) {
       return ''
@@ -174,7 +178,7 @@ module.exports = /**
     eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
     eleventyConfig.addPassthroughCopy("img")
-    eleventyConfig.addPassthroughCopy("*.mp3")
+    eleventyConfig.addPassthroughCopy("mp3")
     eleventyConfig.addPassthroughCopy(".nojekyll")
 
     eleventyConfig.addPlugin(externalLinks)

@@ -1,9 +1,14 @@
 ---
 layout: layouts/sidebar
+tags: show
+parentId: shows
+eleventyComputed:
+  pageId: "shows/{{ show }}"
 ---
+{% set mp3 = (audio | url) if audio %}
 <div data-controller="vr mt-4">
-  <audio src="{{ audio | url }}" controls class="max-w-full">
-    <a href="{{ audio | url }}">{{ audioSample }}</a>
+  <audio src="{{ mp3 }}" controls class="max-w-full">
+    <a href="{{ mp3 }}">{{ audioSample }}</a>
   </audio>
 </div>
 

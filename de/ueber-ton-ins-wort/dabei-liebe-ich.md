@@ -2,11 +2,10 @@
 layout: layouts/show-page
 title: '&bdquo;... Dabei liebe ich doch gar nicht Dich...&ldquo; '
 subtitle: Kafkas &bdquo;lebendige Bilder&ldquo; in den Briefen an Milena
-audio: ../dabei-liebe-ich.mp3
-show: ajavlastne
-pageId: shows/ajavlastne
-parentId: shows
+audio: /mp3/dabei-liebe-ich.mp3
+show: a-ja-vlastne
 ---
+
 Das Programm wird durch einen erklärenden Teil eingeleitet, in dem die äusseren
 Umstände der Liebesgeschichte zwischen Franz Kafka und Milena Jesenská, deren
 Hintergrund und die Zusammenhänge in den <em>Briefen an Milena</em> erläutert werden,

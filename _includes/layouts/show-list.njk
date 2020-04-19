@@ -1,0 +1,20 @@
+---
+layout: layouts/sidebar
+pageId: shows
+img:
+  src: /img/pozvanky.jpeg
+---
+{% for show in collections.show | withCurrentLang %}
+<div class="sidebar-section mt-4">
+  <div class="in-sidebar">
+    <a href="{{ show.url }}">
+      {{ show.data.listTitle | default(show.data.title) | safe }}
+    </a>
+  </div>
+  <div>{{ show.data.subtitle | safe}}</div>
+</div>
+{% endfor %}
+
+{% from 'macros.njk' import image %}
+{{ image(img) }}
+
