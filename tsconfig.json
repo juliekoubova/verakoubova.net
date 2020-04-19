@@ -2,9 +2,6 @@
   "compilerOptions": {
     "noImplicitReturns": true,
     "strict": true,
-    "target": "ES5",
-    "types": [
-      "./_plugins/types/eleventy.d.ts"
-    ]
+    "target": "ES5"
   }
 }
