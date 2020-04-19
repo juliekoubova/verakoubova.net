@@ -11,5 +11,5 @@ layout: layouts/sidebar
   {{ content | safe }}
 </div>
 
-{% set gigs = shows.nietzsche %}
+{% set gigs = shows[show] %}
 {% include 'gigs.njk' %}

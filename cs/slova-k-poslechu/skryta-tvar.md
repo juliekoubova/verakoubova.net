@@ -1,17 +1,10 @@
 ---
-layout: layouts/sidebar
+layout: layouts/show
 title: Skrytá tvář Friedricha Nietzscheho
 subtitle: komponovaný dialog písní a básní filosofa
 audio: ../skryta-tvar.mp3
+show: nietzsche
 ---
-<div data-controller="vr">
-  <audio src="" controls>
-    <a href="../skryta-tvar.mp3">Zvuková ukázka</a>
-  </audio>
-</div>
-
-<div class="applied mt-2">
-
 Nietzsche nalezl pro své umělecké nadání nejrůznější vyjadřovací prostředky.
 Jeho hudebnost ho přivedla až k&nbsp;vlastnímu komponování, intenzivní cit pro
 jazyk pak k&nbsp;básnění. Přirozeně se jeho talent nejplněji rozvinul ve filosofii,
@@ -25,8 +18,3 @@ Hodinový program obsahuje celkem 30 čísel, z&nbsp;nichž skladby interpretuje
 [Olga Černá](http://www.olgacerna.com/) a&nbsp;klavíristka Marie Vigilante
 a&nbsp;texty Věra Koubová. Program existuje v&nbsp;německé a&nbsp;české verzi a&nbsp;byl
 proveden na několika místech:
-
-</div>
-
-{% set shows = shows.nietzsche %}
-{% include 'shows.njk' %}

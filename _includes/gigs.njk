@@ -1,8 +1,8 @@
 <ol class="mt-4">
-  {% for show in shows %}
+  {% for gig in gigs %}
   <li class="sidebar-section">
-    <div class="in-sidebar vr-base">{{ show.city | lang }}</div>
-    <div class="in-main font-body vr-base">{{ show.year }} -  {{ show.venue | lang }}</div>
+    <div class="in-sidebar vr-base">{{ gig.city | lang }}</div>
+    <div class="in-main font-body vr-base">{{ gig.year }} - {{ gig.venue | lang }}</div>
   </li>
   {% endfor %}
 </ol>
