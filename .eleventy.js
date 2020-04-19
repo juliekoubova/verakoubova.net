@@ -32,9 +32,22 @@ function removeTrailingSlash(url) {
   return String(url).replace(/\/$/, '')
 }
 
+function ensureStartingSlash(url) {
+  return '/' + removeStartingSlash(url)
+}
 
 function ensureTrailingSlash(url) {
-  return String(url).replace(/\/*$/, '/')
+  return removeTrailingSlash(url) + '/'
+}
+
+function splitExtension(path) {
+  const m = /^(.*)(\.[^.]+)$/.exec(path)
+  return m ? [m[1], m[2]] : [path, '']
+}
+
+function getExtension(path) {
+  const [, ext] = splitExtension(path)
+  return ext
 }
 
 function pipe(f, g) {
@@ -130,8 +143,16 @@ const filters = {
     if (!url) {
       return ''
     }
-    const filePathStem = '/' + removeTrailingSlash(combineUrl(baseUrl, url))
-    const item = this.ctx.collections.all.find(p => p.filePathStem === filePathStem)
+
+    const [path, ext] = splitExtension(
+      removeTrailingSlash(combineUrl(baseUrl, url))
+    )
+    const filePathStem = ensureStartingSlash(path)
+
+    const item = this.ctx.collections.all.find(
+      p => p.filePathStem === filePathStem && getExtension(p.inputPath) === ext
+    )
+
     return item
   },
 
