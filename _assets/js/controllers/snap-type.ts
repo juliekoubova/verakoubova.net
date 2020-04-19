@@ -19,7 +19,7 @@ export class SnapTypeController extends ResizerController {
       ? this.determineByTarget!
       : this.element
     const { height } = target.getBoundingClientRect()
-    const mandatory = height <= innerHeight
+    const mandatory = this.data.has('mandatory') && height <= innerHeight
     toggleScrollSnapClass('snap-y-mandatory', mandatory)
     toggleScrollSnapClass('snap-y-proximity', !mandatory)
   }
