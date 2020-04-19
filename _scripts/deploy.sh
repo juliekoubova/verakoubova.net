@@ -8,8 +8,8 @@ if [ -z "$1" ]; then
 fi
 
 
-if [ -z "$DEPLOY_HOST" ]; then
-  echo 'Action did not find the DEPLOY_HOST variable.' >2
+if [ -z "$DEPLOY_URL" ]; then
+  echo 'Action did not find the DEPLOY_URL variable.' >2
   exit 1
 fi
 
@@ -39,4 +39,4 @@ printf '\n%s\n' "$DEPLOY_KNOWN_HOSTS" >> "$SSH_PATH/known_hosts"
 exec rsync -avz --checksum --delete-after \
   -e "ssh $SSH_OPTS" \
   "$GITHUB_WORKSPACE/$1/" \
-  "$DEPLOY_HOST"
+  "$DEPLOY_URL"

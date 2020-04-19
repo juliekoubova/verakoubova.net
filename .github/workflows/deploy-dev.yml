@@ -28,7 +28,7 @@ jobs:
 
     - name: Deploy
       env:
-        DEPLOY_HOST: ${{ secrets.DEV_SSH_HOST }}
-        DEPLOY_KEY: ${{ secrets.DEV_SSH_KEY }}
-        DEPLOY_KNOWN_HOSTS: ${{ secrets.DEV_SSH_KNOWN_HOSTS }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
       run: ./_scripts/deploy.sh _site
