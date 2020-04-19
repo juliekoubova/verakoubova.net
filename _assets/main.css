@@ -96,9 +96,14 @@ nav a[href]:focus {
 }
 
 .applied h3 {
-  @apply font-bold;
-  @apply vr-lg;
   @apply mt-4;
+  @apply vr-normal-xl;
+}
+
+@screen md {
+  .applied h3 {
+    @apply vr-normal-lg;
+  }
 }
 
 .applied p {

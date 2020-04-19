@@ -6,12 +6,12 @@ img:
 ---
 {% for show in collections.show | withCurrentLang %}
 <div class="sidebar-section mt-4">
-  <div class="in-sidebar">
-    <a href="{{ show.url }}">
+  <div class="in-sidebar vr-base">
+    <a href="{{ show.url | url }}">
       {{ show.data.listTitle | default(show.data.title) | safe }}
     </a>
   </div>
-  <div>{{ show.data.subtitle | safe}}</div>
+  <div class="vr-base font-body">{{ show.data.subtitle | safe}}</div>
 </div>
 {% endfor %}
 

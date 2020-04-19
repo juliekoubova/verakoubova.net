@@ -11,7 +11,7 @@ pageId: bibliography
     <li class="{{ 'mb-2' if not loop.last }}">
       <div class="flex flex-wrap vr-base">
         <div class="mr-1">
-          <em>{{ pub.translated }}</em>
+          <cite>{{ pub.translated }}</cite>
           ({{ pub.original | lang }}){{ ", " if published }}
         </div>
         {% if published %}
