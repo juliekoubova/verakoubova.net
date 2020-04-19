@@ -19,9 +19,7 @@
     "build:postcss-after": "postcss ./_site/main.css --config ./_postcss_after --replace --map",
     "debug": "node --inspect-brk ./node_modules/@11ty/eleventy/cmd.js ",
     "serve": "run-s build && ws --directory _site --port 8080",
-    "start": "eleventy --serve --quiet --output _site",
-    "deploy": "run-s build deploy:push-dir",
-    "deploy:push-dir": "push-dir --dir=_site --branch=master"
+    "start": "eleventy --serve --quiet --output _site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0-beta.3",
@@ -38,7 +36,6 @@
     "parcel-bundler": "^1.12.4",
     "postcss-cli": "^7.1.0",
     "probe-image-size": "^5.0.0",
-    "push-dir": "^0.4.1",
     "shx": "^0.3.2",
     "tailwind-vertical-rhythm": "^1.1.0",
     "tailwindcss": "^1.2.0",
