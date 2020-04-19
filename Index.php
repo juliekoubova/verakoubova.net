@@ -1,41 +1,20 @@
 <?php
-	if (isset( $_SERVER['HTTP_ACCEPT_LANGUAGE']))
-	{
-		//explode languages into array
-		$languages = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-		$languages = explode(',', $languages);
+  if (isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+    $languages = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    $languages = explode(',', $languages);
 
-		foreach ($languages as $l)
-		{
-			$code = substr($l, 0, strcspn($l, ';-'));
-
-      if ($code == 'cs')
-      {
-        header('Location: cz/Index.html');
+    foreach ($languages as $l) {
+      $code = substr($l, 0, strcspn($l, ';-'));
+      if ($code == 'cs') {
+        header('Location: cs/');
         return;
-      }
-      else if ($code == 'de')
-      {
-        header('Location: de/Index.html');
+      } else if ($code == 'de') {
+        header('Location: de/');
         return;
       }
     }
   }
 
-  header('Location: cz/Index.html');
+  header('Location: cs/');
+  return;
 ?>
-
-<html>
-  <head>
-    <title>Věra Koubová</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-  </head>
-
-  <body>
-
-    <a href="cz/Index.html">Česky</a>
-    <a href="de/Index.html">Deutsch</a>
-
-  </body>
-</html>

@@ -200,7 +200,9 @@ module.exports = /**
 
     eleventyConfig.addPassthroughCopy("img")
     eleventyConfig.addPassthroughCopy("mp3")
+    eleventyConfig.addPassthroughCopy(".htaccess")
     eleventyConfig.addPassthroughCopy(".nojekyll")
+    eleventyConfig.addPassthroughCopy("index.php")
 
     eleventyConfig.addPlugin(externalLinks)
 

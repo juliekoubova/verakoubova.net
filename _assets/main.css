@@ -123,7 +123,3 @@ nav a[href]:focus {
 .applied blockquote {
   @apply mt-4
 }
-
-.applied blockquote > p {
-
-}
