@@ -1,6 +1,7 @@
 ---
 layout: layouts/show-page
 title: Sekera na zamrzlé moře v nás
+listTitle: Sekera na<br class="hidden lg:inline">zamrzlé moře v nás
 subtitle: literárně-hudební pořad o &bdquo;žitém&ldquo; psaní Franze Kafky
 audio: /mp3/sekera.mp3
 show: sekera
