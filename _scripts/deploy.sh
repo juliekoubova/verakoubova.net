@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 source_directory" >2
+  exit 1
+fi
+
+
 if [ -z "$DEPLOY_HOST" ]; then
   echo 'Action did not find the DEPLOY_HOST variable.' >2
   exit 1
