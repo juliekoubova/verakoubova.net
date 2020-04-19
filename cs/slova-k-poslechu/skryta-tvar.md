@@ -4,8 +4,6 @@ title: Skrytá tvář Friedricha Nietzscheho
 subtitle: komponovaný dialog písní a básní filosofa
 audio: /mp3/skryta-tvar.mp3
 show: nietzsche
-pageId: shows/nietzsche
-parentId: shows
 ---
 
 Nietzsche nalezl pro své umělecké nadání nejrůznější vyjadřovací prostředky.

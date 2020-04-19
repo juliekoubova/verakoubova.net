@@ -1,0 +1,20 @@
+- city: Praha
+  year: 2007
+  venue:
+    cs: Centrum Franze Kafky
+    de: Franz-Kafka-Zentrum Prag
+- city: Praha
+  year: 2008
+  venue:
+    cs: nahrávka pro rozhlasovou stanici Vltava
+    de: Aufnahme für den Rundfunk Vltava Prag
+- city: Praha
+  year: 2011
+  venue:
+    cs: Dům U kamenného zvonu, s <em>Janem Zvěřinou</em>
+    de: Haus Zur steinernen Glocke, mit <em>Jan Zvěřina</em>
+- city: Písek
+  year: 2017
+  venue:
+    cs: Kavárna Psychiatrické léčebny, se <em>Zuzanou Šebkovou</em>
+    de: Café der Psychiatrischen Klinik, mit <em>Zuzana Šebková</em>
