@@ -1,0 +1,38 @@
+---
+layout: layouts/sidebar
+pageId: shows
+title: Slova k poslechu
+img:
+  src: /img/pozvanky.jpeg
+shows:
+---
+<div class="sidebar-section">
+  <div class="in-sidebar">{{ 'skryta-tvar' | link }}</div>
+  <div>{{ 'skryta-tvar' | itemData('subtitle') | safe }}</div>
+</div>
+
+<div class="sidebar-section mt-4">
+  <div class="in-sidebar">{{ 'a-ja-vlastne' | link }}</div>
+  <div>{{ 'a-ja-vlastne' | itemData('subtitle') | safe }}</div>
+</div>
+
+{% from 'macros.njk' import image %}
+{{ image(img) }}
+
+    <!-- <a id="AJaVlastne" href="AJaVlastne.html">
+      <span class="nocss">&bdquo;...A já vlastně vůbec nemiluji Tebe...&ldquo;</span>
+    </a>
+
+    <a id="DonJuan" href="DonJuan.html">
+      <span class="nocss">Don Juan (ve vlastním podání)</span>
+    </a>
+
+    <a id="Sekera" href="Sekera.html">
+      <span class="nocss">Sekera na zamrzlé moře v nás</span>
+    </a>
+
+    <div id="ElipsaMala"></div>
+
+    <a id="RozhlasovePorady" href="RozhlasovePorady.html">
+      <span class="nocss">Rozhlasové pořady</span>
+    </a> -->

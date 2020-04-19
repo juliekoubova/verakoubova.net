@@ -1,0 +1,83 @@
+- city: Praha
+  year: 2002
+  venue:
+    cs: Židovská obec
+    de: Jüdische Gemeinde (Tschechien)
+
+- city: Ostrava
+  year: 2005
+  venue:
+    cs: 'Fiducia, s <em>Norskou trojkou</em>'
+    de: Fiducia, mit <em>Norská trojka</em> (Tschechien)
+
+- city: Praha
+  year: 2005
+  venue:
+    cs: nahrávka pro rozhlasovou stanici Vltava
+    de: Aufnahme für den Rundfunksender Vltava (Tschechien)
+
+- city: Marktredwitz
+  year: 2006
+  venue:
+    cs: Egerland-Kulturhaus (Německo)
+    de: Egerland-Kulturhaus (Deutschland)
+
+- city: Praha
+  year: 2006
+  venue:
+    cs: Pražský literární dům spisovatelů německého jazyka
+    de: Prager Literaturhaus deutschsprachiger Autoren
+
+- city: Berlín
+  year: 2007
+  venue:
+    cs: Kleistův dům (Německo)
+    de: Kleist-Haus (Deutschland)
+
+- city: Berlín
+  year: 2007
+  venue:
+    cs: Kleistův dům (Německo)
+    de: Kleist-Haus (Deutschland)
+
+- city: Liberec
+  year: 2007
+  venue:
+    cs: Vědecká knihovna
+    de: Wissenschaftliche Bibliothek (Tschechien)
+
+- city: Praha
+  year: 2007
+  venue:
+    cs: U Šemíka
+    de: U Šemíka (Tschechien)
+
+- city: Praha
+  year: 2007
+  venue:
+    cs: 'Centrum Mariapoli, s <em>Lenkou Neubauerovou</em>'
+    de: 'Mariapoli, mit <em>Lenka Neubauerová</em> (Tschechien)'
+
+- city: Praha
+  year: 2009
+  venue:
+    cs: Knihovna hotelu Savoy
+    de: Hotel Savoy (Tschechien)
+
+- city: Bern
+  year: 2010
+  venue:
+    cs: '"raum" (Švýcarsko), s <em>Miou Schultz</em>'
+    de: '"raum" (Schweiz), mit <em>Mia Schultz</em>'
+
+- city: Mnichov
+  year: 2012
+  venue:
+    cs: Kulturní forum v Sudetoněmeckém domě (Německo)
+    de: Kulturforum im Sudetendeutschen Haus (Deutschland)
+
+- city: Heidelberg
+  year: 2015
+  venue:
+    cs: 'Německo-Americký Institut, s <em>Otto Engelhardtem</em>'
+    de: 'Deutsch-Amerikanisches Institut, mit <em>Otto Engelhardt</em>'

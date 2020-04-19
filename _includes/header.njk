@@ -22,22 +22,21 @@
         {% if inPageNav %}
         <li hidden class="inline lf-before sm:no-lf-before" data-target="breadcrumb.parentItem">
           <a class="inline" data-target="breadcrumb.parentAnchor" data-action="breadcrumb#goUp">{{
-            bodyTitle | default(title)
+            bodyTitle | default(title) | safe
           }}</a>
         </li>
         <li class="inline" data-target="breadcrumb.leafItem">
           <span aria-hidden="true">&rsaquo;</span>
           <h2 class="inline" data-target="breadcrumb.leafHeading">{{
-            bodyTitle | default(title)
+            bodyTitle | default(title) | safe
           }}</h2>
         </li>
         {% endif %}
       </ol>
     </nav>
+
     {% if not inPageNav %}
-    <h2 class="vr-normal-3xl xl:font-light">
-      {{ bodyTitle | default(title) }}
-    </h2>
+    {% include 'header/title.njk' %}
     {% endif %}
   </div>
   <nav class="vr-normal-sm mb-2 sm:text-right">

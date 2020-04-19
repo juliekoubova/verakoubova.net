@@ -17,6 +17,7 @@
     "build:plugins": "cd _plugins && run-s build",
     "build:parcel": "parcel build _assets/main.css _assets/main.ts --out-dir _site",
     "build:postcss-after": "postcss ./_site/main.css --config ./_postcss_after --replace --map",
+    "debug": "node --inspect-brk ./node_modules/@11ty/eleventy/cmd.js ",
     "serve": "run-s build && ws --directory _site --port 8080",
     "start": "eleventy --serve --quiet --output _site",
     "deploy": "run-s build deploy:push-dir",

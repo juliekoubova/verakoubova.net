@@ -1,10 +1,11 @@
 ---
-layout: layouts/show
+layout: layouts/show-page
 title: Das verborgene Gesicht von Friedrich Nietzsche
 subtitle: Dialog, komponiert aus Liedern und Gedichten eines Philosophen
 audio: ../das-verborgene-gesicht.mp3
 show: nietzsche
-pageId: show/nietzsche
+pageId: shows/nietzsche
+parentId: shows
 ---
 Nietzsche fand für seine künstlerischen Talente die unterschiedlichsten Ausdrucksmittel.
 Seine Musikalität brachte ihn zum eigenen Komponieren, sein starkes Sprachgefühl

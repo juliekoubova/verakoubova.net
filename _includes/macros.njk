@@ -10,8 +10,3 @@
   >
 {% endif %}
 {% endmacro %}
-
-{% macro galleryLink(set, key) %}
-{% set gallery = set[key] %}
-<a href="{{ key | url }}" data-gallery="{{ gallery | prepareGalleryData | dump | escape }}">{{ gallery | lang }}</a>
-{% endmacro %}

@@ -1,0 +1,38 @@
+---
+layout: layouts/sidebar
+pageId: shows
+title: Über Ton ins Wort
+img:
+  src: /img/pozvanky.jpeg
+shows:
+---
+<div class="sidebar-section">
+  <div class="in-sidebar">{{ 'das-verborgene-gesicht' | link }}</div>
+  <div>{{ 'das-verborgene-gesicht' | itemData('subtitle') | safe }}</div>
+</div>
+
+<div class="sidebar-section mt-4">
+  <div class="in-sidebar">{{ 'dabei-liebe-ich' | link }}</div>
+  <div>{{ 'dabei-liebe-ich' | itemData('subtitle') | safe }}</div>
+</div>
+
+{% from 'macros.njk' import image %}
+{{ image(img) }}
+
+    <!-- <a id="AJaVlastne" href="AJaVlastne.html">
+      <span class="nocss">&bdquo;...A já vlastně vůbec nemiluji Tebe...&ldquo;</span>
+    </a>
+
+    <a id="DonJuan" href="DonJuan.html">
+      <span class="nocss">Don Juan (ve vlastním podání)</span>
+    </a>
+
+    <a id="Sekera" href="Sekera.html">
+      <span class="nocss">Sekera na zamrzlé moře v nás</span>
+    </a>
+
+    <div id="ElipsaMala"></div>
+
+    <a id="RozhlasovePorady" href="RozhlasovePorady.html">
+      <span class="nocss">Rozhlasové pořady</span>
+    </a> -->

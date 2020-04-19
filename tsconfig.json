@@ -3,8 +3,8 @@
     "noImplicitReturns": true,
     "strict": true,
     "target": "ES5",
-    "typeRoots": [
-      "_plugins/types"
+    "types": [
+      "./_plugins/types/eleventy.d.ts"
     ]
   }
 }

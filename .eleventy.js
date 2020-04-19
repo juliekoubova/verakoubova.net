@@ -24,8 +24,27 @@ function countBy(objects, key) {
   return counts
 }
 
+function removeStartingSlash(url) {
+  return String(url).replace(/^\//, '')
+}
+
+function removeTrailingSlash(url) {
+  return String(url).replace(/\/$/, '')
+}
+
+
 function ensureTrailingSlash(url) {
   return String(url).replace(/\/*$/, '/')
+}
+
+function pipe(f, g) {
+  return (...args) => g(f(...args))
+}
+
+const normalizeUrl = pipe(removeStartingSlash, ensureTrailingSlash)
+
+function combineUrl(parent, leaf) {
+  return normalizeUrl(parent) + normalizeUrl(leaf)
 }
 
 function lang(value) {
@@ -48,6 +67,16 @@ function findPage(ctx, pageId, lang) {
 
   const page = ctx.collections.all.find(filter)
   return page
+}
+
+function getFilters(self) {
+  const result = {}
+
+  for (const key in self.env.filters) {
+    result[key] = self.env.filters[key].bind(self)
+  }
+
+  return result
 }
 
 const filters = {
@@ -93,21 +122,22 @@ const filters = {
 
   lang,
 
-  item(url, baseUrl) {
+  item(url, baseUrl = this.ctx.page.url) {
     if (!url) {
       return ''
     }
-    const inputPath = '.' + ensureTrailingSlash(baseUrl) + url.replace(/^\//, '')
-    const item = this.ctx.collections.all.find(p => p.inputPath === inputPath)
+    const filePathStem = '/' + removeTrailingSlash(combineUrl(baseUrl, url))
+    const item = this.ctx.collections.all.find(p => p.filePathStem === filePathStem)
     return item
   },
 
+  itemData(url, property, baseUrl) {
+    const item = this.env.filters.item.call(this, url, baseUrl)
+    return item && item.data[property] || undefined
+  },
+
   itemContent(url, baseUrl) {
-    if (!url) {
-      return ''
-    }
-    const inputPath = '.' + ensureTrailingSlash(baseUrl) + url.replace(/^\//, '')
-    const item = this.ctx.collections.all.find(p => p.inputPath === inputPath)
+    const item = this.env.filters.item.call(this, url, baseUrl)
     return item ? item.templateContent : ''
   },
 
@@ -126,6 +156,14 @@ const filters = {
     const href = url(slug(key))
 
     return safe(`<a href="${href}"> ${lang.call(this, value)} </a>`)
+  },
+
+  link(path) {
+    const { escape, item, url, safe } = getFilters(this)
+    const target = item(path)
+    const href = escape(ensureTrailingSlash(url(path)))
+    const text = target && target.data.title || path
+    return safe(`<a href="${href}">${text}</a>`)
   }
 }
 
