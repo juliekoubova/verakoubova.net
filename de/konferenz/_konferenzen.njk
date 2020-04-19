@@ -5,7 +5,7 @@ pagination:
   size: 1
   alias: gallery
 parentId: konference
-permalink: "{{ lang }}/konferenz/{{ gallery | slug }}/index.html"
+permalink: "{{ lang }}/konferenz/{{ konference[gallery] | lang | slug }}/index.html"
 eleventyComputed:
   pageId: "konference/{{ gallery }}"
   title: "{{ konference[gallery] | lang }}"

@@ -10,3 +10,21 @@
   >
 {% endif %}
 {% endmacro %}
+
+{% macro youtube(id, width, height) %}
+{% set aspectRatio = height / width %}
+{% set paddingBottom = aspectRatio * 100 | round(2) %}
+<div class="vr-base mt-2" data-controller="vr">
+  <div class="relative overflow-hidden" style="padding-bottom: {{ paddingBottom }}%;">
+    <iframe
+      class="absolute top-0 left-0 w-full h-full"
+      width="{{ wihth }}" height="{{ height }}"
+      src="https://www.youtube.com/embed/{{ id }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+</div>
+{% endmacro %}
