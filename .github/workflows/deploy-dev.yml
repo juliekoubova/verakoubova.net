@@ -27,5 +27,8 @@ jobs:
       run: yarn build
 
     - name: Deploy
-      run: |
-        rsync --version
+      env:
+        DEPLOY_HOST: ${{ secrets.DEV_SSH_HOST }}
+        DEPLOY_KEY: ${{ secrets.DEV_SSH_KEY }}
+        DEPLOY_KNOWN_HOSTS: ${{ secrets.DEV_SSH_KNOWN_HOSTS }}
+      run: ./_scripts/deploy.sh
