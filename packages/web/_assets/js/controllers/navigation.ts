@@ -1,5 +1,5 @@
 import { AttributeObserver } from '@stimulus/mutation-observers'
-import { IntersectorController } from '../base_controllers/intersector'
+import { IntersectorController } from '@verakoubova/intersector'
 
 export interface InPagePosition {
   hash: string
