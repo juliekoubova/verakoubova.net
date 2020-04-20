@@ -192,17 +192,12 @@ const filters = {
   }
 }
 
-module.exports = /**
- * @param {import('@11ty/eleventy').Eleventy} eleventyConfig
- */
-  function (eleventyConfig) {
+/** @type {import('@11ty/eleventy').EleventyConfigFunction} */
+module.exports =  function (eleventyConfig) {
     eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
     eleventyConfig.addPassthroughCopy("img")
     eleventyConfig.addPassthroughCopy("mp3")
-    eleventyConfig.addPassthroughCopy(".htaccess")
-    eleventyConfig.addPassthroughCopy(".nojekyll")
-    eleventyConfig.addPassthroughCopy("index.php")
 
     eleventyConfig.addPlugin(externalLinks)
 
