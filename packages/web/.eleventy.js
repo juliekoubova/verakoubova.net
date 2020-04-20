@@ -204,8 +204,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
   eleventyConfig.addPassthroughCopy({ '_assets/static': '/' })
-  eleventyConfig.addPassthroughCopy('img')
-  eleventyConfig.addPassthroughCopy('mp3')
+  eleventyConfig.addPassthroughCopy('img/**/*.jpeg')
+  eleventyConfig.addPassthroughCopy('mp3/*.mp3')
 
   eleventyConfig.addPlugin(externalLinks)
 
