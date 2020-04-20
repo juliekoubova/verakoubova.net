@@ -203,8 +203,9 @@ const filters = {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
-  eleventyConfig.addPassthroughCopy("img")
-  eleventyConfig.addPassthroughCopy("mp3")
+  eleventyConfig.addPassthroughCopy({ '_assets/static': '/' })
+  eleventyConfig.addPassthroughCopy('img')
+  eleventyConfig.addPassthroughCopy('mp3')
 
   eleventyConfig.addPlugin(externalLinks)
 
