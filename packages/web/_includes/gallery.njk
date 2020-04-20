@@ -48,11 +48,7 @@
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
     data-title="{{ img | lang }}"
-    id="{{ img | lang | slug }}"
-
-    {% if loop.first %}
-    data-navigation-ignore
-    {% endif %}
+    id="{{ img | lang | slug if not loop.first }}"
     >
     <h3 class="sr-only">{{ item | lang }}</h3>
 

@@ -1,4 +1,5 @@
 import { makeIntersector, makeAttributeObserver, makeEventHandler, wrapController } from '@verakoubova/stimulus'
+import { throttle } from 'throttle-debounce'
 import { Controller } from 'stimulus'
 import { hashEqual, stripHash } from './hash-utils'
 
@@ -38,22 +39,7 @@ function setInPagePosition(element: Element | undefined) {
   dispatchInPageNavigation({ hash, id, title })
 }
 
-function debounce<F extends (this: undefined, ...args: any[]) => void>(
-  delay: number,
-  fn: F,
-): F {
-  let timeoutId = 0
-
-  return function (...args: any[]) {
-    if (timeoutId) {
-      window.clearTimeout(timeoutId)
-    }
-    const f = fn.bind(undefined, ...args)
-    timeoutId = window.setTimeout(f, delay)
-  } as F
-}
-
-export const queueSetInPagePosition = debounce(128, setInPagePosition)
+export const queueSetInPagePosition = throttle(128, setInPagePosition)
 
 export function getInPagePosition(): InPagePosition {
   const { hash } = location
@@ -100,14 +86,11 @@ export class NavigationController extends Controller {
   }
 
   intersect(entries: IntersectionObserverEntry[]) {
-    const relevantEntries = entries.filter(
-      e => e.isIntersecting && !e.target.hasAttribute('data-navigation-ignore')
-    )
-    for (const entry of relevantEntries) {
-      const target =
-        entry.target === topElement
-          ? undefined
-          : entry.target
+    const intersecting = entries.filter(e => e.isIntersecting)
+    for (const entry of intersecting) {
+      const target = entry.target === topElement
+        ? undefined
+        : entry.target
       queueSetInPagePosition(target)
     }
   }
