@@ -3,7 +3,7 @@ import {
   BreadcrumbController, NavigationController,
   setupHasScrolled, SnapTypeController, VRController,
 } from './js'
-import './js/polyfills/custom-event'
+import '@verakoubova/polyfills'
 import './js/turbolinks'
 
 setupHasScrolled()
