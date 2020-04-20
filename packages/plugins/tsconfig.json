@@ -1,7 +1,6 @@
 {
-  "extends": "../../base.tsconfig.json",
+  "extends": "../../tsconfig.node.json",
   "compilerOptions": {
-    "target": "ES2019",
     "outDir": "dist"
   }
 }
