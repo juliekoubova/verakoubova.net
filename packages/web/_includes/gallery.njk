@@ -9,8 +9,9 @@
       title="{{ img | lang }}"
       class="block py-2 opacity-0 transition-opacity"
       data-target="active-dot.link"
+      {{ 'data-navigation-top' if loop.first }}
       >
-      <svg viewBox="0 0 20 10" class="w-4 h-2 text-gray-600">
+      <svg viewBox="0 0 20 10" width="4" height="2" class="w-4 h-2 text-gray-600">
         <circle cx="10" cy="5" r="4" fill="currentColor" />
       </svg>
       <span class="sr-only">{{ img | lang }}</span>
@@ -48,7 +49,11 @@
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
     data-title="{{ img | lang }}"
-    id="{{ img | lang | slug if not loop.first }}"
+    {% if loop.first %}
+    data-navigation-top
+    {% else %}
+    id="{{ img | lang | slug }}"
+    {% endif %}
     >
     <h3 class="sr-only">{{ item | lang }}</h3>
 

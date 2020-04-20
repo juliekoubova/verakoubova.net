@@ -26,7 +26,6 @@ function getElementTitle(element: Element) {
 
 
 function setInPagePosition(element: Element | undefined) {
-
   const title = element ? getElementTitle(element) : ''
   const id = element?.id ?? ''
   const hash = '#' + id
@@ -42,10 +41,10 @@ function setInPagePosition(element: Element | undefined) {
 export const queueSetInPagePosition = throttle(128, setInPagePosition)
 
 export function getInPagePosition(): InPagePosition {
-  const { hash } = location
-  const id = stripHash(hash) || undefined
+  const id = stripHash(location.hash) || undefined
   const element = id && document.getElementById(id) || undefined
   const title = element && getElementTitle(element) || ''
+  const hash = '#' + (id ?? '')
   return { hash, id, title }
 }
 
@@ -88,9 +87,11 @@ export class NavigationController extends Controller {
   intersect(entries: IntersectionObserverEntry[]) {
     const intersecting = entries.filter(e => e.isIntersecting)
     for (const entry of intersecting) {
-      const target = entry.target === topElement
-        ? undefined
-        : entry.target
+      const target =
+        entry.target === topElement ||
+          entry.target.hasAttribute('data-navigation-top')
+          ? undefined
+          : entry.target
       queueSetInPagePosition(target)
     }
   }

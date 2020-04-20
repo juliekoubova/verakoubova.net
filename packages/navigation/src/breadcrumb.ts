@@ -19,7 +19,6 @@ export class BreadcrumbController extends Controller {
     // hide leaf and show parent
     this.leafItemTarget.style.opacity = '0'
     this.parentItemTarget.removeAttribute('hidden')
-    this.update(getInPagePosition())
     setTimeout(() => this.leafItemTarget.style.transition = 'opacity 192ms ease-in')
   }
 

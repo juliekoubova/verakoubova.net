@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './css/scroll-enticer.css';
 @import './css/sidebar.css';
 
 body {

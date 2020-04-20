@@ -13,7 +13,11 @@ export class ActiveDotController extends Controller {
 
   private update(pos: InPagePosition) {
     this.linkTargets.forEach(link => {
-      link.style.opacity = pos.hash === getHash(link.href) ? '.75' : '.20'
+      const isTarget =
+        pos.hash === getHash(link.href) ||
+        (pos.hash === '#' && link.hasAttribute('data-navigation-top'))
+
+      link.style.opacity = isTarget ? '.75' : '.20'
     })
   }
 }
