@@ -166,21 +166,15 @@ const filters = {
     return item ? item.templateContent : ''
   },
 
-  galleryLink(set, key) {
-
-    if (!set || !key) {
-      throw new Error("dict | galleryLink(key)")
-    }
-    const value = set[key]
+  galleryLink(value) {
     if (!value || !value.images || !value.imageBase) {
-      throw new Error(`galleryLink key "${key}" not found between ${Object.keys(set).join(', ')}`)
+      throw new Error(`galleryLink invalid value: ${JSON.stringify(value)}`)
     }
 
-    const { url, slug, safe } = this.env.filters
+    const { url, slug, lang, safe } = getFilters(this)
+    const href = url(slug(lang(value)))
 
-    const href = url(slug(key))
-
-    return safe(`<a href="${href}"> ${lang.call(this, value)} </a>`)
+    return safe(`<a href="${href}">${lang(value)}</a>`)
   },
 
   link(path) {

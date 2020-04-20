@@ -1,14 +1,6 @@
 ---
-layout: layouts/gallery-page
-pagination:
-  data: konference
-  size: 1
-  alias: gallery
-parentId: konference
+layout: layouts/konference-page
 permalink: "{{ lang }}/konferenz/{{ konference[gallery] | lang | slug }}/index.html"
-eleventyComputed:
-  pageId: "konference/{{ gallery }}"
-  title: "{{ konference[gallery] | lang }}"
 ---
 
 {% set gallery = konference[gallery] %}

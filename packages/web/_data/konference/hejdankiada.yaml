@@ -4,6 +4,9 @@ imageBase: /img/hejdankiada
 images:
 - cs: Hejdánkiáda
   src: na-jedne-lodi.jpeg
+  left:
+    cs: index.cs.html
+    de: index.de.html
 
 - cs: Hejdánkovy křivky
   de: Hejdáneks Kurven
