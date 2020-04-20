@@ -4,7 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
-    "deploy": "lerna run --scope web deploy"
+    "deploy": "lerna run --scope @verakoubova/web deploy"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
