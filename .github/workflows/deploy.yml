@@ -12,15 +12,15 @@ jobs:
         node-version: [13.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: actions/setup-node ${{ matrix.node-version }}
+    - name: Check out
+      uses: actions/checkout@v2
+    - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
     - run: yarn install
     - run: yarn build
-    - run: yarn predeploy
     - run: yarn deploy
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
