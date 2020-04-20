@@ -3,7 +3,10 @@
     "module": "CommonJS",
     "noImplicitReturns": true,
     "strict": true,
-    "target": "ES2019",
-    "outDir": "dist"
+    "typeRoots": [
+      "packages/types",
+      "node_modules/@types"
+    ]
   }
 }
+

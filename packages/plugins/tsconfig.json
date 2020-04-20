@@ -1,0 +1,7 @@
+{
+  "extends": "../../base.tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2019",
+    "outDir": "dist"
+  }
+}

@@ -21,7 +21,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install Dependencies
-      run: yarn install && cd _plugins && yarn install
+      run: yarn install
 
     - name: Build
       run: yarn build
@@ -31,4 +31,4 @@ jobs:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
         DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-      run: ./_scripts/deploy.sh _site
+      run: yarn deploy

@@ -1,15 +1,13 @@
 {
   "name": "@verakoubova/11ty-plugins",
+  "version": "0.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "clean": "shx rm -rf dist",
     "build": "tsc"
   },
   "main": "dist/index.js",
-  "devDependencies": {
-    "shx": "^0.3.2",
-    "typescript": "^3.8.3"
-  },
   "dependencies": {
     "@types/cheerio": "^0.22.17",
     "@types/html-minifier": "^3.5.3",

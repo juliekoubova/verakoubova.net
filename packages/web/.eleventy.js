@@ -1,7 +1,7 @@
 // @ts-check
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 const imagesResponsiver = require('eleventy-plugin-images-responsiver')
-const { externalLinks, htmlMinifier } = require('./_plugins')
+const { externalLinks, htmlMinifier } = require('@verakoubova/11ty-plugins')
 const yaml = require('js-yaml')
 
 /**
