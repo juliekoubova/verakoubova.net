@@ -1,0 +1,8 @@
+{
+  "name": "@verakoubova/types__eleventy",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@types/browser-sync": "^2.26.1"
+  }
+}
