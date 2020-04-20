@@ -1,4 +1,4 @@
-import { ResizerController } from '../base_controllers'
+import { ResizerController } from '@verakoubova/resizer'
 
 const isSafari =
   /Safari/.test(navigator.userAgent) &&

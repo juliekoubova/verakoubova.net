@@ -1,4 +1,4 @@
-import { ResizerController } from '../base_controllers'
+import { ResizerController } from '@verakoubova/resizer'
 
 function adjustToRem(documentFontSizePx: number, px: number) {
   if (px === 0) {

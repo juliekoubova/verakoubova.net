@@ -1,6 +1,4 @@
 export * from './breadcrumb'
-export * from './can-scroll'
 export * from './navigation'
-export * from './scroll-to'
 export * from './snap-type'
 export * from './vr'
