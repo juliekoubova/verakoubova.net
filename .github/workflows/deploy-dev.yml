@@ -1,5 +1,4 @@
-name: Deploy dev
-
+name: Deploy
 on:
   push:
     branches: [ dev ]
@@ -14,21 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: actions/setup-node ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install Dependencies
-      run: yarn install
-
-    - name: Build
-      run: yarn build
-
-    - name: Deploy
+    - run: yarn install
+    - run: yarn build
+    - run: yarn predeploy
+    - run: yarn deploy
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
         DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-      run: yarn deploy

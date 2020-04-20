@@ -2,23 +2,22 @@
 set -e
 
 if [ -z "$1" ]; then
-  echo "Usage: $0 source_directory" >2
+  echo "Usage: $0 source_directory" >&2
   exit 1
 fi
 
-
 if [ -z "$DEPLOY_URL" ]; then
-  echo 'Action did not find the DEPLOY_URL variable.' >2
+  echo 'Action did not find the DEPLOY_URL variable.' >&2
   exit 1
 fi
 
 if [ -z "$DEPLOY_KEY" ]; then
-  echo 'Action did not find the DEPLOY_KEY secret.' >2
+  echo 'Action did not find the DEPLOY_KEY secret.' >&2
   exit 1
 fi
 
 if [ -z "$DEPLOY_KNOWN_HOSTS" ]; then
-  echo 'Action did not find the DEPLOY_KNOWN_HOSTS secret.' >2
+  echo 'Action did not find the DEPLOY_KNOWN_HOSTS secret.' >&2
   exit 1
 fi
 
