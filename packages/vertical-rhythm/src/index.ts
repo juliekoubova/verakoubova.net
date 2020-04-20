@@ -8,7 +8,7 @@ function adjustToRem(documentFontSizePx: number, px: number) {
   return `${adjustPx / documentFontSizePx}rem`
 }
 
-export class VRController extends ResizerController {
+export class VerticalRhythmController extends ResizerController {
   resized() {
     const el = this.element as HTMLElement
     const { height, top } = el.getBoundingClientRect()

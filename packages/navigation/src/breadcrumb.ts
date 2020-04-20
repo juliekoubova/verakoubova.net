@@ -1,5 +1,5 @@
-import { Controller } from "stimulus"
-import { InPagePosition, getInPagePosition } from "./navigation"
+import { Controller } from 'stimulus'
+import { InPagePosition, getInPagePosition } from './navigation'
 
 export class BreadcrumbController extends Controller {
 
