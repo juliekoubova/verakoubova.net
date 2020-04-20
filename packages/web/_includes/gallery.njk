@@ -1,5 +1,25 @@
 {% from 'macros.njk' import image %}
 
+<nav class="fixed bottom-0 left-0 right-0" data-controller="active-dot">
+  <ol class="flex flex-wrap justify-center m4-2 md:mb-8 mx-2 relative">
+  {% for img in gallery.images %}
+  <li>
+    <a
+      href="#{{ img | lang | slug if not loop.first }}"
+      title="{{ img | lang }}"
+      class="block py-2 opacity-0 transition-opacity"
+      data-target="active-dot.link"
+      >
+      <svg viewBox="0 0 20 10" class="w-4 h-2 text-gray-600">
+        <circle cx="10" cy="5" r="4" fill="currentColor" />
+      </svg>
+      <span class="sr-only">{{ img | lang }}</span>
+    </a>
+  </li>
+  {% endfor %}
+  </ol>
+</nav>
+
 <ol>
 {% for img in gallery.images %}
   {% set left = img.left | lang | item(gallery.imageBase) %}

@@ -1,4 +1,4 @@
-import { BreadcrumbController, NavigationController } from '@verakoubova/navigation'
+import { ActiveDotController, BreadcrumbController, NavigationController } from '@verakoubova/navigation'
 import { VerticalRhythmController } from '@verakoubova/vertical-rhythm'
 import { Application } from 'stimulus'
 import { setupHasScrolled, SnapTypeController } from './js'
@@ -8,6 +8,7 @@ import './js/turbolinks'
 setupHasScrolled()
 
 const vekApp = Application.start()
+vekApp.register('active-dot', ActiveDotController)
 vekApp.register('breadcrumb', BreadcrumbController)
 vekApp.register('navigation', NavigationController)
 vekApp.register('snap-type', SnapTypeController)

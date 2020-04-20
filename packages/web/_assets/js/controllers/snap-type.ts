@@ -1,4 +1,5 @@
-import { ResizerController } from '@verakoubova/resizer'
+import { makeResizer } from '@verakoubova/stimulus'
+import { Controller } from 'stimulus'
 
 const isSafari =
   /Safari/.test(navigator.userAgent) &&
@@ -9,18 +10,20 @@ function toggleScrollSnapClass(className: string, value?: boolean) {
   el.classList.toggle(className, value)
 }
 
-export class SnapTypeController extends ResizerController {
+export class SnapTypeController extends Controller {
   static targets = ["determineBy"]
   readonly hasDetermineByTarget!: boolean
   readonly determineByTarget?: Element
 
-  resized() {
-    const target = this.hasDetermineByTarget
-      ? this.determineByTarget!
-      : this.element
-    const { height } = target.getBoundingClientRect()
-    const mandatory = this.data.has('mandatory') && height <= innerHeight
-    toggleScrollSnapClass('snap-y-mandatory', mandatory)
-    toggleScrollSnapClass('snap-y-proximity', !mandatory)
+  initialize() {
+    makeResizer(this, () => {
+      const target = this.hasDetermineByTarget
+        ? this.determineByTarget!
+        : this.element
+      const { height } = target.getBoundingClientRect()
+      const mandatory = this.data.has('mandatory') && height <= innerHeight
+      toggleScrollSnapClass('snap-y-mandatory', mandatory)
+      toggleScrollSnapClass('snap-y-proximity', !mandatory)
+    })
   }
 }
