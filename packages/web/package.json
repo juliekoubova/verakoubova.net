@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@verakoubova/types__eleventy": "0.0.0",
+    "@verakoubova/11ty-plugins": "0.0.0",
     "@11ty/eleventy": "^0.11.0-beta.3",
     "@fullhuman/postcss-purgecss": "^2.1.2",
     "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3",
