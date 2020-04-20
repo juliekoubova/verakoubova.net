@@ -183,62 +183,75 @@ const filters = {
     const href = escape(ensureTrailingSlash(url(path)))
     const text = target && target.data.title || path
     return safe(`<a href="${href}">${text}</a>`)
+  },
+
+  dataAttributes(obj) {
+    const { escape, safe } = getFilters(this)
+    const result = [' ']
+    for (const key in obj) {
+      result.push('data-')
+      result.push(key)
+      result.push('="')
+      result.push(escape(String(obj[key])))
+      result.push('" ')
+    }
+    return safe(result.join(''))
   }
 }
 
 /** @type {import('@11ty/eleventy').EleventyConfigFunction} */
-module.exports =  function (eleventyConfig) {
-    eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
-    eleventyConfig.addPassthroughCopy("img")
-    eleventyConfig.addPassthroughCopy("mp3")
+  eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy("mp3")
 
-    eleventyConfig.addPlugin(externalLinks)
+  eleventyConfig.addPlugin(externalLinks)
 
-    if (process.env.NODE_ENV === 'production') {
-      eleventyConfig.addPlugin(cacheBuster({}))
-    }
+  if (process.env.NODE_ENV === 'production') {
+    eleventyConfig.addPlugin(cacheBuster({}))
+  }
 
-    eleventyConfig.addPlugin(htmlMinifier, {
-      caseSensitive: false,
-      collapseBooleanAttributes: true,
-      collapseInlineTagWhitespace: true,
-      collapseWhitespace: true,
-      conservativeCollapse: true,
-      decodeEntities: true,
-      html5: true,
-      removeAttributeQuotes: true,
-      removeComments: true,
-      removeEmptyAttributes: true,
-      removeEmptyElements: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      sortAttributes: true,
-      sortClassName: true
-    })
+  eleventyConfig.addPlugin(htmlMinifier, {
+    caseSensitive: false,
+    collapseBooleanAttributes: true,
+    collapseInlineTagWhitespace: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    decodeEntities: true,
+    html5: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeEmptyElements: true,
+    removeOptionalTags: true,
+    removeRedundantAttributes: true,
+    sortAttributes: true,
+    sortClassName: true
+  })
 
-    for (const [key, fn] of Object.entries(filters)) {
-      eleventyConfig.addFilter(key, fn)
-    }
+  for (const [key, fn] of Object.entries(filters)) {
+    eleventyConfig.addFilter(key, fn)
+  }
 
-    // In order to support Turbolinks, Browsersync can be used with a custom rule
-    // to include Browsersync's script at the <head> tag instead of the <body> tag.
-    // https://github.com/BrowserSync/browser-sync/wiki/Browsersync-for-Turbolinks
-    eleventyConfig.setBrowserSyncConfig({
-      snippetOptions: {
-        rule: {
-          match: /<\/head>/i,
-          fn: function (snippet, match) {
-            return snippet + match;
-          }
+  // In order to support Turbolinks, Browsersync can be used with a custom rule
+  // to include Browsersync's script at the <head> tag instead of the <body> tag.
+  // https://github.com/BrowserSync/browser-sync/wiki/Browsersync-for-Turbolinks
+  eleventyConfig.setBrowserSyncConfig({
+    snippetOptions: {
+      rule: {
+        match: /<\/head>/i,
+        fn: function (snippet, match) {
+          return snippet + match;
         }
       }
-    })
-
-    return {
-      dataTemplateEngine: 'njk',
-      markdownTemplateEngine: 'njk',
-      htmlTemplateEngine: 'njk',
-      templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],
     }
+  })
+
+  return {
+    dataTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],
   }
+}
