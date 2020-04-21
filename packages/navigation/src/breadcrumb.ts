@@ -20,9 +20,6 @@ export class BreadcrumbController extends Controller {
   }
 
   connect() {
-    // hide leaf and show parent
-    this.leafItemTarget.style.opacity = '0'
-    this.parentItemTarget.removeAttribute('hidden')
     setTimeout(() => this.leafItemTarget.style.transition = 'opacity 192ms ease-in')
   }
 
@@ -31,6 +28,7 @@ export class BreadcrumbController extends Controller {
   }
 
   private update(pos: InPagePosition) {
+    this.parentItemTarget.removeAttribute('hidden')
     if (pos.id && pos.title) {
       this.parentAnchorTarget.href = '#'
       this.leafHeadingTarget.textContent = pos.title
