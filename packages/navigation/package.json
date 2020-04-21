@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "clean": "shx rm -rf dist",
-    "build": "tsc"
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "@types/throttle-debounce": "^2.1.0",
