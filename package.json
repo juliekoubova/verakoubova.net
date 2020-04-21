@@ -5,7 +5,7 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "deploy": "./scripts/deploy.sh packages/web/_site",
-    "dev": "lerna run dev",
+    "dev": "lerna run --parallel dev",
     "predeploy": "lerna run predeploy",
     "serve": "lerna run serve"
   },
