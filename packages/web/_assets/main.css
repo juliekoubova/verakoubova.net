@@ -33,7 +33,7 @@ b, strong {
 }
 
 .turbolinks-progress-bar {
-  /* purgecss ignore current */
+  /*! purgecss ignore current */
   @apply h-1;
   @apply bg-red-800;
 }
