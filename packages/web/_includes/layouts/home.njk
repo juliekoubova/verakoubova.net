@@ -11,7 +11,6 @@ bodyData:
 {% from 'macros.njk' import image %}
 <div
   class="flex items-center sm:items-stretch justify-center py-8 sm:py-16"
-  data-controller="snap-type"
   >
   <div class="flex flex-col sm:flex-row-reverse sm:items-center">
     <div class="vr-base self-end sm:self-auto sm:flex-basis-1/2 sm:flex-shrink-0">
@@ -30,13 +29,13 @@ bodyData:
   </div>
 </div>
 
-<div class="snap-start min-h-screen" data-controller="vr">
+<div class="min-h-screen" data-controller="vr">
 {% endblock %}
 
 {% block content %}
 <main id="{{ mainId }}">
   {% for post in posts | reverse %}
-  <article class="snap-start sidebar-section mb-4">
+  <article class="sidebar-section mb-4">
     <h3 class="in-sidebar vr-base">{{ post.title | lang }}</h3>
     <p class="para">{{ post | lang | safe }}</p>
   </article>
