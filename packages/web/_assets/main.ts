@@ -1,4 +1,6 @@
-import { ActiveDotController, BreadcrumbController, NavigationController } from '@verakoubova/navigation'
+import {
+  ActiveDotController, BreadcrumbController, NavigationController, SmoothScrollController
+} from '@verakoubova/navigation'
 import { VerticalRhythmController } from '@verakoubova/vertical-rhythm'
 import { Application } from 'stimulus'
 import { SnapTypeController } from './js'
@@ -10,4 +12,5 @@ vekApp.register('active-dot', ActiveDotController)
 vekApp.register('breadcrumb', BreadcrumbController)
 vekApp.register('navigation', NavigationController)
 vekApp.register('snap-type', SnapTypeController)
+vekApp.register('smooth-scroll', SmoothScrollController)
 vekApp.register('vr', VerticalRhythmController)
