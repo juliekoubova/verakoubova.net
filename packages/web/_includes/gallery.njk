@@ -7,9 +7,8 @@
     <a
       href="#{{ img | lang | slug if not loop.first }}"
       title="{{ img | lang }}"
-      class="block py-2 opacity-0 transition-opacity"
+      class="block py-2 opacity-0 transition-opacity duration-700 ease-out"
       data-target="active-dot.link"
-      {{ 'data-navigation-top' if loop.first }}
       >
       <svg viewBox="0 0 20 10" width="4" height="2" class="w-4 h-2 text-gray-600">
         <circle cx="10" cy="5" r="4" fill="currentColor" />

@@ -69,10 +69,14 @@ export class NavigationController extends Controller {
       topElement = makeTopElement()
     }
     this.intersector.observe(topElement)
-    makeAttributeObserver(this, 'id', {
+
+    const delegate = {
       elementMatchedAttribute: this.intersector.observe,
       elementUnmatchedAttribute: this.intersector.unobserve,
-    })
+    }
+
+    makeAttributeObserver(this, 'data-navigation-top', delegate)
+    makeAttributeObserver(this, 'id', delegate)
   }
 
   intersect(entries: IntersectionObserverEntry[]) {

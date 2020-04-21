@@ -9,6 +9,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@verakoubova/store": "0.0.0",
     "@stimulus/core": "^1.1.1",
     "@stimulus/mutation-observers": "^1.1.1"
   }
