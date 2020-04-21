@@ -1,5 +1,5 @@
 import { Controller } from 'stimulus'
-import { InPagePosition, getInPagePosition, makeNavigationWatcher } from './navigation'
+import { InPagePosition, currentPosition } from './navigation'
 
 export class BreadcrumbController extends Controller {
 
@@ -11,15 +11,17 @@ export class BreadcrumbController extends Controller {
   readonly parentAnchorTarget!: HTMLAnchorElement
   readonly parentItemTarget!: HTMLElement
 
-  initialize() {
-    makeNavigationWatcher(this, pos => this.update(pos))
-  }
+  readonly sub = currentPosition.subscribe(pos => this.update(pos))
 
   connect() {
     // hide leaf and show parent
     this.leafItemTarget.style.opacity = '0'
     this.parentItemTarget.removeAttribute('hidden')
     setTimeout(() => this.leafItemTarget.style.transition = 'opacity 192ms ease-in')
+  }
+
+  disconnect() {
+    this.sub.unsubscribe()
   }
 
   goUp(e: Event) {

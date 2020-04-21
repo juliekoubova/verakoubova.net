@@ -1,0 +1,13 @@
+{
+  "name": "@verakoubova/store",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "build": "tsc"
+  },
+  "dependencies": {
+  }
+}

@@ -1,52 +1,43 @@
-import { makeIntersector, makeAttributeObserver, makeEventHandler, wrapController } from '@verakoubova/stimulus'
+import { makeIntersector, makeAttributeObserver } from '@verakoubova/stimulus'
+import { createStore } from '@verakoubova/store'
 import { throttle } from 'throttle-debounce'
 import { Controller } from 'stimulus'
-import { hashEqual, stripHash } from './hash-utils'
+import { hashEqual, getHash } from './hash-utils'
 
 export interface InPagePosition {
-  hash: string
   id: string | undefined
   title: string
 }
 
-export const InPagePositionChangedEvent = 'vek:in-page-navigation'
-
-function dispatchInPageNavigation(detail: InPagePosition) {
-  dispatchEvent(
-    new CustomEvent<InPagePosition>(
-      InPagePositionChangedEvent,
-      { bubbles: false, detail }
-    )
-  )
+function getInPagePosition(): InPagePosition {
+  const id = getHash(location.hash) || undefined
+  const element = id && document.getElementById(id) || undefined
+  const title = element && getElementTitle(element) || ''
+  return { id, title }
 }
+
+export const currentPosition = createStore<InPagePosition>(
+  getInPagePosition()
+)
 
 function getElementTitle(element: Element) {
   return element.getAttribute('data-title') || ''
 }
 
-
 function setInPagePosition(element: Element | undefined) {
   const title = element ? getElementTitle(element) : ''
-  const id = element?.id ?? ''
-  const hash = '#' + id
+  const id = element?.id
+  const hash = '#' + (id ?? '')
 
   if (hashEqual(hash, location.hash)) {
     return
   }
 
   history.replaceState(history.state, title, hash)
-  dispatchInPageNavigation({ hash, id, title })
+  currentPosition.dispatch({ id, title })
 }
 
 export const queueSetInPagePosition = throttle(128, setInPagePosition)
-
-export function getInPagePosition(): InPagePosition {
-  const id = stripHash(location.hash) || undefined
-  const element = id && document.getElementById(id) || undefined
-  const title = element && getElementTitle(element) || ''
-  const hash = '#' + (id ?? '')
-  return { hash, id, title }
-}
 
 function makeTopElement() {
   const el = document.createElement('div')
@@ -95,27 +86,4 @@ export class NavigationController extends Controller {
       queueSetInPagePosition(target)
     }
   }
-
-  connect() {
-    const position = getInPagePosition()
-    if (position) {
-      dispatchInPageNavigation(position)
-    }
-  }
-}
-
-export function makeNavigationWatcher(
-  controller: Controller,
-  positionUpdate: (position: InPagePosition) => void,
-) {
-  makeEventHandler(
-    controller,
-    window,
-    InPagePositionChangedEvent,
-    e => positionUpdate((e as CustomEvent<InPagePosition>).detail)
-  )
-  wrapController(
-    controller,
-    () => positionUpdate(getInPagePosition())
-  )
 }
