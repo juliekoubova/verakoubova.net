@@ -1,15 +1,18 @@
 import { Controller } from "@stimulus/core";
-import { Subscription } from "@verakoubova/store"
+import { Subscription, Observable } from 'rxjs'
 import { wrapController } from "./wrapper";
 
-export function makeSubscriber(
-  controller: Controller,
-  subscriber: () => Subscription,
+export function makeSubscriber<T, TController extends Controller>(
+  controller: TController,
+  observable: Observable<T> ,
+  next: (this: TController, value: T) => void
 ) {
   let subscription: Subscription | undefined
   wrapController(
     controller,
-    () => subscription = subscriber(),
+    () => subscription = observable.subscribe(
+      value => next.call(controller, value)
+    ),
     () => subscription?.unsubscribe()
   )
 }

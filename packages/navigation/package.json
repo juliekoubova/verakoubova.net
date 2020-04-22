@@ -10,11 +10,12 @@
     "dev": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
+    "@stimulus/core": "^1.1.1",
+    "@stimulus/mutation-observers": "^1.1.1",
     "@types/throttle-debounce": "^2.1.0",
     "@verakoubova/stimulus": "0.0.0",
     "@verakoubova/store": "0.0.0",
-    "@stimuls/core": "^1.1.1",
-    "@stimuls/mutation-observers": "^1.1.1",
+    "rxjs": "^6.5.5",
     "throttle-debounce": "^2.1.0"
   }
 }
