@@ -10,6 +10,7 @@
       class="block py-2 opacity-0 transition-opacity duration-700 ease-out"
       data-target="active-dot.link"
       >
+      {# pointer-events-none because events do not bubble from SVG elements to HTML parents #}
       <svg viewBox="0 0 20 10" width="4" height="2" class="w-4 h-2 text-gray-600 pointer-events-none">
         <circle cx="10" cy="5" r="4" fill="currentColor" />
       </svg>
@@ -63,13 +64,7 @@
       </div>
       {% endif %}
 
-      <div
-        class="sm:mx-4 {{ blockClass }} flex-1"
-
-        {% if loop.first %}
-        data-target="snap-type.determineBy"
-        {% endif %}
-      >
+      <div class="sm:mx-4 {{ blockClass }} flex-1">
         {{ image(
                 img,
                 gallery.imageBase | ensureTrailingSlash,

@@ -1,4 +1,4 @@
-export * from './active-dot';
+export * from './paging';
 export * from './breadcrumb';
 export * from './hash-utils';
 export * from './navigation';

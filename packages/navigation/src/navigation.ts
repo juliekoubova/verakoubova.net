@@ -1,43 +1,8 @@
-import { makeIntersector, makeAttributeObserver } from '@verakoubova/stimulus'
-import { createStore } from '@verakoubova/store'
-import { throttle } from 'throttle-debounce'
-import { Controller } from 'stimulus'
-import { hashEqual, getHash } from './hash-utils'
-
-export interface InPagePosition {
-  id: string | undefined
-  title: string
-}
-
-function getInPagePosition(): InPagePosition {
-  const id = getHash(location.hash) || undefined
-  const element = id && document.getElementById(id) || undefined
-  const title = element && getElementTitle(element) || ''
-  return { id, title }
-}
-
-export const currentPosition = createStore<InPagePosition>(
-  getInPagePosition()
-)
-
-function getElementTitle(element: Element) {
-  return element.getAttribute('data-title') || ''
-}
-
-function setInPagePosition(element: Element | undefined) {
-  const title = element ? getElementTitle(element) : ''
-  const id = element?.id
-  const hash = '#' + (id ?? '')
-
-  if (hashEqual(hash, location.hash)) {
-    return
-  }
-
-  history.replaceState(history.state, title, hash)
-  currentPosition.dispatch({ id, title })
-}
-
-const queueSetInPagePosition = throttle(128, setInPagePosition)
+import { makeIntersector, makeAttributeObserver, combineAttributeObserverDelegates } from '@verakoubova/stimulus'
+import { Controller } from '@stimulus/core'
+import { AttributeObserverDelegate } from '@stimulus/mutation-observers'
+import { queueSetInPagePosition } from './position'
+import { positions } from './positions'
 
 function makeTopElement() {
   const el = document.createElement('div')
@@ -69,10 +34,20 @@ export class NavigationController extends Controller {
       topElement = makeTopElement()
     }
 
-    const delegate = {
-      elementMatchedAttribute: this.intersector.observe,
-      elementUnmatchedAttribute: this.intersector.unobserve,
+    const observeIntersection: AttributeObserverDelegate = {
+      elementMatchedAttribute: el => this.intersector.observe(el),
+      elementUnmatchedAttribute: el => this.intersector.unobserve(el),
     }
+
+    const updatePositions: AttributeObserverDelegate = {
+      elementMatchedAttribute: element => positions.dispatch({ type: 'add', element }),
+      elementUnmatchedAttribute: element => positions.dispatch({ type: 'remove', element })
+    }
+
+    const delegate = combineAttributeObserverDelegates(
+      observeIntersection,
+      updatePositions,
+    )
 
     makeAttributeObserver(this, 'data-navigation-top', delegate)
     makeAttributeObserver(this, 'id', delegate)

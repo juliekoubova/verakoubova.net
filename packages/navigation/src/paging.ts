@@ -1,7 +1,7 @@
-import { Controller } from "stimulus";
-import { InPagePosition, currentPosition } from "./navigation";
-import { hashEqual } from "./hash-utils";
-import { makeSubscriber } from "@verakoubova/stimulus";
+import { makeSubscriber } from '@verakoubova/stimulus';
+import { Controller } from 'stimulus';
+import { InPagePosition, currentPosition } from './position';
+import { hashEqual } from './hash-utils';
 
 function delayFirstInvocation<T, Args extends any[], F extends (...args: Args) => T>(
   delayMs: number,
