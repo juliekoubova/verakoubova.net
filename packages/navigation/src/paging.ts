@@ -3,18 +3,23 @@ import { Controller } from 'stimulus';
 import { InPagePosition, currentPosition } from './position';
 import { hashEqual } from './hash-utils';
 
-function delayFirstInvocation<T, Args extends any[], F extends (...args: Args) => T>(
+function delayFirstInvocation<
+  T,
+  Context,
+  Args extends any[],
+  F extends (this: Context, ...args: Args) => T
+>(
   delayMs: number,
   f: F,
 ) {
   let called = false
-  return function delayed(...args: Args): Promise<T> {
+  return function delayed(this: Context, ...args: Args): Promise<T> {
     return new Promise<T>(resolve => {
       if (called) {
-        resolve(f(...args))
+        resolve(f.apply(this, args))
       } else {
         called = true
-        setTimeout(() => resolve(f(...args)), delayMs)
+        setTimeout(() => resolve(f.apply(this, args)), delayMs)
       }
     })
   }
@@ -30,9 +35,8 @@ export class ActiveDotController extends Controller {
     this.first = true
     makeSubscriber(
       this,
-      () => currentPosition.subscribe(
-        delayFirstInvocation(600, pos => this.update(pos))
-      )
+      currentPosition,
+      delayFirstInvocation(600, this.update),
     )
   }
 
