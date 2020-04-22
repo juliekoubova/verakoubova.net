@@ -1,6 +1,6 @@
 import { Controller } from 'stimulus'
 import { makeSubscriber } from '@verakoubova/stimulus'
-import { InPagePosition, currentPosition } from './navigation'
+import { InPagePosition, currentPosition } from './position'
 
 export class BreadcrumbController extends Controller {
 
@@ -31,7 +31,7 @@ export class BreadcrumbController extends Controller {
     this.parentItemTarget.removeAttribute('hidden')
     if (pos.id && pos.title) {
       this.parentAnchorTarget.href = '#'
-      this.leafHeadingTarget.textContent = pos.title
+      // this.leafHeadingTarget.textContent = pos.title
       this.leafItemTarget.style.opacity = '1'
     } else {
       this.parentAnchorTarget.removeAttribute('href')

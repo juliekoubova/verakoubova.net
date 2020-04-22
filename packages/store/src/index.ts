@@ -1,27 +1,38 @@
 
+export type Reducer<State, Action> = (state: State, action: Action) => State
 export type Subscriber<T> = (state: T) => void
 
 export interface Subscription {
   unsubscribe(): void
 }
 
-export interface Store<T> {
-  readonly state: T
-  dispatch(newState: T): void
-  subscribe(subscriber: Subscriber<T>): Subscription
+export interface Store<State, Action> {
+  readonly state: State
+  dispatch(action: Action): void
+  subscribe(subscriber: Subscriber<State>): Subscription
 }
 
-export function createStore<T>(state: T): Store<T> {
+function replaceState<State, Action>(state: State, action: Action) {
+  return action as unknown as State
+}
 
-  let subscribers: Subscriber<T>[] = []
-
+export function createStore<T>(state: T): Store<T, T>
+export function createStore<State, Action>(
+  state: State,
+  reducer: Reducer<State, Action>
+): Store<State, Action>
+export function createStore<State, Action>(
+  state: State,
+  reducer: Reducer<State, Action> = replaceState
+): Store<State, Action> {
+  let subscribers: Subscriber<State>[] = []
   return {
     get state() { return state },
-    dispatch(newState: T) {
-      state = newState
+    dispatch(action: Action) {
+      state = reducer(state, action)
       subscribers.forEach(sub => sub(state))
     },
-    subscribe(subscriber: Subscriber<T>) {
+    subscribe(subscriber: Subscriber<State>) {
       subscribers.push(subscriber)
       subscriber(state)
       return {

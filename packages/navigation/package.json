@@ -13,7 +13,8 @@
     "@types/throttle-debounce": "^2.1.0",
     "@verakoubova/stimulus": "0.0.0",
     "@verakoubova/store": "0.0.0",
-    "stimulus": "^1.1.1",
+    "@stimuls/core": "^1.1.1",
+    "@stimuls/mutation-observers": "^1.1.1",
     "throttle-debounce": "^2.1.0"
   }
 }

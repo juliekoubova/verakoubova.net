@@ -1,15 +1,5 @@
 import { Controller } from "@stimulus/core";
-
-function then<T>(
-  context: unknown,
-  a: (...args: unknown[]) => void,
-  b: (...args: unknown[]) => T,
-) {
-  return (...args: unknown[]) => {
-    a.apply(context, args)
-    return b.apply(context, args)
-  }
-}
+import { then } from './then'
 
 export function wrapController(
   controller: Controller,
@@ -17,8 +7,8 @@ export function wrapController(
   disconnect?: () => void,
 ): void {
   const { connect: prevConnect, disconnect: prevDisconnect } = controller
-  controller.connect = then(controller, connect, prevConnect)
+  controller.connect = then(connect, prevConnect)
   if (disconnect) {
-    controller.disconnect = then(controller, prevDisconnect, disconnect)
+    controller.disconnect = then(prevDisconnect, disconnect)
   }
 }
