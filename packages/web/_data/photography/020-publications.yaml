@@ -88,12 +88,8 @@ rows:
 - cs: Masák a partner
   de: Masak und Partner
   instances:
-  - cs: |
-      Fotografická prezentace architektonického ateliéru
-      Viz webovou stránku <a href="http://www.masak-partner.com/">Masák a partner</a>
-    de: |
-      Photographische Präsentation eines architektonischen Ateliers
-      Siehe die Webseite von <a href="http://www.masak-partner.com/">Masak und Partner</a>
+  - cs: Fotografická prezentace architektonického ateliéru
+    de: Photographische Präsentation eines architektonischen Ateliers
 
 - cs: Psí víno
   instances:
