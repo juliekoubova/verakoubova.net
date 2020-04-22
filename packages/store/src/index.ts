@@ -6,7 +6,7 @@ function replaceState<State, Action>(state: State, action: Action): State {
   return action as any
 }
 
-class Store<State, Action> extends BehaviorSubject<State>{
+export class Store<State, Action> extends BehaviorSubject<State>{
   constructor(
     initialState: State,
     private readonly reducer: Reducer<State, Action>,

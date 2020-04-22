@@ -15,7 +15,8 @@ export class BreadcrumbController extends Controller {
   initialize() {
     makeSubscriber(
       this,
-      () => currentPosition.subscribe(pos => this.update(pos))
+      currentPosition,
+      this.update
     )
   }
 
@@ -31,7 +32,7 @@ export class BreadcrumbController extends Controller {
     this.parentItemTarget.removeAttribute('hidden')
     if (pos.id && pos.title) {
       this.parentAnchorTarget.href = '#'
-      // this.leafHeadingTarget.textContent = pos.title
+      this.leafHeadingTarget.textContent = pos.title
       this.leafItemTarget.style.opacity = '1'
     } else {
       this.parentAnchorTarget.removeAttribute('href')

@@ -1,11 +1,20 @@
 import { Controller } from 'stimulus'
 
-const isSafari =
+// yuuuuuuck
+
+const safari =
   /Safari/.test(navigator.userAgent) &&
   !/Chrome/.test(navigator.userAgent)
 
+const isMobileWebkit = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (safari && navigator.maxTouchPoints > 0)
+
 function toggleScrollSnapClass(className: string, value?: boolean) {
-  const el = isSafari ? document.body : document.documentElement
+  if (isMobileWebkit) {
+    // scroll snap is irredeemably broken on iOS. no snap for now :(
+      return
+  }
+  const el = safari ? document.body : document.documentElement
   el.classList.toggle(className, value)
 }
 

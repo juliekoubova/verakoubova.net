@@ -1,5 +1,5 @@
 import { getHash, hashEqual } from "./hash-utils"
-import { createStore } from "@verakoubova/store"
+import { createStore, Store } from "@verakoubova/store"
 import { throttle } from "throttle-debounce"
 
 export interface InPagePosition {

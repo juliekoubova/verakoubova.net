@@ -5,6 +5,7 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "deploy": "./scripts/deploy.sh packages/web/_site",
+    "predev": "lerna run build --ignore @verakoubova/web",
     "dev": "lerna run --parallel dev",
     "predeploy": "lerna run predeploy",
     "serve": "lerna run serve"
