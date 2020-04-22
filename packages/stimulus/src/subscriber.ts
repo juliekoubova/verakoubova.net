@@ -1,5 +1,5 @@
 import { Controller } from "@stimulus/core";
-import { Subscription, Observable } from 'rxjs'
+import { Subscription, Observable } from '@verakoubova/store'
 import { wrapController } from "./wrapper";
 
 export function makeSubscriber<T, TController extends Controller>(

@@ -7,8 +7,5 @@
   "scripts": {
     "clean": "shx rm -rf dist",
     "build": "tsc"
-  },
-  "dependencies": {
-    "rxjs": "^6.5.5"
   }
 }

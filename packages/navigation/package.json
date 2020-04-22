@@ -15,7 +15,6 @@
     "@types/throttle-debounce": "^2.1.0",
     "@verakoubova/stimulus": "0.0.0",
     "@verakoubova/store": "0.0.0",
-    "rxjs": "^6.5.5",
     "throttle-debounce": "^2.1.0"
   }
 }

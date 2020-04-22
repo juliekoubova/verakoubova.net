@@ -1,4 +1,3 @@
-import { BehaviorSubject } from 'rxjs'
 
 export type Reducer<State, Action> = (state: State, action: Action) => State
 
@@ -6,18 +5,20 @@ function replaceState<State, Action>(state: State, action: Action): State {
   return action as any
 }
 
-export class Store<State, Action> extends BehaviorSubject<State>{
-  constructor(
-    initialState: State,
-    private readonly reducer: Reducer<State, Action>,
-  ) {
-    super(initialState)
-  }
+export type Observer<T> = (value: T) => void
 
-  dispatch(action: Action) {
-    const next = this.reducer(this.value, action)
-    this.next(next)
-  }
+export interface Observable<T> {
+  subscribe(observer: Observer<T>): Subscription
+}
+
+export interface Store<State, Action> {
+  readonly value: State
+  dispatch(action: Action): void
+  subscribe(observer: Observer<State>): Subscription
+}
+
+export interface Subscription {
+  unsubscribe(): void
 }
 
 export function createStore<T>(state: T): Store<T, T>
@@ -28,8 +29,19 @@ export function createStore<State, Action>(
 ): Store<State, Action>
 
 export function createStore<State, Action>(
-  initialState: State,
+  state: State,
   reducer: Reducer<State, Action> = replaceState
 ): Store<State, Action> {
-  return new Store(initialState, reducer)
+  const subscribers = new Set<Observer<State>>()
+  return {
+    get value() { return state },
+    dispatch(action) {
+      state = reducer(state, action)
+      subscribers.forEach(sub => sub(state))
+    },
+    subscribe(subscriber) {
+      subscribers.add(subscriber)
+      return { unsubscribe() { subscribers.delete(subscriber) }}
+    }
+  }
 }
