@@ -23,33 +23,6 @@
 
 <ol>
 {% for img in gallery.images %}
-  {% set left = img.left | lang | item(gallery.imageBase) %}
-  {% set right = img.right | lang | item(gallery.imageBase) %}
-
-  {% if left and right %}
-    {% set flexBasis = " sm:w-1/3" %}
-  {% elif left or right %}
-    {% set flexBasis = " sm:w-1/2" %}
-  {% else %}
-    {% set flexBasis = "" %}
-  {% endif %}
-
-  {% set leftClass = left.data.class | lang %}
-  {% set rightClass = right.data.class | lang %}
-
-  {% if left and not right %}
-  {%   set objectAlign = 'sm:object-left-top' %}
-  {% elif right and not left %}
-  {%   set objectAlign = 'sm:object-right-top' %}
-  {% else %}
-  {%  set objectAlign = 'sm:object-top' %}
-  {% endif %}
-
-  {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto' + flexBasis %}
-
-  {% set leftHtml = (left.templateContent if left) | trim %}
-  {% set rightHtml = (right.templateContent if right) | trim %}
-
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
     data-title="{{ img | lang }}"
@@ -61,28 +34,7 @@
     >
     <h3 class="sr-only">{{ item | lang }}</h3>
 
-    <div class="sm:max-h-full sm:flex sm:max-w-2xl lg:max-w-4xl mx-auto">
-      {% if left %}
-      <div class="{{ blockClass }} {{ leftClass }}">
-        {{ leftHtml | safe }}
-      </div>
-      {% endif %}
-
-      <div class="sm:mx-4 {{ blockClass }} flex-1">
-        {{ image(
-                img,
-                gallery.imageBase | ensureTrailingSlash,
-                class='object-scale-down h-full w-full ' + objectAlign
-          ) }}
-      </div>
-
-      {% if right %}
-      <div class="{{ blockClass }} {{ rightClass }}">
-        {{ rightHtml | safe }}
-      </div>
-      {% endif %}
-    </div>
-
+    {% include 'photo.njk' %}
   </li>
 {% endfor %}
 </ol>
