@@ -41,6 +41,7 @@ export function createStore<State, Action>(
     },
     subscribe(subscriber) {
       subscribers.add(subscriber)
+      subscriber(state)
       return { unsubscribe() { subscribers.delete(subscriber) }}
     }
   }

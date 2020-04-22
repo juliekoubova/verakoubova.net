@@ -20,7 +20,7 @@
 
         {% if inPageNav %}
         <li hidden class="inline lf-before sm:no-lf-before" data-target="breadcrumb.parentItem">
-          <a class="inline" data-target="breadcrumb.parentAnchor" data-action="breadcrumb#goUp">{{
+          <a class="inline" data-target="breadcrumb.parentAnchor">{{
             bodyTitle | default(title) | safe
           }}</a>
         </li>

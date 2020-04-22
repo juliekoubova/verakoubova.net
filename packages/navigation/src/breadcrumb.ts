@@ -21,15 +21,15 @@ export class BreadcrumbController extends Controller {
   }
 
   connect() {
-    setTimeout(() => this.leafItemTarget.style.transition = 'opacity 192ms ease-in')
-  }
-
-  goUp(e: Event) {
+    this.parentAnchorTarget.removeAttribute('href')
+    this.parentItemTarget.removeAttribute('hidden')
     this.leafItemTarget.style.opacity = '0'
+    requestAnimationFrame(
+      () => this.leafItemTarget.style.transition = 'opacity 192ms ease-in'
+    )
   }
 
   private update(pos: InPagePosition) {
-    this.parentItemTarget.removeAttribute('hidden')
     if (pos.id && pos.title) {
       this.parentAnchorTarget.href = '#'
       this.leafHeadingTarget.textContent = pos.title
