@@ -37,9 +37,13 @@
   {% set leftClass = left.data.class | lang %}
   {% set rightClass = right.data.class | lang %}
 
-  {% set objectAlign = 'sm:object-top' %}
-  {% set objectAlign = 'sm:object-left-top' if left %}
-  {% set objectAlign = 'sm:object-right-top' if right %}
+  {% if left and not right %}
+  {%   set objectAlign = 'sm:object-left-top' %}
+  {% elif right and not left %}
+  {%   set objectAlign = 'sm:object-right-top' %}
+  {% else %}
+  {%  set objectAlign = 'sm:object-top' %}
+  {% endif %}
 
   {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto' + flexBasis %}
 
