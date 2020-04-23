@@ -33,7 +33,7 @@
     {% from 'macros.njk' import image %}
     {{ image(
             img,
-            gallery.imageBase | ensureTrailingSlash,
+            imageBase | ensureTrailingSlash,
             class='object-scale-down h-full w-full ' + objectAlign
       ) }}
   </div>
