@@ -5,6 +5,7 @@ title: Konference
 img:
   src: index.jpeg
 ---
+{% set right %}
 <div class="md:self-end md:ml-4 md:mb-6">
   <svg aria-hidden="true" width="71" height="65" viewbox="0 0 100 100" class="text-red-800">
     <circle cx="50" cy="50" r="50" class="fill-current" />
@@ -17,3 +18,5 @@ img:
   </ul>
   </nav>
 </div>
+{% endset %}
+{% include 'photo.njk' %}

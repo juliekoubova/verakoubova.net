@@ -6,7 +6,6 @@
 {% else %}
   {% set flexBasis = "" %}
 {% endif %}
-
 {% set leftClass = left.data.class | lang %}
 {% set rightClass = right.data.class | lang %}
 
@@ -20,8 +19,8 @@
 
 {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto' + flexBasis %}
 
-{% set leftHtml = (left.templateContent if left) | trim %}
-{% set rightHtml = (right.templateContent if right) | trim %}
+{% set leftHtml = left.templateContent if left.templateContent else left %}
+{% set rightHtml = right.templateContent if right.templateContent else right %}
 
 <div class="sm:max-h-full sm:flex sm:max-w-2xl lg:max-w-4xl mx-auto">
   {% if left %}
@@ -31,6 +30,7 @@
   {% endif %}
 
   <div class="sm:mx-4 {{ blockClass }} flex-1">
+    {% from 'macros.njk' import image %}
     {{ image(
             img,
             gallery.imageBase | ensureTrailingSlash,
@@ -44,4 +44,3 @@
   </div>
   {% endif %}
 </div>
-
