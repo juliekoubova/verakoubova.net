@@ -1,11 +1,5 @@
 ---
 layout: fixed-header
-pagination:
-  addAllPagesToCollections: true
-  alias: gallery
-  data: galleries
-  resolve: values
-  size: 1
 eleventyComputed:
   pageId: "gallery/{{ pagination.pageNumber }}"
   title: "{{ gallery | lang }}"
