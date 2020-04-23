@@ -1,6 +1,7 @@
 ---
-layout: gallery-index
+layout: layouts/fixed-header
 pageId: konference
+inPageNav: true
 title: Konference
 img:
   src: index.jpeg
@@ -19,4 +20,8 @@ img:
   </nav>
 </div>
 {% endset %}
+
+<div class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start">
+{% set imageBase = page.url %}
 {% include 'photo.njk' %}
+</div>
