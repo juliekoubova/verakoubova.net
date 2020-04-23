@@ -1,7 +1,5 @@
 ---
-layout: layouts/konference-page
-permalink: "{{ lang }}/konference/{{ konference[gallery] | lang | slug }}/index.html"
+layout: layouts/gallery-page
+parentId: konference
+permalink: "{{ lang }}/konference/{{ gallery | lang | slug }}/index.html"
 ---
-
-{% set gallery = konference[gallery] %}
-{% include 'gallery.njk' %}
