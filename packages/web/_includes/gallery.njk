@@ -23,6 +23,8 @@
 
 <ol>
 {% for img in gallery.images %}
+  {% set left = img.left | lang | item(gallery.imageBase) %}
+  {% set right = img.right | lang | item(gallery.imageBase) %}
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
     data-title="{{ img | lang }}"
