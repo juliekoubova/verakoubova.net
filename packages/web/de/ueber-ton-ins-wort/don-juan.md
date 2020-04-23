@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: Don Juan (erzählt von ihm selbst)
 subtitle: literarisch-musikalische Buchpräsentation
 audio: /mp3/don-juan.de.mp3

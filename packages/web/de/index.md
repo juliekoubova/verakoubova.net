@@ -1,5 +1,5 @@
 ---
-layout: layouts/home
+layout: pages/home
 pageId: home
 img:
   src: /img/home.jpeg

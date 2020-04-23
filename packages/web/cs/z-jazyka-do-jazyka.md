@@ -1,4 +1,4 @@
 ---
-layout: bibliography
+layout: pages/bibliography
 title: Z jazyka do jazyka
 ---

@@ -1,4 +1,4 @@
 ---
-layout: photography
+layout: pages/photography
 title: Aufnahme für Aufnahme
 ---

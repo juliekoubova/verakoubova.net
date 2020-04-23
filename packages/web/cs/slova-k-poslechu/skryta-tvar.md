@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: Skrytá tvář Friedricha Nietzscheho
 subtitle: komponovaný dialog písní a básní filosofa
 audio: /mp3/skryta-tvar.mp3

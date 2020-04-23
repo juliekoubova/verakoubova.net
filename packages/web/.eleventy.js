@@ -251,6 +251,9 @@ module.exports = function (eleventyConfig) {
 
   return {
     dataTemplateEngine: 'njk',
+    dir: {
+      layouts: '_layouts'
+    },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],

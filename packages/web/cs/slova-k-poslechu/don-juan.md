@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: Don Juan (ve vlastním podání)
 listTitle: 'Don Juan<br class="hidden lg:inline">(ve vlastním podání)'
 subtitle: literárně-hudební prezentace

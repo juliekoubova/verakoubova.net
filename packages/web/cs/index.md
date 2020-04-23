@@ -1,9 +1,6 @@
 ---
-layout: layouts/home
-pageId: home
-img:
-  src: /img/home.jpeg
-titlePrefix:
+layout: pages/home
+img: { src: /img/home.jpeg }
 bodyTitle: Aktuality
 mainId: aktuality
 ---

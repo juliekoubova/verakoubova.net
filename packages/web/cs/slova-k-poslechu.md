@@ -1,4 +1,4 @@
 ---
-layout: layouts/show-list
+layout: pages/show-list
 title: Slova k poslechu
 ---

@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: '&bdquo;... Dabei liebe ich doch gar nicht Dich...&ldquo; '
 subtitle: Kafkas &bdquo;lebendige Bilder&ldquo; in den Briefen an Milena
 audio: /mp3/dabei-liebe-ich.mp3

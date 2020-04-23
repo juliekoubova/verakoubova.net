@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: Sekera na zamrzlé moře v nás
 listTitle: Sekera na<br class="hidden lg:inline">zamrzlé moře v nás
 subtitle: literárně-hudební pořad o &bdquo;žitém&ldquo; psaní Franze Kafky

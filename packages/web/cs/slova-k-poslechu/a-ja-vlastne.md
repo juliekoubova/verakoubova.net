@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: '&bdquo;&hellip;A já vlastně vůbec nemiluji Tebe&hellip;&ldquo;'
 subtitle: Kafkovy &bdquo;živé obrazy&ldquo; v dopisech Mileně
 audio: /mp3/a-ja-vlastne.mp3

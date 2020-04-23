@@ -1,8 +1,7 @@
 ---
-layout: conventions
+layout: pages/convention-list
 title: Konferenzen
-img:
-  src: index.jpeg
+img: { src: index.jpeg }
 ---
 * [UnÄhnlichkeiten](unahnlichkeiten/)
 * [Hejdánek](hejdanek/)

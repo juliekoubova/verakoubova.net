@@ -1,5 +1,5 @@
 ---
-layout: layouts/show-page
+layout: pages/show
 title: Die Axt für das gefrorene Meer in uns
 listTitle: Die Axt für das<br class="hidden lg:inline">gefrorene Meer in uns
 subtitle: musikalische Lesung zum &bdquo;gelebten&ldquo; Schreiben des Franz Kafka
