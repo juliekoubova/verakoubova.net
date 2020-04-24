@@ -16,7 +16,7 @@
   export interface Eleventy {
     setBrowserSyncConfig(options: BrowserSyncOptions): void
     addFilter(key: string, fn: () => any): void
-    addPassthroughCopy(glob: string): void
+    addPassthroughCopy(glob: string | Record<string, string>) : void
     addDataExtension(ext: string, loader: (text: any) => any): void
     addPlugin<Config>(plugin: EleventyPlugin<Config>, config?: Config): void
     addTransform(name: string, transform: EleventyTransform): void

@@ -3,5 +3,10 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true
-  }
+  },
+  "include": [
+    ".eleventy.js",
+    "**/*.js",
+    "**/*.ts"
+  ]
 }
