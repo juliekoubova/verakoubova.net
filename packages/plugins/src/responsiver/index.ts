@@ -85,10 +85,45 @@ function src(context: Context, image: ResizedImage) {
   return context.urlBase + '/' + image.original.id + '/' + image.fileName
 }
 
-function srcset(context: Context, images: ResizedImage[]) {
+function srcsetByDensity(context: Context, images: ResizedImage[]) {
+  return images
+    .map(s => `${src(context, s)} ${s.width.pixelDensity.toFixed(0)}x`)
+    .join(',')
+}
+
+function srcsetByWidth(context: Context, images: ResizedImage[]) {
   return images
     .map(s => `${src(context, s)} ${s.width.physical.toFixed(0)}w`)
     .join(',')
+}
+
+function setImgSrcset(
+  context: Context,
+  $img: Cheerio,
+  sources: Record<Format, ResizedImage[]>
+) {
+  const { [Format.jpeg]: jpegs } = sources
+
+  if (!jpegs) {
+    throw new Error('JPEG file not produced')
+  }
+
+  // the legacy <img> tag gets created as follows:
+  // * src is the logically largest JPEG at 1x density
+  // * srcset is the logically largest JPEG at all densities
+
+  const largestLogicalWidth = jpegs
+    .map(x => x.width.logical)
+    .reduce((x, y) => x > y ? x : y)
+
+  const imgSrcset = jpegs.filter(x => x.width.logical === largestLogicalWidth)
+  const imgSrc = imgSrcset.find(x => x.width.pixelDensity === 1)!
+
+  $img.attr('width', imgSrc.width.logical.toFixed(0))
+  $img.attr('height', (imgSrc.width.logical * imgSrc.original.aspectRatio).toFixed(0))
+  $img.attr('src', src(context, imgSrc))
+  $img.attr('srcset', srcsetByDensity(context, imgSrcset))
+
 }
 
 function convertToPicture(
@@ -96,31 +131,17 @@ function convertToPicture(
   $img: Cheerio,
   sources: Record<Format, ResizedImage[]>
 ) {
-  const { [Format.jpeg]: jpegs, ...others } = sources
+  // $img.wrap('<picture></picture>')
+  // const $picture = $img.parent()
 
-  if (!jpegs) {
-    throw new Error('JPEG file not produced')
-  }
-
-  const srcJpeg = jpegs
-    .filter(jpeg => jpeg.width.pixelDensity === 1)
-    .reduce((x, y) => x.width.logical > y.width.logical ? x : y)
-
-  $img.attr('width', srcJpeg.width.logical.toFixed(0))
-  $img.attr('height', (srcJpeg.width.logical * srcJpeg.original.aspectRatio).toFixed(0))
-  $img.attr('src', src(context, srcJpeg))
-  $img.attr('srcset', srcset(context, jpegs))
-
-  $img.wrap('<picture></picture>')
-  const $picture = $img.parent()
-
-  for (const [format, sizes] of Object.entries(others)) {
-    const $source = context.$('<source/>')
-    $source.attr('type', FormatMimeTypes[format as Format])
-    $source.attr('srcset', srcset(context, sizes))
-    $source.prependTo($picture)
-  }
+  // for (const [format, sizes] of Object.entries(sources)) {
+  //   const $source = context.$('<source/>')
+  //   $source.attr('type', FormatMimeTypes[format as Format])
+  //   $source.attr('srcset', srcset(context, sizes))
+  //   $source.prependTo($picture)
+  // }
 }
+
 async function processImage(context: Context, img: CheerioElement) {
   const $img = context.$(img)
   const src = $img.attr('src')
@@ -160,6 +181,7 @@ async function processImage(context: Context, img: CheerioElement) {
     )
   )
 
+  setImgSrcset(context, $img, sources)
   convertToPicture(context, $img, sources)
 }
 
