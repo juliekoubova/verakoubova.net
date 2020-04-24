@@ -45,8 +45,7 @@ export async function loadSourceImage(path: string): Promise<OriginalImage> {
   const aspectRatio = height / width
 
   const id =
-    hash.substr(0, HashDirLength)
-    + '/' +
+    hash.substr(0, HashDirLength) + '/' +
     hash.substr(HashDirLength)
 
   return {

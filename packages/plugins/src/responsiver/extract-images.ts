@@ -8,6 +8,13 @@ const remSizes: [string, number][] = [
   ['xl:', 20]
 ]
 
+const screens = {
+  'sm:': '640px',
+  'md:': '768px',
+  'lg:': '1024px',
+  'xl:': '1280px',
+}
+
 const classes = {
   'w-64': '16rem',
   'max-w-xs': '20rem',
@@ -106,5 +113,6 @@ export function getLogicalWidths($img: Cheerio) {
     addRange(widths, multiply(classNameWidths, factor))
   }
 
+  $img.data('widths', null)
   return widths
 }
