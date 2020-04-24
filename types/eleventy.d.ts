@@ -20,10 +20,10 @@ declare module '@11ty/eleventy' {
     addTransform(name: string, transform: EleventyTransform): void
   }
 
-  export type EleventyConfigFunction = (eleventy: Eleventy) => undefined | void |Partial<{
-      dataTemplateEngine: string,
-      markdownTemplateEngine: string,
-      htmlTemplateEngine: string,
-      templateFormats: string[],
+  export type EleventyConfigFunction = (eleventy: Eleventy) => undefined | void | Partial<{
+    dataTemplateEngine: string,
+    markdownTemplateEngine: string,
+    htmlTemplateEngine: string,
+    templateFormats: string[],
   }>
 }

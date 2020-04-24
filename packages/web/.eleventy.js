@@ -1,4 +1,3 @@
-// @ts-check
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 const { externalLinks, responsiver, htmlMinifier } = require('@verakoubova/plugins')
 const yaml = require('js-yaml')
@@ -198,8 +197,10 @@ const filters = {
   }
 }
 
-/** @type {import('@11ty/eleventy').EleventyConfigFunction} */
-module.exports = function (eleventyConfig) {
+/**
+ * @param {import('@11ty/eleventy').Eleventy} eleventyConfig
+ */
+function config(eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
   eleventyConfig.addPassthroughCopy({ '_assets/static': '/' })
@@ -260,3 +261,5 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],
   }
 }
+
+module.exports = config
