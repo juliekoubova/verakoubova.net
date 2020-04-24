@@ -1,4 +1,6 @@
-declare module '@11ty/eleventy' {
+// /// <reference types="browser-sync" />
+
+// declare module '@11ty/eleventy' {
   import { Options as BrowserSyncOptions } from 'browser-sync'
 
   export type EleventyTransform = (content: string, outputPath: string | false) => string | Promise<string>
@@ -26,4 +28,4 @@ declare module '@11ty/eleventy' {
     htmlTemplateEngine: string,
     templateFormats: string[],
   }>
-}
+// }
