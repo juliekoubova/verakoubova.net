@@ -32,7 +32,6 @@ export interface ResponsiveImage {
   aspectRatio: number
   hash: string
   height: number
-  image: sharp.Sharp
   path: string
   width: number
 }
@@ -42,12 +41,5 @@ export async function loadSourceImage(path: string): Promise<ResponsiveImage> {
   const hash = await hashImage(image)
   const { height, width } = await loadMetadata(path, image)
   const aspectRatio = height / width
-  return {
-    aspectRatio,
-    hash,
-    height,
-    image,
-    path,
-    width
-  }
+  return { aspectRatio, hash, height, path, width }
 }

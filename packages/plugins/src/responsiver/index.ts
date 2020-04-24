@@ -3,7 +3,7 @@ import { getImageWidths } from "./extract-images"
 import { promises as fsp } from 'fs'
 import { join } from 'path'
 import * as sharp from 'sharp'
-import { loadSourceImage } from "./image"
+import { loadSourceImage, ResponsiveImage } from "./image"
 
 
 async function fileExists(path: string) {
@@ -20,7 +20,7 @@ async function fileExists(path: string) {
 }
 
 async function ensureImage(
-  image: sharp.Sharp,
+  image: ResponsiveImage,
   outputDir: string,
   width: number,
   format: string
@@ -32,14 +32,13 @@ async function ensureImage(
     return
   }
 
-  const resized = image.clone().resize(width)
-  const formatted = format === '.webp'
-    ? resized.webp()
-    : resized.jpeg()
+  const resized = sharp(image.path).resize(width)
 
-  console.log(path)
-  const buffer = await formatted.toBuffer()
-  await fsp.writeFile(path, buffer)
+  if (format === '.webp') {
+    await resized.webp().toFile(path)
+  } else {
+    await resized.jpeg().toFile(path)
+  }
 }
 
 const PixelDensities = [1, 2, 3]
@@ -88,7 +87,7 @@ async function processImage(context: Context, $img: Cheerio) {
   await Promise.all(
     physicalWidths.flatMap(width =>
       Formats.flatMap(format =>
-        ensureImage(image.image, imageDir, width, format)
+        ensureImage(image, imageDir, width, format)
       )
     )
   )
