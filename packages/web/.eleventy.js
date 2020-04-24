@@ -1,7 +1,6 @@
 // @ts-check
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
-const imagesResponsiver = require('eleventy-plugin-images-responsiver')
-const { externalLinks, htmlMinifier } = require('@verakoubova/11ty-plugins')
+const { externalLinks, responsiver, htmlMinifier } = require('@verakoubova/plugins')
 const yaml = require('js-yaml')
 
 /**
@@ -208,6 +207,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('mp3/*.mp3')
 
   eleventyConfig.addPlugin(externalLinks)
+  eleventyConfig.addPlugin(responsiver, { imageOutputPath: '_images' })
 
   if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addPlugin(cacheBuster({}))

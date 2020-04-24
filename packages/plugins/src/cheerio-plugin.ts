@@ -22,29 +22,31 @@ function decode(string: string) {
   });
 }
 
+export type CheerioPluginTransform<Options> = (
+  document: CheerioStatic,
+  outputPath: string | false,
+  options: Partial<Options>,
+) => void | Promise<void>
 
-
-export function cheerioPlugin(
+export function cheerioPlugin<Options>(
   name: string,
-  transform: (document: CheerioStatic) => void | Promise<void>
-): EleventyPlugin {
-  return {
-    configFunction(eleventy) {
-      eleventy.addTransform(name, async (content, outputPath) => {
-        if (!isHtml(outputPath)) {
-          return content
-        }
+  transform: CheerioPluginTransform<Options>
+): EleventyPlugin<Partial<Options>> {
+  return function cheerioPlugin(eleventy, options = {}) {
+    eleventy.addTransform(name, async (content, outputPath) => {
+      if (!isHtml(outputPath)) {
+        return content
+      }
 
-        const document = load(content)
-        await Promise.resolve(transform(document))
+      const document = load(content)
+      await Promise.resolve(transform(document, outputPath, options))
 
-        const hasBody = /<\s*body(\w|\s|=|"|-)*>/gm
-        const html = hasBody.test(content)
-          ? document.html()
-          : document('body').html()
+      const hasBody = /<\s*body(\w|\s|=|"|-)*>/gm
+      const html = hasBody.test(content)
+        ? document.html()
+        : document('body').html()
 
-        return decode(html ?? '')
-      })
-    }
+      return decode(html ?? '')
+    })
   }
 }

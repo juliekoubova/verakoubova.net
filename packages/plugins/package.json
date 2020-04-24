@@ -1,17 +1,20 @@
 {
-  "name": "@verakoubova/11ty-plugins",
+  "name": "@verakoubova/plugins",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
   "scripts": {
     "clean": "shx rm -rf dist",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput"
   },
   "main": "dist/index.js",
   "dependencies": {
     "@types/cheerio": "^0.22.17",
     "@types/html-minifier": "^3.5.3",
+    "@types/sharp": "^0.25.0",
     "cheerio": "^1.0.0-rc.3",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "sharp": "^0.25.2"
   }
 }

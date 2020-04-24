@@ -4,10 +4,15 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
+
+    "predeploy": "lerna run predeploy",
     "deploy": "./scripts/deploy.sh packages/web/_site",
+
+    "predebug": "lerna run build --ignore @verakoubova/web",
+    "debug": "lerna run debug",
+
     "predev": "lerna run build --ignore @verakoubova/web",
     "dev": "lerna run --parallel dev",
-    "predeploy": "lerna run predeploy",
     "serve": "lerna run serve"
   },
   "devDependencies": {

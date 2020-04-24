@@ -1,12 +1,11 @@
-{% macro image(img, base = '', class = '') %}
+{% macro image(img, base = '', class = '', widths = '') %}
 {% if img %}
 {% set src = base | lang + img.src | lang %}
   <img
     class="{{ class }}"
     alt="{{ img.alt | lang }}"
     src="{{ src | url }}"
-    width="{{ img.width }}"
-    height="{{ img.height }}"
+    {% if widths %}data-widths="{{ widths }}"{% endif %}
   >
 {% endif %}
 {% endmacro %}
