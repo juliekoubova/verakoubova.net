@@ -105,9 +105,5 @@ export function getImageWidths($img: Cheerio) {
     addRange(widths, multiply(classNameWidths, factor))
   }
 
-  if (widths.size !== 0) {
-    console.log(`${$img.attr('src')}: ${[...widths].join(', ')}`)
-  }
-
   return widths
 }
