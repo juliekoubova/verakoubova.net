@@ -9,6 +9,7 @@
     "dev": "tsc --watch --preserveWatchOutput"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@types/cheerio": "^0.22.17",
     "@types/html-minifier": "^3.5.3",

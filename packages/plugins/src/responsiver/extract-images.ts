@@ -1,4 +1,5 @@
 
+// todo read from tailwind config
 const remSizes: [string, number][] = [
   ['', 16],
   ['sm:', 16],
