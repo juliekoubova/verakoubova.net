@@ -203,11 +203,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', text => yaml.safeLoad(text))
 
   eleventyConfig.addPassthroughCopy({ '_assets/static': '/' })
-  eleventyConfig.addPassthroughCopy('img/**/*.jpeg')
   eleventyConfig.addPassthroughCopy('mp3/*.mp3')
 
   eleventyConfig.addPlugin(externalLinks)
-  eleventyConfig.addPlugin(responsiver, { imageOutputPath: '_images' })
+  eleventyConfig.addPlugin(responsiver)
 
   if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addPlugin(cacheBuster({}))

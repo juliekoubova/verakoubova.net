@@ -87,7 +87,7 @@ function multiply(numbers: number[], factor: number) {
   return numbers.map(num => num * factor)
 }
 
-export function getImageWidths($img: Cheerio) {
+export function getLogicalWidths($img: Cheerio) {
   const widths = new Set<number>()
 
   const imgClassNames = new Set([

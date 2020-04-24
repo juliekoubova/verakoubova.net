@@ -28,18 +28,32 @@ function hashImage(image: sharp.Sharp) {
   })
 }
 
-export interface ResponsiveImage {
+export interface OriginalImage {
   aspectRatio: number
-  hash: string
-  height: number
+  id: string
   path: string
-  width: number
+  physicalHeight: number
+  physicalWidth: number
 }
 
-export async function loadSourceImage(path: string): Promise<ResponsiveImage> {
+const HashDirLength = 1
+
+export async function loadSourceImage(path: string): Promise<OriginalImage> {
   const image = sharp(path)
   const hash = await hashImage(image)
   const { height, width } = await loadMetadata(path, image)
   const aspectRatio = height / width
-  return { aspectRatio, hash, height, path, width }
+
+  const id =
+    hash.substr(0, HashDirLength)
+    + '/' +
+    hash.substr(HashDirLength)
+
+  return {
+    aspectRatio,
+    id,
+    path,
+    physicalHeight: height,
+    physicalWidth: width,
+  }
 }
