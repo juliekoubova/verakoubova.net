@@ -1,5 +1,7 @@
 import { ScreenDefinition, Block, screenDefs, ClassDefinition, defaultScreenDef } from './class-parsing';
-import { addExpr, literalExpr, Expr, Value, subtractExpr, multiplyExpr, vw, serializeExpr } from './expr';
+import {
+  addExpr, literalExpr, isLiteral, Expr, Value, subtractExpr, multiplyExpr, vw, serializeExpr, px
+} from './expr';
 
 export function coalesceSpacing(
   type: 'margin' | 'padding',
@@ -54,6 +56,20 @@ export function calcExpressionForScreen(
   return subtractExpr(parent, spacing)
 }
 
+export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
+  if (isLiteral(expr)) {
+    return expr.value.unit === 'rem'
+      ? literalExpr(px(screen.remSizePx * expr.value.value))
+      : expr
+  }
+
+  return {
+    type: expr.type,
+    left: convertRemsToPx(screen, expr.left),
+    right: convertRemsToPx(screen, expr.right),
+  }
+}
+
 export function calcExpression(block: Block) {
 
   let prevScreen: ScreenDefinition | undefined
@@ -69,8 +85,11 @@ export function calcExpression(block: Block) {
       continue
     }
 
+    const expr = calcExpressionForScreen(prevScreen, screen, block)
+    const pxExpr = convertRemsToPx(screen, expr)
+
     expressions.push(
-      [screen, calcExpressionForScreen(prevScreen, screen, block)] as const
+      [screen, pxExpr] as const
     )
 
     prevScreen = screen
@@ -79,11 +98,15 @@ export function calcExpression(block: Block) {
   let result = ''
   for (const [screen, expr] of expressions.reverse()) {
     if (screen !== defaultScreenDef) {
-      result += `(min-width: ${screen.minWidthPx}px) `
+      result += `(min-width:${screen.minWidthPx}px) `
     }
-    result += `calc(${serializeExpr(expr)})`
+    if (isLiteral(expr)) {
+      result += expr.value.toString()
+    } else {
+      result += `calc(${serializeExpr(expr)})`
+    }
     if (screen !== defaultScreenDef) {
-      result += ', '
+      result += ','
     }
   }
 

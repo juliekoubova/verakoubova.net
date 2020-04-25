@@ -33,7 +33,7 @@ export type Expr =
   | LiteralExpr
   | BinaryExpr
 
-function isLiteral(expr: Expr): expr is LiteralExpr {
+export function isLiteral(expr: Expr): expr is LiteralExpr {
   return expr.type === ExprType.literal
 }
 
@@ -152,15 +152,15 @@ export function serializeExpr(expr: Expr): string {
   }
 
   if (expr.type === ExprType.add) {
-    return `${serializeExpr(expr.left)} + ${serializeExpr(expr.right)}`
+    return `${serializeExpr(expr.left)}+${serializeExpr(expr.right)}`
   }
 
   if (expr.type === ExprType.subtract) {
-    return `${serializeExpr(expr.left)} - ${serializeExpr(expr.right)}`
+    return `${serializeExpr(expr.left)}-${serializeExpr(expr.right)}`
   }
 
   if (expr.type === ExprType.multiply) {
-    return `${serializeExpr(expr.left)} * ${serializeExpr(expr.right)}`
+    return `${serializeExpr(expr.left)}*${serializeExpr(expr.right)}`
   }
 
   return `(*TODO ${expr.type}*)`
