@@ -15,18 +15,9 @@ const screens = {
   'xl:': '1280px',
 }
 
-const classes = {
-  'w-64': '16rem',
-  'max-w-xs': '20rem',
-  'max-w-sm': '24rem',
-  'max-w-md': '28rem',
-  'max-w-lg': '32rem',
-  'max-w-xl': '36rem',
-  'max-w-2xl': '42rem',
-  'max-w-3xl': '48rem',
-  'max-w-4xl': '56rem',
-  'max-w-5xl': '64rem',
-  'max-w-6xl': '72rem',
+interface Value {
+  value: number
+  unit: string
 }
 
 function parseValue(str: string): { value: number, unit: string } {
@@ -39,6 +30,26 @@ function parseValue(str: string): { value: number, unit: string } {
   }
   const unit = str.replace(/\d|\./g, '')
   return { value, unit }
+}
+
+interface ClassDefinition {
+  type: 'max' | 'width' | 'subtract' | 'factor'
+  value: Value
+}
+
+const classes: Record<string, ClassDefinition> = {
+  'px-2': { type: 'subtract', value: parseValue('1rem') },
+  'w-64': { type: 'width', value: parseValue('16rem') },
+  'max-w-xs': { type: 'width', value: parseValue('20rem') },
+  'max-w-sm': { type: 'width', value: parseValue('24rem') },
+  'max-w-md': { type: 'width', value: parseValue('28rem') },
+  'max-w-lg': { type: 'width', value: parseValue('32rem') },
+  'max-w-xl': { type: 'width', value: parseValue('36rem') },
+  'max-w-2xl': { type: 'width', value: parseValue('42rem') },
+  'max-w-3xl': { type: 'width', value: parseValue('48rem') },
+  'max-w-4xl': { type: 'width', value: parseValue('56rem') },
+  'max-w-5xl': { type: 'width', value: parseValue('64rem') },
+  'max-w-6xl': { type: 'width', value: parseValue('72rem') },
 }
 
 function getPx(prefixIndex: number, str: string): Set<number> {

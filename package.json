@@ -4,22 +4,22 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
-
     "predeploy": "lerna run predeploy",
     "deploy": "./scripts/deploy.sh packages/web/_site",
-
     "predebug": "lerna run build --ignore @verakoubova/web",
     "debug": "lerna run debug",
-
     "predev": "lerna run build --ignore @verakoubova/web",
     "dev": "lerna run --parallel dev",
     "serve": "lerna run serve"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "cross-env": "^7.0.2",
+    "jest": "^25.4.0",
     "lerna": "^3.20.2",
     "npm-run-all": "^4.1.5",
     "shx": "^0.3.2",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "workspaces": [
