@@ -1,13 +1,14 @@
-import { ScreenDefinition, Block, screenDefs, ClassDefinition, defaultScreenDef } from './block-model';
+import { ScreenDefinition, Block, screenDefs, ClassDefinition } from './block-model';
 import {
-  addExpr, literalExpr, isLiteral, Expr, Value, subtractExpr, multiplyExpr, vw, serializeExpr, px
+  add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce
 } from './expr';
+import { px, vw } from './value';
 
 export function coalesceSpacing(
   type: 'margin' | 'padding',
   classes: ClassDefinition[]
 ): Expr {
-  const zero = new Value(0, 'px')
+  const zero = px(0)
   const result = classes.reduce(
     (prev, c) => c.type === type
       ? c.side === 'both' ? [c.value, c.value] :
@@ -17,7 +18,7 @@ export function coalesceSpacing(
     [zero, zero]
   )
 
-  return addExpr(literalExpr(result[0]), literalExpr(result[1]))
+  return reduce(add(literalExpr(result[0]), literalExpr(result[1])))
 }
 
 export function calcExpressionForScreen(
@@ -34,7 +35,7 @@ export function calcExpressionForScreen(
 
   const margin = coalesceSpacing('margin', appliedClasses)
   const padding = coalesceSpacing('padding', appliedClasses)
-  const spacing = addExpr(margin, padding)
+  const spacing = add(margin, padding)
 
   const parent = block.parent
     ? calcExpressionForScreen(screen, block.parent)
@@ -42,33 +43,22 @@ export function calcExpressionForScreen(
 
   for (const c of appliedClasses) {
     if (c.type === 'const') {
-      return subtractExpr(literalExpr(c.value), spacing)
+      return subtract(literalExpr(c.value), spacing)
     }
     if (c.type === 'factor') {
-      return subtractExpr(
-        multiplyExpr(parent, literalExpr(c.value)),
+      return subtract(
+        multiply(parent, literalExpr(c.value)),
         spacing
       )
     }
   }
 
-  return subtractExpr(parent, spacing)
+  return subtract(parent, spacing)
 }
 
 export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
-  if (isLiteral(expr)) {
-    return expr.value.unit === 'rem'
-      ? literalExpr(px(screen.remSizePx * expr.value.value))
-      : expr
-  }
-
-  return {
-    type: expr.type,
-    left: convertRemsToPx(screen, expr.left),
-    right: convertRemsToPx(screen, expr.right),
-  }
+  return convertUnit('rem', 'px', screen.remSizePx)(expr)
 }
-
 
 export interface BlockSizeEntry {
   blockSize: Expr
@@ -88,7 +78,7 @@ export function serializeBlockSizes(entries: BlockSizeEntry[]) {
       chunks.push('px) ')
     }
     if (isLiteral(entry.blockSize)) {
-      chunks.push(entry.blockSize.value.toString())
+      chunks.push(entry.blockSize.literal.toString())
     } else {
       chunks.push('calc(')
       chunks.push(serializeExpr(entry.blockSize))
@@ -125,7 +115,7 @@ export function getBlockSizes(block: Block) {
       screenWidthMax: i === screenDefs.length - 1
         ? undefined
         : screenDefs[i + 1].minWidthPx,
-      blockSize: pxExpr
+      blockSize: reduce(pxExpr)
     }
 
     entries.push(entry)

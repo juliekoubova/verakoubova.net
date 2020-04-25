@@ -1,5 +1,5 @@
 import { parseBlock, screenDefsByPrefix, defaultScreenDef } from "./block-model"
-import { rem, unitless } from "./expr"
+import { rem, unitless } from "./value"
 
 test(`parses simple class`, () => {
   expect(parseBlock(undefined, ['px-2']).classes).toStrictEqual(
