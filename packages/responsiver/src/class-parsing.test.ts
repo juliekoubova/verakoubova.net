@@ -1,5 +1,5 @@
 import { parseBlock, screenDefsByPrefix, defaultScreenDef } from "./class-parsing"
-import { rem } from "./expr"
+import { rem, unitless } from "./expr"
 
 test(`parses simple class`, () => {
   expect(parseBlock(undefined, ['px-2']).classes).toStrictEqual(
@@ -30,7 +30,7 @@ test(`parses screen-prefixed class`, () => {
     new Map([
       [
         screenDefsByPrefix.sm,
-        [{ type: 'factor', value: 0.5 }]
+        [{ type: 'factor', value: unitless(0.5) }]
       ]
     ]),
   )

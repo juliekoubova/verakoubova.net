@@ -10,7 +10,9 @@
     "debug": "lerna run debug",
     "predev": "lerna run build --ignore @verakoubova/web",
     "dev": "lerna run --parallel dev",
-    "serve": "lerna run serve"
+    "serve": "lerna run serve",
+    "pretest": "jest --clearCache",
+    "test": "learna run test"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",

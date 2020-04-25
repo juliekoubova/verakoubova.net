@@ -10,39 +10,59 @@ export class Value {
   }
 }
 
+export enum ExprType {
+  add = 'add',
+  literal = 'literal',
+  min = 'min',
+  multiply = 'multiply',
+  subtract = 'subtract',
+}
+
 export interface BinaryExpr {
-  type: 'min' | 'add' | 'subtract' | 'multiply',
+  type: ExprType.add | ExprType.min | ExprType.multiply | ExprType.subtract,
   left: Expr,
   right: Expr
 }
 
-export type Expr =
-  | { type: 'value', value: Value }
-  | BinaryExpr
-
-export function valueExpr(value: Value): Expr {
-  return { type: 'value', value }
+export interface LiteralExpr {
+  type: ExprType.literal
+  value: Value
 }
 
-function combineExprWithIdentity(
+export type Expr =
+  | LiteralExpr
+  | BinaryExpr
+
+function isLiteral(expr: Expr): expr is LiteralExpr {
+  return expr.type === ExprType.literal
+}
+
+export function literalExpr(value: Value): Expr {
+  return { type: ExprType.literal, value }
+}
+
+function additionImpl(
   type: BinaryExpr['type'],
   identity: number,
-  applyToValues: (l: number, rigth: number) => number,
+  applyToValues: (l: number, right: number) => number,
   left: Expr,
   right: Expr,
 ): Expr {
-  if (left.type === 'value' && right.type === 'value') {
-    if (left.value.value === identity) {
+  if (isLiteral(left) && isLiteral(right)) {
+    const lval = left.value
+    const rval = right.value
+
+    if (lval.value === identity) {
       return right
     }
-    if (right.value.value === identity) {
+    if (rval.value === identity) {
       return left
     }
-    if (left.value.unit === right.value.unit) {
-      return valueExpr(
+    if (lval.unit === rval.unit) {
+      return literalExpr(
         new Value(
-          applyToValues(left.value.value, right.value.value),
-          left.value.unit
+          applyToValues(lval.value, rval.value),
+          rval.unit
         )
       )
     }
@@ -50,26 +70,51 @@ function combineExprWithIdentity(
   return { type, left, right }
 }
 
-export const addExpr = combineExprWithIdentity.bind(
+export const addExpr = additionImpl.bind(
   undefined,
-  'add',
+  ExprType.add,
   0,
   (l, r) => l + r
 )
 
-export const subtractExpr = combineExprWithIdentity.bind(
+export const subtractExpr = additionImpl.bind(
   undefined,
-  'subtract',
+  ExprType.subtract,
   0,
   (l, r) => l - r
 )
 
-export const multiplyExpr = combineExprWithIdentity.bind(
-  undefined,
-  'multiply',
-  1,
-  (l, r) => l * r
-)
+function unitlessToUnit(unitless: LiteralExpr, target: LiteralExpr) {
+  return target.value.unit === ''
+    ? unitless
+    : literalExpr(new Value(unitless.value.value, target.value.unit))
+}
+
+export function multiplyExpr(left: Expr, right: Expr) {
+
+  if (isLiteral(left) && isLiteral(right)) {
+    const lval = left.value
+    const rval = right.value
+
+    if (lval.value === 0 || rval.value === 0) {
+      return literalExpr(unitless(0))
+    }
+
+    if (lval.unit === '') {
+      left = unitlessToUnit(left, right)
+    } else if (rval.unit === '') {
+      right = unitlessToUnit(right, left)
+    }
+  }
+
+  return additionImpl(
+    ExprType.multiply,
+    1,
+    (l, r) => l * r,
+    left,
+    right
+  )
+}
 
 
 export function parseValue(str: string): Value {
@@ -95,4 +140,28 @@ export function rem(value: number): Value {
 
 export function vw(value: number): Value {
   return new Value(value, 'vw')
+}
+
+export function unitless(value: number): Value {
+  return new Value(value, '')
+}
+
+export function serializeExpr(expr: Expr): string {
+  if (isLiteral(expr)) {
+    return expr.value.toString()
+  }
+
+  if (expr.type === ExprType.add) {
+    return `${serializeExpr(expr.left)} + ${serializeExpr(expr.right)}`
+  }
+
+  if (expr.type === ExprType.subtract) {
+    return `${serializeExpr(expr.left)} - ${serializeExpr(expr.right)}`
+  }
+
+  if (expr.type === ExprType.multiply) {
+    return `${serializeExpr(expr.left)} * ${serializeExpr(expr.right)}`
+  }
+
+  return `(*TODO ${expr.type}*)`
 }
