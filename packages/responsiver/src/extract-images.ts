@@ -1,57 +1,3 @@
-
-// todo read from tailwind config
-const remSizes: [string, number][] = [
-  ['', 16],
-  ['sm:', 16],
-  ['md:', 16],
-  ['lg:', 16],
-  ['xl:', 20]
-]
-
-const screens = {
-  'sm:': '640px',
-  'md:': '768px',
-  'lg:': '1024px',
-  'xl:': '1280px',
-}
-
-interface Value {
-  value: number
-  unit: string
-}
-
-function parseValue(str: string): { value: number, unit: string } {
-  if (!str) {
-    return { value: NaN, unit: '' }
-  }
-  const value = parseFloat(str)
-  if (isNaN(value)) {
-    return { value: NaN, unit: '' }
-  }
-  const unit = str.replace(/\d|\./g, '')
-  return { value, unit }
-}
-
-interface ClassDefinition {
-  type: 'max' | 'width' | 'subtract' | 'factor'
-  value: Value
-}
-
-const classes: Record<string, ClassDefinition> = {
-  'px-2': { type: 'subtract', value: parseValue('1rem') },
-  'w-64': { type: 'width', value: parseValue('16rem') },
-  'max-w-xs': { type: 'width', value: parseValue('20rem') },
-  'max-w-sm': { type: 'width', value: parseValue('24rem') },
-  'max-w-md': { type: 'width', value: parseValue('28rem') },
-  'max-w-lg': { type: 'width', value: parseValue('32rem') },
-  'max-w-xl': { type: 'width', value: parseValue('36rem') },
-  'max-w-2xl': { type: 'width', value: parseValue('42rem') },
-  'max-w-3xl': { type: 'width', value: parseValue('48rem') },
-  'max-w-4xl': { type: 'width', value: parseValue('56rem') },
-  'max-w-5xl': { type: 'width', value: parseValue('64rem') },
-  'max-w-6xl': { type: 'width', value: parseValue('72rem') },
-}
-
 function getPx(prefixIndex: number, str: string): Set<number> {
   const { value, unit } = parseValue(str)
   if (unit === 'px') {
@@ -70,7 +16,7 @@ function getPx(prefixIndex: number, str: string): Set<number> {
 const classWidths = Object.fromEntries(
   remSizes.flatMap(([prefix], prefixIndex) => {
     return Object.entries(classes).map(([className, width]) => {
-      const widths = getPx(prefixIndex, width)
+      const widths = new Set() //getPx(prefixIndex, width)
       return [prefix + className, widths]
     })
   })

@@ -1,4 +1,4 @@
-import { cheerioPlugin } from "../cheerio-plugin"
+import { cheerioPlugin } from "@verakoubova/plugins"
 import { getLogicalWidths } from "./extract-images"
 import { promises as fsp } from 'fs'
 import { join } from 'path'
