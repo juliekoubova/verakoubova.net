@@ -1,4 +1,4 @@
-import { parseBlock, screenDefsByPrefix, defaultScreenDef } from "./class-parsing"
+import { parseBlock, screenDefsByPrefix, defaultScreenDef } from "./block-model"
 import { rem, unitless } from "./expr"
 
 test(`parses simple class`, () => {

@@ -50,7 +50,6 @@ export const classDefs: Record<string, ClassDefinition> = {
 }
 
 export class Block {
-
   readonly classes = new Map<ScreenDefinition, ClassDefinition[]>()
 
   constructor(

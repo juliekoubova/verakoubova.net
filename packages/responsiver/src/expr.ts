@@ -165,3 +165,20 @@ export function serializeExpr(expr: Expr): string {
 
   return `(*TODO ${expr.type}*)`
 }
+export function convertUnit(source: string, target: string) {
+  return function (multiplier: number) {
+    return function converter(expr: Expr): Expr {
+      if (isLiteral(expr)) {
+        return expr.value.unit === source
+          ? literalExpr(new Value(multiplier * expr.value.value, target))
+          : expr
+      }
+
+      return {
+        type: expr.type,
+        left: converter(expr.left),
+        right: converter(expr.right),
+      }
+    }
+  }
+}

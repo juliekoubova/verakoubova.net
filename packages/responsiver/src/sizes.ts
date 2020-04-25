@@ -1,4 +1,4 @@
-import { ScreenDefinition, Block, screenDefs, ClassDefinition, defaultScreenDef } from './class-parsing';
+import { ScreenDefinition, Block, screenDefs, ClassDefinition, defaultScreenDef } from './block-model';
 import {
   addExpr, literalExpr, isLiteral, Expr, Value, subtractExpr, multiplyExpr, vw, serializeExpr, px
 } from './expr';
@@ -21,7 +21,6 @@ export function coalesceSpacing(
 }
 
 export function calcExpressionForScreen(
-  prevScreen: ScreenDefinition | undefined,
   screen: ScreenDefinition,
   block: Block
 ): Expr {
@@ -38,7 +37,7 @@ export function calcExpressionForScreen(
   const spacing = addExpr(margin, padding)
 
   const parent = block.parent
-    ? calcExpressionForScreen(prevScreen, screen, block.parent)
+    ? calcExpressionForScreen(screen, block.parent)
     : literalExpr(vw(100))
 
   for (const c of appliedClasses) {
@@ -70,12 +69,46 @@ export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
   }
 }
 
-export function calcExpression(block: Block) {
 
-  let prevScreen: ScreenDefinition | undefined
-  const expressions: (readonly [ScreenDefinition, Expr])[] = []
-  for (const screen of screenDefs) {
+export interface BlockSizeEntry {
+  blockSize: Expr
+  screenWidthMin: number
+  screenWidthMax?: number
+}
 
+export function serializeBlockSizes(entries: BlockSizeEntry[]) {
+  const chunks: string[] = []
+
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const entry = entries[i]
+
+    if (entry.screenWidthMin) {
+      chunks.push('(min-width:')
+      chunks.push(entry.screenWidthMin.toFixed())
+      chunks.push('px) ')
+    }
+    if (isLiteral(entry.blockSize)) {
+      chunks.push(entry.blockSize.value.toString())
+    } else {
+      chunks.push('calc(')
+      chunks.push(serializeExpr(entry.blockSize))
+      chunks.push(')')
+    }
+    if (i > 0) {
+      chunks.push(',')
+    }
+  }
+
+  return chunks.join('')
+}
+
+export function getBlockSizes(block: Block) {
+
+  const entries: BlockSizeEntry[] = []
+
+  for (let i = 0; i < screenDefs.length; i++) {
+    const screen = screenDefs[i]
+    const prevScreen = i > 0 ? screenDefs[i - 1] : undefined
     const screenIsSame =
       prevScreen &&
       prevScreen.remSizePx === screen.remSizePx &&
@@ -85,31 +118,18 @@ export function calcExpression(block: Block) {
       continue
     }
 
-    const expr = calcExpressionForScreen(prevScreen, screen, block)
+    const expr = calcExpressionForScreen(screen, block)
     const pxExpr = convertRemsToPx(screen, expr)
+    const entry: BlockSizeEntry = {
+      screenWidthMin: screen.minWidthPx,
+      screenWidthMax: i === screenDefs.length - 1
+        ? undefined
+        : screenDefs[i + 1].minWidthPx,
+      blockSize: pxExpr
+    }
 
-    expressions.push(
-      [screen, pxExpr] as const
-    )
-
-    prevScreen = screen
+    entries.push(entry)
   }
 
-  let result = ''
-  for (const [screen, expr] of expressions.reverse()) {
-    if (screen !== defaultScreenDef) {
-      result += `(min-width:${screen.minWidthPx}px) `
-    }
-    if (isLiteral(expr)) {
-      result += expr.value.toString()
-    } else {
-      result += `calc(${serializeExpr(expr)})`
-    }
-    if (screen !== defaultScreenDef) {
-      result += ','
-    }
-  }
-
-
-  return result
+  return entries
 }
