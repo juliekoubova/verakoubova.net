@@ -1,11 +1,11 @@
 import { ScreenDefinition, Block, screenDefs, ClassDefinition } from './class-parsing';
-import { addExpr, valueExpr, Expr } from './expr';
+import { addExpr, valueExpr, Expr, Value, subtractExpr } from './expr';
 
 export function coalesceSpacing(
   type: 'margin' | 'padding',
   classes: ClassDefinition[]
 ): Expr {
-  const zero = { value: 0, unit: 'px' }
+  const zero = new Value(0, 'px')
   const result = classes.reduce(
     (prev, c) => c.type === type
       ? c.side === 'both' ? [c.value, c.value] :
@@ -17,6 +17,7 @@ export function coalesceSpacing(
 
   return addExpr(valueExpr(result[0]), valueExpr(result[1]))
 }
+
 export function calcExpressionWithParent(
   prevScreen: ScreenDefinition | undefined,
   screen: ScreenDefinition,
@@ -36,17 +37,15 @@ export function calcExpressionWithParent(
     .filter(s => !s.minWidthPx || s.minWidthPx <= screen.minWidthPx)
     .sort((a, b) => a.minWidthPx - b.minWidthPx)
 
-  const margin = coalesceSpacing(
-    'margin',
+  const appliedClasses =
     appliedScreens.flatMap(s => block.getClasses(s))
+
+  const spacing = addExpr(
+    coalesceSpacing('margin', appliedClasses),
+    coalesceSpacing('padding', appliedClasses),
   )
 
-  const padding = coalesceSpacing(
-    'padding',
-    appliedScreens.flatMap(s => block.getClasses(s))
-  )
-
-  throw new Error('not implemented')
+  return subtractExpr(parent, spacing)
 }
 
 export function calcExpression(screen: ScreenDefinition, block: Block) {

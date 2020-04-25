@@ -1,4 +1,4 @@
-import { px, addExpr, valueExpr, rem } from "./expr"
+import { px, addExpr, valueExpr, rem, Value } from "./expr"
 
 describe('addExpr', () => {
   test(`adds values with same unit`, () => {
@@ -8,7 +8,7 @@ describe('addExpr', () => {
     )
     expect(actual).toStrictEqual({
       type: 'value',
-      value: { value: 6, unit: 'px' }
+      value: px(6),
     })
   })
 

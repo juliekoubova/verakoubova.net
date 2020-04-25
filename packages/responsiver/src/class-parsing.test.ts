@@ -1,11 +1,12 @@
 import { parseBlock, screenDefsByPrefix, defaultScreenDef } from "./class-parsing"
+import { rem } from "./expr"
 
 test(`parses simple class`, () => {
   expect(parseBlock(undefined, ['px-2']).classes).toStrictEqual(
     new Map([
       [
         defaultScreenDef,
-        [{ type: 'padding', side: 'both', value: { value: 1, unit: 'rem' } }]
+        [{ type: 'padding', side: 'both', value: rem(0.5) }]
       ]
     ]),
   )
@@ -16,8 +17,8 @@ test(`parses multiple classes`, () => {
     new Map([
       [
         defaultScreenDef, [
-          { type: 'padding', side: 'both', value: { value: 1, unit: 'rem' } },
-          { type: 'max', value: { value: 36, unit: 'rem' } },
+          { type: 'padding', side: 'both', value: rem(0.5) },
+          { type: 'max', value: rem(36) },
         ]
       ]
     ]),

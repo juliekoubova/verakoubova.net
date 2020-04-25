@@ -1,6 +1,6 @@
 import { calcExpressionWithParent, coalesceSpacing } from './calc-expression'
 import { Block, screenDefsByPrefix, classDefs, defaultScreenDef } from './class-parsing'
-import { rem, valueExpr, px } from './expr'
+import { rem, valueExpr, px, vw, subtractExpr } from './expr'
 
 describe(`coalesceSpacing`, () => {
 
@@ -60,6 +60,24 @@ describe(`coalesceSpacing`, () => {
   })
 })
 
+test(`subtracts spacing from 100vw`, () => {
+  const block = new Block()
+  block.addClass(defaultScreenDef, classDefs['px-4'])
+
+  const actual = calcExpressionWithParent(
+    undefined,
+    defaultScreenDef,
+    block,
+    valueExpr(vw(100)),
+  )
+
+  expect(actual).toStrictEqual(
+    subtractExpr(
+      valueExpr(vw(100)),
+      valueExpr(rem(2)),
+    )
+  )
+})
 
 test(`returns undefined expression when screen isn't different`, () => {
 
@@ -71,7 +89,7 @@ test(`returns undefined expression when screen isn't different`, () => {
     defaultScreenDef,
     screenDefsByPrefix.sm,
     block,
-    { type: 'value', value: { value: 100, unit: 'vw' } },
+    valueExpr(vw(100)),
   )
 
   expect(actual).toBeUndefined()
