@@ -60,15 +60,19 @@ export class Block {
 
   addClass(screen: ScreenDefinition, ...classes: ClassDefinition[]) {
     for (const c of classes) {
-      this.getClasses(screen).push(c)
+      if (!this.classes.has(screen)) {
+        this.classes.set(screen, [])
+      }
+      this.classes.get(screen)!.push(c)
     }
   }
 
-  getClasses(screen: ScreenDefinition) {
-    if (!this.classes.has(screen)) {
-      this.classes.set(screen, [])
-    }
-    return this.classes.get(screen)!
+  getClasses(screen: ScreenDefinition): ReadonlyArray<ClassDefinition> {
+    return this.classes.get(screen) ?? []
+  }
+
+  hasClasses(screen: ScreenDefinition) {
+    return this.getClasses(screen).length !== 0
   }
 }
 

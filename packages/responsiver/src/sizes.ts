@@ -113,7 +113,7 @@ export function getBlockSizes(block: Block) {
     const sameAsPrevious =
       !!prevScreen &&
       (previousRem === screen.remSizePx || !hasRem(expr)) &&
-      block.getClasses(screen).length === 0
+      !block.hasClasses(screen)
 
     const entry: BlockSizeEntry = {
       blockSize: sameAsPrevious
