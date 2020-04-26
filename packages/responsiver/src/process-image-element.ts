@@ -25,7 +25,7 @@ const FormatMimeTypes = {
   [Format.webp]: 'image/webp'
 }
 
-const PixelDensities = [1, 2, 3]
+const PixelDensities = [1, 1.25, 1.5, 2, 3]
 
 interface Context {
   $: CheerioStatic
