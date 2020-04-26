@@ -1,8 +1,8 @@
-import { add, literalExpr, multiply, ExprType, reduce, subtract } from "./expr"
-import { px, rem, vw } from "./value"
+import { add, literalExpr, multiply, ExprType, reduce, subtract, serializeExpr } from "./expr"
+import { px, rem, vw, unitless } from "./value"
 
 describe('reduce', () => {
-  test(`adds values with same unit`, () => {
+  it(`adds values with same unit`, () => {
     const actual = reduce(add(
       literalExpr(px(2)),
       literalExpr(px(4))
@@ -12,7 +12,7 @@ describe('reduce', () => {
     )
   })
 
-  test(`adds values with different unit`, () => {
+  it(`adds values with different unit`, () => {
     const actual = reduce(add(
       literalExpr(px(2)),
       literalExpr(rem(4))
@@ -24,7 +24,7 @@ describe('reduce', () => {
     })
   })
 
-  test(`adds values with different unit, removing zeros left`, () => {
+  it(`adds values with different unit, removing zeros left`, () => {
     const actual = reduce(add(
       literalExpr(px(0)),
       literalExpr(rem(4))
@@ -34,7 +34,7 @@ describe('reduce', () => {
     )
   })
 
-  test(`adds values with different unit, removing zeros right`, () => {
+  it(`adds values with different unit, removing zeros right`, () => {
     const actual = reduce(add(
       literalExpr(px(2)),
       literalExpr(rem(0))
@@ -44,7 +44,7 @@ describe('reduce', () => {
     )
   })
 
-  test('multiplies same units', () => {
+  it('multiplies same units', () => {
     const actual = reduce(multiply(
       literalExpr(px(2)),
       literalExpr(px(3))
@@ -54,7 +54,7 @@ describe('reduce', () => {
     )
   })
 
-  test('reduces zero additions', () => {
+  it('reduces zero additions', () => {
     const expr = add(
       add(literalExpr(vw(100)), literalExpr(px(5))),
       literalExpr(px(0))
@@ -67,7 +67,7 @@ describe('reduce', () => {
     ))
   })
 
-  test('reduces zero subtractions', () => {
+  it('reduces zero subtractions', () => {
     const expr = subtract(
       subtract(literalExpr(vw(100)), literalExpr(px(5))),
       literalExpr(px(0))
@@ -79,4 +79,17 @@ describe('reduce', () => {
       literalExpr(px(5))
     ))
   })
+})
+
+describe('serialize', () => {
+
+  it('introduces parens when add is left node multiply', () => {
+    const expr = multiply(
+      add(literalExpr(px(1)), literalExpr(vw(100))),
+      literalExpr(unitless(2))
+    )
+    const actual = serializeExpr(expr)
+    expect(actual).toBe('(1px+100vw)*2')
+  })
+
 })

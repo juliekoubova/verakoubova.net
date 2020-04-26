@@ -70,16 +70,16 @@ function getResultUnit(left: Value, right: Value) {
 }
 
 export function map<T>(
-  mapLiteral: (value: Value) => T,
-  mapBinary: (type: BinaryExprType, left: T, right: T) => T,
+  mapLiteral: (value: Value, node: LiteralExpr) => T,
+  mapBinary: (type: BinaryExprType, left: T, right: T, node: BinaryExpr) => T,
 ): (expr: Expr) => T {
   return function mapper(expr: Expr): T {
     if (isLiteral(expr)) {
-      return mapLiteral(expr.literal)
+      return mapLiteral(expr.literal, expr)
     }
     const left = mapper(expr.left)
     const right = mapper(expr.right)
-    return mapBinary(expr.type, left, right)
+    return mapBinary(expr.type, left, right, expr)
   }
 }
 
@@ -113,13 +113,24 @@ export const reduce = map(
   }
 )
 
+function isAddOrSubtract(expr: Expr) {
+  return expr.type === ExprType.add || expr.type === ExprType.subtract
+}
+
 export const serializeExpr = map(
   literal => literal.toString(),
-  (type, left, right) => {
+  (type, left, right, expr) => {
     switch (type) {
       case ExprType.add: return `${left}+${right}`
       case ExprType.subtract: return `${left}-${right}`
-      case ExprType.multiply: return `${left}*${right}`
+      case ExprType.multiply:
+        if (isAddOrSubtract(expr.left)) {
+          left = `(${left})`
+        }
+        if (isAddOrSubtract(expr.right)) {
+          right = `(${right})`
+        }
+        return `${left}*${right}`
     }
     return `(*TODO ${type}*)`
   }
