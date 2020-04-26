@@ -88,19 +88,19 @@ export const reduce = map(
   (type, left, right) => {
     const reduced: BinaryExpr = { type, left, right }
 
-    if (!isLiteral(left) || !isLiteral(right)) {
-      return reduced
-    }
-
     const reducer = LiteralExprReducers[type]
     if (!reducer) {
       return reduced
     }
 
-    if (left.literal.value === reducer.identity) {
+    if (isLiteral(left) && left.literal.value === reducer.identity) {
       return right
-    } else if (right.literal.value === reducer.identity) {
+    } else if (isLiteral(right) && right.literal.value === reducer.identity) {
       return left
+    }
+
+    if (!isLiteral(left) || !isLiteral(right)) {
+      return reduced
     }
 
     const unit = getResultUnit(left.literal, right.literal)

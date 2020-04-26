@@ -1,5 +1,5 @@
-import { add, literalExpr, multiply, ExprType, reduce } from "./expr"
-import { px, rem } from "./value"
+import { add, literalExpr, multiply, ExprType, reduce, subtract } from "./expr"
+import { px, rem, vw } from "./value"
 
 describe('reduce', () => {
   test(`adds values with same unit`, () => {
@@ -52,5 +52,31 @@ describe('reduce', () => {
     expect(actual).toStrictEqual(
       literalExpr(px(6))
     )
+  })
+
+  test('reduces zero additions', () => {
+    const expr = add(
+      add(literalExpr(vw(100)), literalExpr(px(5))),
+      literalExpr(px(0))
+    )
+
+    const actual = reduce(expr)
+    expect(actual).toStrictEqual(add(
+      literalExpr(vw(100)),
+      literalExpr(px(5))
+    ))
+  })
+
+  test('reduces zero subtractions', () => {
+    const expr = subtract(
+      subtract(literalExpr(vw(100)), literalExpr(px(5))),
+      literalExpr(px(0))
+    )
+
+    const actual = reduce(expr)
+    expect(actual).toStrictEqual(subtract(
+      literalExpr(vw(100)),
+      literalExpr(px(5))
+    ))
   })
 })

@@ -35,7 +35,7 @@ export function calcExpressionForScreen(
 
   const margin = coalesceSpacing('margin', appliedClasses)
   const padding = coalesceSpacing('padding', appliedClasses)
-  const spacing = add(margin, padding)
+  const spacing = reduce(add(margin, padding))
 
   const parent = block.parent
     ? calcExpressionForScreen(screen, block.parent)
