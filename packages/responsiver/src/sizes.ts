@@ -1,6 +1,6 @@
 import { ScreenDefinition, Block, screenDefs, ClassDefinition } from './block-model';
 import {
-  add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce
+  add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce, hasUnit
 } from './expr';
 import { px, vw } from './value';
 
@@ -61,10 +61,10 @@ export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
 }
 
 export interface BlockSizeEntry {
+  sameAsPrevious: boolean
   blockSize: Expr
   screen: ScreenDefinition
-  screenWidthMin: number
-  screenWidthMax?: number
+  screenMaxWidthPx?: number
 }
 
 export function serializeBlockSizes(entries: BlockSizeEntry[]) {
@@ -73,9 +73,13 @@ export function serializeBlockSizes(entries: BlockSizeEntry[]) {
   for (let i = entries.length - 1; i >= 0; i--) {
     const entry = entries[i]
 
-    if (entry.screenWidthMin) {
+    if (entry.sameAsPrevious) {
+      continue
+    }
+
+    if (entry.screen.minWidthPx) {
       chunks.push('(min-width:')
-      chunks.push(entry.screenWidthMin.toFixed())
+      chunks.push(entry.screen.minWidthPx.toFixed())
       chunks.push('px) ')
     }
     if (isLiteral(entry.blockSize)) {
@@ -95,29 +99,27 @@ export function serializeBlockSizes(entries: BlockSizeEntry[]) {
 
 export function getBlockSizes(block: Block) {
 
+  const hasRem = hasUnit('rem')
   const entries: BlockSizeEntry[] = []
 
   for (let i = 0; i < screenDefs.length; i++) {
     const screen = screenDefs[i]
     const prevScreen = i > 0 ? screenDefs[i - 1] : undefined
-    const screenIsSame =
-      prevScreen &&
-      prevScreen.remSizePx === screen.remSizePx &&
+    const nextScreen = i < screenDefs.length - 1 ? screenDefs[i + 1] : undefined
+    const expr = calcExpressionForScreen(screen, block)
+
+    const sameAsPrevious =
+      !!prevScreen &&
+      (prevScreen.remSizePx === screen.remSizePx || !hasRem(expr)) &&
       block.getClasses(screen).length === 0
 
-    if (screenIsSame) {
-      continue
-    }
-
-    const expr = calcExpressionForScreen(screen, block)
-    const pxExpr = convertRemsToPx(screen, expr)
     const entry: BlockSizeEntry = {
+      blockSize: sameAsPrevious
+        ? entries[i - 1].blockSize
+        : reduce(convertRemsToPx(screen, expr)),
+      sameAsPrevious,
       screen,
-      screenWidthMin: screen.minWidthPx,
-      screenWidthMax: i === screenDefs.length - 1
-        ? undefined
-        : screenDefs[i + 1].minWidthPx,
-      blockSize: reduce(pxExpr)
+      screenMaxWidthPx: nextScreen?.minWidthPx,
     }
 
     entries.push(entry)

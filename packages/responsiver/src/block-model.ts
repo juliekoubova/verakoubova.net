@@ -35,6 +35,7 @@ export const defaultScreenDef = screenDefsByPrefix['']
 export const classDefs: Record<string, ClassDefinition> = {
   'px-2': { type: 'padding', value: rem(0.5), side: 'both' },
   'px-4': { type: 'padding', value: rem(1), side: 'both' },
+  'w-1/4': { type: 'factor', value: unitless(0.25) },
   'w-1/2': { type: 'factor', value: unitless(0.5) },
   'w-64': { type: 'const', value: rem(16) },
   'max-w-xs': { type: 'max', value: rem(20) },

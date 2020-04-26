@@ -1,25 +1,26 @@
-import { Block, screenDefs, screenDefsByPrefix } from "./block-model";
 import { BlockSizeEntry } from "./sizes";
-import { convertUnit, isLiteral, reduce, serializeExpr } from "./expr";
+import { convertUnit, isLiteral, reduce, hasUnit } from "./expr";
 
-export function getLogicalWidths(blockSizes: BlockSizeEntry[]): number[] {
+export function getLogicalWidths(
+  blockSizes: BlockSizeEntry[],
+  largestViewport = 3840
+): number[] {
   const sizes = new Set<number>()
-  const viewportWidths = [
-    ...blockSizes.filter(b => b.screenWidthMax).map(b => b.screenWidthMax),
-    ...screenDefs.map(s => s.minWidthPx)
-  ]
 
   for (const entry of blockSizes) {
-    const size = entry.screenWidthMax === undefined
-      ? entry.blockSize
-      : convertUnit('vw', 'px', entry.screenWidthMax * 0.01)(entry.blockSize)
+
+    if (entry.sameAsPrevious && !hasUnit('vw')(entry.blockSize)) {
+      continue
+    }
+
+    const maxWidth = entry.screenMaxWidthPx ?? largestViewport
+    const size = convertUnit('vw', 'px', maxWidth * 0.01)(entry.blockSize)
 
     const reduced = reduce(size)
-    console.log(`${serializeExpr(entry.blockSize)} => ${serializeExpr(reduced)}`)
     if (isLiteral(reduced) && reduced.literal.unit === 'px') {
       sizes.add(reduced.literal.value)
     }
   }
 
-  return [...sizes].sort()
+  return [...sizes].sort((a, b) => a - b)
 }
