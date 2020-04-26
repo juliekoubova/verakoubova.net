@@ -86,6 +86,19 @@ test(`generates media query for larger screen`, () => {
   expect(actual).toBe('(min-width:1280px) calc(100vw-40px),(min-width:640px) calc(100vw-32px),calc(100vw-16px)')
 })
 
+test(`generates a media query when parent block has a class for screen`, () => {
+
+  const parent = new Block()
+  parent.addClass(screenDefsByPrefix.sm, classDefs['px-4'])
+
+  const block = new Block(parent)
+  block.addClass(defaultScreenDef, classDefs['w-1/2'])
+
+  const sizes = getBlockSizes(block)
+  const actual = serializeBlockSizes(sizes)
+  expect(actual).toBe('(min-width:1280px) calc((100vw-40px)*0.5),(min-width:640px) calc((100vw-32px)*0.5),50vw')
+})
+
 test(`doesn't generate a media query for screen with no classes`, () => {
   const block = new Block()
   block.addClass(defaultScreenDef, classDefs['px-4'])

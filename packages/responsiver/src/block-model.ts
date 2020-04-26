@@ -60,6 +60,9 @@ export class Block {
 
   addClass(screen: ScreenDefinition, ...classes: ClassDefinition[]) {
     for (const c of classes) {
+      if (!c) {
+        throw new Error('Class must be truthy')
+      }
       if (!this.classes.has(screen)) {
         this.classes.set(screen, [])
       }
@@ -71,8 +74,9 @@ export class Block {
     return this.classes.get(screen) ?? []
   }
 
-  hasClasses(screen: ScreenDefinition) {
-    return this.getClasses(screen).length !== 0
+  hasClasses(screen: ScreenDefinition): boolean {
+    return this.getClasses(screen).length !== 0 ||
+      (this.parent?.hasClasses(screen) ?? false)
   }
 }
 

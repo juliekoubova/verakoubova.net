@@ -39,3 +39,15 @@ test(`returns fixed width`, () => {
     { width: 320, screen: screenDefsByPrefix.xl },
   ])
 })
+
+test(`returns max width for min expr`, () => {
+  const block = new Block()
+  block.addClass(defaultScreenDef, classDefs['max-w-2xl'])
+  const sizes = getBlockSizes(block)
+  const actual = getLogicalWidths(sizes)
+  expect(actual).toStrictEqual([
+    { width: 640, screen: defaultScreenDef },
+    { width: 672, screen: screenDefsByPrefix.sm },
+    { width: 840, screen: screenDefsByPrefix.xl },
+  ])
+})

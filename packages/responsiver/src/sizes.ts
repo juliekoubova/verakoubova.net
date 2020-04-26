@@ -1,6 +1,6 @@
 import { ScreenDefinition, Block, screenDefs, ClassDefinition } from './block-model';
 import {
-  add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce, hasUnit
+  add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce, hasUnit, min
 } from './expr';
 import { px, vw } from './value';
 
@@ -49,6 +49,12 @@ export function calcExpressionForScreen(
       return subtract(
         multiply(parent, literalExpr(c.value)),
         spacing
+      )
+    }
+    if (c.type === 'max') {
+      return subtract(
+        min(parent, literalExpr(c.value)),
+        padding
       )
     }
   }

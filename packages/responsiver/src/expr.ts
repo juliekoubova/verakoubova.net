@@ -43,16 +43,18 @@ export function binaryExpr(type: BinaryExprType, left: Expr, right: Expr): Expr 
 
 export const add = binaryExpr.bind(undefined, ExprType.add)
 export const subtract = binaryExpr.bind(undefined, ExprType.subtract)
+export const min = binaryExpr.bind(undefined, ExprType.min)
 export const multiply = binaryExpr.bind(undefined, ExprType.multiply)
 
 interface LiteralExprReducer {
-  identity: number
+  identity?: number
   apply: (l: number, r: number) => number
 }
 
 const LiteralExprReducers: { [key: string]: LiteralExprReducer | undefined } = {
   [ExprType.add]: { identity: 0, apply: (l, r) => l + r },
   [ExprType.subtract]: { identity: 0, apply: (l, r) => l - r },
+  [ExprType.min]: { apply: Math.min },
   [ExprType.multiply]: { identity: 1, apply: (l, r) => l * r }
 }
 
@@ -93,10 +95,12 @@ export const reduce = map(
       return reduced
     }
 
-    if (isLiteral(left) && left.literal.value === reducer.identity) {
-      return right
-    } else if (isLiteral(right) && right.literal.value === reducer.identity) {
-      return left
+    if (reducer.identity !== undefined) {
+      if (isLiteral(left) && left.literal.value === reducer.identity) {
+        return right
+      } else if (isLiteral(right) && right.literal.value === reducer.identity) {
+        return left
+      }
     }
 
     if (!isLiteral(left) || !isLiteral(right)) {
@@ -123,6 +127,7 @@ export const serializeExpr = map(
     switch (type) {
       case ExprType.add: return `${left}+${right}`
       case ExprType.subtract: return `${left}-${right}`
+      case ExprType.min: return `min(${left},${right})`
       case ExprType.multiply:
         if (isAddOrSubtract(expr.left)) {
           left = `(${left})`

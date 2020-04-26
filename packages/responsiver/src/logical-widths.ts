@@ -1,5 +1,5 @@
 import { BlockSizeEntry } from "./sizes";
-import { convertUnit, isLiteral, reduce, hasUnit } from "./expr";
+import { convertUnit, isLiteral, reduce, hasUnit, map, literalExpr, ExprType } from "./expr";
 import { ScreenDefinition } from "./block-model";
 
 export interface LogicalWidth {
@@ -20,11 +20,14 @@ export function getLogicalWidths(
     }
 
     const maxWidth = entry.screenMaxWidthPx ?? largestViewport
-    const size = convertUnit('vw', 'px', maxWidth * 0.01)(entry.blockSize)
+    const pixels = convertUnit('vw', 'px', maxWidth * 0.01)(entry.blockSize)
+    const reduced = reduce(pixels)
 
-    const reduced = reduce(size)
     if (isLiteral(reduced) && reduced.literal.unit === 'px') {
-      sizes.push({ screen: entry.screen, width: reduced.literal.value })
+      const width = reduced.literal.value
+      if (sizes.length === 0 || sizes[sizes.length - 1].width !== width) {
+        sizes.push({ screen: entry.screen, width })
+      }
     }
   }
 

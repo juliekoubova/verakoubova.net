@@ -1,4 +1,4 @@
-import { add, literalExpr, multiply, ExprType, reduce, subtract, serializeExpr } from "./expr"
+import { add, literalExpr, multiply, ExprType, reduce, subtract, serializeExpr, min } from "./expr"
 import { px, rem, vw, unitless } from "./value"
 
 describe('reduce', () => {
@@ -78,6 +78,12 @@ describe('reduce', () => {
       literalExpr(vw(100)),
       literalExpr(px(5))
     ))
+  })
+
+  it('reduces min between same units', () => {
+    const expr = min(literalExpr(px(100)), literalExpr(px(200)))
+    const actual = reduce(expr)
+    expect(actual).toStrictEqual(literalExpr(px(100)))
   })
 })
 
