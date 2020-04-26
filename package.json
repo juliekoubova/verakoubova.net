@@ -12,7 +12,7 @@
     "dev": "lerna run --parallel dev",
     "serve": "lerna run serve",
     "pretest": "jest --clearCache",
-    "test": "learna run test"
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
