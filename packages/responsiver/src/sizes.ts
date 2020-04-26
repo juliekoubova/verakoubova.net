@@ -102,6 +102,8 @@ export function getBlockSizes(block: Block) {
   const hasRem = hasUnit('rem')
   const entries: BlockSizeEntry[] = []
 
+  let previousRem = 0
+
   for (let i = 0; i < screenDefs.length; i++) {
     const screen = screenDefs[i]
     const prevScreen = i > 0 ? screenDefs[i - 1] : undefined
@@ -110,7 +112,7 @@ export function getBlockSizes(block: Block) {
 
     const sameAsPrevious =
       !!prevScreen &&
-      (prevScreen.remSizePx === screen.remSizePx || !hasRem(expr)) &&
+      (previousRem === screen.remSizePx || !hasRem(expr)) &&
       block.getClasses(screen).length === 0
 
     const entry: BlockSizeEntry = {
@@ -120,6 +122,10 @@ export function getBlockSizes(block: Block) {
       sameAsPrevious,
       screen,
       screenMaxWidthPx: nextScreen?.minWidthPx,
+    }
+
+    if (!sameAsPrevious) {
+      previousRem = screen.remSizePx
     }
 
     entries.push(entry)
