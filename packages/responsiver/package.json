@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "shx rm -rf dist",
     "build": "tsc",
-    "debug": "node --inspect-brk ../../node_modules/.bin/jest",
+    "debug": "node --inspect-brk ../../node_modules/.bin/jest --runInBand",
     "dev": "tsc --watch --preserveWatchOutput",
     "test": "jest"
   },

@@ -27,7 +27,7 @@ export function calcExpressionForScreen(
 ): Expr {
 
   const appliedScreens = screenDefs
-    .filter(s => !s.minWidthPx || s.minWidthPx <= screen.minWidthPx)
+    .filter(s => s.minWidthPx <= screen.minWidthPx)
     .sort((a, b) => a.minWidthPx - b.minWidthPx)
 
   const appliedClasses =
@@ -62,6 +62,7 @@ export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
 
 export interface BlockSizeEntry {
   blockSize: Expr
+  screen: ScreenDefinition
   screenWidthMin: number
   screenWidthMax?: number
 }
@@ -111,6 +112,7 @@ export function getBlockSizes(block: Block) {
     const expr = calcExpressionForScreen(screen, block)
     const pxExpr = convertRemsToPx(screen, expr)
     const entry: BlockSizeEntry = {
+      screen,
       screenWidthMin: screen.minWidthPx,
       screenWidthMax: i === screenDefs.length - 1
         ? undefined

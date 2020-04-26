@@ -6,7 +6,7 @@ test(`returns empty array if no applicable classes`, () => {
   const block = new Block()
   const sizes = getBlockSizes(block)
   const actual = getLogicalWidths(sizes)
-  expect(actual).toBe([])
+  expect(actual).toStrictEqual([])
 })
 
 test(`returns fixed width`, () => {
@@ -14,5 +14,5 @@ test(`returns fixed width`, () => {
   block.addClass(defaultScreenDef, classDefs['w-64'])
   const sizes = getBlockSizes(block)
   const actual = getLogicalWidths(sizes)
-  expect(actual).toBe([256, 320])
+  expect(actual).toStrictEqual([256, 320])
 })
