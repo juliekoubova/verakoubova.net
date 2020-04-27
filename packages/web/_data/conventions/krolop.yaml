@@ -1,0 +1,59 @@
+cs: Krolop
+de: Krolop
+imageBase: /img/krolop
+images:
+
+- cs: Krolop
+  de: Krolop
+  src: der-tusch.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: V sukňách
+  de: Blechtrommelomaröcke
+  src: blechtrommel-oma-roecke.jpeg
+
+- cs: Pozdrav z Kárného tábora
+  de: Gruss aus der Strafkolonie
+  src: gruss-aus-der-strafkolonie.jpeg
+
+- cs: Swing tam i tam
+  de: Swing beiderseits
+  src: swing-beiderseits.jpeg
+
+- cs: Na vrcholu pyramidy
+  de: Pyramidaler Becher
+  src: ein-pyramidaler-becher.jpeg
+
+- cs: Stěny mají uši
+  de: Wände haben Ohren
+  src: waende-haben-ohren.jpeg
+
+- cs: Konferenční fantomy
+  de: Phantome in der Konferenz
+  src: phantome-in-der-konferenz.jpeg
+
+- cs: Prstová cvičení
+  de: Fingerübungen
+  src: fingeruebungen.jpeg
+
+- cs: Bublina
+  de: Sprechblase
+  src: sprechblase.jpeg
+
+- cs: Ohlédnutí
+  de: Rückblick
+  src: ein-rueckblick.jpeg
+
+- cs: Bude medaile?
+  de: Braver Soldat
+  src: braver-soldat.jpeg
+
+- cs: Bližní
+  de: Enge Freunde
+  src: enge-freunde.jpeg
+
+- cs: Okřídlený
+  de: Beflügelt
+  src: befluegelt.jpeg

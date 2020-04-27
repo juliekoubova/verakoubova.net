@@ -7,3 +7,4 @@ title: Konferenzen
 * [Nietzsche](nietzsche/)
 * [Hejdánek](hejdanek/)
 * [Chvatík](chvatik/)
+* [Krolop](krolop/)

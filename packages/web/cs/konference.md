@@ -8,3 +8,4 @@ img:
 * [Hejdánkiáda](hejdankiada/)
 * [Chvatíkiáda](chvatikiada/)
 * [Nietzsche](nietzsche/)
+* [Krolop](krolop/)
