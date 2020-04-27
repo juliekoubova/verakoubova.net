@@ -1,0 +1,35 @@
+cs: Chvatíkiáda
+de: Chvatík
+imageBase: /img/chvatikiada
+images:
+- cs: Dobré vodstvo
+  de: Gutes Gewässer
+  src: dobre-vodstvo.jpeg
+
+- cs: Klobouk dolů
+  de: Hut ab
+  src: nad-kloboukem.jpeg
+
+- cs: Lautr sranda
+  de: Gaudium
+  src: lautr-sranda.jpeg
+
+- cs: Poletuchy
+  de: Im Fluge
+  src: poletuchy.jpeg
+
+- cs: Široká záda
+  de: Im Rücken
+  src: siroka-zada.jpeg
+
+- cs: Antické prolnutí
+  de: Durchdringend
+  src: anticke-prolnuti.jpeg
+
+- cs: Antické ústí
+  de: Auslaufend
+  src: anticke-usti.jpeg
+
+- cs: Podpůrně
+  de: Unterstützung
+  src: podpurne.jpeg
