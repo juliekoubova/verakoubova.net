@@ -2,6 +2,14 @@ cs: Chvatíkiáda
 de: Chvatík
 imageBase: /img/chvatikiada
 images:
+
+- cs: Chvatíkiáda
+  de: Chvatík
+  src: anticke-prolnuti.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
 - cs: Dobré vodstvo
   de: Gutes Gewässer
   src: dobre-vodstvo.jpeg
