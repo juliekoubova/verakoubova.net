@@ -59,6 +59,11 @@ export interface OriginalImage {
 const HashDirLength = 1
 
 export async function loadSourceImage(path: string): Promise<OriginalImage> {
+
+  if (!await fileExists(path)) {
+    throw new Error(`File not found: ${path}`)
+  }
+
   const image = sharp(path)
   const hash = await hashImage(image)
   const { height, width } = await loadMetadata(path, image)
