@@ -2,51 +2,42 @@ cs: Nietzsche
 de: Nietzsche
 imageBase: /img/nietzsche
 images:
-# - cs: Dobré vodstvo
-#   de: Gutes Gewässer
-#   src: dobre-vodstvo.jpeg
 
-# - cs: Klobouk dolů
-#   de: Hut ab
-#   src: nad-kloboukem.jpeg
+- cs: Nietzsche
+  de: Nietzsche
+  src: hlava-vzhuru-nohama.jpeg
+  left:
+    cs: index.cs.html
+    de: index.de.html
 
-# - cs: Lautr sranda
-#   de: Gaudium
-#   src: lautr-sranda.jpeg
+- cs: Lustr na stole
+  de: Erleuchtung
+  src: lustr-na-stole.jpeg
 
-# - cs: Poletuchy
-#   de: Im Fluge
-#   src: poletuchy.jpeg
+- cs: Nohy na trnoži
+  de: Am Steg
+  src: nohy-na-trnozi.jpeg
 
-# - cs: Široká záda
-#   de: Im Rücken
-#   src: siroka-zada.jpeg
+- cs: Karetní figura
+  de: Kartenfigur
+  src: karetni-figura.jpeg
 
-# - cs: Antické prolnutí
-#   de: Durchdringend
-#   src: anticke-prolnuti.jpeg
+- cs: Dálnice
+  de: Autobahn
+  src: dalnice.jpeg
 
-# - cs: Antické ústí
-#   de: Auslaufend
-#   src: anticke-usti.jpeg
+- cs: Hlava vzhůru nohama
+  de: Kopf hoch!
+  src: hlava-vzhuru-nohama.jpeg
 
-# - cs: Podpůrně
-#   de: Unterstützung
-#   src: podpurne.jpeg
+- cs: Hlava na věšáku
+  de: Am Haken
+  src: hlava-na-vesaku.jpeg
 
-# Lustr na stole
-#  Erleuchtung
-# Nohy na trnoži
-#  Am Steg
-# Karetní figura
-# Kartenfigur
-# Dálnice
-#  Autobahn
-# Hlava vzhůru nohama
-#  Kopf hoch!
-# Hlava na věšáku
-#  Am Haken
-# Hlava z plátna
-#  Im Stoff
-# Taneček
-# Tänzchen
+- cs: Hlava z plátna
+  de: Im Stoff
+  src: hlava-z-platna.jpeg
+
+- cs: Taneček
+  de: Tänzchen
+  src: tanecek.jpeg

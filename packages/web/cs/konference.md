@@ -7,3 +7,4 @@ img:
 * [NeShodnosti](neshodnosti/)
 * [Hejdánkiáda](hejdankiada/)
 * [Chvatíkiáda](chvatikiada/)
+* [Nietzsche](nietzsche/)
