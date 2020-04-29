@@ -9,3 +9,4 @@ img:
 * [Chvatíkiáda](chvatikiada/)
 * [Nietzsche](nietzsche/)
 * [Krolop](krolop/)
+* [Milost](milost/)

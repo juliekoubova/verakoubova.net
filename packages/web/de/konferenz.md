@@ -8,3 +8,4 @@ title: Konferenzen
 * [Hejdánek](hejdanek/)
 * [Chvatík](chvatik/)
 * [Krolop](krolop/)
+* [Gnade](gnade/)

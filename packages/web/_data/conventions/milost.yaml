@@ -1,0 +1,44 @@
+cs: Milost
+de: Gnade
+imageBase: /img/milost
+images:
+
+- cs: Reflektovaná bdělost
+  de: Reflektierte Wachsamkeit
+  src: reflektovana-bdelost.jpeg
+
+- cs: Znásobil pozornost
+  de: Aufmerksamkeit gesteigert
+  src: znasobil-pozornost.jpeg
+
+- cs: Noe
+  de: Noah
+  src: noe.jpeg
+
+- cs: Chápavé prstoví
+  de: Griffbereit
+  src: chapave-prstovi.jpeg
+
+- cs: Osvícená pauza
+  de: Erleuchtete Pause
+  src: osvicena-pauza.jpeg
+
+- cs: Trojúhelník
+  de: Dreieck
+  src: trojuhelnik.jpeg
+
+- cs: Vypadává z rámce
+  de: Aus dem Rahmen fallend
+  src: vypadava-z-ramce.jpeg
+
+- cs: Pojme mnohé vodstvo
+  de: Mit allen Wässern . . .
+  src: pojme-mnohe-vodstvo.jpeg
+
+- cs: Je za vodou
+  de: Wasserstau
+  src: je-za-vodou.jpeg
+
+- cs: Šlo o milost
+  de: Es ging um die Gnade
+  src: slo-o-milost.jpeg
