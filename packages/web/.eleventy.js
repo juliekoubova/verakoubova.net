@@ -260,7 +260,7 @@ function config(eleventyConfig) {
     },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['html', 'jpeg', 'md', 'njk', 'png'],
+    templateFormats: ['html', 'md', 'njk'],
   }
 }
 
