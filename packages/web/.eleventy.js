@@ -246,9 +246,7 @@ function config(eleventyConfig) {
     snippetOptions: {
       rule: {
         match: /<\/head>/i,
-        fn: function (snippet, match) {
-          return snippet + match;
-        }
+        fn: (snippet, match) => snippet + match
       }
     }
   })
