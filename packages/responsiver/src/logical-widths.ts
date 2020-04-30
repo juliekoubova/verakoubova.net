@@ -1,5 +1,5 @@
-import { BlockSizeEntry } from "./sizes";
-import { convertUnit, isLiteral, reduce, hasUnit, map, literalExpr, ExprType } from "./expr";
+import { BlockWidthEntry } from "./block-widths";
+import { convertUnit, isLiteral, reduce, hasUnit } from "./expr";
 import { ScreenDefinition } from "./block-model";
 
 export interface LogicalWidth {
@@ -8,7 +8,7 @@ export interface LogicalWidth {
 }
 
 export function getLogicalWidths(
-  blockSizes: BlockSizeEntry[],
+  blockSizes: BlockWidthEntry[],
   largestViewport = 3840
 ): LogicalWidth[] {
   const sizes: LogicalWidth[] = []

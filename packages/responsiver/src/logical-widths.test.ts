@@ -1,10 +1,10 @@
 import { Block, defaultScreenDef, classDefs, screenDefsByPrefix } from "./block-model"
 import { getLogicalWidths } from "./logical-widths"
-import { getBlockSizes } from "./sizes"
+import { getBlockWidths } from "./block-widths"
 
 test(`returns array of viewport widths if no applicable classes`, () => {
   const block = new Block()
-  const sizes = getBlockSizes(block)
+  const sizes = getBlockWidths(block)
   const actual = getLogicalWidths(sizes)
   expect(actual).toStrictEqual([
     { width: 640, screen: defaultScreenDef },
@@ -18,7 +18,7 @@ test(`returns array of viewport widths if no applicable classes`, () => {
 test(`returns percentage of viewport`, () => {
   const block = new Block()
   block.addClass(defaultScreenDef, classDefs['w-1/4'])
-  const sizes = getBlockSizes(block)
+  const sizes = getBlockWidths(block)
   const actual = getLogicalWidths(sizes)
   expect(actual).toStrictEqual([
     { width: 160, screen: defaultScreenDef },
@@ -32,7 +32,7 @@ test(`returns percentage of viewport`, () => {
 test(`returns fixed width`, () => {
   const block = new Block()
   block.addClass(defaultScreenDef, classDefs['w-64'])
-  const sizes = getBlockSizes(block)
+  const sizes = getBlockWidths(block)
   const actual = getLogicalWidths(sizes)
   expect(actual).toStrictEqual([
     { width: 256, screen: defaultScreenDef },
@@ -43,7 +43,7 @@ test(`returns fixed width`, () => {
 test(`returns max width for min expr`, () => {
   const block = new Block()
   block.addClass(defaultScreenDef, classDefs['max-w-2xl'])
-  const sizes = getBlockSizes(block)
+  const sizes = getBlockWidths(block)
   const actual = getLogicalWidths(sizes)
   expect(actual).toStrictEqual([
     { width: 640, screen: defaultScreenDef },

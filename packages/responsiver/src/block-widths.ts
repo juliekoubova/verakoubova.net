@@ -66,14 +66,14 @@ export function convertRemsToPx(screen: ScreenDefinition, expr: Expr): Expr {
   return convertUnit('rem', 'px', screen.remSizePx)(expr)
 }
 
-export interface BlockSizeEntry {
+export interface BlockWidthEntry {
   sameAsPrevious: boolean
   blockSize: Expr
   screen: ScreenDefinition
   screenMaxWidthPx?: number
 }
 
-export function serializeBlockSizes(entries: BlockSizeEntry[]) {
+export function serializeBlockWidths(entries: BlockWidthEntry[]) {
   const chunks: string[] = []
 
   for (let i = entries.length - 1; i >= 0; i--) {
@@ -103,10 +103,10 @@ export function serializeBlockSizes(entries: BlockSizeEntry[]) {
   return chunks.join('')
 }
 
-export function getBlockSizes(block: Block) {
+export function getBlockWidths(block: Block) {
 
   const hasRem = hasUnit('rem')
-  const entries: BlockSizeEntry[] = []
+  const entries: BlockWidthEntry[] = []
 
   let previousRem = 0
 
@@ -121,7 +121,7 @@ export function getBlockSizes(block: Block) {
       (previousRem === screen.remSizePx || !hasRem(expr)) &&
       !block.hasClasses(screen)
 
-    const entry: BlockSizeEntry = {
+    const entry: BlockWidthEntry = {
       blockSize: sameAsPrevious
         ? entries[i - 1].blockSize
         : reduce(convertRemsToPx(screen, expr)),

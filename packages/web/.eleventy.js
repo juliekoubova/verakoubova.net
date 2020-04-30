@@ -209,9 +209,7 @@ function config(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('mp3/*.mp3')
 
   eleventyConfig.addPlugin(externalLinks)
-  eleventyConfig.addPlugin(responsiver, {
-
-  })
+  eleventyConfig.addPlugin(responsiver())
 
   if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addPlugin(cacheBuster({}))
