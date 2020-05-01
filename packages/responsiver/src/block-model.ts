@@ -8,7 +8,7 @@ export interface ScreenDefinition {
 
 export type SpacingSide = 'both' | 'start' | 'end'
 
-export type ClassDefinition =
+export type StyleRule =
   | { type: 'const', value: Value }
   | { type: 'factor', value: Value }
   | { type: 'margin', value: Value, side: SpacingSide }
@@ -32,7 +32,7 @@ export const screenDefsByPrefix = Object.fromEntries(
 export const defaultScreenDef = screenDefsByPrefix['']
 
 // todo read from tailwind config
-export const classDefs: Record<string, ClassDefinition> = {
+export const singleScreenClasses: Record<string, StyleRule> = {
   'px-2': { type: 'padding', value: rem(0.5), side: 'both' },
   'px-4': { type: 'padding', value: rem(1), side: 'both' },
   'w-1/4': { type: 'factor', value: unitless(0.25) },
@@ -50,28 +50,44 @@ export const classDefs: Record<string, ClassDefinition> = {
   'max-w-6xl': { type: 'max', value: rem(72) },
 }
 
+export const multiScreenClasses: Record<string, Record<string, StyleRule[]>> = {
+  'in-sidebar': {
+    'lg': [
+      { type: 'const', value: rem(12) },
+      { type: 'padding', value: rem(0.75), side: 'end' }
+    ]
+  },
+  'sidebar': {
+    'lg': [{ type: 'const', value: rem(40) }]
+  },
+  'sidebar-container': {
+    '': [{ type: 'max', value: rem(40) }],
+    'lg': [{ type: 'max', value: rem(54) }]
+  }
+}
+
 export class Block {
-  readonly classes = new Map<ScreenDefinition, ClassDefinition[]>()
+  readonly rules = new Map<ScreenDefinition, StyleRule[]>()
 
   constructor(
     readonly parent?: Block | undefined
   ) {
   }
 
-  addClass(screen: ScreenDefinition, ...classes: ClassDefinition[]) {
-    for (const c of classes) {
+  addRule(screen: ScreenDefinition, ...rules: StyleRule[]) {
+    for (const c of rules) {
       if (!c) {
         throw new Error('Class must be truthy')
       }
-      if (!this.classes.has(screen)) {
-        this.classes.set(screen, [])
+      if (!this.rules.has(screen)) {
+        this.rules.set(screen, [])
       }
-      this.classes.get(screen)!.push(c)
+      this.rules.get(screen)!.push(c)
     }
   }
 
-  getClasses(screen: ScreenDefinition): ReadonlyArray<ClassDefinition> {
-    return this.classes.get(screen) ?? []
+  getClasses(screen: ScreenDefinition): ReadonlyArray<StyleRule> {
+    return this.rules.get(screen) ?? []
   }
 
   hasClasses(screen: ScreenDefinition): boolean {
@@ -80,25 +96,46 @@ export class Block {
   }
 }
 
-export function parseBlock(parent: Block | undefined, tokens: string[]): Block {
+function tryAddSingleScreenClass(result: Block, token: string) {
   const PrefixRegexp = /^(\S+):(\S+)$/
-  const result = new Block(parent)
+  const match = PrefixRegexp.exec(token)
+  const prefix = match ? match[1] : ''
+  const className = match ? match[2] : token
+  const screen = screenDefsByPrefix[prefix]
 
-  for (const token of tokens) {
-    const match = PrefixRegexp.exec(token)
-    const prefix = match ? match[1] : ''
-    const className = match ? match[2] : token
-    const screen = screenDefsByPrefix[prefix]
+  if (!screen) {
+    console.warn(`@verakoubova/responsiver: unknown prefix '${prefix}' in class '${token}'.`)
+    return
+  }
 
+  const rule = singleScreenClasses[className]
+  if (rule) {
+    result.addRule(screen, rule)
+  }
+}
+
+function tryAddMultiScreenClass(result: Block, token: string) {
+  const def = multiScreenClasses[token]
+  if (!def) {
+    return
+  }
+  for (const [screenPrefix, rules] of Object.entries(def)) {
+    const screen = screenDefsByPrefix[screenPrefix]
     if (!screen) {
-      console.warn(`@verakoubova/responsiver: unknown prefix '${prefix}' in class '${token}'.`)
+      console.warn(
+        `@verakoubova/responsiver: unknown screen prefix '${screenPrefix}' ` +
+        `referenced by class '${token}'.`)
       continue
     }
+    result.addRule(screen, ...rules)
+  }
+}
 
-    const classDef = classDefs[className]
-    if (classDef) {
-      result.addClass(screen, classDef)
-    }
+export function parseBlock(parent: Block | undefined, tokens: string[]): Block {
+  const result = new Block(parent)
+  for (const token of tokens) {
+    tryAddSingleScreenClass(result, token)
+    tryAddMultiScreenClass(result, token)
   }
   return result
 }

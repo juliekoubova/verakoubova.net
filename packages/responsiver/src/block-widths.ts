@@ -1,4 +1,4 @@
-import { ScreenDefinition, Block, screenDefs, ClassDefinition } from './block-model';
+import { ScreenDefinition, Block, screenDefs, StyleRule } from './block-model';
 import {
   add, literalExpr, isLiteral, Expr, serializeExpr, convertUnit, multiply, subtract, reduce, hasUnit, min
 } from './expr';
@@ -6,7 +6,7 @@ import { px, vw } from './value';
 
 export function coalesceSpacing(
   type: 'margin' | 'padding',
-  classes: ClassDefinition[]
+  classes: StyleRule[]
 ): Expr {
   const zero = px(0)
   const result = classes.reduce(

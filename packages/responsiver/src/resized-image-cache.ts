@@ -152,6 +152,7 @@ export class ResizedImageCache {
     const physicalWidths = new Set(
       [...logicalWidths]
         .flatMap(lw => this.pixelDensities.map(density => lw * density))
+        .map(Math.floor)
         .filter(pw => pw <= original.physicalWidth)
     )
     physicalWidths.add(original.physicalWidth)

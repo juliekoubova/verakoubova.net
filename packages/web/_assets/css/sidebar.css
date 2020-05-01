@@ -1,11 +1,7 @@
 
-.header-width {
-  max-width: 40rem;
-}
-
 .sidebar-container {
   @apply mx-auto;
-  @apply header-width;
+  max-width: 40rem;
 }
 
 .in-sidebar {
