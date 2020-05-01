@@ -9,3 +9,4 @@ title: Konferenzen
 * [Chvatík](chvatik/)
 * [Krolop](krolop/)
 * [Gnade](gnade/)
+* [Kafka](kafka/)

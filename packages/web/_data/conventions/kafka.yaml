@@ -1,0 +1,51 @@
+cs: Kafka
+de: Kafka
+imageBase: /img/kafka-konference
+images:
+
+- cs: Kafka a filosofie
+  de: Kafka & Philosophie
+  src: za-skly.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: Háčky nad zahájením
+  de: Haken über der Eröffnung
+  src: hacky-nad-zahajenim.jpeg
+
+- cs: Odstartováno
+  de: Gestartet
+  src: odstartovano.jpeg
+
+- cs: Ona...
+  de: Sie...
+  src: ona.jpeg
+
+- cs: ...A on
+  de: ...Und er
+  src: a-on.jpeg
+
+- cs: S hlavou pod paží
+  de: Kopf unterm Arm
+  src: s-hlavou-pod-pazi.jpeg
+
+- cs: Povídej!
+  de: Erzähl mal!
+  src: povidej.jpeg
+
+- cs: Poslouchej!
+  de: Hör zu!
+  src: poslouchej.jpeg
+
+- cs: Pal!
+  de: Feuer!
+  src: pal.jpeg
+
+- cs: Za skly
+  de: Hinter Gläsern
+  src: za-skly.jpeg
+
+- cs: Tabula už rasa
+  de: Tabula schon rasa
+  src: tabula-uz-rasa.jpeg
