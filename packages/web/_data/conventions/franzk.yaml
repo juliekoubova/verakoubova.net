@@ -1,0 +1,59 @@
+cs: FranzK
+de: FranzK
+imageBase: /img/franzk
+images:
+
+- cs: FranzK
+  de: FranzK
+  src: der-verlaengerte-arm.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: Robinson
+  de: Ein Robinson
+  src: ein-robinson.jpeg
+
+- cs: Kárované punčošky
+  de: Karrierte Strümpfe
+  src: karrierte-struempfe.jpeg
+
+- cs: Ruka
+  de: Die Hand
+  src: die-hand.jpeg
+
+- cs: Ukazovák
+  de: Der Zeigefinger
+  src: der-zeigefinger.jpeg
+
+- cs: Paže
+  de: Der Arm
+  src: der-arm.jpeg
+
+- cs: Prodloužené rámě
+  de: Der verlängerte Arm
+  src: der-verlaengerte-arm.jpeg
+
+- cs: Z nitra
+  de: Der Ausholende
+  src: der-ausholende.jpeg
+
+- cs: Usebraný
+  de: Der Gesammelte
+  src: der-gesammelte.jpeg
+
+- cs: Jde to bradou
+  de: Es liegt am Kinn
+  src: es-liegt-am-kinn.jpeg
+
+- cs: Naslouchare
+  de: Lauschare
+  src: lauschare.jpeg
+
+- cs: Souzvuk
+  de: Zusammenklang
+  src: zusammenklang.jpeg
+
+- cs: Počtení
+  de: Lektüre
+  src: lektuere.jpeg
