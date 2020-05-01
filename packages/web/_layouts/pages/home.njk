@@ -12,7 +12,7 @@ titlePrefix:
 <div class="flex items-center sm:items-stretch justify-center py-8 sm:py-16">
   <div class="flex flex-col sm:flex-row-reverse sm:items-center">
     <div class="vr-base self-end sm:self-auto sm:flex-basis-1/2 sm:flex-shrink-0">
-      <div class="w-64">
+      <div class="w-64" style="height: 25rem">
         {% include 'lang-switcher.njk' %}
         {{ image(img, class = 'w-64') }}
       </div>
@@ -27,7 +27,7 @@ titlePrefix:
   </div>
 </div>
 
-<div class="min-h-screen" data-controller="vr">
+<div>
 {% endblock %}
 
 {% block content %}
