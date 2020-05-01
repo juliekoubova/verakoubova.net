@@ -24,6 +24,12 @@ jobs:
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - uses: actions/cache@v1
+      name: Restore image cache
+      with:
+        path: .imagecache
+        key: imagecache
+
+    - uses: actions/cache@v1
       name: Restore yarn cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -34,8 +40,10 @@ jobs:
     - run: yarn install
     - run: yarn build
     - run: yarn test
+    - run: yarn clean-imagecache
     - run: yarn deploy
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
         DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+
