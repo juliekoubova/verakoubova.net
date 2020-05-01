@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
+    "clean-imagecache": "node ./scripts/clean-imagecache.js",
     "predeploy": "lerna run predeploy",
     "deploy": "./scripts/deploy.sh packages/web/_site",
     "predebug": "lerna run build --ignore @verakoubova/web",
