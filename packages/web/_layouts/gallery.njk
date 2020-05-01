@@ -1,7 +1,7 @@
 ---
 layout: fixed-header
 eleventyComputed:
-  pageId: "gallery/{{ pagination.pageNumber }}"
+  pageId: "{{ pagination.data }}/{{ pagination.pageNumber }}"
   title: "{{ gallery | lang }}"
 ---
 

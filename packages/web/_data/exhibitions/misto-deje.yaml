@@ -1,0 +1,37 @@
+cs: Místo děje
+de: Anstelle anstätte
+imageBase: /img/misto-deje
+images:
+
+- cs: Palachiáda
+  de: Palach-Tag
+  src: palachiada.jpg
+
+- cs: Dvojvěž
+  de: Doppelturm
+  src: dvojvez.jpg
+
+- cs: Pomník
+  de: Denkmal
+  src: pomnik.jpg
+
+- cs: Vzdušný zámek
+  de: Luftschloss
+  src: vzdusny-zamek.jpg
+
+- cs: Do zdi
+  de: Mauerwärts
+  src: do-zdi.jpg
+
+- cs: Čekárna
+  de: Warteraum
+  src: cekarna.jpg
+
+- cs: Tři sudy
+  de: Drei Fässer
+  src: tri-sudy.jpg
+
+- cs: Terezka dvojmo
+  de: Tereschen doppelt
+  src: terezka-dvojmo.jpg
+

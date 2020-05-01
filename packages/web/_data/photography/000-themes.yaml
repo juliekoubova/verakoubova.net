@@ -6,6 +6,9 @@ slug:
 rows:
 - cs: Místo děje
   de: Anstelle anstätte
+  href:
+    cs: /cs/expozice/misto-deje
+    de: /de/ausstellung/anstelle-anstatte
   instances:
   - cs: pouliční příběhy z devadesátých let
     de: Strassengeschichten aus den neunziger Jahren
@@ -21,8 +24,8 @@ rows:
 - cs: Konference
   de: Konferenzen
   href:
-      cs: /cs/konference/
-      de: /de/konferenz/
+    cs: /cs/konference/
+    de: /de/konferenz/
   instances:
   - cs: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
