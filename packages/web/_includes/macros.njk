@@ -5,6 +5,7 @@
     class="{{ class }}"
     alt="{{ img.alt | lang }}"
     src="{{ src | url }}"
+    loading="lazy"
     {% if widths %}data-widths="{{ widths }}"{% endif %}
   >
 {% endif %}
