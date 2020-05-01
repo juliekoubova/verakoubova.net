@@ -52,21 +52,22 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
     process.cwd(),
   )
 
-  const resizedImages = new ResizedImageCache(
-    resolvedCacheDir,
-    resolvedOutputDir,
-    pixelDensities,
-  )
-
-  const context: ResponsiverContext = {
-    largestViewport,
-    legacyViewport,
-    originalImages,
-    resizedImages,
-    urlBase
-  }
 
   return cheerioPlugin('responsiver', async ($, _outputPath) => {
+    const resizedImages = new ResizedImageCache(
+      resolvedCacheDir,
+      resolvedOutputDir,
+      pixelDensities,
+    )
+
+    const context: ResponsiverContext = {
+      largestViewport,
+      legacyViewport,
+      originalImages,
+      resizedImages,
+      urlBase
+    }
+
     const entries = await Promise.all(
       $('img').toArray().map(img => generateImageSizes(context, img))
     )

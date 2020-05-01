@@ -4,7 +4,7 @@ import { ResizedImageSet } from "./resized-image-cache"
 import { serializeBlockWidths, BlockWidthEntry } from "./block-widths"
 
 function src(context: ResponsiverContext, image: ResizedImage) {
-  return context.urlBase + '/' + image.original.id + '/' + image.fileName
+  return `/${context.urlBase}/${image.original.id}/${image.fileName}`
 }
 
 function srcsetByWidth(context: ResponsiverContext, images: ResizedImage[]) {

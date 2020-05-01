@@ -1,11 +1,11 @@
 import { promises as fsp } from 'fs';
-export async function fileExists(path: string) {
+export async function fileExists(path: string): Promise<number> {
   try {
-    await fsp.stat(path);
-    return true;
+    const stat = await fsp.stat(path);
+    return stat.size
   } catch (e) {
     if (e.code === 'ENOENT') {
-      return false;
+      return 0;
     } else {
       throw e;
     }

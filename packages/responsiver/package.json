@@ -14,9 +14,11 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@types/cheerio": "^0.22.17",
+    "@types/cli-progress": "^3.4.2",
     "@types/sharp": "^0.25.0",
     "@verakoubova/plugins": "0.0.0",
     "cheerio": "^1.0.0-rc.3",
+    "cli-progress": "^3.8.1",
     "sharp": "^0.25.2",
     "zbase32": "^1.0.2"
   },

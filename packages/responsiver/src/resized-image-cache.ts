@@ -1,5 +1,6 @@
+import { SingleBar, Presets } from 'cli-progress'
 import { promises as fsp } from 'fs'
-import { join } from 'path'
+import { join, relative } from 'path'
 import sharp = require("sharp");
 import { OriginalImage } from "./original-image";
 import { ResizedImage } from "./resized-image";
@@ -25,25 +26,24 @@ async function writeResizedImage(
 
   const fileName = physicalWidth.toFixed(0) + format.extension
   const path = join(imageDir, fileName)
-  const resizedImage: ResizedImage = {
+  const result = {
     fileName,
     format,
     original,
     physicalWidth,
   }
 
-  if (await fileExists(path)) {
-    return resizedImage
+  const existingFileSize = await fileExists(path)
+  if (existingFileSize) {
+    return { ...result, fileSize: existingFileSize }
   }
 
   const resized = sharp(original.path).resize(physicalWidth)
-  if (resizedImage.format === WebP) {
-    await resized.webp().toFile(path)
-  } else {
-    await resized.jpeg().toFile(path)
-  }
+  const output = result.format === WebP
+    ? await resized.webp().toFile(path)
+    : await resized.jpeg().toFile(path)
 
-  return resizedImage
+  return { ...result, fileSize: output.size }
 }
 
 export type ResizedImageSet = Map<ImageFormat, ResizedImage[]>
@@ -71,25 +71,55 @@ export class ResizedImageCache {
   }
 
   async writeResizedImages() {
+    const progress = this.startProgress()
     const result = new Map<OriginalImage, ResizedImageSet>()
+
     for (const [original, logicalWidths] of this.#logicalWidths) {
+      const originalRelative = relative(process.cwd(), original.path)
+
       const imageDir = await ensureImageDir(this.outputDir, original)
       const physicalWidths = this.getPhysicalWidths(original, logicalWidths)
+
+      progress.setTotal(
+        progress.getTotal() -
+        logicalWidths.size +
+        physicalWidths.length * ImageFormats.length
+      )
+
       const byFormat = await Promise.all(
         ImageFormats.map(format => Promise.all(
-          physicalWidths.map(
-            physicalWidth => writeResizedImage(
+          physicalWidths.map(async physicalWidth => {
+            const result = await writeResizedImage(
               imageDir,
               original,
               physicalWidth,
               format
-            ),
-          )
+            )
+            progress.increment(1, { original: originalRelative })
+            return result
+          })
         ).then(images => [format, images] as const))
       )
       result.set(original, new Map(byFormat))
     }
+
+    progress.stop()
     return result
+  }
+
+  private startProgress() {
+    const total = [...this.#logicalWidths.values()].reduce(
+      (prev, current) => prev + current.size,
+      0
+    )
+    const progress = new SingleBar(
+      { format: '{bar} {value}/{total} {original}' },
+      Presets.rect
+    )
+    if (total !== 0) {
+      progress.start(total, 0, { original: '' })
+    }
+    return progress
   }
 
   private getPhysicalWidths(original: OriginalImage, logicalWidths: Iterable<number>) {
