@@ -1,0 +1,10 @@
+cs: Nesmrtelní smrtelní
+de: Sterbliche unsterbliche
+imageBase: /img/nesmrtelni-smrtelni-vystava
+images:
+
+- cs: František Bílek
+  src: harlekyn.jpeg
+  left:
+    caption: František Bílek
+    src: frantisek-bilek.jpeg
