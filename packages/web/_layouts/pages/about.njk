@@ -1,0 +1,30 @@
+---
+layout: applied
+pageId: about
+img:
+  src: /img/vek.jpeg
+  alt:
+    cs: Věra Koubová s fotoaparátem
+---
+
+<div class="sidebar-section">
+
+  <div class="in-sidebar flex lg:justify-end mt-4">
+    <div class="mr-4">
+      {% from 'macros.njk' import image %}
+      {{ image(img) | safe }}
+    </div>
+  </div>
+
+  <div>
+    {{ content | safe }}
+
+    <div class="vr-normal-base font-body text-right mt-8">
+      <div><a href="mailto:{{ site.mail }}">{{ site.mail }}</a></div>
+      {% if proofreading %}
+      <div>{{ proofreading }}</div>
+      {% endif %}
+      <div>{{ audioDirection }} Martin Klusák</div>
+    </div>
+  </div>
+</div>
