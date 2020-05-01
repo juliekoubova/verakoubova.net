@@ -9,10 +9,10 @@ import { fileExists } from "./fs";
 
 
 async function ensureImageDir(
-  outputDir: string,
+  baseDir: string,
   original: OriginalImage
 ) {
-  const imageOutputDir = join(outputDir, original.id)
+  const imageOutputDir = join(baseDir, original.id)
   await fsp.mkdir(imageOutputDir, { recursive: true })
   return imageOutputDir
 }
@@ -44,6 +44,23 @@ async function writeResizedImage(
     : await resized.jpeg().toFile(path)
 
   return { ...result, fileSize: output.size }
+}
+
+async function linkResizedImage(
+  cacheImageDir: string,
+  outputImageDir: string,
+  image: ResizedImage,
+) {
+  try {
+    await fsp.link(
+      join(cacheImageDir, image.fileName),
+      join(outputImageDir, image.fileName)
+    )
+  } catch (e) {
+    if (e.code !== 'EEXIST') {
+      throw e
+    }
+  }
 }
 
 export type ResizedImageSet = Map<ImageFormat, ResizedImage[]>
@@ -84,17 +101,19 @@ export class ResizedImageCache {
 
     for (const [image, imageWidths] of physicalWidths) {
       const imagePath = relative(process.cwd(), image.path)
-      const imageDir = await ensureImageDir(this.outputDir, image)
+      const cacheImageDir = await ensureImageDir(this.cacheDir, image)
+      const outputImageDir = await ensureImageDir(this.outputDir, image)
 
       const byFormat = await Promise.all(
         ImageFormats.map(format => Promise.all(
           imageWidths.map(async physicalWidth => {
             const result = await writeResizedImage(
-              imageDir,
+              cacheImageDir,
               image,
               physicalWidth,
               format
             )
+            await linkResizedImage(cacheImageDir, outputImageDir, result)
             progress.increment(1, { imagePath })
             return result
           })

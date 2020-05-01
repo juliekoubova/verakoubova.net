@@ -1,5 +1,6 @@
 .cache
 .DS_Store
+.imagecache
 _site
 dist
 node_modules
