@@ -3,20 +3,23 @@ import { convertUnit, isLiteral, reduce, hasUnit } from "./expr";
 import { ScreenDefinition } from "./block-model";
 
 export interface LogicalWidth {
-  screen: ScreenDefinition,
-  width: number
+  appliesUpToScreen: ScreenDefinition
+  value: number
 }
 
 export function getLogicalWidths(
   blockSizes: BlockWidthEntry[],
-  largestViewport = 3840
+  largestViewport: number,
 ): LogicalWidth[] {
   const sizes: LogicalWidth[] = []
 
   for (const entry of blockSizes) {
 
-    if (entry.sameAsPrevious && !hasUnit('vw')(entry.blockSize)) {
-      continue
+    if (sizes.length !== 0) {
+      if (entry.sameAsPrevious && !hasUnit('vw')(entry.blockSize)) {
+        sizes[sizes.length - 1].appliesUpToScreen = entry.screen
+        continue
+      }
     }
 
     const maxWidth = entry.screenMaxWidthPx ?? largestViewport
@@ -24,12 +27,12 @@ export function getLogicalWidths(
     const reduced = reduce(pixels)
 
     if (isLiteral(reduced) && reduced.literal.unit === 'px') {
-      const width = reduced.literal.value
-      if (sizes.length === 0 || sizes[sizes.length - 1].width !== width) {
-        sizes.push({ screen: entry.screen, width })
+      const { value } = reduced.literal
+      if (sizes.length === 0 || sizes[sizes.length - 1].value !== value) {
+        sizes.push({ appliesUpToScreen: entry.screen, value })
       }
     }
   }
 
-  return sizes.sort((a, b) => a.width - b.width)
+  return sizes.sort((a, b) => a.value - b.value)
 }

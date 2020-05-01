@@ -1,8 +1,9 @@
-import { parseBlock, Block } from "./block-model"
+import { parseBlock, Block, screenDefs } from "./block-model"
 import { getLogicalWidths, LogicalWidth } from './logical-widths'
 import { getBlockWidths } from './block-widths'
 import { ResponsiverContext } from './context'
 import { sortBy } from "./utils/sort-by"
+import { tryFindAtLeast } from "./utils"
 
 
 function getTokens(str: string | undefined) {
@@ -22,13 +23,11 @@ export function parseBlockList(element: CheerioElement): Block | undefined {
 }
 
 
-function pickLegacySize(widths: LogicalWidth[]) {
-  const sizesByScreen = sortBy(
+function pickLegacySize(context: ResponsiverContext, widths: LogicalWidth[]) {
+  return tryFindAtLeast(
     widths,
-    w => w.screen.minWidthPx
-  )
-  return sizesByScreen.reduce(
-    (prev, current) => prev.screen.minWidthPx < 1024 ? current : prev
+    w => w.appliesUpToScreen.minWidthPx,
+    context.legacyViewport,
   )
 }
 
@@ -44,12 +43,12 @@ export async function generateImageSizes(
   const original = await context.originalImages.get(src)
   const block = parseBlockList(el)
   const blockWidths = block ? getBlockWidths(block) : []
-  const logicalWidths = getLogicalWidths(blockWidths)
-  const legacyWidth = pickLegacySize(logicalWidths)
+  const logicalWidths = getLogicalWidths(blockWidths, context.largestViewport)
+  const legacyWidth = pickLegacySize(context, logicalWidths).value
 
   context.resizedImages.ensureImages(
     original,
-    [...logicalWidths.map(l => l.width), original.physicalWidth]
+    logicalWidths.map(l => l.value)
   )
 
   return { el, blockWidths, legacyWidth, logicalWidths, original }

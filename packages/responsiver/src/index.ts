@@ -6,6 +6,7 @@ import { ResizedImageCache } from "./resized-image-cache"
 import { ResponsiverContext } from "./context"
 import { setImgSrc, convertToPicture } from "./update-dom"
 import { JPEG } from "./image-formats"
+import { sortBy, tryFindAtLeast } from "./utils"
 
 type Truthy<T> = Exclude<T, undefined | null | 0 | '' | false>
 
@@ -26,6 +27,8 @@ function ensureTruthy<T>(
 
 export interface ResponsiverOptions {
   cacheDir: string
+  largestViewport: number
+  legacyViewport: number
   outputDir: string
   pixelDensities: number[]
   urlBase: string
@@ -35,6 +38,8 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
 
   const {
     cacheDir = '../../.imagecache',
+    largestViewport = 3840,
+    legacyViewport = 1024,
     outputDir = '_site',
     urlBase = 'i',
     pixelDensities = [1, 1.25, 1.5, 2, 3]
@@ -54,6 +59,8 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
   )
 
   const context: ResponsiverContext = {
+    largestViewport,
+    legacyViewport,
     originalImages,
     resizedImages,
     urlBase
@@ -73,11 +80,12 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
         images.get(JPEG),
         `No JPEG images for "${entry.original.path}".`
       )
-      const legacyJpeg = ensureTruthy(
-        jpegs.find(jpeg => jpeg.physicalWidth === entry.legacyWidth.width),
-        `JPEG with width of ${entry.legacyWidth.width}px not found ` +
-        `for "${entry.original.path}".`
+      const legacyJpeg = tryFindAtLeast(
+        jpegs,
+        jpeg => jpeg.physicalWidth,
+        entry.legacyWidth,
       )
+
       const $img = $(entry.el)
       setImgSrc(context, $img, legacyJpeg)
       convertToPicture(context, $, $img, entry.blockWidths, images)
