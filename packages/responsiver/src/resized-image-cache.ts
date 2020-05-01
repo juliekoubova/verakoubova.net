@@ -71,58 +71,65 @@ export class ResizedImageCache {
   }
 
   async writeResizedImages() {
-    const progress = this.startProgress()
+
+    const physicalWidths = this.getPhysicalWidths()
+    const progress = this.startProgress(
+      ImageFormats.length *
+      [...physicalWidths.values()].reduce(
+        (sum, current) => sum + current.length,
+        0,
+      )
+    )
     const result = new Map<OriginalImage, ResizedImageSet>()
 
-    for (const [original, logicalWidths] of this.#logicalWidths) {
-      const originalRelative = relative(process.cwd(), original.path)
-
-      const imageDir = await ensureImageDir(this.outputDir, original)
-      const physicalWidths = this.getPhysicalWidths(original, logicalWidths)
-
-      progress.setTotal(
-        progress.getTotal() -
-        logicalWidths.size +
-        physicalWidths.length * ImageFormats.length
-      )
+    for (const [image, imageWidths] of physicalWidths) {
+      const imagePath = relative(process.cwd(), image.path)
+      const imageDir = await ensureImageDir(this.outputDir, image)
 
       const byFormat = await Promise.all(
         ImageFormats.map(format => Promise.all(
-          physicalWidths.map(async physicalWidth => {
+          imageWidths.map(async physicalWidth => {
             const result = await writeResizedImage(
               imageDir,
-              original,
+              image,
               physicalWidth,
               format
             )
-            progress.increment(1, { original: originalRelative })
+            progress.increment(1, { imagePath })
             return result
           })
         ).then(images => [format, images] as const))
       )
-      result.set(original, new Map(byFormat))
+      result.set(image, new Map(byFormat))
     }
 
     progress.stop()
     return result
   }
 
-  private startProgress() {
-    const total = [...this.#logicalWidths.values()].reduce(
-      (prev, current) => prev + current.size,
-      0
-    )
+  private startProgress(total: number) {
     const progress = new SingleBar(
-      { format: '{bar} {value}/{total} {original}' },
+      { format: '{bar} {value}/{total} {imagePath}' },
       Presets.rect
     )
     if (total !== 0) {
-      progress.start(total, 0, { original: '' })
+      progress.start(total, 0, { imagePath: '' })
     }
     return progress
   }
 
-  private getPhysicalWidths(original: OriginalImage, logicalWidths: Iterable<number>) {
+  private getPhysicalWidths() {
+    return new Map(
+      [...this.#logicalWidths.entries()].map(
+        ([original, logicalWidths]) => [
+          original,
+          this.getImagePhysicalWidths(original, logicalWidths)
+        ] as const
+      )
+    )
+  }
+
+  private getImagePhysicalWidths(original: OriginalImage, logicalWidths: Iterable<number>) {
     const physicalWidths = new Set(
       [...logicalWidths]
         .flatMap(lw => this.pixelDensities.map(density => lw * density))
