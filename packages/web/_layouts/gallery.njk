@@ -29,8 +29,6 @@ eleventyComputed:
 <ol>
 {% set imageBase = gallery.imageBase %}
 {% for img in gallery.images %}
-  {% set left = img.left | lang | item(imageBase) %}
-  {% set right = img.right | lang | item(imageBase) %}
   <li
     class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start"
     data-title="{{ img | lang }}"
@@ -42,7 +40,8 @@ eleventyComputed:
     >
     <h3 class="sr-only">{{ item | lang }}</h3>
 
-    {% include 'photo.njk' %}
+    {% set layout = (img.layout or 'vertical') %}
+    {% include 'photo/' + layout + '.njk' %}
   </li>
 {% endfor %}
 </ol>
