@@ -4,22 +4,21 @@
 {% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-full sm:w-1/2' %}
 {% from 'macros.njk' import figure %}
 
-<div class="sm:max-h-full sm:flex mx-auto sm:max-w-2xl lg:max-w-4xl">
-  <div class="sm:mx-4 {{ blockClass }}">
-    left
-    {# {{ figure(
-            left,
-            imageBase | ensureTrailingSlash,
-            'right-bottom'
-      ) }} #}
-  </div>
-  <div class="sm:mx-4 {{ blockClass }}">
-  right
-    {# {{ figure(
-            right,
-            imageBase | ensureTrailingSlash,
-            'left-bottom'
-      ) }} #}
+<div class="flex flex-col justify-center sm:h-full sm:mx-auto sm:max-w-2xl lg:max-w-4xl">
+  <div class="sm:flex max-h-full">
+    <div class="sm:mx-4 {{ blockClass }}">
+      {{ figure(
+              left,
+              imageBase | ensureTrailingSlash,
+              'right-bottom'
+        ) }}
+    </div>
+    <div class="sm:mx-4 {{ blockClass }}">
+      {{ figure(
+              right,
+              imageBase | ensureTrailingSlash,
+              'left-bottom'
+        ) }}
+    </div>
   </div>
 </div>
-
