@@ -4,7 +4,9 @@ imageBase: /img/nesmrtelni-smrtelni-vystava
 images:
 
 - cs: František Bílek
-  src: harlekyn.jpeg
+  layout: two
   left:
     caption: František Bílek
     src: frantisek-bilek.jpeg
+  right:
+    src: harlekyn.jpeg

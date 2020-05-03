@@ -4,21 +4,33 @@ pageId: convention-list
 parentId: photography
 inPageNav: true
 ---
-{% set right %}
 
-<div class="md:self-end md:ml-4 md:mb-6">
-  <svg aria-hidden="true" width="71" height="65" viewbox="0 0 100 100" class="text-red-800">
-    <circle cx="50" cy="50" r="50" class="fill-current" />
-  </svg>
+{% from 'macros.njk' import image %}
+<div class="flex items-center sm:items-stretch justify-center py-8 sm:py-16">
+  <div class="flex flex-col sm:flex-row-reverse sm:items-center">
+    <nav
+      class="vr-snug-3xl text-right tracking-tight whitespace-no-wrap
+        flex-none sm:flex-basis-1/2 sm:pr-5 xl:pr-6 sm:vr-normal-4xl
+        sm:-mt-10 font-condensed
+      ">
 
-  <nav class="vr-tight-2xl font-bold tracking-tight">
-    {{ content | safe }}
-  </nav>
-</div>
 
-{% endset %}
+      <div class="md:self-end md:ml-4 md:mb-6">
+        <svg aria-hidden="true" width="71" height="65" viewbox="0 0 100 100" class="text-red-800">
+          <circle cx="50" cy="50" r="50" class="fill-current" />
+        </svg>
 
-<div class="sm:h-screen sm:py-32 sm:flex items-center sm:snap-start">
-{% set imageBase = page.url %}
-{% include 'photo/vertical.njk' %}
+        <nav class="vr-tight-2xl font-bold tracking-tight">
+          {{ content | safe }}
+        </nav>
+      </div>
+
+
+    </nav>
+    <div class="vr-base self-end sm:self-auto sm:flex-basis-1/2 sm:flex-shrink-0">
+      <div >
+        {{ image(img, base = page.url) }}
+      </div>
+    </div>
+  </div>
 </div>

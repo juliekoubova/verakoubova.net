@@ -1,4 +1,4 @@
-{% macro image(img, base = '', class = '', widths = '') %}
+{% macro image(img, base = '', class = '') %}
 {% if img %}
 {% set src = base | lang + img.src | lang %}
   <img
@@ -6,7 +6,6 @@
     alt="{{ img.alt | lang }}"
     src="{{ src | url }}"
     loading="lazy"
-    {% if widths %}data-widths="{{ widths }}"{% endif %}
   >
 {% endif %}
 {% endmacro %}
@@ -27,4 +26,23 @@
     </iframe>
   </div>
 </div>
+{% endmacro %}
+
+{% macro figure(img, base, align='top') %}
+  {% if img.caption %}
+  <div class="flex flex-col h-full">
+    <div class="flex-auto">
+  {% endif %}
+    {{
+      image(
+        img,
+        base,
+        'object-scale-down h-full w-full sm:object-align-' + align
+      )
+    }}
+  {% if img.caption %}
+    </div>
+    <div class="flex-none">{{ img.caption | lang }}</div>
+  </div>
+  {% endif %}
 {% endmacro %}
