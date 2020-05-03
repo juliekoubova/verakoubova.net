@@ -52,6 +52,18 @@ b, strong {
 }
 
 @screen sm {
+  .sm\:max-h-2xl\/2 {
+    max-height: 21rem;
+  }
+}
+
+@screen lg {
+  .lg\:max-h-4xl\/2 {
+    max-height: 28rem;
+  }
+}
+
+@screen sm {
   .lf-before.sm\:no-lf-before::before {
     content: '';
     white-space: unset;

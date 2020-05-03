@@ -10,3 +10,35 @@ images:
     src: frantisek-bilek.jpeg
   right:
     src: harlekyn.jpeg
+
+- cs: František Palacký
+  layout: two
+  left:
+    caption: František Palacký
+    src: frantisek-palacky.jpeg
+  right:
+    src: kocarek.jpeg
+
+- cs: Jan Zahradníček
+  layout: two
+  left:
+    caption: Jan Zahradníček
+    src: jan-zahradnicek.jpeg
+  right:
+    src: kabinet-doktora-caligariho.jpeg
+
+- cs: Bohumil Hrabal
+  layout: two
+  left:
+    caption: Bohumil Hrabal
+    src: bohumil-hrabal.jpeg
+  right:
+    src: pulpes.jpeg
+
+- cs: Bohuslav Martinů
+  layout: two
+  left:
+    caption: Bohuslav Martinů
+    src: bohuslav-martinu.jpeg
+  right:
+    src: vltavske-loze.jpeg
