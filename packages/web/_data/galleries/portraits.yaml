@@ -1,0 +1,77 @@
+cs: Portréty
+de: Portraits
+imageBase: /img/portret
+images:
+
+- cs: Ada Fryntová
+  de: Ada Fryntová
+  src: ada-fryntova.jpeg
+
+# - cs: Klavíristka Marie Vigilante
+#   de: Pianistin Marie Vigilante
+#   src: marie-vigilante.jpeg
+
+# - cs: Pěvkyně Olga Černá
+#   de: Sängerin Olga Černá
+#   src: olga-cerna.jpeg
+
+- cs: Spisovatel Michal Ajvaz
+  de: Schriftsteller Michal Ajvaz
+  src: michal-ajvaz.jpeg
+
+# - cs: Nákupčí Ljuba Malik
+#   de: Ankäuferin Ljuba Malik
+#   src: ljuba-malik.jpeg
+
+- cs: Filosof Pavel Kouba
+  de: Philosoph Pavel Kouba
+  src: pavel-kouba.jpeg
+
+# - cs: Důchodkyně Jarka Langrová
+#   de: Rentnerin Jarka Langrová
+#   src: jarka-langrova.jpeg
+
+# - cs: Studentka Běta Rejšková
+#   de: Studentin Běta Rejšková
+#   src: beta-rejskova.jpeg
+
+- cs: Filosof Petr Rezek
+  de: Philosoph Petr Rezek
+  src: petr-rezek.jpeg
+
+- cs: Spisovatelka Anna Blažíčková
+  de: Schriftstellerin Anna Blažíčková
+  src: anna-blazickova.jpeg
+
+- cs: Malířka Saša Berounská
+  de: Malerin Saša Berounská
+  src: sasa-berounska.jpeg
+
+# - cs: Publicistka Věra Saudková
+#   de: Publizistin Věra Saudková
+#   src: vera-saudkova.jpeg
+
+- cs: Filosof Daniel Kroupa
+  de: Philosoph Daniel Kroupa
+  src: daniel-kroupa.jpeg
+
+# - cs: Básník Petr Motýl
+#   de: Dichter Petr Motýl
+#   src: petr-motyl.jpeg
+
+- cs: Malíř Václav Sokol
+  de: Maler Václav Sokol
+  src: vaclav-sokol.jpeg
+
+# - cs: Malířka Martina Špinková
+#   de: Malerin Martina Špinková
+#   src: martina-spinkkova.jpeg
+
+- cs: Básník Ivan Matoušek
+  de: Schriftsteller Ivan Matoušek
+  src: ivan-matousek.jpeg
+
+# - cs: Filmařka Eva Jobst
+#   de: Filmautorin Eva Jobst
+#   src: eva-jobst.jpeg
+

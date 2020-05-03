@@ -38,6 +38,9 @@ rows:
 
 - cs: Portréty
   de: Portraits
+  href:
+    cs: /cs/portrety/
+    de: /de/portraits/
   instances:
   - cs: obrazy tváří z minulého i nového věku
     de: Antlitze aus dem vergangenen sowie neuen Zeitalter
