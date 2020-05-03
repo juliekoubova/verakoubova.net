@@ -28,7 +28,12 @@
 </div>
 {% endmacro %}
 
-{% macro figure(img, base, valign='top') %}
+{% macro figure(img, base, valign='top', halign='right') %}
+  {% if halign and valign %}
+  {% set align = ' sm:object-' + halign + '-' + valign %}
+  {% elif halign or valign %}
+  {% set align = ' sm:object-' + (halign or valign) %}
+  {% endif %}
   {% if img.caption %}
   <figure class="flex flex-col h-full">
     <div class="flex-auto overflow-hidden">
@@ -37,12 +42,15 @@
       image(
         img,
         base,
-        'object-scale-down h-full w-full sm:object-' + valign
+        'object-scale-down h-full w-full' + align
       )
     }}
   {% if img.caption %}
     </div>
-    <figcaption class="flex-none text-gray-700 vr-normal-2xl font-condensed text-center">
+    <figcaption class="
+      flex-none text-gray-700 vr-normal-2xl font-condensed
+      {{ 'text-' + halign if halign }}
+      ">
       {{ img.caption | lang }}
     </figcaption>
   </figure>
