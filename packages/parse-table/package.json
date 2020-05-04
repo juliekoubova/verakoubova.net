@@ -1,0 +1,10 @@
+{
+  "name": "@verakoubova/parse-table",
+  "version": "0.0.0",
+  "bin": {
+    "parse-table": "index.js"
+  },
+  "dependencies": {
+    "js-levenshtein": "^1.1.6"
+  }
+}
