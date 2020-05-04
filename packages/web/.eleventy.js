@@ -3,6 +3,7 @@ const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 const { externalLinks, htmlMinifier } = require('@verakoubova/plugins')
 const { responsiver } = require('@verakoubova/responsiver')
 const yaml = require('js-yaml')
+const slugify = require('slugify').default
 
 /**
  * @param {object[]} objects
@@ -196,6 +197,11 @@ const filters = {
       result.push('" ')
     }
     return safe(result.join(''))
+  },
+
+  slug(str) {
+    str = str.normalize('NFD').replace(/\u{308}/ug, 'e') // replace umlaut
+    return slugify(str, { lower: true, replacement: '-' })
   }
 }
 
