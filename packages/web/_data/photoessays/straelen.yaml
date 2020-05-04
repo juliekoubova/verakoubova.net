@@ -1,0 +1,81 @@
+cs: Straelen
+de: Straelen
+imageBase: /img/straelen
+images:
+
+- cs: Vidoucí na rynku
+  de: Seher auf dem Markt
+  src: seher-auf-dem-markt.jpeg
+
+- cs: Kočár mezi trhovci
+  de: Marktkutsche
+  src: marktkutsche.jpeg
+
+- cs: Klauni
+  de: Clowns
+  src: clowns.jpeg
+
+- cs: Artistka
+  de: Artistin
+  src: artistin.jpeg
+
+- cs: Kolombína
+  de: Kolombine
+  src: kolombine.jpeg
+
+- cs: Columba columba
+  de: Columba columba
+  src: columba-columba.jpeg
+
+- cs: Ve svitu lucerny
+  de: Im Laternenlicht
+  src: im-laternenlicht.jpeg
+
+- cs: Prostřeno ke světlokvasu
+  de: Zum Lichtschmaus gedeckt
+  src: zum-lichtschmaus-gedeckt.jpeg
+
+- cs: Bílé štíty
+  de: Weisse Giebel
+  src: weisse-giebel.jpeg
+
+- cs: Hřebeny na pláni
+  de: Gipfel im Flachland
+  src: gipfel-im-flachland.jpeg
+
+- cs: Opilá písmena
+  de: Buchstabenspiele
+  src: buchstabenspiele.jpeg
+
+- cs: Zahrady v omítce
+  de: Fassadengärten
+  src: fassadengaerten.jpeg
+
+- cs: Porost zdiva
+  de: Mauergewächs
+  src: mauergewaechs.jpeg
+
+- cs: Otomanská radnice
+  de: Ottomanisches Rathaus
+  src: ottomanisches-rathaus.jpeg
+
+- cs: Široko daleko jediná
+  de: Ein Berg weit und breit
+  src: ein-berg-weit-und-breit.jpeg
+
+- cs: Chřest útokem
+  de: Spargel im Angriff
+  src: spargel-im-angriff.jpeg
+
+- cs: Aleje za sklem
+  de: Glasalleen
+  src: glasalleen.jpeg
+
+- cs: Stromy na poli
+  de: Feldbäume
+  src: feldbaeume.jpeg
+
+- cs: Měsíční modul
+  de: Mondlandschaft
+  src: mondlandschaft.jpeg
+
