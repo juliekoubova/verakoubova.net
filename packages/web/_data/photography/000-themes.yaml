@@ -53,6 +53,9 @@ rows:
 
 - cs: Fantom
   de: Phantom
+  href:
+    cs: /cs/fantom/
+    de: /de/phantom/
   instances:
   - cs: cyklus světelných příběhů
     de: Zyklus einiger Lichtgeschichten

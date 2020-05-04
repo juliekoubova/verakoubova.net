@@ -1,0 +1,49 @@
+cs: Fantom
+de: Phantom
+imageBase: /img/fantom
+images:
+
+# - cs: Kniha Srní
+#   de: Das Buch von Srní
+#   src: .jpeg
+
+# - cs: Záclony z Veveří
+#   de: Gardinen aus Veveří
+#   src: .jpeg
+
+- cs: Komtur na Malostranském
+  de: Der Komtur vom Kleinseitner Ring
+  src: komtur.jpeg
+
+# - cs: Plachta nad Stromovkou
+#   de: Das Segel über dem Baumgarten
+#   src: .jpg
+
+# - cs: Černá ruka z Dobříše
+#   de: Die schwarze Hand von Dobříš
+#   src: .jpg
+
+- cs: Blýskavice nad Oserem
+  de: Wetterleuchten über dem Osser
+  src: blyskavice.jpeg
+
+# - cs: Blesk v Kozí
+#   de: Blitz in der Ziegengasse
+#   src: .jpg
+
+# - cs: Kleč v Krči
+#   de: Das Krummholz in Krč
+#   src: .jpg
+
+# - cs: Patník pod Strahovem
+#   de: Der Prellstein unter Strahov
+#   src: .jpg
+
+# - cs: Kámen u Drahomyšle
+#   de: Ein Stein bei Drahomyšl
+#   src: .jpg
+
+# - cs: Černá ovce za Třebotovem
+#   de: Das schwarze Schaf von Třebotov
+#   src: .jpg
+
