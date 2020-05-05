@@ -14,20 +14,17 @@
     <link rel="stylesheet" href="{{ '/main.css' | url }}">
     <link href="{{ site.googleFonts }}" rel="stylesheet">
     <script>
-      window.dataLayer = window.dataLayer || [['js', new Date()]]
-      function vekPageView() {
-        dataLayer.push([
-          'config',
-          '{{ site.googleAnalytics }}',
-          { page_location: location.href }
-        ])
+      window.ga = window.ga || function() {
+        (ga.q = ga.q || []).push(arguments)
       }
+      ga.l=+new Date
+      ga('create', '{{ site.googleAnalytics }}', 'auto')
     </script>
     <script src="{{ '/main.js' | url }}" async></script>
-    <script src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}" async></script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
   </head>
   <body class="{{ bodyClass }} px-2 pb-24" {{ bodyData | dataAttributes }}>
     {{ content | safe }}
-    <script>vekPageView()</script>
+    <script>ga('send', 'pageview')</script>
   </body>
 </html>
