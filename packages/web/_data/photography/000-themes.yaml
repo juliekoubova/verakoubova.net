@@ -6,9 +6,7 @@ slug:
 rows:
 - cs: Místo děje
   de: Anstelle anstätte
-  href:
-    cs: /cs/expozice/misto-deje
-    de: /de/ausstellung/anstelle-anstatte
+  pageId: misto-deje
   instances:
   - cs: pouliční příběhy z devadesátých let
     de: Strassengeschichten aus den neunziger Jahren
@@ -23,9 +21,7 @@ rows:
 
 - cs: Konference
   de: Konferenzen
-  href:
-    cs: /cs/konference/
-    de: /de/konferenz/
+  pageId: convention-list
   instances:
   - cs: scény a portréty z kolokvií, sympozií, disputací, konferencí z počátku třetího tisíciletí
     de: Bilder und Bildnisse aus Kolloquien, Symposien, Disputationen, Konferenzen vom Anfang des dritten Jahrtausends
@@ -38,9 +34,7 @@ rows:
 
 - cs: Portréty
   de: Portraits
-  href:
-    cs: /cs/portrety/
-    de: /de/portraits/
+  pageId: portret
   instances:
   - cs: obrazy tváří z minulého i nového věku
     de: Antlitze aus dem vergangenen sowie neuen Zeitalter
@@ -53,9 +47,7 @@ rows:
 
 - cs: Fantom
   de: Phantom
-  href:
-    cs: /cs/fantom/
-    de: /de/phantom/
+  pageId: fantom
   instances:
   - cs: cyklus světelných příběhů
     de: Zyklus einiger Lichtgeschichten

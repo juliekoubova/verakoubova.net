@@ -21,9 +21,7 @@ rows:
 
 - cs: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   de: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
-  href:
-    cs: /cs/expozice/nesmrtelni-smrtelni/
-    de: /de/ausstellung/sterbliche-unsterbliche/
+  pageId: nesmrtelni-smrtelni-vystava
   instances:
   - cs: Freiburg - Katolická akademie (Německo)
     de: Freiburg - Katholische Akademie (Deutschland)
@@ -49,9 +47,7 @@ rows:
 
 - cs: Místo děje
   de: Anstelle anstätte
-  href:
-    cs: /cs/expozice/misto-deje/
-    de: /de/ausstellung/anstelle-anstatte/
+  pageId: misto-deje
   instances:
   - cs: Praha - Černý kůň Lucerna
     de: Praha - Lucerna (Tschechien)

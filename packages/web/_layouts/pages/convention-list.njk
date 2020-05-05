@@ -11,8 +11,7 @@ inPageNav: true
     <nav
       class="vr-snug-3xl text-right tracking-tight whitespace-no-wrap
         flex-none sm:flex-basis-1/2 sm:pr-5 xl:pr-6 sm:vr-normal-4xl
-        sm:-mt-10 font-condensed
-      ">
+        sm:-mt-10">
 
 
       <div class="md:self-end md:ml-4 md:mb-6">
@@ -21,7 +20,15 @@ inPageNav: true
         </svg>
 
         <nav class="vr-tight-2xl font-bold tracking-tight">
-          {{ content | safe }}
+          <ul>
+          {% for item in list %}
+            <li>
+              <a href="{{ item.pageId | urlOfPageId }}">
+                {{ item.text or (item.pageId | titleOfPageId) }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
         </nav>
       </div>
 

@@ -1,12 +1,13 @@
 ---
 layout: pages/convention-list
 title: Konference
+list:
+- pageId: dissimilarities
+- pageId: hejdankiada
+- pageId: chvatikiada
+- pageId: nietzsche
+- pageId: krolop
+- pageId: milost
+- pageId: kafka
+- pageId: franzk
 ---
-* [NeShodnosti](neshodnosti/)
-* [Hejdánkiáda](hejdankiada/)
-* [Chvatíkiáda](chvatikiada/)
-* [Nietzsche](nietzsche/)
-* [Krolop](krolop/)
-* [Milost](milost/)
-* [Kafka](kafka/)
-* [FranzK](franzk/)

@@ -9,9 +9,13 @@ pageId: photography
   {% for row in section[1].rows %}
     <li class="mb-2 sidebar-section">
       <h4 class="in-sidebar vr-base">
-      {% if row.href %}<a href="{{ row.href | lang }}">{% endif %}
+      {% if row.href %}
+      <a href="{{ row.href | lang }}">
+      {% elif row.pageId %}
+      <a href="{{ row.pageId | urlOfPageId }}">
+      {% endif %}
       {{ row | lang | nl2br | safe }}
-      {% if row.href %}</a>{% endif %}
+      {% if row.href or row.pageId %}</a>{% endif %}
       </h4>
       <div class="vr-base font-body">
       {% for inst in row.instances %}

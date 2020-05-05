@@ -1,13 +1,13 @@
 ---
 layout: pages/convention-list
 title: Konferenzen
-# img: { src: index.jpeg }
+list:
+- pageId: dissimilarities
+- pageId: hejdankiada
+- pageId: chvatikiada
+- pageId: nietzsche
+- pageId: krolop
+- pageId: milost
+- pageId: kafka
+- pageId: franzk
 ---
-* [UnÄhnlichkeiten](unahnlichkeiten/)
-* [Nietzsche](nietzsche/)
-* [Hejdánek](hejdanek/)
-* [Chvatík](chvatik/)
-* [Krolop](krolop/)
-* [Gnade](gnade/)
-* [Kafka](kafka/)
-* [FranzK](franzk/)

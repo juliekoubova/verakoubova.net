@@ -140,7 +140,7 @@ const filters = {
     return items.filter(i => i.data.lang === this.ctx.lang)
   },
 
-  item(url, baseUrl = this.ctx.page.url) {
+ item(url, baseUrl = this.ctx.page.url) {
     if (!url) {
       return ''
     }
@@ -155,35 +155,6 @@ const filters = {
     )
 
     return item
-  },
-
-  itemData(url, property, baseUrl) {
-    const item = this.env.filters.item.call(this, url, baseUrl)
-    return item && item.data[property] || undefined
-  },
-
-  itemContent(url, baseUrl) {
-    const item = this.env.filters.item.call(this, url, baseUrl)
-    return item ? item.templateContent : ''
-  },
-
-  galleryLink(value) {
-    if (!value || !value.images || !value.imageBase) {
-      throw new Error(`galleryLink invalid value: ${JSON.stringify(value)}`)
-    }
-
-    const { url, slug, lang, safe } = getFilters(this)
-    const href = url(slug(lang(value)))
-
-    return safe(`<a href="${href}">${lang(value)}</a>`)
-  },
-
-  link(path) {
-    const { escape, item, url, safe } = getFilters(this)
-    const target = item(path)
-    const href = escape(ensureTrailingSlash(url(path)))
-    const text = target && target.data.title || path
-    return safe(`<a href="${href}">${text}</a>`)
   },
 
   dataAttributes(obj) {
@@ -202,7 +173,19 @@ const filters = {
   slug(str) {
     str = str.normalize('NFD').replace(/\u{308}/ug, 'e') // replace umlaut
     return slugify(str, { lower: true, replacement: '-' })
+  },
+
+  urlOfPageId(pageId) {
+    const page = findPage(this.ctx, pageId, this.ctx.lang)
+    const { url } = getFilters(this)
+    return page ? url(page.url) : ''
+  },
+
+  titleOfPageId(pageId) {
+    const page = findPage(this.ctx, pageId, this.ctx.lang)
+    return page ? page.data.title : ''
   }
+
 }
 
 /**
