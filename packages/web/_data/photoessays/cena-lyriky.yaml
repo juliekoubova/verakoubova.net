@@ -1,0 +1,250 @@
+cs: Cena lyrujy
+de: Dresdner Lyrikpreis
+pageId: cena-lyriky
+imageBase: /img/cena-lyriky
+images:
+
+- cs: Čtení Richarda Pietrasse
+  de: Lesung Richard Pietrass
+  src: durch-die-blume.jpeg
+
+- cs: V předvečer
+  de: Auftakt
+  src: auftakt.jpeg
+
+- cs: Básník básníkovi
+  de: Dichter im Zwiegespräch
+  src: dichter-im-zwiegespraech.jpeg
+
+- cs: Richard Hlava skleněná
+  de: Richard der Gläserne
+  src: richard-der-glaeserne.jpeg
+
+- cs: Dílny v Pirně
+  de: Werkstätten in Pirna
+  src: in-der-pause.jpeg
+
+- cs: Potlesk lyrice
+  de: Dichtung kriegt Beifall
+  src: dichtung-kriegt-beifall.jpeg
+
+- cs: Koutek poezie
+  de: Lyrik in der Ecke
+  src: lyrik-in-der-ecke.jpeg
+
+- cs: Tak pravila Básnířka
+  de: Im Banne der Leserin
+  src: im-bann-der-leserin.jpeg
+
+- cs: Poetův kohoutek
+  de: Poetentolle
+  src: poetentolle.jpeg
+
+- cs: Luští křížovku?
+  de: Gemeinsam grübeln gestattet
+  src: gemeinsam-gruebeln-gestattet.jpeg
+
+- cs: Ztracen v prostoru
+  de: Im Raum verloren
+  src: im-raum-verloren.jpeg
+
+- cs: Hlavy dohromady
+  de: Köpfe zusammengesteckt
+  src: koepfe-zusammengesteckt.jpeg
+
+- cs: Pracovité ruce
+  de: Hilfreiche Hände
+  src: hilfreiche-haende.jpeg
+
+- cs: Učitel poezie
+  de: Poesielehrer
+  src: poesielehrer.jpeg
+
+- cs: Básní i o přestávce!
+  de: In der Pause
+  src: in-der-pause.jpeg
+
+- cs: Tři grácie
+  de: Drei Grazien
+  src: drei-grazien.jpeg
+
+- cs: Usebrán
+  de: Innengekehrt
+  src: innengekehrt.jpeg
+
+- cs: Čtení finalistů
+  de: Lesung der Finalisten
+  src: blumenfinale.jpeg
+
+- cs: Čtení před čtením
+  de: Lesen vor der Lesung
+  src: lesen-vor-der-lesung.jpeg
+
+- cs: Skalní král z Čech
+  de: Der Felsenkönig aus Böhmen
+  src: der-felsenkoenig-aus-boehmen.jpeg
+
+- cs: Cella temné tóny
+  de: Dunkles Cellospiel
+  src: dunkles-cellospiel.jpeg
+
+- cs: Nastalo ticho
+  de: Es wird Stille
+  src: es-wird-stille.jpeg
+
+- cs: Doznívá zjitření
+  de: Es wird verwundbar
+  src: es-wird-verwundbar.jpeg
+
+- cs: Roste uhrančivost
+  de: Es wird bezwingend
+  src: es-wird-bezwingend.jpeg
+
+- cs: Je vroucnost
+  de: Es wird innig
+  src: es-wird-innig.jpeg
+
+- cs: Zvítězila Lea
+  de: Gesiegt hat Lea
+  src: gesiegt-hat-lea.jpeg
+
+- cs: Neposedná poseděla
+  de: Mal hockendes Moderieren
+  src: mal-hockendes-moderieren.jpeg
+
+- cs: Sklidili šampus
+  de: Mit Sekt in der Hand
+  src: mit-sekt-in-der-hand.jpeg
+
+- cs: Porada poroty
+  de: Beratung der Jury
+  src: poetentolle.jpeg
+
+- cs: Radní v tmách
+  de: Stadträtin im Dunkeln
+  src: stadtraetin-im-dunkeln.jpeg
+
+- cs: S Kästnerem za zády
+  de: Mit Kästner in der Jury
+  src: mit-kaestner-in-der-jury.jpeg
+
+- cs: Papíru hromady
+  de: Hände wühlen in Papieren
+  src: haende-wuehlen-in-papieren.jpeg
+
+- cs: Na pospas překladatelům
+  de: Den Übersetzern ausgeliefert
+  src: den-uebersetzern-ausgeliefert.jpeg
+
+- cs: Musí se to zvážit
+  de: Es muss erwogen werden
+  src: es-muss-erwogen-werden.jpeg
+
+- cs: Pro mě jasná věc
+  de: Ich seh da klar!
+  src: ich-seh-da-klar.jpeg
+
+- cs: Ano, drží to pohromadě
+  de: Rakusa und des Geistes Hand
+  src: rakusa-und-des-geistes-hand.jpeg
+
+- cs: Tu snad ne!
+  de: Die doch nicht!
+  src: die-doch-nicht.jpeg
+
+- cs: Naopak, kolegyně!
+  de: Zweifel kommen nicht in Frage!
+  src: zweifel-kommen-nicht-in-frage.jpeg
+
+- cs: Vyhlášení vítěze
+  de: Preisverleihung
+  src: preisholen.jpeg
+
+- cs: Roste napětí
+  de: Spannung wächst
+  src: spannung-waechst.jpeg
+
+- cs: Stoupá pozornost
+  de: Aufmerksamkeit steigt
+  src: aufmerksamkeit-steigt.jpeg
+
+- cs: Promlouvá město
+  de: Redet die Stadt
+  src: redet-die-stadt.jpeg
+
+- cs: Popsaný list
+  de: Beschriebenes Blatt
+  src: beschriebenes-blatt.jpeg
+
+- cs: Stinný svit
+  de: Schattiges Licht im Gesicht
+  src: schattiges-licht-im-gesicht.jpeg
+
+- cs: Prstocvik
+  de: Fingerringen
+  src: finger-ringen.jpeg
+
+- cs: Panenčin pokojík
+  de: Puppentheater
+  src: puppentheater.jpeg
+
+- cs: Biograf
+  de: Lichtspieltheater
+  src: lichtspieltheater.jpeg
+
+- cs: Florální finále
+  de: Blumenfinale
+  src: blumenfinale.jpeg
+
+- cs: Pohoštění z radnice
+  de: Empfang der Stadt
+  src: empfang-parkiert.jpeg
+
+- cs: Ve světle obdivu
+  de: Im Licht der Bewunderung
+  src: im-licht-der-bewunderung.jpeg
+
+- cs: Přívrženci z obou stran
+  de: Anhänger beiderseits
+  src: anhaenger-beiderseits.jpeg
+
+- cs: Ze stolů už sklizeno
+  de: Bereits abgedeckt
+  src: bereits-abgedeckt.jpeg
+
+- cs: Čtení v Ústí nad Labem
+  de: Lesung in Ústí nad Labem
+  src: es-wird-stille.jpeg
+
+- cs: Poezie na cestě
+  de: Dichtung unterwegs
+  src: dichtung-unterwegs.jpeg
+
+- cs: Sami sobě publikem
+  de: Sich selber das Publikum
+  src: sich-selber-publikum.jpeg
+
+- cs: Z par se zvedá slovo
+  de: Aus Dämpfen steigt das Wort
+  src: aus-daempfen-steigt-das-wort.jpeg
+
+- cs: Pugét patří jí
+  de: Durch die Blume
+  src: durch-die-blume.jpeg
+
+- cs: V Ústí od podlahy
+  de: Musik in Aussig
+  src: musik-in-aussig.jpeg
+
+- cs: Mezi světly
+  de: Unter Lichtbildern
+  src: unter-lichtbildern.jpeg
+
+- cs: Tak to by bylo
+  de: Tja, das wars!
+  src: tja-das-wars.jpeg
+
+- cs: Za dva roky?
+  de: In zwei Jahren?
+  src: auftakt.jpeg
+
