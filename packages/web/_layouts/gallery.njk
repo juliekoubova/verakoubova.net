@@ -16,8 +16,12 @@ eleventyComputed:
       data-target="active-dot.link"
       >
       {# pointer-events-none because events do not bubble from SVG elements to HTML parents #}
-      <svg viewBox="0 0 20 10" width="4" height="2" class="w-4 h-2 text-gray-600 pointer-events-none">
-        <circle cx="10" cy="5" r="4" fill="currentColor" />
+      <svg width="16" height="8" class="w-4 h-2 text-gray-600 pointer-events-none">
+        {% if loop.first %}
+        <circle id="dot" cx="8" cy="4" r="3.85" fill="currentColor" />
+        {% else %}
+        <use xlink:href="#dot" />
+        {% endif %}
       </svg>
       <span class="sr-only">{{ img | lang }}</span>
     </a>
