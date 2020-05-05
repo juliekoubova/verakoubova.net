@@ -3,3 +3,5 @@ languages:
   de: deutsch
 mail: verkou@verakoubova.net
 name: Věra Koubová
+googleAnalytics: UA-165401650-1
+googleFonts: https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap

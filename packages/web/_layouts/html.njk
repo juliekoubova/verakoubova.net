@@ -12,10 +12,22 @@
       {{ title | lang | default(site.name) | safe }}
     </title>
     <link rel="stylesheet" href="{{ '/main.css' | url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="{{ site.googleFonts }}" rel="stylesheet">
+    <script>
+      window.dataLayer = window.dataLayer || [['js', new Date()]]
+      function vekPageView() {
+        dataLayer.push([
+          'config',
+          '{{ site.googleAnalytics }}',
+          { page_location: location.href }
+        ])
+      }
+    </script>
     <script src="{{ '/main.js' | url }}" async></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}" async></script>
   </head>
   <body class="{{ bodyClass }} px-2 pb-24" {{ bodyData | dataAttributes }}>
     {{ content | safe }}
+    <script>vekPageView()</script>
   </body>
 </html>

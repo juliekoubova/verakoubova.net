@@ -3,6 +3,9 @@ import { Controller } from '@stimulus/core'
 import { AttributeObserverDelegate } from '@stimulus/mutation-observers'
 import { queueSetInPagePosition } from './position'
 import { positions } from './positions'
+import { setupScrollAnalytics } from './analytics'
+
+setupScrollAnalytics()
 
 function makeTopElement() {
   const el = document.createElement('div')

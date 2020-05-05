@@ -5,6 +5,7 @@ import { VerticalRhythmController } from '@verakoubova/vertical-rhythm'
 import { Application } from 'stimulus'
 import { SnapTypeController } from './js'
 import '@verakoubova/polyfills'
+import './js/logrocket'
 import './js/turbolinks'
 
 const vekApp = Application.start()

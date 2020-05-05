@@ -47,6 +47,7 @@
     "@stimulus/mutation-observers": "^1.1.1",
     "@types/turbolinks": "^5.2.0",
     "eleventy-plugin-images-responsiver": "^1.5.3",
+    "logrocket": "^1.0.7",
     "slugify": "^1.4.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
