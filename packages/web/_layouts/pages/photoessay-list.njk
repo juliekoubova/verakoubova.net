@@ -1,1 +1,15 @@
-{{ content | safe }}
+---
+layout: fixed-header
+pageId: photoessay-list
+parentId: photography
+inPageNav: true
+---
+<ul>
+{% for item in list %}
+  <li>
+    <a href="{{ item.pageId | urlOfPageId }}">
+      {{ item.text or (item.pageId | titleOfPageId) }}
+    </a>
+  </li>
+{% endfor %}
+</ul>

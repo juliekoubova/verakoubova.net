@@ -28,6 +28,7 @@ rows:
 
 - cs: Fotoeseje
   de: Photoessays
+  pageId: photoessay-list
   instances:
   - cs: dlouhodobě sbírané události
     de: Langfristig aufgenommene Ereignisse
