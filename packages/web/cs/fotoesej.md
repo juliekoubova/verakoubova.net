@@ -2,14 +2,14 @@
 title: Fotoeseje
 layout: pages/photoessay-list
 list:
-- pageId: hody
-- pageId: straelen
-- pageId: zustavam
-- pageId: heidelberk
-- pageId: montpellier
-- pageId: pejškovna
-- pageId: slavnost
-- pageId: odehrávky
-- pageId: cena-lyriky
-- pageId: troje-kulate
+- pageId: fotoeseje/hody
+- pageId: fotoeseje/straelen
+- pageId: fotoeseje/zustavam
+- pageId: fotoeseje/heidelberk
+- pageId: fotoeseje/montpellier
+- pageId: fotoeseje/pejskovna
+- pageId: fotoeseje/slavnost
+- pageId: fotoeseje/odehravky
+- pageId: fotoeseje/cena-lyriky
+- pageId: fotoeseje/troje-kulate
 ---

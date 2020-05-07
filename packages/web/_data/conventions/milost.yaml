@@ -1,7 +1,7 @@
 cs: Milost
 de: Gnade
-pageId: milost
-imageBase: /img/milost
+pageId: konference/milost
+imageBase: /img/konference/milost
 images:
 
 - cs: Reflektovaná bdělost

@@ -1,7 +1,7 @@
 cs: Kafka
 de: Kafka
-pageId: kafka
-imageBase: /img/kafka-konference
+pageId: konference/kafka
+imageBase: /img/konference/kafka
 images:
 
 - cs: Kafka a filosofie
