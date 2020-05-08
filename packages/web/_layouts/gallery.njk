@@ -30,22 +30,24 @@ eleventyComputed:
   </ol>
 </nav>
 
-<ol>
-{% set imageBase = gallery.imageBase %}
-{% for img in gallery.images %}
-  <li
-    class="sm:h-screen sm:py-32 sm:flex sm:snap-start"
-    data-title="{{ img | lang }}"
-    {% if loop.first %}
-    data-navigation-top
-    {% else %}
-    id="{{ img | lang | slug }}"
-    {% endif %}
-    >
-    <h3 class="sr-only">{{ item | lang }}</h3>
+<div class="sidebar-section">
+  <ol>
+  {% set imageBase = gallery.imageBase %}
+  {% for img in gallery.images %}
+    <li
+      class="sm:h-screen sm:py-32 sm:flex sm:snap-start"
+      data-title="{{ img | lang }}"
+      {% if loop.first %}
+      data-navigation-top
+      {% else %}
+      id="{{ img | lang | slug }}"
+      {% endif %}
+      >
+      <h3 class="sr-only">{{ item | lang }}</h3>
 
-    {% set layout = (img.layout or 'primary') %}
-    {% include 'photo/' + layout + '.njk' %}
-  </li>
-{% endfor %}
-</ol>
+      {% set layout = (img.layout or 'primary') %}
+      {% include 'photo/' + layout + '.njk' %}
+    </li>
+  {% endfor %}
+  </ol>
+</div>

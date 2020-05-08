@@ -10,13 +10,13 @@
 
 @screen lg {
   .sidebar-container {
-    max-width: 54rem;
+    max-width: 52rem;
   }
 
   .sidebar {
     width: 40rem;
     margin-left: 12rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
   }
 
   .sidebar-section {
