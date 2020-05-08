@@ -196,9 +196,9 @@ images:
   de: Blumenfinale
   src: blumenfinale.jpeg
 
-- cs: Pohoštění z radnice
-  de: Empfang der Stadt
-  src: empfang-parkiert.jpeg
+# - cs: Pohoštění z radnice
+#   de: Empfang der Stadt
+#   src: empfang-parkiert.jpeg
 
 - cs: Ve světle obdivu
   de: Im Licht der Bewunderung
