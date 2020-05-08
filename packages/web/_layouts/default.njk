@@ -12,16 +12,13 @@ layout: html
     </main>
   </div>
 
-  <div class="shadow-lg fixed bg-white-3/4 bg-blur top-0 left-0 right-0 z-10 px-2a slide-up"
+  <div class="shadow-lg fixed bg-white-3/4 bg-blur top-0 left-0 right-0 z-10 px-2"
        data-target="fixed-header.fixedHeader"
        {{ 'hidden' if not fixedHeaderOnly }}
        >
     <div class="sidebar-container">
-      <header class="flex items-end justify-between py-4 md:pt-8">
-        {% set breadcrumbLeaf = true %}
-        {% include 'breadcrumb.njk' %}
-        {% include 'lang-switcher.njk' %}
-      </header>
+      {% set breadcrumbLeaf = true %}
+      {% include 'header.njk' %}
     </div>
   </div>
 </div>

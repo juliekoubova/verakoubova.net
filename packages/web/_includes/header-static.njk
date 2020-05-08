@@ -1,11 +1,5 @@
-<header
-  class="flex items-end justify-between pt-8 md:pt-16"
-  data-target="fixed-header.staticHeader"
-  >
-  {% set breadcrumbLeaf = false %}
-  {% include 'breadcrumb.njk' %}
-  {% include 'lang-switcher.njk' %}
-</header>
+{% set breadcrumbLeaf = false %}
+{% include 'header.njk' %}
 
 <hgroup class="pb-6">
   <h2 class="vr-normal-3xl xl:font-light">
