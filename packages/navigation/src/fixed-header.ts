@@ -1,8 +1,12 @@
 import { Controller } from "@stimulus/core";
 import { makeIntersector } from "@verakoubova/stimulus";
 
-function nextFrame() {
-  return new Promise<number>(resolve => requestAnimationFrame(resolve))
+function styleUpdate() {
+  return new Promise<number>(
+    resolve => requestAnimationFrame(
+      () => requestAnimationFrame(resolve)
+    )
+  )
 }
 
 function transitionEnd(el: HTMLElement) {
@@ -33,7 +37,7 @@ async function enter(el: HTMLElement, animation: string) {
 
   await withClass(el, `${animation}-enter-active ${animation}-enter`, async () => {
     el.hidden = false
-    await nextFrame()
+    await styleUpdate()
     el.classList.remove(`${animation}-enter`)
     await withClass(el, `${animation}-enter-to`, () => transitionEnd(el))
   })
@@ -45,7 +49,7 @@ async function leave(el: HTMLElement, animation: string) {
   }
 
   await withClass(el, `${animation}-leave-active ${animation}-leave`, async () => {
-    await nextFrame()
+    await styleUpdate()
     el.classList.remove(`${animation}-leave`)
     await withClass(el, `${animation}-leave-to`, async () => {
       await transitionEnd(el)
