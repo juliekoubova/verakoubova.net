@@ -29,7 +29,7 @@ jobs:
         path: .imagecache
         key: imagecache-${{ github.sha }}
         restore-keys: |
-          imagecache
+          imagecache-
 
     - uses: actions/cache@v1
       name: Restore yarn cache
