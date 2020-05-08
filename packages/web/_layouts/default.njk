@@ -6,4 +6,10 @@ layout: html
     {{ content | safe }}
   </main>
 </div>
-{% include 'header-fixed.njk' %}
+
+<div
+  class="sidebar-container fixed bg-white-3/4 bg-blur top-0 left-0 right-0 z-10 px-2"
+  {{ 'hidden' if not fixedHeaderOnly }}
+  >
+  {% include 'header-fixed.njk' %}
+</div>
