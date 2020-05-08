@@ -2,10 +2,8 @@
 layout: html
 ---
 <div class="sidebar-container">
-  <div class="sidebar">
-    <main class="main" id="{{ mainId }}">
-      {{ content | safe }}
-    </main>
-  </div>
+  <main class="sidebar">
+    {{ content | safe }}
+  </main>
 </div>
 {% include 'header-fixed.njk' %}
