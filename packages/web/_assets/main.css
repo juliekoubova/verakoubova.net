@@ -132,5 +132,27 @@ nav a[href]:focus {
 }
 
 .applied blockquote {
-  @apply mt-4
+  @apply mt-4;
+}
+
+.slide-up-enter-active {
+  /*! purgecss ignore current */
+  transition: transform .3s ease-out;
+}
+
+.slide-up-leave-active {
+  /*! purgecss ignore current */
+  transition: transform .3s ease-in;
+}
+
+.slide-up-enter,
+.slide-up-leave-to {
+  /*! purgecss ignore current */
+  transform: translateY(-100%);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .slide-up-enter, .slide-up-leave {
+    transition: none;
+  }
 }

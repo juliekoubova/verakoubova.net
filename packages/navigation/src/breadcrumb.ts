@@ -25,13 +25,8 @@ export class BreadcrumbController extends Controller {
   }
 
   connect() {
-    this.parentAnchorTarget.removeAttribute('href')
-    this.parentArrowTarget.setAttribute('hidden', '')
     this.parentItemTarget.removeAttribute('hidden')
-    this.leafItemTarget.setAttribute('hidden', '')
-    // requestAnimationFrame(
-    //   () => this.leafItemTarget.style.transition = 'opacity 192ms ease-in'
-    // )
+    this.update({ id: undefined, title: '' })
   }
 
   private update(pos: InPagePosition) {
