@@ -95,24 +95,26 @@ function getFilters(self) {
 
 const filters = {
   vekNav(page) {
-    const result = [
-      {
-        url: `/${this.ctx.lang}/`,
-        label: this.ctx.site.name
-      }
-    ]
+    const result = []
+    let { lang, parentId } = this.ctx
 
-    if (this.ctx.parentId) {
-      const parent = findPage(this.ctx, this.ctx.parentId, this.ctx.lang)
+    while (parentId) {
+      const parent = findPage(this.ctx, parentId, lang)
       if (parent) {
         result.push({
           url: parent.url,
-          label: lang(parent.data.title)
+          label: parent.data.title
         })
       }
+      parentId = parent ? parent.data.parentId : undefined
     }
 
-    return result
+    result.push({
+      url: `/${lang}/`,
+      label: this.ctx.site.name
+    })
+
+    return result.reverse()
   },
 
   languages(_page) {
@@ -140,7 +142,7 @@ const filters = {
     return items.filter(i => i.data.lang === this.ctx.lang)
   },
 
- item(url, baseUrl = this.ctx.page.url) {
+  item(url, baseUrl = this.ctx.page.url) {
     if (!url) {
       return ''
     }
