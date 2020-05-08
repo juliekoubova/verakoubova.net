@@ -1,7 +1,7 @@
 {% block before %}{% endblock %}
 <div class="sidebar-container">
   <div class="sidebar">
-    {% include 'header.njk' %}
+    {% include 'header-static.njk' %}
     {% block content %}
     <main class="main" id="{{ mainId }}">
       {{ content | safe }}
@@ -10,3 +10,4 @@
   </div>
 </div>
 {% block after %}{% endblock %}
+{% include 'header-fixed.njk' %}

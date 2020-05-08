@@ -1,0 +1,20 @@
+{% set headerPadding = 'pt-8 pb-6' %}
+<header
+  class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16"
+  >
+  <div class="mb-4 sm:mb-2">
+    {% include 'breadcrumb.njk' %}
+    <h2 class="mt-2 vr-normal-3xl xl:font-light">
+      {{ bodyTitle | default(title) | safe }}
+    </h2>
+
+    {% if subtitle %}
+    <h3 class="vr-normal-xl font-medium">
+      {{ subtitle | safe }}
+    </h2>
+    {% endif %}
+  </div>
+  <nav class="vr-normal-sm mb-2 sm:text-right">
+    {% include 'lang-switcher.njk' %}
+  </nav>
+</header>

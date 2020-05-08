@@ -1,0 +1,24 @@
+<nav class="vr-normal-sm">
+  <ol class="inline">
+    {% for item in page | vekNav %}
+    <li class="inline">
+      <a href="{{ item.url }}">{{ item.label }}</a>
+      <span aria-hidden="true">&rsaquo;</span>
+    </li>
+    {% endfor %}
+
+    {% if inPageNav %}
+    <li hidden class="inline lf-before sm:no-lf-before" data-target="breadcrumb.parentItem">
+      <a class="inline" data-target="breadcrumb.parentAnchor">{{
+        bodyTitle | default(title) | safe
+      }}</a>
+    </li>
+    <li class="inline" data-target="breadcrumb.leafItem">
+      <span aria-hidden="true">&rsaquo;</span>
+      <h2 class="inline" data-target="breadcrumb.leafHeading">{{
+        bodyTitle | default(title) | safe
+      }}</h2>
+    </li>
+    {% endif %}
+  </ol>
+</nav>
