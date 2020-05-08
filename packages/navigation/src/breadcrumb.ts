@@ -4,12 +4,16 @@ import { InPagePosition, currentPosition } from './position'
 
 export class BreadcrumbController extends Controller {
 
-  static readonly targets = ["parentItem", "parentAnchor", "leafItem", "leafHeading"]
+  static readonly targets = [
+    'parentItem', 'parentAnchor', 'parentArrow',
+    'leafItem', 'leafHeading'
+  ]
 
   readonly leafHeadingTarget!: HTMLElement
   readonly leafItemTarget!: HTMLElement
 
   readonly parentAnchorTarget!: HTMLAnchorElement
+  readonly parentArrowTarget!: HTMLAnchorElement
   readonly parentItemTarget!: HTMLElement
 
   initialize() {
@@ -22,21 +26,24 @@ export class BreadcrumbController extends Controller {
 
   connect() {
     this.parentAnchorTarget.removeAttribute('href')
+    this.parentArrowTarget.setAttribute('hidden', '')
     this.parentItemTarget.removeAttribute('hidden')
-    this.leafItemTarget.style.opacity = '0'
-    requestAnimationFrame(
-      () => this.leafItemTarget.style.transition = 'opacity 192ms ease-in'
-    )
+    this.leafItemTarget.setAttribute('hidden', '')
+    // requestAnimationFrame(
+    //   () => this.leafItemTarget.style.transition = 'opacity 192ms ease-in'
+    // )
   }
 
   private update(pos: InPagePosition) {
     if (pos.id && pos.title) {
       this.parentAnchorTarget.href = '#'
+      this.parentArrowTarget.removeAttribute('hidden')
       this.leafHeadingTarget.textContent = pos.title
-      this.leafItemTarget.style.opacity = '1'
+      this.leafItemTarget.removeAttribute('hidden')
     } else {
       this.parentAnchorTarget.removeAttribute('href')
-      this.leafItemTarget.style.opacity = '0'
+      this.parentArrowTarget.setAttribute('hidden', '')
+      this.leafItemTarget.setAttribute('hidden', '')
     }
   }
 }

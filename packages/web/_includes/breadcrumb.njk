@@ -3,22 +3,22 @@
   data-controller="breadcrumb"
   {% endif %}
   >
-  <ol class="inline">
+  <ol class="flex flex-wrap content-end">
     {% for item in page | vekNav %}
-    <li class="inline">
+    <li>
       <a href="{{ item.url }}">{{ item.label }}</a>
-      <span aria-hidden="true">&rsaquo;</span>
+      <span aria-hidden="true">&rsaquo;&nbsp;</span>
     </li>
     {% endfor %}
 
     {% if breadcrumbLeaf %}
-    <li hidden class="inline lf-before sm:no-lf-before" data-target="breadcrumb.parentItem">
-      <a class="inline" data-target="breadcrumb.parentAnchor">{{
+    <li hidden data-target="breadcrumb.parentItem">
+      <a data-target="breadcrumb.parentAnchor">{{
         bodyTitle | default(title) | safe
       }}</a>
+      <span aria-hidden="true" hidden data-target="breadcrumb.parentArrow">&rsaquo;&nbsp;</span>
     </li>
-    <li class="inline" data-target="breadcrumb.leafItem">
-      <span aria-hidden="true">&rsaquo;</span>
+    <li data-target="breadcrumb.leafItem">
       <h2 class="inline" data-target="breadcrumb.leafHeading">{{
         bodyTitle | default(title) | safe
       }}</h2>
