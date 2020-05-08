@@ -1,8 +1,12 @@
 ---
-layout: fixed-header
+layout: default
+bodyData:
+  controller: navigation snap-type smooth-scroll
+  snap-type-mandatory:
 eleventyComputed:
   pageId: "{{ gallery.pageId or (pagination.data + '/' + pagination.pageNumber) }}"
   title: "{{ gallery | lang }}"
+fixedHeaderOnly: true
 ---
 
 <nav class="fixed bottom-0 left-0 right-0" data-controller="active-dot">

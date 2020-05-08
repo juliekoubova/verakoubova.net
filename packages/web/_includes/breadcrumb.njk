@@ -1,4 +1,8 @@
-<nav class="vr-normal-sm">
+<nav class="vr-normal-sm"
+  {% if breadcrumbLeaf %}
+  data-controller="breadcrumb"
+  {% endif %}
+  >
   <ol class="inline">
     {% for item in page | vekNav %}
     <li class="inline">
@@ -7,7 +11,7 @@
     </li>
     {% endfor %}
 
-    {% if inPageNav %}
+    {% if breadcrumbLeaf %}
     <li hidden class="inline lf-before sm:no-lf-before" data-target="breadcrumb.parentItem">
       <a class="inline" data-target="breadcrumb.parentAnchor">{{
         bodyTitle | default(title) | safe

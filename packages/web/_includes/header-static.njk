@@ -1,8 +1,6 @@
-{% set headerPadding = 'pt-8 pb-6' %}
-<header
-  class="flex flex-wrap justify-between {{ headerPadding }} md:pt-16"
-  >
+<header class="flex flex-wrap justify-between pt-8 pb-6 md:pt-16" >
   <div class="mb-4 sm:mb-2">
+      {% set breadcrumbLeaf = false %}
     {% include 'breadcrumb.njk' %}
     <h2 class="mt-2 vr-normal-3xl xl:font-light">
       {{ bodyTitle | default(title) | safe }}
