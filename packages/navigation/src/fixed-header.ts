@@ -11,7 +11,7 @@ export class FixedHeaderController extends Controller {
   private readonly intersector = makeIntersector(
     this,
     this.update.bind(this),
-    { threshold: 0.5 }
+    { threshold: 1 }
   )
 
   connect() {
@@ -23,12 +23,15 @@ export class FixedHeaderController extends Controller {
   }
 
   private update(entries: IntersectionObserverEntry[]) {
-    for (const entry of entries) {
-      if (entry.intersectionRatio >= 0.5) {
-        this.fixedHeaderTarget.setAttribute('hidden', '')
-      } else {
-        this.fixedHeaderTarget.removeAttribute('hidden')
-      }
+    const staticHeader = entries.find(e => e.target === this.staticHeaderTarget)
+    if (!staticHeader) {
+      return
+    }
+
+    if (staticHeader.isIntersecting || staticHeader.boundingClientRect.top > 0) {
+      this.fixedHeaderTarget.setAttribute('hidden', '')
+    } else {
+      this.fixedHeaderTarget.removeAttribute('hidden')
     }
   }
 }
