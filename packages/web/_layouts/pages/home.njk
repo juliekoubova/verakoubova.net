@@ -1,15 +1,13 @@
 ---
-layout: html
+layout: sidebar
 pageId: home
 titlePrefix:
 ---
-{% extends 'sidebar.njk' %}
 {% from 'macros.njk' import image %}
 
-{% block before %}
 <h1 class="sr-only">{{ site.name }}</h1>
 
-<div class="flex items-center sm:items-stretch justify-center py-8 sm:py-16">
+<div class="sidebar-section flex items-center sm:items-stretch justify-center py-8 sm:py-16">
   <div class="flex flex-col sm:flex-row-reverse sm:items-center">
     <div class="vr-base self-end sm:self-auto sm:flex-basis-1/2 sm:flex-shrink-0">
       <div class="w-64" style="height: 25rem">
@@ -27,20 +25,10 @@ titlePrefix:
   </div>
 </div>
 
-<div>
-{% endblock %}
-
-{% block content %}
-<main id="{{ mainId }}">
-  {% for post in posts | reverse %}
-  <article class="sidebar-section mb-4">
-    <h3 class="in-sidebar vr-base">{{ post.title | lang }}</h3>
-    <p class="para">{{ post | lang | safe }}</p>
-  </article>
-  {% endfor %}
-</main>
-{% endblock %}
-
-{% block after %}
-</div>
-{% endblock %}
+{% include 'header-static.njk' %}
+{% for post in posts | reverse %}
+<article class="sidebar-section mb-4">
+  <h3 class="in-sidebar vr-base">{{ post.title | lang }}</h3>
+  <p class="para">{{ post | lang | safe }}</p>
+</article>
+{% endfor %}

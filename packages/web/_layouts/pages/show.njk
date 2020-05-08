@@ -5,6 +5,7 @@ parentId: shows
 eleventyComputed:
   pageId: "shows/{{ show }}"
 ---
+{% include 'header-static.njk' %}
 {% set mp3 = (audio | url) if audio %}
 <div data-controller="vr mt-4">
   <audio src="{{ mp3 }}" controls class="max-w-full">

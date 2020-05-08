@@ -4,6 +4,7 @@ pageId: shows
 img:
   src: /img/pozvanky.jpeg
 ---
+{% include 'header-static.njk' %}
 {% for show in collections.show | withCurrentLang %}
 <div class="sidebar-section mt-4">
   <div class="in-sidebar vr-base">

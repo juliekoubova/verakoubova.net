@@ -1,4 +1,11 @@
 ---
 layout: html
 ---
-{% extends 'sidebar.njk' %}
+<div class="sidebar-container">
+  <div class="sidebar">
+    <main class="main" id="{{ mainId }}">
+      {{ content | safe }}
+    </main>
+  </div>
+</div>
+{% include 'header-fixed.njk' %}

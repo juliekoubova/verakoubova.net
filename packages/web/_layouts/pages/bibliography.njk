@@ -2,6 +2,7 @@
 layout: sidebar
 pageId: bibliography
 ---
+{% include 'header-static.njk' %}
 {% for b in bibliography | dictsort %}
 <section id="{{ b[0] }}" class="sidebar-section mb-4">
   <h3 class="in-sidebar vr-base">{{ b[1].name }} </h3>

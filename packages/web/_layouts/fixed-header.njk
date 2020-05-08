@@ -1,20 +1,8 @@
 ---
-layout: html
+layout: sidebar
 bodyData:
   controller: navigation snap-type smooth-scroll
   snap-type-mandatory:
 inPageNav: true
 ---
-{% extends 'sidebar.njk' %}
-{% block before %}
-{% endblock %}
-
-{% block content %}
-{% endblock %}
-
-{% block after %}
-
-<main class="sm:pt-32">
-  {{ content | safe }}
-</main>
-{% endblock %}
+{{ content | safe }}

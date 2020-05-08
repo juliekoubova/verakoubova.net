@@ -2,6 +2,7 @@
 layout: sidebar
 pageId: photography
 ---
+{% include 'header-static.njk' %}
 {% for section in photography | dictsort %}
 <section id="{{ section[1].slug | lang }}" class="mb-8">
   <h3 class="vr-xl md:vr-normal-lg">{{ section[1] | lang | nl2br | safe }}</h3>
