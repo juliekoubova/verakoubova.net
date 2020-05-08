@@ -1,12 +1,13 @@
-<ul>
-{% for item in page | languages | sort %}
-  <li class="inline pipe-separator">
-    {% if item.active %}
-    <strong>{{ item.label }}</strong>
-    {% else %}
-    <a class="text-gray-600 active:text-gray-900"
-        href="{{ item.url | url }}">{{ item.label }}</a>
-    {% endif %}
-  </li>
-{% endfor %}
-</ul>
+<nav>
+  <ul class="vr-normal-sm">
+  {% for item in page | languages | sort %}
+    <li class="inline pipe-separator">
+      {% if item.active %}
+      <strong>{{ item.label }}</strong>
+      {% else %}
+      <a href="{{ item.url | url }}">{{ item.label }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</nav>
