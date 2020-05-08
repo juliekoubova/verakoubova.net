@@ -1,16 +1,23 @@
 ---
 layout: html
 ---
-<div class="sidebar-container">
-  <main class="sidebar">
-    {{ content | safe }}
-  </main>
-</div>
+<div
+  {% if not fixedHeaderOnly %}
+  data-controller="fixed-header"
+  {% endif %}
+>
+  <div class="sidebar-container">
+    <main class="sidebar">
+      {{ content | safe }}
+    </main>
+  </div>
 
-<div class="shadow-lg fixed bg-white-3/4 bg-blur top-0 left-0 right-0 z-10 ">
-  <div class="sidebar-container px-2"
-    {{ 'hidden' if not fixedHeaderOnly }}
-    >
-    {% include 'header-fixed.njk' %}
+  <div class="shadow-lg fixed bg-white-3/4 bg-blur top-0 left-0 right-0 z-10"
+       data-target="fixed-header.fixedHeader"
+       {{ 'hidden' if not fixedHeaderOnly }}
+       >
+    <div class="sidebar-container px-2">
+      {% include 'header-fixed.njk' %}
+    </div>
   </div>
 </div>

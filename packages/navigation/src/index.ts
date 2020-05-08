@@ -1,5 +1,6 @@
 export * from './analytics';
 export * from './breadcrumb';
+export * from './fixed-header';
 export * from './hash-utils';
 export * from './navigation';
 export * from './paging';
