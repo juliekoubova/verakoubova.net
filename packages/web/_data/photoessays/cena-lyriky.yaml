@@ -156,9 +156,9 @@ images:
   de: Zweifel kommen nicht in Frage!
   src: zweifel-kommen-nicht-in-frage.jpeg
 
-- cs: Vyhlášení vítěze
-  de: Preisverleihung
-  src: preisholen.jpeg
+# - cs: Vyhlášení vítěze
+#   de: Preisverleihung
+#   src: preisholen.jpeg
 
 - cs: Roste napětí
   de: Spannung wächst
