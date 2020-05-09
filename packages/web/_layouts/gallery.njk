@@ -2,7 +2,7 @@
 layout: default
 bodyData:
   controller: navigation snap-type smooth-scroll
-  snap-type-mandatory:
+  snap-type-mandatory: ''
 eleventyComputed:
   pageId: "{{ gallery.pageId or (pagination.data + '/' + pagination.pageNumber) }}"
   title: "{{ gallery | lang }}"
