@@ -1,0 +1,62 @@
+cs: Pejškovna
+de: Der Weiler
+pageId: fotoeseje/pejskovna
+imageBase: /img/fotoeseje/pejskovna
+images:
+
+- cs: Prolog
+  de: Prolog
+  src: prolog.jpeg
+
+- cs: Slunce na louce
+  de: Sonne auf der Aue
+  src: slunce-na-louce.jpeg
+
+- cs: Otvírání nebe
+  de: Himmel-Öffnen
+  src: otvirani-nebe.jpeg
+
+- cs: Indiánské léto
+  de: Indianersommer
+  src: indianske-leto.jpeg
+
+- cs: Z betlémské krabatiny
+  de: Aus Bethlehemitischer Gegend
+  src: z-betlemske-krabatiny.jpeg
+
+- cs: Alkyónská lelkovna
+  de: Halkyonische Mussemänner
+  src: alkyonska-lelkovna.jpeg
+
+- cs: Dveřník a dveřnice na mušce
+  de: Türhüter im Visier
+  src: dvernici-na-musce.jpeg
+
+- cs: Srdečné pohledy
+  de: Herzliche Einblicke
+  src: srdecne-pohledy.jpeg
+
+- cs: Podvečer v předvečer
+  de: Vesperstunde des Vorabends
+  src: podvecer-v-predvecer.jpeg
+
+- cs: Zápražní řečnice
+  de: Schwellenrednerinnen
+  src: zaprazni-recnice.jpeg
+
+- cs: Dvorek pod oblaky
+  de: In der Schwebe
+  src: dvorek-pod-oblaky.jpeg
+
+- cs: Rajony pro Režné rejdy
+  de: Landstrich für Spukgeister
+  src: rajony-pro-rezne-rejdy.jpeg
+
+- cs: Vzhůru k tanci trubadúrů
+  de: Tanzen wir gleich Troubadouren!
+  src: vzhuru-k-tanci-trubaduru.jpeg
+
+- cs: Epilog
+  de: Epilog
+  src: epilog.jpeg
+
