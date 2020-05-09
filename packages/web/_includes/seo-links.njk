@@ -1,0 +1,4 @@
+<link rel="canonical" href="{{ site.publicUrl }}{{ page.url | url }}">
+{% for item in page | languages %}
+<link rel="alternate" hreflang="{{ item.code }}" href="{{ site.publicUrl }}{{ item.url | url }}">
+{% endfor %}

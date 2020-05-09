@@ -118,15 +118,15 @@ const filters = {
   },
 
   languages(_page) {
-    return Object.entries(this.ctx.site.languages).map(([lang, label]) => {
+    return Object.entries(this.ctx.site.languages).map(([code, label]) => {
       const target = this.ctx.pageId
-        ? findPage(this.ctx, this.ctx.pageId, lang)
+        ? findPage(this.ctx, this.ctx.pageId, code)
         : undefined
 
-      const url = target ? target.url : `/${lang}/`
-      const active = lang === this.ctx.lang
+      const url = target ? target.url : `/${code}/`
+      const active = code === this.ctx.lang
 
-      return { active, label, url }
+      return { active, code, label, url }
     })
   },
 
