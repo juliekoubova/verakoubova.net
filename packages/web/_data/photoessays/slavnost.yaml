@@ -1,0 +1,42 @@
+cs: Slavnost
+de: Familienfeier
+pageId: fotoeseje/slavnost
+imageBase: /img/fotoeseje/slavnost
+images:
+
+- cs: Strážci pořádku
+  de: Ordnungshüter
+  src: strazci-poradku.jpeg
+
+- cs: Fotografie
+  de: Photographie
+  src: fotografie.jpeg
+
+- cs: Čtenářka not
+  de: Notenleserin
+  src: ctenarka-not.jpeg
+
+- cs: Čtverka z Babičky
+  de: Erleuchtete Vier
+  src: ctverka-z-babicky.jpeg
+
+- cs: Verbuňk
+  de: Werbungstanz
+  src: verbunk.jpeg
+
+- cs: Dcera a matka
+  de: Tochter und Mutter
+  src: dcera-a-matka.jpeg
+
+- cs: Za hradbou
+  de: Hinterm Wall
+  src: za-hradbou.jpeg
+
+- cs: Morava, Moravěnka
+  de: Oh, mein liebes Mähren
+  src: morava-moravenka.jpeg
+
+- cs: V kruhu rodiny
+  de: Im Familienkreis
+  src: v-kruhu-rodiny.jpeg
+
