@@ -14,9 +14,9 @@ module.exports = {
       relaxed: 1.625,
       loose: 2,
     },
-    maxHeight: {
-      ...defaultTheme.maxHeight,
-      'screen-2/3': '66vh'
+    maxWidth: {
+      ...defaultTheme.maxWidth,
+      '48': '12rem'
     },
     scrollSnapType: {
       'no-snap': 'none',
@@ -43,5 +43,6 @@ module.exports = {
   plugins: [
     require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
-  ]
+  ],
+  purge: false,
 }

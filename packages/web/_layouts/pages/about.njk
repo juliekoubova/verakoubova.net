@@ -2,6 +2,7 @@
 layout: applied
 pageId: about
 img:
+  width: 420
   src: /img/vek.jpeg
   alt:
     cs: Věra Koubová s fotoaparátem
@@ -9,7 +10,7 @@ img:
 <div class="sidebar-section">
 
   <div class="in-sidebar mt-4 sm:float-right lg:flex lg:justify-end lg:float-none">
-    <div class="mb-4 sm:mb-0 sm:mx-4 lg:ml-0 ">
+    <div class="mb-4 sm:mb-0 sm:mx-4 lg:ml-0 max-w-48">
       {% from 'macros.njk' import image %}
       {{ image(img) | safe }}
     </div>
