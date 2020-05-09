@@ -1,0 +1,58 @@
+cs: Heidelberk v babím létě
+de: Heidelberg im Nachsommer
+pageId: fotoeseje/heidelberg
+imageBase: /img/fotoeseje/heidelberg
+images:
+
+- cs: Neckar
+  de: Neckar
+  src: neckar.jpeg
+
+- cs: Předměstí
+  de: Ziegelhausen
+  src: ziegelhausen.jpeg
+
+- cs: Shromaždiště
+  de: Thingstätte
+  src: thingstaette.jpeg
+
+- cs: Svatá hora
+  de: Heiligenberg
+  src: heiligenberg.jpeg
+
+- cs: Studentské město
+  de: Studentenstadt
+  src: studentenstadt.jpeg
+
+- cs: Posunková řeč
+  de: Gebärdensprache
+  src: gebaerdensprache.jpeg
+
+- cs: Pod sv. Duchem
+  de: Unterm Heiliggeist
+  src: unterm-heiliggeist.jpeg
+
+- cs: Panoptikum na ulici
+  de: Strassenpanoptikum
+  src: strassenpanoptikum.jpeg
+
+- cs: Hromosvod
+  de: Blitzableiter
+  src: blitzableiter.jpeg
+
+- cs: Čtyřkolka
+  de: Vierrad
+  src: vierrad.jpeg
+
+- cs: Díra do nebe
+  de: Himmelloch
+  src: himmelloch.jpeg
+
+- cs: Slunce ve stole
+  de: Sonnentisch
+  src: sonnentisch.jpeg
+
+- cs: Zpěněné vody
+  de: Gischt
+  src: gischt.jpeg
+

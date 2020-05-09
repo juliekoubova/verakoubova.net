@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 //@ts-check
 const levenshtein = require('js-levenshtein')
-const { join, resolve } = require('path')
+const { join, resolve, basename } = require('path')
 const { readdirSync, renameSync, createWriteStream } = require('fs')
 
 /**
@@ -44,7 +44,7 @@ process.stdin.on('readable', () => {
 
 process.stdin.on('end', () => {
   const outfile = createWriteStream(
-    join(webRoot, '_data/galleries', imgRoot.replace(/^\/?img\/?/, '') + '.yaml'),
+    join(webRoot, '_data/galleries', basename(imgRoot) + '.yaml'),
     { encoding: 'utf8' }
   )
 

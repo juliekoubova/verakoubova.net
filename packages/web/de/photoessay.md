@@ -5,7 +5,7 @@ list:
 - pageId: fotoeseje/hody
 - pageId: fotoeseje/straelen
 - pageId: fotoeseje/zustavam
-- pageId: fotoeseje/heidelberk
+- pageId: fotoeseje/heidelberg
 - pageId: fotoeseje/montpellier
 - pageId: fotoeseje/pejskovna
 - pageId: fotoeseje/slavnost
