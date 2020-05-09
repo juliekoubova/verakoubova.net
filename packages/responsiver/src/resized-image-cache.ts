@@ -6,6 +6,7 @@ import { OriginalImage } from "./original-image";
 import { ResizedImage } from "./resized-image";
 import { ImageFormats, WebP, ImageFormat } from "./image-formats";
 import { fileExists } from "./fs";
+import { deduplicate } from './deduplicate';
 
 
 async function ensureImageDir(
@@ -156,6 +157,7 @@ export class ResizedImageCache {
         .filter(pw => pw <= original.physicalWidth)
     )
     physicalWidths.add(original.physicalWidth)
-    return [...physicalWidths]
+
+    return deduplicate(physicalWidths, 1.1)
   }
 }
