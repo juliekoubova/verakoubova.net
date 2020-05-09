@@ -1,0 +1,74 @@
+cs: Odehrávky
+de: Schlussfest
+pageId: fotoeseje/odehravky
+imageBase: /img/fotoeseje/odehravky
+images:
+
+- cs: Tažení
+  de: Invasion
+  src: tazeni.jpeg
+
+- cs: Než začnou zvát
+  de: Bevor sie einladen
+  src: nez-zacnou-zvat.jpeg
+
+- cs: Pozvaní pohostí
+  de: Schüsseln voll
+  src: pozvani-pohosti.jpeg
+
+- cs: Plné ruce
+  de: Hände voll
+  src: plne-ruce.jpeg
+
+- cs: Krapet se pobavit
+  de: Bisschen Unterhaltung
+  src: krapet-se-pobavit.jpeg
+
+- cs: Kapánek zacifrovat
+  de: Bisschen Tanz
+  src: kapanek-zacifrovat.jpeg
+
+- cs: A slzu upustit
+  de: Bisschen zu viel
+  src: a-slzu-upustit.jpeg
+
+- cs: Zvou i v chaloupkách
+  de: Von Haus zu Haus
+  src: zvou-i-v-chaloupkach.jpeg
+
+- cs: Mají si co říct
+  de: Viel einander zu sagen
+  src: maji-si-co-rict.jpeg
+
+- cs: Než průvod vyrazí
+  de: Bevor es losgeht
+  src: nez-pruvod-vyrazi.jpeg
+
+- cs: Kupředu levá
+  de: Schön in Reihen
+  src: kupredu-leva.jpeg
+
+- cs: Vzhůru do nebe
+  de: Hoch in den Himmel
+  src: vzhuru-do-nebe.jpeg
+
+- cs: Kolem dokola
+  de: Rund herum
+  src: kolem-dokola.jpeg
+
+- cs: Zapojí se?
+  de: Teilnehmen?
+  src: zapojit-se.jpeg
+
+- cs: Tahle si neskočí
+  de: Heute ohne Tanz
+  src: tahle-si-neskoci.jpeg
+
+- cs: Tahle si počká
+  de: Warten auch hier
+  src: tahle-si-pocka.jpeg
+
+- cs: Houšť, jen houšť
+  de: Im Wirbel der Blätter
+  src: houst-jen-houst.jpeg
+
