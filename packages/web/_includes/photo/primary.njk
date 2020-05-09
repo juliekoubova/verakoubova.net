@@ -38,7 +38,8 @@
       {{ image(
               img,
               imageBase | ensureTrailingSlash,
-              class='object-scale-down h-full w-full ' + objectAlign
+              class='object-scale-down h-full w-full ' + objectAlign,
+              lazy=(loop.index > 2)
         ) }}
     </div>
 

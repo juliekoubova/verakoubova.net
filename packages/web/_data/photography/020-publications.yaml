@@ -22,11 +22,13 @@ rows:
   - de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
 
 - cs: Nesmrtelní:smrtelní
+  pageId: nesmrtelni-smrtelni-vystava
   instances:
   - cs: (výstava) ukázky v Revolver Revue 55/2004 (14)
     de: (Ausstellung) Proben in der Zeitschrift Revolver Revue 55/2004 (14)
 
 - cs: Událost a nepředmětnost
+  pageId: konference/hejdankiada
   instances:
   - cs: |
       disputace k filosofii Ladislava Hejdánka
@@ -35,8 +37,8 @@ rows:
       Disputation zur Philosophie Ladislav Hejdáneks: <em>Ereignis und Nicht-Gegenständlichkeit</em>
       Proben in der Zeitschrift Reflexe 28/2005 (8)
 
-
 - cs: Nekonečnost konečnosti
+  pageId: konference/chvatikiada
   instances:
   - cs: disputace k filosofii Ivana Chvatíka 2005
     de: |
@@ -58,6 +60,7 @@ rows:
       Proben in der Zeitschrift Revolver Revue 65/2006 (7)
 
 - de: „ich bleibe. ihr geht“
+  pageId: fotoeseje/zustavam
   instances:
   - cs: (fotoesej) Transit 33, Vídeň 2007 (9)
     de: (Photoessay) Transit 33, Wien 2007 (9)
@@ -98,7 +101,6 @@ rows:
     de: |
       Illustrationen zur Novelle "Wilder Wein" von Anna Blažíčková
       Triáda, Praha 2010 (10)
-
 
 - cs: Filosofie Lidského, příliš lidského
   instances:

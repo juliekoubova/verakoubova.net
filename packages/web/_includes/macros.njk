@@ -1,11 +1,11 @@
-{% macro image(img, base = '', class = '') %}
+{% macro image(img, base = '', class = '', lazy = false) %}
 {% if img %}
 {% set src = base | lang + img.src | lang %}
   <img
     class="{{ class }}"
     alt="{{ img.alt | lang }}"
     src="{{ src | url }}"
-    loading="lazy"
+    {% if lazy %}loading="lazy"{% endif %}
   >
 {% endif %}
 {% endmacro %}
