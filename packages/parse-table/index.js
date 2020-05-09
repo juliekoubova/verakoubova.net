@@ -48,7 +48,7 @@ process.stdin.on('end', () => {
     { encoding: 'utf8' }
   )
 
-  outfile.write(`cs: \nde: \nimageBase: ${imgRoot}\nimages:\n\n`)
+  outfile.write(`cs: \nde: \npageId: ${imgRoot.replace(/.*img\//, '')}\nimageBase: ${imgRoot}\nimages:\n\n`)
 
   const lines = chunks.join('').split(/[\r\n]/).filter(Boolean)
   for (const line of lines) {
