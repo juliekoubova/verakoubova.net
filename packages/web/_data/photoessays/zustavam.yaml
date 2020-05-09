@@ -1,0 +1,42 @@
+cs: Zůstávám
+de: Ich bleibe
+pageId: fotoeseje/zustavam
+imageBase: /img/fotoeseje/zustavam
+images:
+
+- cs: Pěvci nad hrobem
+  de: Sänger am Grabe
+  src: pevci-nad-hrobem.jpeg
+
+- cs: Mamka rodu
+  de: Familienoberhaupt
+  src: mamka-rodu.jpeg
+
+- cs: Pohled jinam
+  de: Blick nach drüben
+  src: pohled-jinam.jpeg
+
+- cs: Před márnicí
+  de: Vor dem Karner
+  src: pred-marnici.jpeg
+
+- cs: Mezi syny
+  de: Zwischen den Söhnen
+  src: mezi-syny.jpeg
+
+- cs: Ve stole
+  de: Im Tisch
+  src: ve-stole.jpeg
+
+- cs: Poslední
+  de: Das Letzte
+  src: posledni.jpeg
+
+- cs: Poté
+  de: Danach
+  src: pote.jpeg
+
+- cs: Průsvitná
+  de: Durchschimmernd
+  src: prusvitna.jpeg
+
