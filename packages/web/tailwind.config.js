@@ -44,5 +44,16 @@ module.exports = {
     require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
   ],
-  purge: false,
+  purge: {
+    content: [
+      '../**/*.js',
+      './**/*.html',
+      './**/*.md',
+      './**/*.njk',
+      './**/*.yaml',
+    ],
+    options: {
+      whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
+    }
+  },
 }
