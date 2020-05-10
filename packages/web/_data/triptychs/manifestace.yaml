@@ -40,9 +40,9 @@ images:
   
 - cs: Blaničtí rytíři
   de: Reiterretter
-  src: blanicti-rytiri.jpg
-  left: blanicti-rytiri.left.html
-  right: blanicti-rytiri.right.html
+  src: blanicti.jpg
+  left: blanicti.left.html
+  right: blanicti.right.html
   
 - cs: Uslyší!
   de: Hören!
