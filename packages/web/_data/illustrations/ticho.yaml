@@ -1,0 +1,102 @@
+cs: Ticho
+de: Stille
+pageId: ilustrace/ticho
+imageBase: /img/ilustrace/ticho
+images:
+
+- cs: Ticho
+  de: Stille
+  src: titul.jpeg
+  left:
+    cs: titul.cs.html
+    de: titul.de.html
+
+
+- cs: V hrozivém ústroji
+  de: Drohend gewandet
+  src: pohled-obraci.jpeg
+  left:
+    cs: pohled-obraci.cs.html
+    de: pohled-obraci.de.html
+
+
+- cs: Na pouti mlhami
+  de: Auf Nebelfahrt
+  src: na-pout-mlhami.jpeg
+  left:
+    cs: na-pout-mlhami.cs.html
+    de: na-pout-mlhami.de.html
+
+
+- cs: Proti smutku těla
+  de: Gegen Trauer des Fleisches
+  src: proti-smutku-tela.jpeg
+  left:
+    cs: proti-smutku-tela.cs.html
+    de: proti-smutku-tela.de.html
+
+
+- cs: Do světla
+  de: In ein Licht
+  src: do-svetla.jpeg
+  left:
+    cs: do-svetla.cs.html
+    de: do-svetla.de.html
+
+
+- cs: Siluetou z němoty
+  de: Schatten-Riss
+  src: siluetou-z-nemoty.jpeg
+  left:
+    cs: siluetou-z-nemoty.cs.html
+    de: siluetou-z-nemoty.de.html
+
+
+- cs: Pohled obrací
+  de: Den Hinblick wendend
+  src: pohled-obraci.jpeg
+  left:
+    cs: pohled-obraci.cs.html
+    de: pohled-obraci.de.html
+
+
+- cs: Sestup z času ven
+  de: Hinabzusteigen aus der Zeit
+  src: sestup-z-casu-ven.jpeg
+  left:
+    cs: sestup-z-casu-ven.cs.html
+    de: sestup-z-casu-ven.de.html
+
+
+- cs: Její rozkročení
+  de: Ihre Grätsche
+  src: jeji-rozkroceni.jpeg
+  left:
+    cs: jeji-rozkroceni.cs.html
+    de: jeji-rozkroceni.de.html
+
+
+- cs: Ruce v troskách
+  de: Hände in den Trümmern
+  src: ruce-v-troskach.jpeg
+  left:
+    cs: ruce-v-troskach.cs.html
+    de: ruce-v-troskach.de.html
+
+
+- cs: Do modrého oparu
+  de: In den blauen Dunst
+  src: do-modreho-oparu.jpeg
+  left:
+    cs: do-modreho-oparu.cs.html
+    de: do-modreho-oparu.de.html
+
+
+- cs: Plna světla
+  de: Alles Licht
+  src: do-svetla.jpeg
+  left:
+    cs: do-svetla.cs.html
+    de: do-svetla.de.html
+
+
