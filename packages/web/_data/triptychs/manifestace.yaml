@@ -48,3 +48,17 @@ images:
   src: blanicti-rytiri.jpg
   left: blanicti-rytiri.left.html
   right: blanicti-rytiri.right.html
+
+  
+- cs: Uslyší!
+  de: Hören!
+  src: uslysi.jpg
+  left: uslysi.left.html
+  right: uslysi.right.html
+
+  
+- cs: Na koni
+  de: Im Sattel
+  src: na-koni.jpg
+  left: na-koni.left.html
+  right: na-koni.right.html
