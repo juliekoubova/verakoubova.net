@@ -54,6 +54,7 @@ rows:
       Proben in: Scholares, Paseka 2006 (8)
 
 - cs: Návrh ilustrací k povídkám Jiřího Weila
+  pageId: ilustrace/weil
   instances:
   - cs: (ilustrace) ukázky v Revolver Revue 65/2006 (7)
     de: |
