@@ -112,6 +112,7 @@ rows:
       Pavel Mervart, Červený Kostelec 2011 (14)
 
 - cs: Kafka
+  pageId: ilustrace/kafka
   instances:
   - cs: |
       Ilustrace k eseji Jürga Amanna
@@ -130,6 +131,7 @@ rows:
       Triáda, Praha 2014 (9)
 
 - cs: Duše zrcadlo
+  pageId: ilustrace/duse-zrcadlo
   instances:
   - cs: |
       Ilustrace ke knize studií Lenky Karfíkové ke Kappadočanům, Augustinovi a Abélardovi
