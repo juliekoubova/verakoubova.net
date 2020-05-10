@@ -21,7 +21,7 @@ rows:
 
 - cs: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
   de: "Nesmrtelní:smrtelní\nSterbliche:Unsterbliche"
-  pageId: nesmrtelni-smrtelni-vystava
+  pageId: vystavy/nesmrtelni
   instances:
   - cs: Freiburg - Katolická akademie (Německo)
     de: Freiburg - Katholische Akademie (Deutschland)
