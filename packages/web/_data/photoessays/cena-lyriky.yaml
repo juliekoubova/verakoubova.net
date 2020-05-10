@@ -3,7 +3,7 @@ de: Dresdner Lyrikpreis
 pageId: fotoeseje/cena-lyriky
 imageBase: /img/fotoeseje/cena-lyriky
 images:
-
+#^titul 
 - cs: Čtení Richarda Pietrasse
   de: Lesung Richard Pietrass
   src: durch-die-blume.jpeg
@@ -19,7 +19,7 @@ images:
 - cs: Richard Hlava skleněná
   de: Richard der Gläserne
   src: richard-der-glaeserne.jpeg
-
+#^podtitul 1
 - cs: Dílny v Pirně
   de: Werkstätten in Pirna
   src: in-der-pause.jpeg
@@ -71,7 +71,7 @@ images:
 - cs: Usebrán
   de: Innengekehrt
   src: innengekehrt.jpeg
-
+#^podtitul 2
 - cs: Čtení finalistů
   de: Lesung der Finalisten
   src: blumenfinale.jpeg
@@ -115,7 +115,7 @@ images:
 - cs: Sklidili šampus
   de: Mit Sekt in der Hand
   src: mit-sekt-in-der-hand.jpeg
-
+#^podtitul 3
 - cs: Porada poroty
   de: Beratung der Jury
   src: poetentolle.jpeg
@@ -156,9 +156,11 @@ images:
   de: Zweifel kommen nicht in Frage!
   src: zweifel-kommen-nicht-in-frage.jpeg
 
-# - cs: Vyhlášení vítěze
-#   de: Preisverleihung
-#   src: preisholen.jpeg
+#^podtitul 4
+
+- cs: Vyhlášení vítěze
+  de: Preisverleihung
+  src: preisholen.jpeg
 
 - cs: Roste napětí
   de: Spannung wächst
@@ -195,10 +197,11 @@ images:
 - cs: Florální finále
   de: Blumenfinale
   src: blumenfinale.jpeg
-
-# - cs: Pohoštění z radnice
-#   de: Empfang der Stadt
-#   src: empfang-parkiert.jpeg
+  
+#^podtitul 5
+- cs: Pohoštění z radnice
+  de: Empfang der Stadt
+  src: empfang-parkiert.jpeg
 
 - cs: Ve světle obdivu
   de: Im Licht der Bewunderung
@@ -211,7 +214,7 @@ images:
 - cs: Ze stolů už sklizeno
   de: Bereits abgedeckt
   src: bereits-abgedeckt.jpeg
-
+#^podtitul 6
 - cs: Čtení v Ústí nad Labem
   de: Lesung in Ústí nad Labem
   src: es-wird-stille.jpeg
@@ -244,7 +247,8 @@ images:
   de: Tja, das wars!
   src: tja-das-wars.jpeg
 
+#^podtitul 7
 - cs: Za dva roky?
   de: In zwei Jahren?
-  src: auftakt.jpeg
+  src: podtitul-7.jpeg
 
