@@ -1,0 +1,73 @@
+cs: Kafka
+pageId: ilustrace/kafka
+imageBase: /img/ilustrace/kafka
+images:
+
+- cs: Kafka
+  src: index.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: Cesta z Deníků z cest
+  de: Reisetagebücherreise
+  src: deniky-z-cest.jpeg
+  right:
+    cs: deniky-z-cest.cs.html
+    de: deniky-z-cest.de.html
+
+- cs: Okno do ulice
+  de: Das Gassenfenster
+  src: okno-do-ulice.jpeg
+  right:
+    cs: okno-do-ulice.cs.html
+    de: okno-do-ulice.de.html
+
+- cs: Starost hlavy rodiny
+  de: Die Sorge des Hausvaters
+  src: starost-hlavy-rodiny.jpeg
+  right:
+    cs: starost-hlavy-rodiny.cs.html
+    de: starost-hlavy-rodiny.de.html
+
+- cs: Před zákonem
+  de: Vor dem Gesetz
+  src: pred-zakonem.jpeg
+  left:
+    cs: pred-zakonem.cs.html
+    de: pred-zakonem.de.html
+
+- cs: Proměna
+  de: Die Verwandlung
+  src: promena.jpeg
+  right:
+    cs: promena.cs.html
+    de: promena.de.html
+
+- cs: V kárném táboře
+  de: In der Strafkolonie
+  src: v-karnem-tabore.jpeg
+  right:
+    cs: v-karnem-tabore.cs.html
+    de: v-karnem-tabore.de.html
+
+- cs: Sen
+  de: Ein Traum
+  src: sen.jpeg
+  right:
+    cs: sen.cs.html
+    de: sen.de.html
+
+- cs: Jezdec na uhláku
+  de: Der Kübelreiter
+  src: jezdec-na-uhlaku.jpeg
+  right:
+    cs: jezdec-na-uhlaku.cs.html
+    de: jezdec-na-uhlaku.de.html
+
+- cs: Lovec Gracchus
+  de: Der Jäger Gracchus
+  src: lovec-gracchus.jpeg
+  right:
+    cs: lovec-gracchus.cs.html
+    de: lovec-gracchus.de.html

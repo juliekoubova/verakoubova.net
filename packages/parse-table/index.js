@@ -16,8 +16,11 @@ const imgRoot = process.argv[2]
 const root = join(webRoot, imgRoot)
 
 for (const f of readdirSync(root)) {
+  const fullPath = join(root, f)
   if (/\.jpg$/.test(f)) {
-    renameSync(join(root, f), join(root, f.replace(/\.jpg$/, '.jpeg')))
+    renameSync(fullPath, join(root, f.replace(/\.jpg$/, '.jpeg')))
+  } else if (/-(cz|de)\./.test(f)) {
+    renameSync(fullPath, join(root, f.replace(/-cz\./, '.cs.').replace(/-de\./, '.de.')))
   }
 }
 
