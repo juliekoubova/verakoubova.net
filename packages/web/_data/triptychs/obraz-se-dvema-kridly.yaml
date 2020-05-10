@@ -1,10 +1,10 @@
-cs: Obraz se dvěma křídly
+cs: Obraz se dvěma křídly slov
 de: ...
 pageId: triptychy/obraz-se-dvema-kridly
 imageBase: /img/triptychy/obraz-se-dvema-kridly
 images:
 
-- cs: Obraz se dvěma křídly
+- cs: Obraz se dvěma křídly slov
   de: ...
   src: ...jpeg
   left: ...left.html
