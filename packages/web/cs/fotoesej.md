@@ -1,6 +1,7 @@
 ---
 title: Fotoeseje
-layout: pages/photoessay-list
+pageId: photoessay-list
+layout: pages/gallery-list
 list:
 - pageId: fotoeseje/hody
 - pageId: fotoeseje/straelen

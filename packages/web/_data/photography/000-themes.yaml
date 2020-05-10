@@ -42,6 +42,7 @@ rows:
 
 - cs: Ilustrace
   de: Illustrationen
+  pageId: illustration-list
   instances:
   - cs: fotografie v duchu literárních děl
     de: Photographien im Sinne von literarischen Werken
