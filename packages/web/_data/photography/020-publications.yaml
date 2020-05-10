@@ -16,8 +16,7 @@ rows:
       Nakladatelství Franze Kafky, Praha 2001 (88)
       Distribution <a href="https://www.oikoymenh.cz/hohne-koubova/nesmrtelni-smrtelni-sterbliche-unsterbliche/">oikoymenh</a>
 
-- cs: Místo děje
-  pageId: vystavy/misto-deje
+- pageId: vystavy/misto-deje
   instances:
   - cs: ukázky v časopise Host 7/2003 (16)
     de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
@@ -72,8 +71,7 @@ rows:
   - cs: (fotoesej) Transit 35, Vídeň 2008 (9)
     de: (Photoessay) Transit 35, Wien 2008 (9)
 
-- cs: Osmdesátiny
-  de: Jubiläum
+- pageId: osmdesatiny
   instances:
   - cs: kolokvium k jubileu Ladislava Hejdánka a Jakuba Trojana 2007
     de: Kolloquium zum Jubiläum von Ladislav Hejdánek und Jakub Trojan 2007
@@ -95,8 +93,7 @@ rows:
   - cs: Fotografická prezentace architektonického ateliéru
     de: Photographische Präsentation eines architektonischen Ateliers
 
-- cs: Psí víno
-  pageId: ilustrace/psi-vino
+- pageId: ilustrace/psi-vino
   instances:
   - cs: |
       Ilustrace k novele Anny Blažíčkové
@@ -111,8 +108,7 @@ rows:
       Ilustrace k souboru filosofických esejů a záběry z kolokvia ke vzniku knihy
       Pavel Mervart, Červený Kostelec 2011 (14)
 
-- cs: Kafka
-  pageId: ilustrace/kafka
+- pageId: ilustrace/kafka
   instances:
   - cs: |
       Ilustrace k eseji Jürga Amanna
@@ -130,8 +126,7 @@ rows:
       Illustration zu Anna Blažíčkovás Erzählband "Warten in der Schar"
       Triáda, Praha 2014 (9)
 
-- cs: Duše zrcadlo
-  pageId: ilustrace/duse-zrcadlo
+- pageId: ilustrace/duse-zrcadlo
   instances:
   - cs: |
       Ilustrace ke knize studií Lenky Karfíkové ke Kappadočanům, Augustinovi a Abélardovi

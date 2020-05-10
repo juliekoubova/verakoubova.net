@@ -1,0 +1,48 @@
+cs: Osmdesátiny
+de: Jubiläum
+pageId: osmdesatiny
+imageBase: /img/publikace/osmdesatiny
+images:
+
+- cs: Osmdesátiny
+  de: Jubiläum
+  src: titul.jpeg
+  left:
+    cs: titul.cs.html
+    de: titul.de.html
+
+- cs: Vědma
+  de: Seherin
+  src: vedma.jpeg
+
+- cs: Na dlani
+  de: Auf der Hand
+  src: na-dlani.jpeg
+
+- cs: Z ústavu
+  de: Aus der Anstalt
+  src: z-ustavu.jpeg
+
+- cs: Oslavená čtveřice
+  de: Die vier Gefeierten
+  src: oslavena-ctverice.jpeg
+
+- cs: Plácačky
+  de: Fliegenklatschen
+  src: placacky.jpeg
+
+- cs: Zvýšená pozornost
+  de: Erhöhte Aufmerksamkeit
+  src: zvysena-pozornost.jpeg
+
+- cs: Heda v láhvi
+  de: Heda in der Flasche
+  src: heda-v-lahvi.jpeg
+
+- cs: Špetku světla
+  de: Prise Licht
+  src: spetku-svetla.jpeg
+
+- cs: Socha svobody
+  de: Freiheitsstatue
+  src: socha-svobody.jpeg

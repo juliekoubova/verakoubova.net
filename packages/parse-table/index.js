@@ -98,7 +98,7 @@ process.stdin.on('end', () => {
       }
     }
 
-    outfile.write('\n\n')
+    outfile.write('\n')
   }
   outfile.close()
 })
