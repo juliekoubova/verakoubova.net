@@ -20,3 +20,10 @@ images:
   src: uroven.jpg
   left: uroven.left.html
   right: uroven.right.html
+
+  
+- cs: Zákopy
+  de: Schützengraben verkehrt
+  src: zakopy.jpg
+  left: zakopy.left.html
+  right: zakopy.right.html
