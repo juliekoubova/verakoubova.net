@@ -1,0 +1,15 @@
+cs: Manifestace
+de: Manifestationen
+pageId: triptychy/manifestace
+imageBase: /img/triptychy/manifestace
+images:
+
+- cs: Manifestace
+  de: Manifestationen
+  src: titul.jpg
+
+- cs: Pod katedrálou
+  de: Unter der Kathedrale
+  src: pod-katedralou.jpg
+  left: pod-katedralou.left.html
+  right: pod-katedralou.right.html

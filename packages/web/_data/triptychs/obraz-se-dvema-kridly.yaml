@@ -1,0 +1,17 @@
+cs: Obraz se dvěma křídly
+de: ...
+pageId: triptychy/obraz-se-dvema-kridly
+imageBase: /img/triptychy/obraz-se-dvema-kridly
+images:
+
+- cs: Obraz se dvěma křídly
+  de: ...
+  src: ...jpeg
+  left: ...left.html
+  right: ...right.html
+
+- cs: ...
+  de: ...
+  src: ...jpeg
+  left: ...left.html
+  right: ...right.html
