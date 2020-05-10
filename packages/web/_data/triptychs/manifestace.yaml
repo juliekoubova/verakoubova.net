@@ -34,3 +34,17 @@ images:
   src: s-vervou.jpg
   left: s-vervou.left.html
   right: s-vervou.right.html
+
+  
+- cs: Sousoší
+  de: Statuengruppen
+  src: sousosi.jpg
+  left: sousosi.left.html
+  right: sousosi.right.html
+
+  
+- cs: Blaničtí rytíři
+  de: Reiterretter
+  src: blanicti-rytiri.jpg
+  left: blanicti-rytiri.left.html
+  right: blanicti-rytiri.right.html
