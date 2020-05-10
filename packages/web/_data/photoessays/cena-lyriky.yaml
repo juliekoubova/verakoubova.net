@@ -3,7 +3,17 @@ de: Dresdner Lyrikpreis
 pageId: fotoeseje/cena-lyriky
 imageBase: /img/fotoeseje/cena-lyriky
 images:
-#^titul 
+
+- cs: Drážďanská cena lyriky
+  de: Dresdner Lyrikpreis
+  src: index.jpeg
+  left:
+    cs: index.left.cs.html
+    de: index.left.de.html
+  right:
+    cs: index.right.cs.html
+    de: index.right.de.html
+
 - cs: Čtení Richarda Pietrasse
   de: Lesung Richard Pietrass
   src: durch-die-blume.jpeg
@@ -197,7 +207,7 @@ images:
 - cs: Florální finále
   de: Blumenfinale
   src: blumenfinale.jpeg
-  
+
 #^podtitul 5
 - cs: Pohoštění z radnice
   de: Empfang der Stadt
