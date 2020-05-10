@@ -1,0 +1,48 @@
+cs: Don Juan
+pageId: ilustrace/don-juan
+imageBase: /img/ilustrace/don-juan
+images:
+
+- cs: Don Juan
+  src: index.jpeg
+
+- cs: Výhled
+  de: Ausblick
+  src: vyhled.jpeg
+
+- cs: Do světla
+  de: Ins Licht
+  src: do-svetla.jpeg
+
+- cs: Pápěří
+  de: Pappelsamenflaum
+  src: paperi.jpeg
+
+- cs: Oslepivá podívaná
+  de: Blendende Schau
+  src: oslepiva-podivana.jpeg
+
+- cs: V oblacích
+  de: Wolkenwandeln
+  src: v-oblacich.jpeg
+
+- cs: Na jehlách
+  de: Nadelstiche
+  src: na-jehlach.jpeg
+
+- cs: Pod rouškou
+  de: Schleierhaft
+  src: pod-rouskou.jpeg
+
+- cs: Černá světla
+  de: Schwarzes Licht
+  src: cerna-svetla.jpeg
+
+- cs: Pavučí
+  de: Gespinst
+  src: pavuci.jpeg
+
+- cs: Objetí
+  de: Umarmung
+  src: objeti.jpeg
+

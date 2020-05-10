@@ -17,9 +17,10 @@ rows:
       Distribution <a href="https://www.oikoymenh.cz/hohne-koubova/nesmrtelni-smrtelni-sterbliche-unsterbliche/">oikoymenh</a>
 
 - cs: Místo děje
+  pageId: vystavy/misto-deje
   instances:
   - cs: ukázky v časopise Host 7/2003 (16)
-  - de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
+    de: Proben aus Anstelle anstätte in der Zeitschrift Host 7/2003 (16)
 
 - cs: Nesmrtelní:smrtelní
   pageId: vystavy/nesmrtelni
@@ -94,6 +95,7 @@ rows:
     de: Photographische Präsentation eines architektonischen Ateliers
 
 - cs: Psí víno
+  pageId: ilustrace/psi-vino
   instances:
   - cs: |
       Ilustrace k novele Anny Blažíčkové
