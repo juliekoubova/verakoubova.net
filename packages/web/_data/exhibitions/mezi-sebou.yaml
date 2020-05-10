@@ -1,0 +1,50 @@
+cs: Mezi sebou
+de: Untereinander
+pageId: vystavy/mezi-sebou
+imageBase: /img/vystavy/mezi-sebou
+images:
+
+- cs: Mezi sebou
+  de: Untereinander
+  src: index.jpeg
+  left:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: Emil Přikryl
+  src: emil-prikryl.jpeg
+
+- cs: Aleš Pultr
+  src: ales-pultr.jpeg
+
+- cs: Jan Palouš
+  src: jan-palous.jpeg
+
+- cs: Roman Kotecký
+  src: roman-kotecky.jpeg
+
+- cs: Dagmar Havlová
+  src: dagmar-havlova.jpeg
+
+- cs: Posezení
+  de: Sitzgelegenheit
+  src: ales-pultr.jpeg
+
+- cs: Ivan Havel
+  src: ivan-havel.jpeg
+
+- cs: Ladislav Lábus
+  src: ladislav-labus.jpeg
+
+- cs: Čapek Chvatík
+  src: titul.jpeg
+
+- cs: Tomáš Halík
+  src: tomas-halik.jpeg
+
+- cs: Petra Stehlíková
+  src: petra-stehlikova.jpeg
+
+- cs: Alexandr Matoušek
+  src: alexandr-matousek.jpeg
+

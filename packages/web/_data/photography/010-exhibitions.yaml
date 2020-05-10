@@ -55,6 +55,7 @@ rows:
 
 - cs: Mezi sebou
   de: Untereinander
+  pageId: vystavy/mezi-sebou
   instances:
   - cs: Praha - Černý kůň Lucerna
     de: Praha - Lucerna (Tschechien)
