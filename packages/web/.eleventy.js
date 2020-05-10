@@ -5,26 +5,6 @@ const { responsiver } = require('@verakoubova/responsiver')
 const yaml = require('js-yaml')
 const slugify = require('slugify').default
 
-/**
- * @param {object[]} objects
- * @param {string?} key
- */
-function countBy(objects, key) {
-  const counts = new Map()
-  for (var obj of objects) {
-    if (!obj || typeof obj !== 'object') {
-      continue
-    }
-    const val = key ? obj[key] : obj
-    if (counts.has(val)) {
-      counts.set(val, counts.get(val) + 1)
-    } else {
-      counts.set(val, 1)
-    }
-  }
-  return counts
-}
-
 function removeStartingSlash(url) {
   return String(url).replace(/^\//, '')
 }
@@ -62,6 +42,9 @@ function combineUrl(parent, leaf) {
 }
 
 function lang(value) {
+  if (typeof value === 'string') {
+    return value
+  }
   if (typeof value === 'object' && value) {
     if (this.ctx && this.ctx.lang && this.ctx.lang in value) {
       return value[this.ctx.lang]
@@ -71,7 +54,7 @@ function lang(value) {
       return value[keys[0]]
     }
   }
-  return value
+  return undefined
 }
 
 function findPage(ctx, pageId, lang) {
@@ -117,19 +100,6 @@ const filters = {
     return result.reverse()
   },
 
-  languages(_page) {
-    return Object.entries(this.ctx.site.languages).map(([code, label]) => {
-      const target = this.ctx.pageId
-        ? findPage(this.ctx, this.ctx.pageId, code)
-        : undefined
-
-      const url = target ? target.url : `/${code}/`
-      const active = code === this.ctx.lang
-
-      return { active, code, label, url }
-    })
-  },
-
   stripSortPrefix(value) {
     return String(value).replace(/^\d+-/, '')
   },
@@ -173,18 +143,18 @@ const filters = {
   },
 
   slug(str) {
-    str = str.normalize('NFD').replace(/\u{308}/ug, 'e') // replace umlaut
+    str = (str || '').normalize('NFD').replace(/\u{308}/ug, 'e') // replace umlaut
     return slugify(str, { lower: true, replacement: '-' })
   },
 
-  urlOfPageId(pageId) {
-    const page = findPage(this.ctx, pageId, this.ctx.lang)
+  urlOfPageId(pageId, lang = this.ctx.lang) {
+    const page = findPage(this.ctx, pageId, lang)
     const { url } = getFilters(this)
     return page ? url(page.url) : ''
   },
 
-  titleOfPageId(pageId) {
-    const page = findPage(this.ctx, pageId, this.ctx.lang)
+  titleOfPageId(pageId, lang = this.ctx.lang) {
+    const page = findPage(this.ctx, pageId, lang)
     return page ? page.data.title : ''
   }
 

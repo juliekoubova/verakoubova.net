@@ -1,4 +1,7 @@
 <link rel="canonical" href="{{ site.publicUrl }}{{ page.url | url }}">
-{% for item in page | languages %}
-<link rel="alternate" hreflang="{{ item.code }}" href="{{ site.publicUrl }}{{ item.url | url }}">
+{% for item in site.languages | dictsort %}
+{% set targetPageUrl = pageId | urlOfPageId(item[0]) %}
+{% if targetPageUrl %}
+<link rel="alternate" hreflang="{{ item[0] }}" href="{{ site.publicUrl }}{{ targetPageUrl }}">
+{% endif %}
 {% endfor %}

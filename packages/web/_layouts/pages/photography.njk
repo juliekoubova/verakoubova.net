@@ -15,7 +15,7 @@ pageId: photography
       {% elif row.pageId %}
       <a href="{{ row.pageId | urlOfPageId }}">
       {% endif %}
-      {{ row | lang | nl2br | safe }}
+      {{ row | lang | default(row.pageId | titleOfPageId) | nl2br | safe }}
       {% if row.href or row.pageId %}</a>{% endif %}
       </h4>
       <div class="vr-base font-body">
