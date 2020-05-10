@@ -13,3 +13,10 @@ images:
   src: pod-katedralou.jpg
   left: pod-katedralou.left.html
   right: pod-katedralou.right.html
+
+  
+- cs: Úroveň
+  de: Ebene
+  src: uroven.jpg
+  left: uroven.left.html
+  right: uroven.right.html
