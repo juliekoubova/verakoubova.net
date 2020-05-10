@@ -2,7 +2,7 @@
 //@ts-check
 const levenshtein = require('js-levenshtein')
 const { join, resolve, basename } = require('path')
-const { readdirSync, renameSync, createWriteStream } = require('fs')
+const { readdirSync, renameSync, createWriteStream, statSync } = require('fs')
 
 /**
  * @param {string} str
@@ -24,14 +24,28 @@ for (const f of readdirSync(root)) {
   }
 }
 
-const filenames = readdirSync(root).map(
-  filename => ({ filename, normalized: normalize(filename.replace(/\..+$/, '')) })
-)
+const filenames = readdirSync(root).map(filename => ({
+  ext: filename.replace(/[^.]+\./, ''),
+  filename,
+  normalized: normalize(filename.replace(/\..+$/, ''))
+}))
 
-function find(str) {
+console.log(filenames)
+
+function find(str, ext) {
   return filenames
-    .map(arg => ({ ...arg, score: levenshtein(str, arg.normalized) }))
+    .filter(f => f.ext === ext)
+    .map(f => ({ ...f, score: levenshtein(str, f.normalized) }))
     .sort((a, b) => a.score - b.score)
+}
+
+function exists(name) {
+  try {
+    statSync(join(root, name))
+    return true
+  } catch (e) {
+    return false
+  }
 }
 
 process.stdin.setEncoding('utf8')
@@ -59,11 +73,32 @@ process.stdin.on('end', () => {
 
     const csNorm = normalize(cs)
     const deNorm = normalize(de)
-    const csBest = find(csNorm)[0]
-    const deBest = find(deNorm)[0]
-    const best = csBest.score <= deBest.score ? csBest : deBest
+    const csBestJpeg = find(csNorm, 'jpeg')[0]
+    const deBestJpeg = find(deNorm, 'jpeg')[0]
+    const best = csBestJpeg.score <= deBestJpeg.score ? csBestJpeg : deBestJpeg
 
-    outfile.write(`- cs: ${cs}\n  de: ${de}\n  src: ${best.filename}\n\n`)
+    outfile.write(`- cs: ${cs}\n  de: ${de}\n`)
+
+    if (best) {
+      outfile.write(`  src: ${best.filename}\n`)
+    }
+
+    const csHtml = best.filename.replace(/\.jpeg$/, '.cs.html')
+    const deHtml = best.filename.replace(/\.jpeg$/, '.de.html')
+    const csHtmlExists = exists(csHtml)
+    const deHtmlExists = exists(deHtml)
+
+    if (csHtmlExists || deHtmlExists) {
+      outfile.write(`  left:\n`)
+      if (csHtmlExists) {
+        outfile.write(`    cs: ${csHtml}\n`)
+      }
+      if (deHtmlExists) {
+        outfile.write(`    de: ${deHtml}\n`)
+      }
+    }
+
+    outfile.write('\n\n')
   }
   outfile.close()
 })

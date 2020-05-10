@@ -1,0 +1,86 @@
+cs: Weil
+de: Weil
+pageId: ilustrace/weil
+imageBase: /img/ilustrace/weil
+images:
+
+- cs: Weil
+  de: Weil
+  src: index.jpeg
+  left:
+    cs: index.cs.html
+    de: index.de.html
+
+
+- cs: Ohlédnutí
+  de: Rücksicht
+  src: ohlednuti.jpeg
+  left:
+    cs: ohlednuti.cs.html
+    de: ohlednuti.de.html
+
+
+- cs: Tanec
+  de: Tanz
+  src: tanec.jpeg
+  left:
+    cs: tanec.cs.html
+    de: tanec.de.html
+
+
+- cs: Chrlič
+  de: Speier
+  src: chrlic.jpeg
+  left:
+    cs: chrlic.cs.html
+    de: chrlic.de.html
+
+
+- cs: Okno
+  de: Fenster
+  src: okno.jpeg
+  left:
+    cs: okno.cs.html
+    de: okno.de.html
+
+
+- cs: Řeka
+  de: Fluss
+  src: reka.jpeg
+  left:
+    cs: reka.cs.html
+    de: reka.de.html
+
+
+- cs: Pavlače
+  de: Pawlatschen
+  src: pavlace.jpeg
+  left:
+    cs: pavlace.cs.html
+    de: pavlace.de.html
+
+
+- cs: Anděla
+  de: Anděla
+  src: andela.jpeg
+  left:
+    cs: andela.cs.html
+    de: andela.de.html
+
+
+- cs: Brána
+  de: Tor
+  src: brana.jpeg
+  left:
+    cs: brana.cs.html
+    de: brana.de.html
+
+
+- cs: Menhir
+  de: Menhir
+  src: menhir.jpeg
+  left:
+    cs: menhir.cs.html
+    de: menhir.de.html
+
+
