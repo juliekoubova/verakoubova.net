@@ -1,17 +1,63 @@
 cs: Obraz se dvěma křídly slov
-de: ...
+de: Bild mit zwei Wortflügeln
 pageId: triptychy/obraz-se-dvema-kridly
 imageBase: /img/triptychy/obraz-se-dvema-kridly
 images:
 
 - cs: Obraz se dvěma křídly slov
-  de: ...
-  src: ...jpeg
-  left: ...left.html
-  right: ...right.html
-
-- cs: ...
-  de: ...
-  src: ...jpeg
-  left: ...left.html
-  right: ...right.html
+  de: Bild mit zwei Wortflügeln
+  src: titul.jpeg
+  
+- cs: Okna
+  de: Fenster
+  src: okna.jpeg
+  left: okna.left.html
+  right: okna.right.html
+  
+- cs: Prsty
+  de: Finger
+  src: prsty.jpeg
+  left: prsty.left.html
+  right: prsty.right.html
+  
+- cs: Mlčení Sirény
+  de: Das Schweigen der Sirene
+  src: mlceni.jpeg
+  left: mlceni.left.html
+  right: mlceni.right.html
+  
+- cs: Stoh
+  de: Feimen
+  src: stoh.jpeg
+  left: stoh.left.html
+  right: stoh.right.html
+  
+- cs: Dvojstrana
+  de: Doppelseite
+  src: dvojstrana.jpeg
+  left: dvojstrana.left.html
+  right: dvojstrana.right.html
+  
+- cs: Vzdušné zámky
+  de: Luftschlösser
+  src: vzdusne.jpeg
+  left: vzdusne.left.html
+  right: vzdusne.right.html
+  
+- cs: Ze života
+  de: Aus dem Leben
+  src: ze-zivota.jpeg
+  left: ze-zivota.left.html
+  right: ze-zivota.right.html
+  
+- cs: Šaty tvé tváře
+  de: Kleider deines Angesichts
+  src: saty.jpeg
+  left: saty.left.html
+  right: saty.right.html
+  
+- cs: Pokaždé poslední
+  de: Immer zum letzten
+  src: pokazde.jpeg
+  left: pokazde.left.html
+  right: pokazde.right.html
