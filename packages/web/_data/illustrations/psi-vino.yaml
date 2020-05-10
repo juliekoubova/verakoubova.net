@@ -1,0 +1,45 @@
+cs: Psí víno
+de: Wilder Wein
+pageId: ilustrace/psi-vino
+imageBase: /img/ilustrace/psi-vino
+images:
+
+- cs: Psí víno
+  de: Wilder Wein
+  src: index.jpeg
+  right:
+    cs: index.cs.html
+    de: index.de.html
+
+- cs: Duch křížku
+  de: Kreuzgeist
+  src: duch-krizku.jpeg
+
+- cs: Pařáty rozkvetly
+  de: Blütenkrallen
+  src: paraty-rozkvetly.jpeg
+
+- cs: Sošný pahýl
+  de: Standbild
+  src: sosny-pahyl.jpeg
+
+- cs: Tanec motýla
+  de: Schmetterling
+  src: tanec-motyla.jpeg
+
+- cs: Návštěva na zahradě
+  de: Gartenbesuch
+  src: navsteva-na-zahrade.jpeg
+
+- cs: Klínová cesta
+  de: Keilweg
+  src: klinova-cesta.jpeg
+
+- cs: Záplata k záplatě
+  de: Flickfleck
+  src: babiccino-flikovani.jpeg
+
+- cs: Okno skrz okno
+  de: Durchsicht
+  src: okno-skrz-okno.jpeg
+

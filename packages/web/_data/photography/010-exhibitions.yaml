@@ -70,6 +70,7 @@ rows:
 
 - cs: Psí víno
   de: Wilder Wein
+  pageId: ilustrace/psi-vino
   instances:
   - cs: Pejškovna
     de: Pejškovna (Tschechien)
