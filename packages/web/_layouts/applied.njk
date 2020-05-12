@@ -2,6 +2,18 @@
 layout: default
 ---
 {% include 'header-static.njk' %}
-<div class="applied">
-  {{ content | safe }}
+{% if img %}
+<div class="sidebar-section">
+  <div class="in-sidebar mt-4 sm:float-right lg:flex lg:justify-end lg:float-none">
+    <div class="mb-4 sm:mb-0 sm:mx-4 lg:ml-0 max-w-48">
+      {% from 'macros.njk' import image %}
+      {{ image(img) | safe }}
+    </div>
+  </div>
+{% endif %}
+  <div class="applied">
+    {{ content | safe }}
+  </div>
+{% if img %}
 </div>
+{% endif %}

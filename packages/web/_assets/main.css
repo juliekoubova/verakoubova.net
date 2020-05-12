@@ -107,7 +107,7 @@ nav a[href]:focus {
 }
 
 .applied h3 {
-  @apply mt-4;
+  @apply mt-8;
   @apply vr-normal-xl;
 }
 
@@ -133,6 +133,16 @@ nav a[href]:focus {
 
 .applied blockquote {
   @apply mt-4;
+  @apply mx-8;
+}
+
+.applied blockquote > p:last-child::before {
+  content: '\2014 ';
+}
+
+.applied blockquote > p:last-child {
+  @apply mt-2;
+  @apply text-right;
 }
 
 .slide-up-enter-active {
