@@ -17,6 +17,7 @@
     "debug": "node --inspect-brk ./node_modules/.bin/eleventy",
     "predeploy": "shx rm -f _site/report.html",
     "serve": "run-s build && ws --directory _site --port 8080",
+    "prestart": "run-s clean build:parcel",
     "start": "eleventy --serve --quiet --output _site"
   },
   "devDependencies": {
