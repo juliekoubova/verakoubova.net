@@ -1,0 +1,3 @@
+{% set src = img.src | lang | item(imageBase) %}
+{% set html = src.templateContent if src.templateContent else src %}
+{{ html | safe }}

@@ -25,28 +25,26 @@
 {% set rightClass = right.data.class | lang %}
 {% set rightHtml = right.templateContent if right.templateContent else right %}
 
-<div class="flex flex-col justify-center sm:h-full sm:mx-auto sm:max-w-2xl lg:max-w-4xl">
-  <div class="sm:flex max-h-full">
-    {% if left %}
-    <div class="{{ blockClass }} {{ leftClass }}">
-      {{ leftHtml | safe }}
-    </div>
-    {% endif %}
-
-    <div class="sm:mx-4 {{ blockClass }} flex-1">
-      {% from 'macros.njk' import image %}
-      {{ image(
-              img,
-              imageBase | ensureTrailingSlash,
-              class='object-scale-down h-full w-full ' + objectAlign,
-              lazy=(loop.index > 2)
-        ) }}
-    </div>
-
-    {% if right %}
-    <div class="{{ blockClass }} {{ rightClass }}">
-      {{ rightHtml | safe }}
-    </div>
-    {% endif %}
+<div class="sm:flex max-h-full">
+  {% if left %}
+  <div class="{{ blockClass }} {{ leftClass }}">
+    {{ leftHtml | safe }}
   </div>
+  {% endif %}
+
+  <div class="sm:mx-4 {{ blockClass }} flex-1">
+    {% from 'macros.njk' import image %}
+    {{ image(
+            img,
+            imageBase | ensureTrailingSlash,
+            class='object-scale-down h-full w-full ' + objectAlign,
+            lazy=(loop.index > 2)
+      ) }}
+  </div>
+
+  {% if right %}
+  <div class="{{ blockClass }} {{ rightClass }}">
+    {{ rightHtml | safe }}
+  </div>
+  {% endif %}
 </div>

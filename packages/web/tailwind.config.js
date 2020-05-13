@@ -1,5 +1,19 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const purge = process.env.NODE_ENV === 'production'
+  ? {
+    content: [
+      '../**/*.js',
+      './**/*.html',
+      './**/*.md',
+      './**/*.njk',
+      './**/*.yaml',
+    ],
+    options: {
+      whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
+    }
+  }
+  : false
 module.exports = {
   theme: {
     fontFamily: {
@@ -44,16 +58,5 @@ module.exports = {
     require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
   ],
-  purge: {
-    content: [
-      '../**/*.js',
-      './**/*.html',
-      './**/*.md',
-      './**/*.njk',
-      './**/*.yaml',
-    ],
-    options: {
-      whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
-    }
-  },
+  purge,
 }
