@@ -2,7 +2,7 @@
 layout: pages/about
 title: VěK
 ---
-Věra Koubová navštěvovala v&nbsp;letech 1986–1989 Pražskou fotografickou školu. Zakončila ji teoretickou prací
+Věra Koubová (1953) navštěvovala v&nbsp;letech 1986–1989 Pražskou fotografickou školu. Zakončila ji teoretickou prací
 <a href="Publikace/ZapomenutePortrety/Index.html">Zapomenuté portréty</a> o&nbsp;svém objevu negativních desek
 s&nbsp;podobiznami slavných osobností z&nbsp;přelomu 19. a&nbsp;20. století z&nbsp;ateliéru Mulač.
 V&nbsp;devadesátých letech se nejprve věnovala snímkům souboru <a href="Expozice/MistoDeje/Index.html">Místo
@@ -21,7 +21,7 @@ němčina–angličtina roku 1979 disertací <em>Jazyková originalita jako pře
 základě rozboru překladů románu Jamese Joyce <em>Ulysses</em>) se věnuje <a href="../z-jazyka-do-jazyka">překládání</a>
 německojazyčné prózy, poezie a&nbsp;filosofie, zvláště dosud
 nepřeložených prací Friedricha Nietzscheho, spisů Franze Kafky v&nbsp;rámci jeho sebraného Díla v&nbsp;češtině
-a&nbsp;poetických sbírek původně pražského Němce Franze Wurma (1926).
+a&nbsp;poetických sbírek původně pražského Němce Franze Wurma.
 
 Texty, jimiž se zabývá překladem či v&nbsp;ilustraci, prezentuje buď jako literárně hudební pásma
 v&nbsp;samostatných <a href="../slova-k-poslechu">pořadech</a> živě či v&nbsp;rozhlase, nebo
