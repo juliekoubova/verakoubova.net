@@ -14,12 +14,12 @@ images:
     cs: index.right.cs.html
     de: index.right.de.html
 
-- cs: Čtení Richarda Pietrasse
-  de: Lesung Richard Pietrass
-  layout: custom
-  src:
-    cs: klavir-z-listi.cs.html
-    de: klavir-z-listi.de.html
+# - cs: Čtení Richarda Pietrasse
+#   de: Lesung Richard Pietrass
+#   layout: custom
+#   src:
+#     cs: klavir-z-listi.cs.html
+#     de: klavir-z-listi.de.html
 
 - cs: V předvečer
   de: Auftakt

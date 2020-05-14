@@ -17,7 +17,7 @@
 {%  set objectAlign = 'sm:object-top' %}
 {% endif %}
 
-{% set blockClass = 'snap-start sm:snap-none pt-20 pb-12 sm:pt-0 sm:pb-0 h-screen sm:h-auto sm:max-h-full' + blockWidth %}
+{% set blockClass = blockClass + blockWidth %}
 
 {% set leftClass = left.data.class | lang %}
 {% set leftHtml = left.templateContent if left.templateContent else left %}
