@@ -1,14 +1,12 @@
-<nav>
-  <ul class="vr-normal-sm">
-  {% set targetPageId = pageId | default('home') %}
-  {% for item in site.languages | dictsort %}
-    <li class="inline pipe-separator">
-      {% if item[0] === lang %}
-      <strong>{{ item[1] }}</strong>
-      {% else %}
-      <a href="{{ targetPageId | urlOfPageId(item[0]) }}">{{ item[1] }}</a>
-      {% endif %}
-    </li>
-  {% endfor %}
-  </ul>
-</nav>
+<ul>
+{% set targetPageId = pageId | default('home') %}
+{% for item in site.languages | dictsort %}
+  <li class="inline pipe-separator">
+    {% if item[0] === lang %}
+    <strong>{{ item[1] }}</strong>
+    {% else %}
+    <a href="{{ targetPageId | urlOfPageId(item[0]) }}">{{ item[1] }}</a>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

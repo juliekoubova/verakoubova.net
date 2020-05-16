@@ -1,7 +1,16 @@
-<div data-target="fixed-header.staticHeader">
-  {% set breadcrumbLeaf = false %}
-  {% include 'header.njk' %}
-</div>
+<nav class="my-4 flex justify-between vr-loose-xs sm:vr-normal-sm" data-target="fixed-header.staticHeader">
+  <ol class=" flex flex-wrap content-end">
+    {% for item in page | vekNav %}
+    <li>
+      <a href="{{ item.url }}">{{ item.label }}</a>
+      <span aria-hidden="true">&rsaquo;&nbsp;</span>
+    </li>
+    {% endfor %}
+  </ol>
+  <div class="flex-none ml-4">
+    {% include 'lang-switcher.njk' %}
+  </div>
+</nav>
 
 <hgroup class="pb-6">
   <h2 class="vr-normal-3xl xl:font-light">

@@ -1,6 +1,32 @@
-<header class="flex items-end justify-between py-4 md:pt-8">
-  {% include 'breadcrumb.njk' %}
-  <div class="flex-none ml-4">
-    {% include 'lang-switcher.njk' %}
+<nav class="flex flex-col py-4" data-controller="breadcrumb">
+
+  <div class="flex vr-loose-xs sm:vr-normal-sm">
+    <ol class="flex-auto flex flex-wrap content-end">
+      {% for item in page | vekNav %}
+      <li>
+        <a href="{{ item.url }}" hidden class="inline sm:hidden">{{ item.shortLabel }}</a>
+        <a href="{{ item.url }}" class="hidden sm:inline">{{ item.label }}</a>
+        <span aria-hidden="true">&rsaquo;&nbsp;</span>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="flex-none ml-4">
+      {% include 'lang-switcher.njk' %}
+    </div>
   </div>
-</header>
+
+  <ol class="vr-normal-sm flex flex-wrap content-end">
+    <li hidden data-target="breadcrumb.parentItem">
+      <a data-target="breadcrumb.parentAnchor">{{
+        bodyTitle | default(title) | safe
+      }}</a>
+      <span aria-hidden="true" hidden data-target="breadcrumb.parentArrow">&rsaquo;&nbsp;</span>
+    </li>
+    <li data-target="breadcrumb.leafItem">
+      <h2 class="inline" data-target="breadcrumb.leafHeading">{{
+        bodyTitle | default(title) | safe
+      }}</h2>
+    </li>
+  </ol>
+
+</nav>
