@@ -88,10 +88,13 @@ images:
 - cs: Usebrán
   de: Innengekehrt
   src: innengekehrt.jpeg
-#^podtitul 2
+
 - cs: Čtení finalistů
   de: Lesung der Finalisten
-  src: blumenfinale.jpeg
+  src: cteni-finalistu.jpeg
+  left:
+    cs: cteni-finalistu.cs.html
+    de: cteni-finalistu.de.html
 
 - cs: Čtení před čtením
   de: Lesen vor der Lesung
