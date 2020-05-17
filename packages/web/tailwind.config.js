@@ -14,8 +14,12 @@ const purge = process.env.NODE_ENV === 'production'
     }
   }
   : false
+
 module.exports = {
   theme: {
+    extend: {
+      zIndex: { '-10': '-10' }
+    },
     fontFamily: {
       condensed: ['"Roboto Condensed"', ...defaultTheme.fontFamily.sans],
       sans: ['Roboto', ...defaultTheme.fontFamily.sans]

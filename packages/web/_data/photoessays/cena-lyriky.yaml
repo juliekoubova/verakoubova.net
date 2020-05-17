@@ -14,12 +14,12 @@ images:
     cs: index.right.cs.html
     de: index.right.de.html
 
-# - cs: Čtení Richarda Pietrasse
-#   de: Lesung Richard Pietrass
-#   layout: custom
-#   src:
-#     cs: klavir-z-listi.cs.html
-#     de: klavir-z-listi.de.html
+- cs: Čtení Richarda Pietrasse
+  de: Lesung Richard Pietrass
+  layout: custom
+  src:
+    cs: klavir-z-listi.cs.html
+    de: klavir-z-listi.de.html
 
 - cs: V předvečer
   de: Auftakt
@@ -32,10 +32,14 @@ images:
 - cs: Richard Hlava skleněná
   de: Richard der Gläserne
   src: richard-der-glaeserne.jpeg
-#^podtitul 1
+
 - cs: Dílny v Pirně
   de: Werkstätten in Pirna
-  src: in-der-pause.jpeg
+  src: dilny-v-pirne.jpeg
+  left:
+    cs: dilny-v-pirne.left.cs.html
+    de: dilny-v-pirne.left.de.html
+  right: dilny-v-pirne.right.html
 
 - cs: Potlesk lyrice
   de: Dichtung kriegt Beifall
