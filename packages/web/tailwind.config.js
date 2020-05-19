@@ -1,7 +1,25 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const purge = process.env.NODE_ENV === 'production'
+  ? {
+    content: [
+      '../**/*.js',
+      './**/*.html',
+      './**/*.md',
+      './**/*.njk',
+      './**/*.yaml',
+    ],
+    options: {
+      whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
+    }
+  }
+  : false
+
 module.exports = {
   theme: {
+    extend: {
+      zIndex: { '-10': '-10' }
+    },
     fontFamily: {
       condensed: ['"Roboto Condensed"', ...defaultTheme.fontFamily.sans],
       sans: ['Roboto', ...defaultTheme.fontFamily.sans]
@@ -44,16 +62,5 @@ module.exports = {
     require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
   ],
-  purge: {
-    content: [
-      '../**/*.js',
-      './**/*.html',
-      './**/*.md',
-      './**/*.njk',
-      './**/*.yaml',
-    ],
-    options: {
-      whitelistPatterns: [/snap-y-(mandatory|proximity)$/]
-    }
-  },
+  purge,
 }

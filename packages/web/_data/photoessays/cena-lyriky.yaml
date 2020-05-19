@@ -16,7 +16,10 @@ images:
 
 - cs: Čtení Richarda Pietrasse
   de: Lesung Richard Pietrass
-  src: durch-die-blume.jpeg
+  layout: custom
+  src:
+    cs: klavir-z-listi.cs.html
+    de: klavir-z-listi.de.html
 
 - cs: V předvečer
   de: Auftakt
@@ -29,10 +32,14 @@ images:
 - cs: Richard Hlava skleněná
   de: Richard der Gläserne
   src: richard-der-glaeserne.jpeg
-#^podtitul 1
+
 - cs: Dílny v Pirně
   de: Werkstätten in Pirna
-  src: in-der-pause.jpeg
+  src: dilny-v-pirne.jpeg
+  left:
+    cs: dilny-v-pirne.left.cs.html
+    de: dilny-v-pirne.left.de.html
+  right: dilny-v-pirne.right.html
 
 - cs: Potlesk lyrice
   de: Dichtung kriegt Beifall
@@ -81,10 +88,13 @@ images:
 - cs: Usebrán
   de: Innengekehrt
   src: innengekehrt.jpeg
-#^podtitul 2
+
 - cs: Čtení finalistů
   de: Lesung der Finalisten
-  src: blumenfinale.jpeg
+  src: cteni-finalistu.jpeg
+  left:
+    cs: cteni-finalistu.cs.html
+    de: cteni-finalistu.de.html
 
 - cs: Čtení před čtením
   de: Lesen vor der Lesung

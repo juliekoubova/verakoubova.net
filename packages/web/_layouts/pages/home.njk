@@ -7,25 +7,25 @@ titlePrefix:
 
 <h1 class="sr-only">{{ site.name }}</h1>
 
-<div class="sidebar-section flex items-center sm:items-stretch justify-center py-8 sm:py-16">
+<nav class="sidebar-section flex items-center sm:items-stretch justify-center py-8 sm:py-16">
   <div class="flex flex-col sm:flex-row-reverse sm:items-center">
     <div class="vr-base self-end sm:self-auto sm:flex-basis-1/2 sm:flex-shrink-0">
       <div class="w-64" style="height: 25rem">
-        <div class="pb-2">
+        <div class="vr-normal-sm pb-2">
           {% include 'lang-switcher.njk' %}
         </div>
         {{ image(img, class = 'w-64') }}
       </div>
     </div>
-    <nav
+    <div
       class="vr-snug-3xl text-right tracking-tight whitespace-no-wrap
         flex-none sm:flex-basis-1/2 sm:pr-5 xl:pr-6 sm:vr-normal-4xl
         sm:-mt-10 font-condensed
       ">
       {{ content | safe }}
-    </nav>
+    </div>
   </div>
-</div>
+</nav>
 
 {% include 'header-static.njk' %}
 {% for post in posts | reverse %}
