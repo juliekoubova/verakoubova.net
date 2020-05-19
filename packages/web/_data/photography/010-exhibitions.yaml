@@ -47,7 +47,7 @@ rows:
 
 - cs: Místo děje
   de: Anstelle anstätte
-  pageId: misto-deje
+  pageId: vystavy/misto-deje
   instances:
   - cs: Praha - Černý kůň Lucerna
     de: Praha - Lucerna (Tschechien)

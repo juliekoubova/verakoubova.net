@@ -6,7 +6,7 @@ slug:
 rows:
 - cs: Místo děje
   de: Anstelle anstätte
-  pageId: misto-deje
+  pageId: vystavy/misto-deje
   instances:
   - cs: pouliční příběhy z devadesátých let
     de: Strassengeschichten aus den neunziger Jahren
