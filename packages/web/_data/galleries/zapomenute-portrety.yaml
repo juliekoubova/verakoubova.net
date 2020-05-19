@@ -1,0 +1,33 @@
+cs: Zapomenuté portréty
+de: Vergessene Portraits
+pageId: zapomenute-portrety
+imageBase: /img/zapomenute-portrety
+images:
+
+- cs:
+  de:
+  src: titul.jpg
+
+- cs: 
+  de:
+  src: obsah.jpg
+
+- cs: 
+  de:
+  src: z-historie.jpg
+
+- cs: 
+  de:
+  src: atelier.jpg
+
+- cs: 
+  de:
+  src: hoffmannovi-vzduchoplavci.jpg
+  
+- cs: 
+  de:
+  src: fota-tri-zen.jpg
+  
+- cs: 
+  de:
+  src: zaver.jpg
