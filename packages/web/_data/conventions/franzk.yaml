@@ -6,7 +6,7 @@ images:
 
 - cs: FranzK
   de: FranzK
-  src: der-verlaengerte-arm.jpeg
+  src: titul.jpeg
   right:
     cs: index.cs.html
     de: index.de.html
@@ -30,10 +30,6 @@ images:
 - cs: Paže
   de: Der Arm
   src: der-arm.jpeg
-
-- cs: Prodloužené rámě
-  de: Der verlängerte Arm
-  src: der-verlaengerte-arm.jpeg
 
 - cs: Z nitra
   de: Der Ausholende
