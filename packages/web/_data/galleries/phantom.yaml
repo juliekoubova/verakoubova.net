@@ -4,47 +4,67 @@ pageId: fantom
 imageBase: /img/fantom
 images:
 
-# - cs: Kniha Srní
-#   de: Das Buch von Srní
-#   src: .jpeg
+- cs: Blýskavice nad Oserem
+  de: Wetterleuchten über dem Osser
+  src: blyskavice.jpeg
 
-# - cs: Záclony z Veveří
-#   de: Gardinen aus Veveří
-#   src: .jpeg
+- cs: Stínový plot
+  de: Schattenzaun
+  src: plot.jpeg
+
+- cs: Branka
+  de: Pforte
+  src: branka.jpeg
+
+- cs: Větev Železničního mostu
+  de: Zweig der Eisenbahnbrücke
+  src: most.jpeg
+
+- cs: Fantom ve své zahrádce
+  de: Phantom in seinem Gärtchen
+  src: fantom-ve-sve-zahradce.jpeg
+
+- cs: Semenáč z Drahomyšle
+  de: Stein bei Drahomyšl
+  src: semenac.jpeg
+
+- cs: Vynořila se z povodně
+  de: Aus der Überschwemmung aufgetaucht
+  src: vynorila-se-z-povodne.jpeg
+
+- cs: Fantom na Vltavě
+  de: Phantom in der Moldau
+  src: fantom-na-vltave.jpeg
+
+- cs: Opilý Bartoloměj
+  de: Bartholomäus, besoffen
+  src: opily-bartolomej.jpeg
+
+- cs: Křik
+  de: Schrei
+  src: krik.jpeg
+
+- cs: Agitace v Tlustovousech
+  de: Agitation in Dickbart
+  src: agitace.jpeg
+
+- cs: Kloboukem v louži
+  de: Mit Hut in der Lache
+  src: kloboukem-v-louzi.jpeg
+
+- cs: Vodní brána
+  de: Wassertor
+  src: vodni-brana.jpeg
 
 - cs: Komtur na Malostranském
   de: Der Komtur vom Kleinseitner Ring
   src: komtur.jpeg
 
-# - cs: Plachta nad Stromovkou
-#   de: Das Segel über dem Baumgarten
-#   src: .jpg
+- cs: Kunratická lucerna
+  de: Laterne von Kunratice
+  src: kunraticka-lucerna.jpeg
 
-# - cs: Černá ruka z Dobříše
-#   de: Die schwarze Hand von Dobříš
-#   src: .jpg
-
-- cs: Blýskavice nad Oserem
-  de: Wetterleuchten über dem Osser
-  src: blyskavice.jpeg
-
-# - cs: Blesk v Kozí
-#   de: Blitz in der Ziegengasse
-#   src: .jpg
-
-# - cs: Kleč v Krči
-#   de: Das Krummholz in Krč
-#   src: .jpg
-
-# - cs: Patník pod Strahovem
-#   de: Der Prellstein unter Strahov
-#   src: .jpg
-
-# - cs: Kámen u Drahomyšle
-#   de: Ein Stein bei Drahomyšl
-#   src: .jpg
-
-# - cs: Černá ovce za Třebotovem
-#   de: Das schwarze Schaf von Třebotov
-#   src: .jpg
+- cs: Zapaluje sklenice
+  de: Gläser angezündet
+  src: zapaluje-sklenice.jpeg
 
