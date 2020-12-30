@@ -2,7 +2,6 @@ import { parseBlock, Block, screenDefs } from "./block-model"
 import { getLogicalWidths, LogicalWidth } from './logical-widths'
 import { getBlockWidths } from './block-widths'
 import { ResponsiverContext } from './context'
-import { sortBy } from "./utils/sort-by"
 import { tryFindAtLeast } from "./utils"
 
 
@@ -12,8 +11,8 @@ function getTokens(str: string | undefined) {
     : []
 }
 
-export function parseBlockList(element: CheerioElement): Block | undefined {
-  const parent = element.parent
+export function parseBlockList(element: cheerio.TagElement): Block | undefined {
+  const parent = element.parent?.type === "tag"
     ? parseBlockList(element.parent)
     : undefined
   const classes = getTokens(element.attribs['class'])
@@ -33,7 +32,7 @@ function pickLegacySize(context: ResponsiverContext, widths: LogicalWidth[]) {
 
 export async function generateImageSizes(
   context: ResponsiverContext,
-  el: CheerioElement,
+  el: cheerio.TagElement,
 ) {
   const { src } = el.attribs
   if (!src) {

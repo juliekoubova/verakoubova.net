@@ -6,28 +6,28 @@ images:
 
 # TODO index
 
-- cs:
-  de:
-  layout: two
-  left: titul-knizky.jpg
-  right: obsah.jpg
+# - cs:
+#   de:
+#   layout: two
+#   left: titul-knizky.jpg
+#   right: obsah.jpg
 
-- cs: 
-  de:
-  src: z-historie.jpg
+# - cs:
+#   de:
+#   src: z-historie.jpg
 
-- cs: 
-  de:
-  src: atelier.jpg
+# - cs:
+#   de:
+#   src: atelier.jpg
 
-- cs: 
-  de:
-  src: hoffmannovi-vzduchoplavci.jpg
-  
-- cs: 
-  de:
-  src: fota-tri-zen.jpg
-  
-- cs: 
-  de:
-  src: zaver.jpg
+# - cs:
+#   de:
+#   src: hoffmannovi-vzduchoplavci.jpg
+
+# - cs:
+#   de:
+#   src: fota-tri-zen.jpg
+
+# - cs:
+#   de:
+#   src: zaver.jpg

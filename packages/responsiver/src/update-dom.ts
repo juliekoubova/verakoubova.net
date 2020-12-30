@@ -15,7 +15,7 @@ function srcsetByWidth(context: ResponsiverContext, images: ResizedImage[]) {
 
 export function setImgSrc(
   context: ResponsiverContext,
-  $img: Cheerio,
+  $img: cheerio.Cheerio,
   legacySrc: ResizedImage
 ) {
   $img.attr('width', legacySrc.physicalWidth.toFixed(0))
@@ -25,8 +25,8 @@ export function setImgSrc(
 
 export function convertToPicture(
   context: ResponsiverContext,
-  $: CheerioStatic,
-  $img: Cheerio,
+  $: cheerio.Selector,
+  $img: cheerio.Cheerio,
   blockSizes: BlockWidthEntry[],
   sources: ResizedImageSet
 ) {

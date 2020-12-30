@@ -69,7 +69,9 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
     }
 
     const entries = await Promise.all(
-      $('img').toArray().map(img => generateImageSizes(context, img))
+      $('img').toArray()
+        .filter((img): img is cheerio.TagElement => img.type === "tag")
+        .map(img => generateImageSizes(context, img))
     )
     const resized = await resizedImages.writeResizedImages()
     for (const entry of entries) {

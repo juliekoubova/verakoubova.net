@@ -2,7 +2,7 @@ import { EleventyPlugin } from '@11ty/eleventy'
 import { load } from 'cheerio'
 import { isHtml } from './is-html'
 
-export function addToken(element: Cheerio, attr: string, token: string) {
+export function addToken(element: cheerio.Cheerio, attr: string, token: string) {
   element.attr('rel', (el, i, tokenList) => {
     const tokens = new Set(tokenList?.split(' ') ?? [])
     tokens.add(token)
@@ -23,7 +23,7 @@ function decode(string: string) {
 }
 
 export type CheerioPluginTransform<Options> = (
-  document: CheerioStatic,
+  document: cheerio.Root,
   outputPath: string | false,
   options: Partial<Options>,
 ) => void | Promise<void>
