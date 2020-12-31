@@ -1,3 +1,4 @@
+// @ts-ignore
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const purge = process.env.NODE_ENV === 'production'

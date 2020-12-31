@@ -1,7 +1,9 @@
 .cache
 .DS_Store
 .imagecache
+.parcel-cache
 _site
 dist
 node_modules
+npm-debug.log
 yarn-error.log

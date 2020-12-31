@@ -10,8 +10,8 @@
     "dev": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
-    "@stimulus/core": "^1.1.1",
-    "@stimulus/mutation-observers": "^1.1.1",
+    "@stimulus/core": "^2.0.0",
+    "@stimulus/mutation-observers": "^2.0.0",
     "@verakoubova/store": "0.0.0"
   }
 }

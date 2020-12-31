@@ -9,6 +9,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "stimulus": "^1.1.1"
+    "stimulus": "^2.0.0"
   }
 }
