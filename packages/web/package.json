@@ -8,11 +8,10 @@
     "clean": "shx rm -rf _site .cache",
     "build": "cross-env NODE_ENV=production run-s clean build:parcel build:eleventy build:csso",
     "build:eleventy": "eleventy --output _site",
-    "build:parcel": "parcel build _assets/main.css _assets/main.ts",
+    "build:parcel": "parcel build _assets/main.ts --dist-dir _site",
     "build:csso": "csso --input ./_site/main.css --output ./_site/main.css --comments none --force-media-merge --stat",
     "dev": "npm-run-all -s clean -p start dev:*",
-    "dev:parcel-css": "parcel watch _assets/main.css --out-dir _site --no-hmr",
-    "dev:parcel-js": "parcel watch _assets/main.ts --out-dir _site --no-hmr",
+    "dev:parcel": "parcel watch _assets/main.ts --dist-dir _site --no-hmr",
     "debug": "node --inspect-brk ./node_modules/.bin/eleventy",
     "predeploy": "shx rm -f _site/report.html",
     "serve": "run-s build && ws --directory _site --port 8080",
@@ -39,7 +38,7 @@
     "parcel": "^2.0.0-beta.1",
     "postcss": "^7.0.35",
     "probe-image-size": "^6.0.0",
-    "tailwind-vertical-rhythm": "^1.1.0",
+    "tailwind-vertical-rhythm": "^1.2.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tailwindcss-scroll-snap": "^1.0.3",
     "ts-jest": "^26.4.4"
@@ -52,20 +51,5 @@
     "slugify": "^1.4.6",
     "stimulus": "^2.0.0",
     "turbolinks": "^5.2.0"
-  },
-  "targets": {
-    "nomodule": {
-      "distDir": "_site/nomodule",
-      "engines": {
-        "browsers": "> 0.25%"
-      }
-    },
-    "module": {
-      "distDir": "_site",
-      "engines": {
-        "browsers": "Chrome 70"
-      },
-      "outputFormat": "esmodule"
-    }
   }
 }

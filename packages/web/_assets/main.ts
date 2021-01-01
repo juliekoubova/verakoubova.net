@@ -1,3 +1,4 @@
+import './main.css'
 import {
   ActiveDotController, BreadcrumbController, FixedHeaderController,
   NavigationController, SmoothScrollController
