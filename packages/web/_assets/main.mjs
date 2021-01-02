@@ -4,9 +4,9 @@ import {
   NavigationController, SmoothScrollController
 } from '@verakoubova/navigation'
 import { VerticalRhythmController } from '@verakoubova/vertical-rhythm'
-import { Application } from 'stimulus'
-import { SnapTypeController } from './js'
 import '@verakoubova/polyfills'
+import { Application } from 'stimulus'
+import { SnapTypeController } from './js/snap-type'
 import './js/logrocket'
 import './js/turbolinks'
 

@@ -9,7 +9,13 @@ const safari =
 const isMobileWebkit = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
   (safari && navigator.maxTouchPoints > 0)
 
-function toggleScrollSnapClass(className: string, value?: boolean) {
+
+/**
+ *
+ * @param {string} className
+ * @param {boolean} [value]
+ */
+function toggleScrollSnapClass(className, value) {
   if (isMobileWebkit) {
     // scroll snap is irredeemably broken on iOS. no snap for now :(
       return
