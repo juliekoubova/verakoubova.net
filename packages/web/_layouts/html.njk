@@ -12,7 +12,7 @@
       {{ title | lang | default(site.name) | safe }}
     </title>
     <link rel="stylesheet" href="{{ '/main.css' | url }}">
-    <link href="{{ site.googleFonts }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.googleFonts }}" >
     {% include 'seo-links.njk' %}
     <script>
       window.ga = window.ga || function() {

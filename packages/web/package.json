@@ -51,5 +51,6 @@
     "slugify": "^1.4.6",
     "stimulus": "^2.0.0",
     "turbolinks": "^5.2.0"
-  }
+  },
+  "browser": "_site/main.js"
 }
