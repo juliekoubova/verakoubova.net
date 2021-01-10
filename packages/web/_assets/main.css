@@ -32,7 +32,7 @@ b, strong {
   content: '\203A';
 }
 
-.turbolinks-progress-bar {
+.turbo-progress-bar {
   /*! purgecss ignore current */
   @apply h-1;
   @apply bg-red-800;
