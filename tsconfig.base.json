@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "noImplicitReturns": true,
     "sourceMap": true,
+    "inlineSources": true,
     "strict": true
   },
 }

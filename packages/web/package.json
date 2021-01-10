@@ -52,5 +52,14 @@
     "stimulus": "^2.0.0",
     "turbolinks": "^5.2.0"
   },
-  "browser": "_site/main.js"
+  "browser": "_site/main.js",
+  "targets": {
+    "browser": {
+      "includeNodeModules": true,
+      "isLibrary": false,
+      "sourceMap": {
+        "inlineSources": true
+      }
+    }
+  }
 }
