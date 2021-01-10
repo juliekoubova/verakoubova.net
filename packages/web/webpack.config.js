@@ -9,6 +9,7 @@ const site = absolute.bind(undefined, '_site')
 
 /** @type {import('webpack').Configuration} */
 const config = {
+  devtool: 'source-map',
   entry: {
     main: assets('main.js')
   },
@@ -19,8 +20,12 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       }, {
         test: /\.js$/,
+        enforce: "pre",
+        use: ['source-map-loader'],
+      }, {
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ['babel-loader']
       }
     ]
   },
