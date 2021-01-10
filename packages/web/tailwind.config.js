@@ -60,7 +60,7 @@ module.exports = {
     height: 0.5 // Vertical rhythm in rems
   },
   plugins: [
-    require('tailwindcss-scroll-snap'),
+    // require('tailwindcss-scroll-snap'),
     require('tailwind-vertical-rhythm')
   ],
   purge,

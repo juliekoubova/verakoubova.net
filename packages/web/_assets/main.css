@@ -1,10 +1,10 @@
 @charset 'utf-8';
+@import './css/sidebar.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './css/sidebar.css';
 
 body {
   /* @apply vr-debug; */
