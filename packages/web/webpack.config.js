@@ -64,6 +64,5 @@ function createConfig(filename, targets = undefined) {
 }
 
 module.exports = [
-  createConfig('main.es5.js', { browsers: ['defaults', 'IE 11'] }),
-  createConfig('main.esm.js', { esmodules: true })
+  createConfig('main.js', { esmodules: true })
 ]
