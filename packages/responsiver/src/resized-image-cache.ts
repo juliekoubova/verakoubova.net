@@ -1,7 +1,7 @@
 import { SingleBar, Presets } from 'cli-progress'
 import { promises as fsp } from 'fs'
 import { join, relative } from 'path'
-import sharp = require("sharp");
+import sharp from "sharp";
 import { OriginalImage } from "./original-image";
 import { ResizedImage } from "./resized-image";
 import { ImageFormats, WebP, ImageFormat } from "./image-formats";

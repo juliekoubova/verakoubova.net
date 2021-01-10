@@ -1,6 +1,6 @@
 import { createHash } from 'crypto'
 import { join } from 'path'
-import sharp = require('sharp')
+import sharp from 'sharp'
 import { encode } from 'zbase32'
 import { OriginalImage } from './original-image'
 import { fileExists } from './fs'
