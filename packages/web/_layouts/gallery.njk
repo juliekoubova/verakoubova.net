@@ -17,7 +17,7 @@ fixedHeaderOnly: true
       href="#{{ img | lang | slug if not loop.first }}"
       title="{{ img | lang }}"
       class="block py-2 opacity-0 transition-opacity duration-700 ease-out"
-      data-target="active-dot.link"
+      data-active-dot-target="link"
       >
       {# pointer-events-none because events do not bubble from SVG elements to HTML parents #}
       <svg width="16" height="8" class="w-4 h-2 text-gray-600 pointer-events-none">

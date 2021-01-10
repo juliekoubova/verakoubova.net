@@ -12,14 +12,14 @@
     {% endfor %}
 
     {% if breadcrumbLeaf %}
-    <li hidden data-target="breadcrumb.parentItem">
-      <a data-target="breadcrumb.parentAnchor">{{
+    <li hidden data-breadcrumb-target="parentItem">
+      <a data-breadcrumb-target="parentAnchor">{{
         bodyTitle | default(title) | safe
       }}</a>
-      <span aria-hidden="true" hidden data-target="breadcrumb.parentArrow">&rsaquo;&nbsp;</span>
+      <span aria-hidden="true" hidden data-breadcrumb-target="parentArrow">&rsaquo;&nbsp;</span>
     </li>
-    <li data-target="breadcrumb.leafItem">
-      <h2 class="inline" data-target="breadcrumb.leafHeading">{{
+    <li data-breadcrumb-target="leafItem">
+      <h2 class="inline" data-breadcrumb-target="leafHeading">{{
         bodyTitle | default(title) | safe
       }}</h2>
     </li>
