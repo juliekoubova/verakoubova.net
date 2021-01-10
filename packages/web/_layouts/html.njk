@@ -21,7 +21,8 @@
       ga.l=+new Date
       ga('create', '{{ site.googleAnalytics }}', 'auto')
     </script>
-    <script src="{{ '/main.js' | url }}" async></script>
+    <script src="{{ '/main.es5.js' | url }}" async nomodule></script>
+    <script src="{{ '/main.esm.js' | url }}" async type="module"></script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
   </head>
   <body class="{{ bodyClass }} px-2 pb-24" {{ bodyData | dataAttributes }}>
