@@ -1,5 +1,5 @@
 ---
-layout: applied
+layout: default
 pageId: about
 img:
   width: 420
@@ -7,6 +7,7 @@ img:
   alt:
     cs: Věra Koubová s fotoaparátem
 ---
+{% include 'header-static.njk' %}
 <div class="sidebar-section">
 
   <div class="in-sidebar mt-4 sm:float-right lg:flex lg:justify-end lg:float-none">
@@ -17,7 +18,9 @@ img:
   </div>
 
   <div>
-    {{ content | safe }}
+    <div class="applied">
+      {{ content | safe }}
+    </div>
 
     <div class="vr-normal-base font-body text-right mt-8">
       <div><a href="mailto:{{ site.mail }}">{{ site.mail }}</a></div>

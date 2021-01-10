@@ -11,11 +11,9 @@
       {{ titlePrefix }}{{ " - " if titlePrefix }}
       {{ title | lang | default(site.name) | safe }}
     </title>
-    <!--[if !IE]-->
     <link rel="stylesheet" href="{{ '/main.css' | url }}">
     <link rel="stylesheet" href="{{ site.googleFonts }}" >
     <script src="{{ '/main.js' | url }}" async type="module"></script>
-    <!--[endif]-->
     {% include 'seo-links.njk' %}
     <script>
       window.ga = window.ga || function() {
