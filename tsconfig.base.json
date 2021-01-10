@@ -5,6 +5,7 @@
     "inlineSources": true,
     "module": "CommonJS",
     "noImplicitReturns": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "ESNext"
