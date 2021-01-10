@@ -8,5 +8,5 @@
     ".eleventy.js",
     "**/*.js",
     "**/*.ts"
-, "_assets/js/snap-type.mjs", "_assets/main.mjs", "_assets/js/turbolinks.mjs"  ]
+, "_assets/js/snap-type.js", "_assets/main.ts", "_a_assets/js/turbolinks.js ]
 }

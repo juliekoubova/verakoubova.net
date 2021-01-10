@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "esModuleInterop": true,
+    "inlineSources": true,
     "module": "CommonJS",
     "noImplicitReturns": true,
     "sourceMap": true,
-    "inlineSources": true,
-    "strict": true
+    "strict": true,
+    "target": "ESNext"
   },
 }
 
