@@ -32,5 +32,9 @@ export const cspInlineHashes = cheerioPlugin('csp-inline-hashes', function ($) {
     }
   })
 
-  writeFileSync(cachePath, [...sources].filter(Boolean).join('\n'), 'utf8')
+  const sorted = [...sources]
+    .filter(Boolean)
+    .sort()
+
+  writeFileSync(cachePath, sorted.join('\n'), 'utf8')
 })
