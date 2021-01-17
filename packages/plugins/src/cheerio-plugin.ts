@@ -3,7 +3,7 @@ import { load } from 'cheerio'
 import { isHtml } from './is-html'
 
 export function addToken(element: cheerio.Cheerio, attr: string, token: string) {
-  element.attr('rel', (el, i, tokenList) => {
+  element.attr(attr, (_el, _i, tokenList) => {
     const tokens = new Set(tokenList?.split(' ') ?? [])
     tokens.add(token)
     return [...tokens].join(' ')
@@ -22,9 +22,14 @@ function decode(string: string) {
   });
 }
 
+export interface CheerioPluginContext {
+  outputDir: string
+  outputPath: string | false
+}
+
 export type CheerioPluginTransform<Options> = (
+  this: CheerioPluginContext,
   document: cheerio.Root,
-  outputPath: string | false,
   options: Partial<Options>,
 ) => void | Promise<void>
 
@@ -33,13 +38,19 @@ export function cheerioPlugin<Options>(
   transform: CheerioPluginTransform<Options>
 ): EleventyPlugin<Partial<Options>> {
   return function cheerioPlugin(eleventy, options = {}) {
-    eleventy.addTransform(name, async (content, outputPath) => {
+    eleventy.addTransform(name, async function (this: any, content, outputPath) {
       if (!isHtml(outputPath)) {
         return content
       }
 
       const document = load(content)
-      await Promise.resolve(transform(document, outputPath, options))
+      const context = {
+        outputDir: this.outputDir,
+        outputPath,
+      }
+      await Promise.resolve(
+        transform.call(context, document, options)
+      )
 
       const hasBody = /<\s*body(\w|\s|=|"|-)*>/gm
       const html = hasBody.test(content)

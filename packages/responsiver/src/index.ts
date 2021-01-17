@@ -53,7 +53,7 @@ export const responsiver = (options: Partial<ResponsiverOptions> = {}) => {
   )
 
 
-  return cheerioPlugin('responsiver', async ($, _outputPath) => {
+  return cheerioPlugin('responsiver', async ($) => {
     const resizedImages = new ResizedImageCache(
       resolvedCacheDir,
       resolvedOutputDir,

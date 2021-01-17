@@ -1,6 +1,6 @@
 // @ts-check
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
-const { externalLinks, htmlMinifier } = require('@verakoubova/plugins')
+const { cspInlineHashes, externalLinks, htmlMinifier } = require('@verakoubova/plugins')
 const { responsiver } = require('@verakoubova/responsiver')
 const yaml = require('js-yaml')
 const slugify = require('slugify').default
@@ -208,6 +208,8 @@ function config(eleventyConfig) {
     sortAttributes: true,
     sortClassName: true
   })
+
+  eleventyConfig.addPlugin(cspInlineHashes)
 
   for (const [key, fn] of Object.entries(filters)) {
     eleventyConfig.addFilter(key, fn)
